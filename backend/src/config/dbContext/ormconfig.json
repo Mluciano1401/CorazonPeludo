@@ -1,0 +1,11 @@
+{
+    "type": "mssql",
+    "host": "localhost",
+    "port": 1433,
+    "username": "sa",
+    "password": "MyStrongPassword",
+    "database": "MiBaseDeDatos",
+    "synchronize": true,
+    "logging": false,
+    "entities": ["src/**/*.entity.ts"],
+  }
