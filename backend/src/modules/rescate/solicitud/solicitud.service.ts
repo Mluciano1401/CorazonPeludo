@@ -1,10 +1,10 @@
 import { Injectable } from '@nestjs/common';
-import { SolicitudR } from '../../../models/SolicitudRescate.model';
+import { SolicitudR } from '../../../models/solicitudRescate.model';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 
 @Injectable()
-export class SolicitudService {
+export class SolicitudRService {
   _SolicitudRRepository: Repository<any> | any;
   constructor(
    @InjectRepository(SolicitudR) private SolicitudRRepository: Repository<SolicitudR>

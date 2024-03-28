@@ -1,13 +1,13 @@
 import { Controller, Get, Post, Body, HttpException, HttpStatus, Param } from '@nestjs/common';
-import {SolicitudService} from  './Solicitud.service';
-import { SolicitudR } from 'src/models/SolicitudRescate.model';
+import {SolicitudRService} from  './solicitud.service';
+import { SolicitudR } from 'src/models/solicitudRescate.model';
 
 
 @Controller('Solicitud')
-export class SolicitudController {
-  userService: SolicitudService;
-  constructor(private SolicitudService: SolicitudService) {
-    this.userService = this.SolicitudService;
+export class SolicitudRController {
+  userService: SolicitudRService;
+  constructor(private SolicitudRService: SolicitudRService) {
+    this.userService = this.SolicitudRService;
   }
 
   @Get()
