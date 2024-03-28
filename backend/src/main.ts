@@ -8,12 +8,13 @@ async function bootstrap() {
   const config = new DocumentBuilder()
     .addBasicAuth()
     .setTitle('My documentation API')
-    .setDescription('this is a API for a portafolio')
+    .setDescription('this is a API for CorazonPeludoApp')
     .setVersion('1.0')
     .addTag('endpoints')
     .build()
   const document = SwaggerModule.createDocument(app, config);
   SwaggerModule.setup('documentation', app, document);
+  app.enableCors();
   app.useGlobalPipes(new ValidationPipe());
   await app.listen(process.env.PORT || 3000);
 }
