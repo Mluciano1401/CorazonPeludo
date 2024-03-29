@@ -1,6 +1,6 @@
 import { Controller, Get, Post, Body, HttpException, HttpStatus, Param } from '@nestjs/common';
 import {SolicitanteService} from  './solicitante.service';
-import { Solicitante } from 'src/models/solicitante.model';
+import { Solicitante } from 'src/models/adopcion/solicitante.model';
 
 
 @Controller('solicitante')

@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { Persona } from '../../../models/persona.model';
+import { Persona } from '../../../models/tercero/persona.model';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 

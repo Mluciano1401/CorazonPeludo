@@ -1,6 +1,6 @@
 import { Controller, Get, Post, Body, HttpException, HttpStatus, Param } from '@nestjs/common';
 import {SolicitudRService} from  './solicitud.service';
-import { SolicitudR } from 'src/models/solicitudRescate.model';
+import { SolicitudR } from 'src/models/rescate/solicitudRescate.model';
 
 
 @Controller('Solicitud')

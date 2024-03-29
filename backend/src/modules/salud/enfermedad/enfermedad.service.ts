@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { Enfermedad } from '../../../models/enfermedad.model';
+import { Enfermedad } from '../../../models/salud/enfermedad.model';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 

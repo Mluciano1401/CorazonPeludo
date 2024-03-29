@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { SolicitudR } from '../../../models/solicitudRescate.model';
+import { SolicitudR } from '../../../models/rescate/solicitudRescate.model';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 

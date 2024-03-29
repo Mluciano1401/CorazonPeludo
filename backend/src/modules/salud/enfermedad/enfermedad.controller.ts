@@ -1,6 +1,6 @@
 import { Controller, Get, Post, Body, HttpException, HttpStatus, Param } from '@nestjs/common';
 import {EnfermedadService} from  './enfermedad.service';
-import { Enfermedad } from 'src/models/enfermedad.model';
+import { Enfermedad } from 'src/models/salud/enfermedad.model';
 
 
 @Controller('enfermedad')

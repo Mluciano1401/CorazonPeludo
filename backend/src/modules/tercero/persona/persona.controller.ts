@@ -1,6 +1,6 @@
 import { Controller, Get, Post, Body, HttpException, HttpStatus, Param } from '@nestjs/common';
 import {PersonaService} from  './persona.service';
-import { Persona } from 'src/models/persona.model';
+import { Persona } from 'src/models/tercero/persona.model';
 
 
 @Controller('persona')

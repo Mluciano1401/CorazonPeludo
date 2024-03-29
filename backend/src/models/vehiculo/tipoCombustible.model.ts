@@ -1,25 +1,17 @@
 import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity()
-export class Empleado {
+export class TipoCombustible{
     @PrimaryGeneratedColumn()
-    EmpleadoId: number;
+    tipoCombustibleId: number;
 
     @Column()
-    personaId: number;
+    descripcion: string;
 
-    @Column()
-    surcusalId: number;
-
-    @Column()
-    tipoEmpleado: number;
-
-    @Column()
-    fechaIngreso: Date;
-    
     @Column()
     fechaModificacion: Date;
 
     @Column()
     status:boolean;
 }
+

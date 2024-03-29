@@ -1,12 +1,14 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, JoinColumn, OneToOne, PrimaryGeneratedColumn } from "typeorm";
+import { TipoPersona } from "./tipoEmpresa.model";
 
 @Entity()
 export class Persona {
     @PrimaryGeneratedColumn()
-    PersonaId: number;
+    personaId: number;
 
-    @Column()
-    tipoPersonaId: number;
+    @OneToOne(()=> TipoPersona)
+    @JoinColumn()
+    tipoPersona: TipoPersona;
 
     @Column()
     nombre: string;

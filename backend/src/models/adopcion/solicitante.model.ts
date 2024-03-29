@@ -1,12 +1,14 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, JoinColumn, OneToOne, PrimaryGeneratedColumn } from "typeorm";
+import { Persona } from "../tercero/persona.model";
 
 @Entity()
 export class Solicitante {
     @PrimaryGeneratedColumn()
     SolicitanteId: number;
 
-    @Column()
-    personaId: number;
+    @OneToOne(()=>Persona)
+    @JoinColumn()
+    persona: Persona;
 
     @Column()
     situacionFamiliar: number;

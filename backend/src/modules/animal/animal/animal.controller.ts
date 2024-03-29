@@ -1,6 +1,6 @@
 import { Controller, Get, Post, Body, HttpException, HttpStatus, Param } from '@nestjs/common';
 import {AnimalService} from  './animal.service';
-import { Animal } from 'src/models/animal.model';
+import { Animal } from 'src/models/animal/animal.model';
 
 
 @Controller('animal')

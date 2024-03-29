@@ -1,4 +1,5 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, JoinColumn, OneToOne, PrimaryGeneratedColumn } from "typeorm";
+import { Especie } from "./especie.model";
 
 @Entity()
 export class Animal {
@@ -11,8 +12,9 @@ export class Animal {
     @Column()
     identificador: number;
 
-    @Column()
-    especie: number;
+    @OneToOne(()=> Especie)
+    @JoinColumn()
+    especie: Especie;
 
     @Column()
     foto:string;

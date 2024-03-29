@@ -1,6 +1,6 @@
 import { Controller, Get, Post, Body, HttpException, HttpStatus, Param } from '@nestjs/common';
 import {EmpleadoService} from  './empleado.service';
-import { Empleado } from 'src/models/empleado.model';
+import { Empleado } from 'src/models/tercero/empleado.model';
 
 
 @Controller('empleado')
