@@ -1,11 +1,12 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, JoinColumn, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
+import { Marca } from "../miscelaneo/marca.model";
 
-@Entity()
+@Entity({ schema: 'almacen', name: 'producto' })
 export class Producto {
     @PrimaryGeneratedColumn()
     productoId: number;
 
-    @Column()
+    @Column({ nullable: false })
     nombre: string;
 
     @Column()
@@ -17,15 +18,16 @@ export class Producto {
     @Column()
     costo:number;
 
-    @Column()
-    marca: number;
+    @ManyToOne(()=> Marca)
+    @JoinColumn()
+    marca: Marca;
 
     @Column()
     fechaVencimiento: Date;
 
-    @Column()
+  @Column({ nullable: false,  default: new Date() })
     fechaModificacion: Date;
     
-    @Column()
+  @Column({ nullable: false, default: true })
     status:boolean;
 }

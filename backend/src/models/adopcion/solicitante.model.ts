@@ -1,23 +1,25 @@
-import { Column, Entity, JoinColumn, OneToOne, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, JoinColumn, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
 import { Persona } from "../tercero/persona.model";
+import { ActividadEconomica } from "./actividadEconomica.model";
 
-@Entity()
+@Entity({ schema: 'adopcion', name: 'solicitante' })
 export class Solicitante {
     @PrimaryGeneratedColumn()
     SolicitanteId: number;
 
-    @OneToOne(()=>Persona)
+    @ManyToOne(()=>Persona)
     @JoinColumn()
     persona: Persona;
 
     @Column()
     situacionFamiliar: number;
 
-    @Column()
+    @Column({ nullable: false, default: 0 })
     ingresosMensuales: number;
 
-    @Column()
-    actividadEconomica: number;
+    @ManyToOne(()=> ActividadEconomica)
+    @JoinColumn()
+    actividadEconomica: ActividadEconomica;
 
     @Column()
     dependencia: boolean;
@@ -25,9 +27,9 @@ export class Solicitante {
     @Column()
     numeroDependientes: number;
 
-    @Column()
+  @Column({ nullable: false,  default: new Date() })
     fechaModificacion: Date;
 
-    @Column()
+  @Column({ nullable: false, default: true })
     status:boolean;
 }

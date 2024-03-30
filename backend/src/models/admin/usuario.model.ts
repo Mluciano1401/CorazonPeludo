@@ -2,18 +2,18 @@ import { Column, Entity, JoinColumn, OneToOne, PrimaryGeneratedColumn } from "ty
 import { TipoUsuario } from "./tipoUsuario.model";
 import { Sucursal } from "../tercero/surcusal.model";
 
-@Entity()
+@Entity({ schema: 'admin', name: 'usuario' })
 export class Usuario {
     @PrimaryGeneratedColumn()
     usuarioId: number;
 
-    @Column()
+    @Column({ nullable: false })
     userName: string;
 
-    @Column()
+    @Column({ nullable: false })
     password: string;
 
-    @Column()
+    @Column({ nullable: false })
     email:string;
 
     @Column()
@@ -27,9 +27,9 @@ export class Usuario {
     @JoinColumn()
     surcusal: Sucursal;
 
-    @Column()
+    @Column({ nullable: false,  default: new Date() })
     fechaModificacion: Date;
 
-    @Column()
+    @Column({ nullable: false, default: true })
     status:boolean;
 }

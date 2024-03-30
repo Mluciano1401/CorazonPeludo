@@ -1,12 +1,15 @@
 import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
 
-@Entity({ schema: 'vehiculo', name: 'modelo' })
-export class Modelo {
+@Entity({ schema: 'miscelaneo', name: 'direccion' })
+export class Direccion{
     @PrimaryGeneratedColumn()
-    modeloId: number;
+    direccionId: number;
 
     @Column({ nullable: false })
-    descripcion: string;
+    calle: string;
+
+    @Column({ nullable: false })
+    sector: string;
 
     @Column({ nullable: false,  default: new Date() })
     fechaModificacion: Date;
@@ -14,3 +17,4 @@ export class Modelo {
     @Column({ nullable: false, default: true })
     status:boolean;
 }
+

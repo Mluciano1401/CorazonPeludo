@@ -1,16 +1,19 @@
 import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
 
-@Entity({ schema: 'vehiculo', name: 'modelo' })
-export class Modelo {
+
+
+@Entity({ schema: 'tercero', name: 'tipoTelefono' })
+export class TipoTelefono {
     @PrimaryGeneratedColumn()
-    modeloId: number;
+    tipoTelefonoId: number;
 
     @Column({ nullable: false })
     descripcion: string;
 
     @Column({ nullable: false,  default: new Date() })
     fechaModificacion: Date;
-
+ 
     @Column({ nullable: false, default: true })
     status:boolean;
 }
+

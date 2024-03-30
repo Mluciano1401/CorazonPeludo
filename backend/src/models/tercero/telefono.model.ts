@@ -1,18 +1,22 @@
 import { Column, Entity, JoinColumn, OneToOne, PrimaryGeneratedColumn } from "typeorm";
-import { Persona } from "./persona.model";
+import { TipoTelefono } from "./tipoTelefono.model";
 
 
-@Entity({ schema: 'tercero', name: 'sucursal' })
-export class Sucursal {
+
+@Entity({ schema: 'tercero', name: 'telefono' })
+export class Telefono{
     @PrimaryGeneratedColumn()
-    sucursalId: number;
+    telefonoId: number;
 
-    @OneToOne(() => Persona)
+    @OneToOne(()=> TipoTelefono)
     @JoinColumn()
-    compania: Persona;
+    tipoTelefono: TipoTelefono;
 
     @Column({ nullable: false })
     descripcion: string;
+
+    @Column()
+    extension: string;
 
   @Column({ nullable: false,  default: new Date() })
     fechaModificacion: Date;

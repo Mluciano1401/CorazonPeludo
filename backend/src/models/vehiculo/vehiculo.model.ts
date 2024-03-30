@@ -2,7 +2,7 @@ import { Column, Entity, JoinColumn, OneToOne, PrimaryGeneratedColumn } from "ty
 import { TipoVehiculo } from "./tipoVehiculo.model";
 import { TipoCombustible } from "./tipoCombustible.model";
 
-@Entity()
+@Entity({ schema: 'vehiculo', name: 'vehiculo' })
 export class Vehiculo {
     @PrimaryGeneratedColumn()
     vehiculoId: number;
@@ -14,7 +14,7 @@ export class Vehiculo {
     @Column()
     numeroChasis: string;
 
-    @Column()
+    @Column({ nullable: false })
     placa: string;
 
     @Column()
@@ -39,9 +39,9 @@ export class Vehiculo {
     @Column()
     color:string;
 
-    @Column()
+  @Column({ nullable: false,  default: new Date() })
     fechaModificacion: Date;
     
-    @Column()
+  @Column({ nullable: false, default: true })
     status:boolean;
 }

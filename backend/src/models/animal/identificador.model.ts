@@ -1,12 +1,15 @@
 import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
 
-@Entity({ schema: 'tercero', name: 'tipoEmpleado' })
-export class TipoEmpleado{
+@Entity({ schema: 'animal', name: 'indentificador' })
+export class Indentificador{
     @PrimaryGeneratedColumn()
-    tipoEmpleadoId: number;
+    indentificadorId: number;
 
     @Column({ nullable: false })
-    descripcion: string;
+    codigoBarra: string;
+
+    @Column()
+    tipoIdentificador: string;
 
   @Column({ nullable: false,  default: new Date() })
     fechaModificacion: Date;

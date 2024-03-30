@@ -1,27 +1,27 @@
 import { Column, Entity, JoinColumn, ManyToOne, OneToOne, PrimaryGeneratedColumn } from "typeorm";
-import { Sucursal } from "../tercero/surcusal.model";
+import { Solicitud } from "./solicitudAdopcion.model";
+import { Animal } from "../animal/animal.model";
 import { Estado } from "../miscelaneo/estado.model";
-import { Solicitante } from "./solicitante.model";
 
-@Entity({ schema: 'adopcion', name: 'solicitudAdopcion' })
-export class Solicitud {
+@Entity({ schema: 'adopcion', name: 'procesoAdopcion' })
+export class ProcesoAdopcion{
     @PrimaryGeneratedColumn()
-    SolicitudId: number;
+    procesoAdopcionId: number;
 
-    @OneToOne(()=> Solicitante)
+    @OneToOne(()=> Solicitud)
     @JoinColumn()
-    solicitante: Solicitante;
+    solicitud: Solicitud
+
+    @ManyToOne(()=> Animal)
+    @JoinColumn()
+    animal: Animal;
 
     @ManyToOne(()=> Estado)
     @JoinColumn()
     estado: Estado;
 
-    @Column()
-    fechaCreacion: Date;
-
-    @ManyToOne(()=> Sucursal)
-    @JoinColumn()
-    surcusal: Sucursal;
+    @Column({ nullable: false})
+    fechaInicio: Date;
 
   @Column({ nullable: false,  default: new Date() })
     fechaModificacion: Date;
@@ -29,3 +29,4 @@ export class Solicitud {
   @Column({ nullable: false, default: true })
     status:boolean;
 }
+

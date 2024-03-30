@@ -1,9 +1,11 @@
 import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
 
-@Entity({ schema: 'tercero', name: 'tipoEmpleado' })
-export class TipoEmpleado{
+
+
+@Entity({ schema: 'tercero', name: 'tipoEnfermedad' })
+export class TipoEnfermedad {
     @PrimaryGeneratedColumn()
-    tipoEmpleadoId: number;
+    tipoEnfermedadId: number;
 
     @Column({ nullable: false })
     descripcion: string;

@@ -1,7 +1,10 @@
-import { Column, Entity, JoinColumn, OneToOne, PrimaryGeneratedColumn } from "typeorm";
-import { TipoPersona } from "./tipoEmpresa.model";
+import { Column, Entity, JoinColumn, ManyToOne, OneToOne, PrimaryGeneratedColumn } from "typeorm";
+import { TipoEmpresa } from "./tipoEmpresa.model";
+import { TipoPersona } from "./tipoPersona.model";
+import { EstadoCivil } from "./estadoCivil.model";
+import { Direccion } from "../miscelaneo/direccion.model";
 
-@Entity()
+@Entity({ schema: 'tercero', name: 'persona' })
 export class Persona {
     @PrimaryGeneratedColumn()
     personaId: number;
@@ -10,7 +13,7 @@ export class Persona {
     @JoinColumn()
     tipoPersona: TipoPersona;
 
-    @Column()
+    @Column({ nullable: false })
     nombre: string;
 
     @Column()
@@ -31,21 +34,27 @@ export class Persona {
     @Column()
     licenciaConducir:string;
 
+    @ManyToOne(()=> Direccion)
+    @JoinColumn()
+    direccion: Direccion;
+
     @Column()
     sexo:string;
     
     @Column()
     genero:string;
     
-    @Column()
-    estadoCivil: number;
+    @ManyToOne(()=> EstadoCivil)
+    @JoinColumn()
+    estadoCivil: EstadoCivil;
 
-    @Column()
-    tipoEmpresa: number;
+    @OneToOne(()=> TipoEmpresa)
+    @JoinColumn()
+    tipoEmpresa: TipoEmpresa;
 
-    @Column()
+  @Column({ nullable: false,  default: new Date() })
     fechaModificacion: Date;
     
-    @Column()
+  @Column({ nullable: false, default: true })
     status:boolean;
 }

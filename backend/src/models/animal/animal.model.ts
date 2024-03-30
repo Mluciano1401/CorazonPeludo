@@ -1,7 +1,8 @@
-import { Column, Entity, JoinColumn, OneToOne, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, JoinColumn, ManyToOne, OneToOne, PrimaryGeneratedColumn } from "typeorm";
 import { Especie } from "./especie.model";
+import { RasgosFísicos } from "./rasgosFisicos.model";
 
-@Entity()
+@Entity({ schema: 'animal', name: 'animal' })
 export class Animal {
     @PrimaryGeneratedColumn()
     animalId: number;
@@ -12,7 +13,7 @@ export class Animal {
     @Column()
     identificador: number;
 
-    @OneToOne(()=> Especie)
+    @ManyToOne(()=> Especie)
     @JoinColumn()
     especie: Especie;
 
@@ -31,8 +32,9 @@ export class Animal {
     @Column()
     sexo: string;
 
-    @Column()
-    rasgosFisicosId: number;
+    @OneToOne(()=> RasgosFísicos)
+    @JoinColumn()
+    rasgosFisicos: RasgosFísicos;
 
     @Column()
     origen: number;
@@ -43,9 +45,9 @@ export class Animal {
     @Column()
     fechaIngreso: Date;
 
-    @Column()
+  @Column({ nullable: false,  default: new Date() })
     fechaModificacion: Date;
     
-    @Column()
+  @Column({ nullable: false, default: true })
     status:boolean;
 }

@@ -2,8 +2,8 @@ import { Column, Entity, JoinColumn, OneToOne, PrimaryGeneratedColumn } from "ty
 import { Usuario } from "./usuario.model";
 import { Sucursal } from "../tercero/surcusal.model";
 
-@Entity()
-export class logAcciones {
+@Entity({ schema: 'admin', name: 'logAcciones' })
+export class LogAcciones {
     @PrimaryGeneratedColumn()
     id: number;
 
@@ -15,19 +15,19 @@ export class logAcciones {
     @JoinColumn()
     surcusal: Sucursal;
 
-    @Column()
+    @Column({ nullable: false })
     fecha: Date;
 
-    @Column()
+    @Column({ nullable: false })
     hora: Date;
 
-    @Column()
+    @Column({ nullable: false })
     origen: string;
 
-    @Column()
+    @Column({ nullable: false })
     datosAntesdelCambio: string;
 
-    @Column()
+    @Column({ nullable: false })
     datosDespuesdelCambio: string;
 
 }

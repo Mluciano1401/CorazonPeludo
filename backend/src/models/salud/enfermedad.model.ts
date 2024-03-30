@@ -1,25 +1,25 @@
 import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
 
-@Entity()
+@Entity({ schema: 'salud', name: 'enfermedad' })
 export class Enfermedad {
     @PrimaryGeneratedColumn()
     EnfermedadId: number;
 
-    @Column()
+    @Column({ nullable: false })
     nombre: string;
 
     @Column()
     tipoEnfermedad: number;
 
     @Column()
-    prevalencial:string;
+    prevalencia:string;
 
     @Column()
     porcientoMortalidad: number;
 
-    @Column()
+  @Column({ nullable: false,  default: new Date() })
     fechaModificacion: Date;
 
-    @Column()
+  @Column({ nullable: false, default: true })
     status:boolean;
 }

@@ -1,34 +1,56 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, JoinColumn, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
+import { Sucursal } from "../tercero/surcusal.model";
+import { Persona } from "../tercero/persona.model";
+import { Estado } from "../miscelaneo/estado.model";
+import { Direccion } from "../miscelaneo/direccion.model";
+import { NivelUrgencia } from "../miscelaneo/nivelUrgencia.model";
+import { EstadoLugar } from "./estadoLugar.model";
+import { Animal } from "../animal/animal.model";
+import { EstadoEmergencia } from "./estadoEmergencia.model";
 
-@Entity()
+@Entity({ schema: 'rescate', name: 'solicitudRescate' })
 export class SolicitudR {
     @PrimaryGeneratedColumn()
     SolicitudId: number;
 
-    @Column()
-    animalId:number;
+    @ManyToOne(()=>Animal)
+    @JoinColumn()
+    animal:Animal;
 
-    @Column()
-    solicitanteId: number;
+    @ManyToOne(()=>Persona)
+    @JoinColumn()
+    remitente: Persona;
 
-    @Column()
-    estadoLugar: number;
+    @ManyToOne(()=>EstadoLugar)
+    @JoinColumn()
+    estadoLugar: EstadoLugar;
 
-    @Column()
-    estadoEmergencia: number;
+    @ManyToOne(()=> NivelUrgencia)
+    @JoinColumn()
+    nivelUrgencia: NivelUrgencia;
 
-    @Column()
-    estado: number;
+    @ManyToOne(()=>EstadoEmergencia)
+    @JoinColumn()
+    estadoEmergencia: EstadoEmergencia;
+
+    @ManyToOne(()=> Estado)
+    @JoinColumn()
+    estado: Estado;
+
+    @ManyToOne(()=> Direccion)
+    @JoinColumn()
+    ubicacion: Direccion;
 
     @Column()
     fechaCreacion: Date;
 
-    @Column()
-    surcusalId: number;
+    @ManyToOne(()=> Sucursal)
+    @JoinColumn()
+    surcusal: Sucursal;
 
-    @Column()
+  @Column({ nullable: false,  default: new Date() })
     fechaModificacion: Date;
 
-    @Column()
+  @Column({ nullable: false, default: true })
     status:boolean;
 }
