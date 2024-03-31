@@ -2,7 +2,7 @@ import { Column, Entity, JoinColumn, OneToOne, PrimaryGeneratedColumn } from "ty
 import { TipoVehiculo } from "./tipoVehiculo.model";
 import { TipoCombustible } from "./tipoCombustible.model";
 
-@Entity({ schema: 'vehiculo', name: 'vehiculo' })
+@Entity( )
 export class Vehiculo {
     @PrimaryGeneratedColumn()
     vehiculoId: number;
@@ -39,7 +39,7 @@ export class Vehiculo {
     @Column()
     color:string;
 
-  @Column({ nullable: false,  default: new Date() })
+  @Column({ nullable: false})
     fechaModificacion: Date;
     
   @Column({ nullable: false, default: true })

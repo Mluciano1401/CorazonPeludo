@@ -1,8 +1,11 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { TipoMedicamento } from './tipoMedicamento.model';
+import { Column, Entity, JoinColumn, OneToOne, PrimaryGeneratedColumn } from "typeorm";
+import { Producto } from "../almacen/producto.model";
+import { ViaAdministracion } from './viaAdministracion.model';
 
 
 
-@Entity({ schema: 'tercero', name: 'medicamento' })
+@Entity( )
 export class Medicamento {
     @PrimaryGeneratedColumn()
     medicamentoId: number;
@@ -10,7 +13,22 @@ export class Medicamento {
     @Column({ nullable: false })
     descripcion: string;
 
-  @Column({ nullable: false,  default: new Date() })
+    @OneToOne(() => Producto)
+    @JoinColumn()
+    producto: Producto;
+
+    @OneToOne(() => TipoMedicamento)
+    @JoinColumn()
+    tipoMedicamento: TipoMedicamento;
+
+    @Column()
+    laboratorio: string;
+
+    @OneToOne(() => ViaAdministracion)
+    @JoinColumn()
+    viaAdministracion: ViaAdministracion;
+
+  @Column({ nullable: false})
     fechaModificacion: Date;
 
   @Column({ nullable: false, default: true })

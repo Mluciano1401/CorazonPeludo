@@ -1,8 +1,8 @@
-import { Column, Entity, JoinColumn, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, JoinColumn, OneToOne, PrimaryGeneratedColumn } from "typeorm";
 import { TipoTarea } from "./tipoTarea.model";
 import { Complejidad } from "./complejidad.model";
 
-@Entity({ schema: 'miscelaneo', name: 'tarea' })
+@Entity( )
 export class Tarea{
     @PrimaryGeneratedColumn()
     tareaId: number;
@@ -10,15 +10,15 @@ export class Tarea{
     @Column({ nullable: false })
     descripcion: string;
 
-    @ManyToOne(()=> TipoTarea)
+    @OneToOne(()=> TipoTarea)
     @JoinColumn()
     tipoTarea: TipoTarea;
 
-    @ManyToOne(()=> Complejidad)
+    @OneToOne(()=> Complejidad)
     @JoinColumn()
     complejidad: Complejidad;
 
-    @Column({ nullable: false,  default: new Date() })
+    @Column({ nullable: false})
     fechaModificacion: Date;
 
     @Column({ nullable: false, default: true })

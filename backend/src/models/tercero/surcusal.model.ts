@@ -2,7 +2,7 @@ import { Column, Entity, JoinColumn, OneToOne, PrimaryGeneratedColumn } from "ty
 import { Persona } from "./persona.model";
 
 
-@Entity({ schema: 'tercero', name: 'sucursal' })
+@Entity( )
 export class Sucursal {
     @PrimaryGeneratedColumn()
     sucursalId: number;
@@ -14,7 +14,7 @@ export class Sucursal {
     @Column({ nullable: false })
     descripcion: string;
 
-  @Column({ nullable: false,  default: new Date() })
+  @Column({ nullable: false})
     fechaModificacion: Date;
 
   @Column({ nullable: false, default: true })

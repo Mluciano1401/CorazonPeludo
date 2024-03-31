@@ -1,6 +1,6 @@
 import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
 
-@Entity({ schema: 'animal', name: 'tipoPiel' })
+@Entity()
 export class TipoPiel{
     @PrimaryGeneratedColumn()
     tipoPielId: number;
@@ -8,7 +8,7 @@ export class TipoPiel{
     @Column({ nullable: false })
     descripcion: string;
 
-  @Column({ nullable: false,  default: new Date() })
+  @Column({ nullable: false})
     fechaModificacion: Date;
 
   @Column({ nullable: false, default: true })

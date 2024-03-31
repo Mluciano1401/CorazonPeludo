@@ -1,12 +1,12 @@
-import { Column, Entity, JoinColumn, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, JoinColumn, OneToOne, PrimaryGeneratedColumn } from "typeorm";
 import { TipoPiel } from "./tipoPiel.model";
 
-@Entity({ schema: 'animal', name: 'rasgosFisicos' })
+@Entity()
 export class RasgosFísicos{
     @PrimaryGeneratedColumn()
     rasgosFísicosId: number;
 
-    @ManyToOne(()=> TipoPiel)
+    @OneToOne(()=> TipoPiel)
     @JoinColumn()
     tipoPiel: TipoPiel;
 
@@ -16,7 +16,7 @@ export class RasgosFísicos{
     @Column()
     tipoAmputacion: string;
 
-  @Column({ nullable: false,  default: new Date() })
+  @Column({ nullable: false})
     fechaModificacion: Date;
 
   @Column({ nullable: false, default: true })

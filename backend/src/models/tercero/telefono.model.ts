@@ -3,7 +3,7 @@ import { TipoTelefono } from "./tipoTelefono.model";
 
 
 
-@Entity({ schema: 'tercero', name: 'telefono' })
+@Entity( )
 export class Telefono{
     @PrimaryGeneratedColumn()
     telefonoId: number;
@@ -18,7 +18,7 @@ export class Telefono{
     @Column()
     extension: string;
 
-  @Column({ nullable: false,  default: new Date() })
+  @Column({ nullable: false})
     fechaModificacion: Date;
 
   @Column({ nullable: false, default: true })

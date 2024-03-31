@@ -3,7 +3,7 @@ import { Sucursal } from "../tercero/surcusal.model";
 import { Estado } from "../miscelaneo/estado.model";
 import { Solicitante } from "./solicitante.model";
 
-@Entity({ schema: 'adopcion', name: 'solicitudAdopcion' })
+@Entity( )
 export class Solicitud {
     @PrimaryGeneratedColumn()
     SolicitudId: number;
@@ -12,18 +12,18 @@ export class Solicitud {
     @JoinColumn()
     solicitante: Solicitante;
 
-    @ManyToOne(()=> Estado)
+    @OneToOne(()=> Estado)
     @JoinColumn()
     estado: Estado;
 
     @Column()
     fechaCreacion: Date;
 
-    @ManyToOne(()=> Sucursal)
+    @OneToOne(()=> Sucursal)
     @JoinColumn()
     surcusal: Sucursal;
 
-  @Column({ nullable: false,  default: new Date() })
+  @Column({ nullable: false})
     fechaModificacion: Date;
 
   @Column({ nullable: false, default: true })

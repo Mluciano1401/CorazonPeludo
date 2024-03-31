@@ -1,7 +1,8 @@
-import { Column, Entity, JoinColumn, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
+import { TipoProducto } from './tipoProducto.model';
+import { Column, Entity, JoinColumn, OneToOne, PrimaryGeneratedColumn } from "typeorm";
 import { Marca } from "../miscelaneo/marca.model";
 
-@Entity({ schema: 'almacen', name: 'producto' })
+@Entity( )
 export class Producto {
     @PrimaryGeneratedColumn()
     productoId: number;
@@ -12,20 +13,21 @@ export class Producto {
     @Column()
     lote: string;
 
-    @Column()
-    tipoProducto:number;
+    @OneToOne(()=> TipoProducto)
+    @JoinColumn()
+    tipoProducto: TipoProducto;
 
     @Column()
     costo:number;
 
-    @ManyToOne(()=> Marca)
+    @OneToOne(()=> Marca)
     @JoinColumn()
     marca: Marca;
 
     @Column()
     fechaVencimiento: Date;
 
-  @Column({ nullable: false,  default: new Date() })
+  @Column({ nullable: false})
     fechaModificacion: Date;
     
   @Column({ nullable: false, default: true })

@@ -1,7 +1,7 @@
 import { Column, Entity, JoinColumn, OneToOne, PrimaryGeneratedColumn } from "typeorm";
 import { Persona } from "../tercero/persona.model";
 
-@Entity({ schema: 'almacen', name: 'proveedor' })
+@Entity( )
 export class Proveedor {
     @PrimaryGeneratedColumn()
     proveedorId: number;
@@ -13,7 +13,7 @@ export class Proveedor {
     @Column()
     tipoCredito: string;
 
-  @Column({ nullable: false,  default: new Date() })
+  @Column({ nullable: false})
     fechaModificacion: Date;
     
   @Column({ nullable: false, default: true })

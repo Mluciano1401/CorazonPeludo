@@ -3,7 +3,7 @@ import { Solicitud } from "./solicitudAdopcion.model";
 import { Animal } from "../animal/animal.model";
 import { Estado } from "../miscelaneo/estado.model";
 
-@Entity({ schema: 'adopcion', name: 'procesoAdopcion' })
+@Entity( )
 export class ProcesoAdopcion{
     @PrimaryGeneratedColumn()
     procesoAdopcionId: number;
@@ -12,18 +12,18 @@ export class ProcesoAdopcion{
     @JoinColumn()
     solicitud: Solicitud
 
-    @ManyToOne(()=> Animal)
+    @OneToOne(()=> Animal)
     @JoinColumn()
     animal: Animal;
 
-    @ManyToOne(()=> Estado)
+    @OneToOne(()=> Estado)
     @JoinColumn()
     estado: Estado;
 
     @Column({ nullable: false})
     fechaInicio: Date;
 
-  @Column({ nullable: false,  default: new Date() })
+  @Column({ nullable: false})
     fechaModificacion: Date;
 
   @Column({ nullable: false, default: true })

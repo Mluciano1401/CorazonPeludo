@@ -4,7 +4,7 @@ import { TipoPersona } from "./tipoPersona.model";
 import { EstadoCivil } from "./estadoCivil.model";
 import { Direccion } from "../miscelaneo/direccion.model";
 
-@Entity({ schema: 'tercero', name: 'persona' })
+@Entity( )
 export class Persona {
     @PrimaryGeneratedColumn()
     personaId: number;
@@ -34,7 +34,7 @@ export class Persona {
     @Column()
     licenciaConducir:string;
 
-    @ManyToOne(()=> Direccion)
+    @OneToOne(()=> Direccion)
     @JoinColumn()
     direccion: Direccion;
 
@@ -44,7 +44,7 @@ export class Persona {
     @Column()
     genero:string;
     
-    @ManyToOne(()=> EstadoCivil)
+    @OneToOne(()=> EstadoCivil)
     @JoinColumn()
     estadoCivil: EstadoCivil;
 
@@ -52,7 +52,7 @@ export class Persona {
     @JoinColumn()
     tipoEmpresa: TipoEmpresa;
 
-  @Column({ nullable: false,  default: new Date() })
+  @Column({ nullable: false})
     fechaModificacion: Date;
     
   @Column({ nullable: false, default: true })

@@ -1,6 +1,6 @@
 import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
 
-@Entity({ schema: 'rescate', name: 'estadoLugar' })
+@Entity( )
 export class EstadoLugar{
     @PrimaryGeneratedColumn()
     estadoLugarId: number;
@@ -8,7 +8,7 @@ export class EstadoLugar{
     @Column({ nullable: false })
     descripcion: string;
 
-    @Column({ nullable: false,  default: new Date() })
+    @Column({ nullable: false})
     fechaModificacion: Date;
 
     @Column({ nullable: false, default: true })

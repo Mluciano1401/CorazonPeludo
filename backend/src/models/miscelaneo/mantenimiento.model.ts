@@ -2,7 +2,7 @@ import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
 
 
 
-@Entity({ schema: 'tercero', name: 'mantenimiento' })
+@Entity( )
 export class Mantenimiento {
     @PrimaryGeneratedColumn()
     mantenimientoId: number;
@@ -10,7 +10,7 @@ export class Mantenimiento {
     @Column({ nullable: false })
     descripcion: string;
 
-  @Column({ nullable: false,  default: new Date() })
+  @Column({ nullable: false})
     fechaModificacion: Date;
 
   @Column({ nullable: false, default: true })

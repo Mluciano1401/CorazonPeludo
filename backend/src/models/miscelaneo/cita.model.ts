@@ -1,13 +1,13 @@
-import { Column, Entity, JoinColumn, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, JoinColumn, OneToOne, PrimaryGeneratedColumn } from "typeorm";
 import { Persona } from "../tercero/persona.model";
 import { Estado } from "./estado.model";
 
-@Entity({ schema: 'miscelaneo', name: 'cita' })
+@Entity()
 export class Cita{
     @PrimaryGeneratedColumn()
     citaId: number;
 
-    @ManyToOne(()=>Persona)
+    @OneToOne(()=>Persona)
     @JoinColumn()
     persona: Persona;
 
@@ -17,11 +17,11 @@ export class Cita{
     @Column()
     hora: Date;
     
-    @ManyToOne(()=> Estado)
+    @OneToOne(()=> Estado)
     @JoinColumn()
     estado: Estado
 
-  @Column({ nullable: false,  default: new Date() })
+  @Column({ nullable: false})
     fechaModificacion: Date;
 
   @Column({ nullable: false, default: true })

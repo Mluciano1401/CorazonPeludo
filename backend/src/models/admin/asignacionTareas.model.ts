@@ -1,14 +1,47 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { NivelUrgencia } from './../miscelaneo/nivelUrgencia.model';
+import { Column, Entity, JoinColumn, OneToOne, PrimaryGeneratedColumn } from "typeorm";
+import { TipoRecurso } from "../miscelaneo/tipoRecurso.model";
+import { Tarea } from "../miscelaneo/tarea.model";
+import { Empleado } from "../tercero/empleado.model";
+import { Direccion } from "../miscelaneo/direccion.model";
+import { Estado } from '../miscelaneo/estado.model';
 
-@Entity({ schema: 'animal', name: 'as' })
-export class as{
+@Entity( )
+export class AsignacionTarea{
     @PrimaryGeneratedColumn()
-    asId: number;
+    asignacionTareaId: number;
 
-    @Column({ nullable: false })
-    descripcion: string;
+    @OneToOne(() => Tarea)
+    @JoinColumn()
+    tarea: Tarea;
 
-  @Column({ nullable: false,  default: new Date() })
+    @OneToOne(() => Empleado)
+    @JoinColumn()
+    empleado: Empleado;
+
+    @Column()
+    fechaInicio: Date;
+
+    @Column()
+    fechaLimite: Date;
+
+    @OneToOne(()=> Estado)
+    @JoinColumn()
+    estado: Estado;
+
+    @OneToOne(()=> Direccion)
+    @JoinColumn()
+    ubicacion: Direccion;
+
+    @OneToOne(()=> NivelUrgencia )
+    @JoinColumn()
+    nivelUrgencia: NivelUrgencia ;
+
+    @OneToOne(() => TipoRecurso)
+    @JoinColumn()
+    tipoRecurso: TipoRecurso;
+
+  @Column({ nullable: false})
     fechaModificacion: Date;
 
   @Column({ nullable: false, default: true })

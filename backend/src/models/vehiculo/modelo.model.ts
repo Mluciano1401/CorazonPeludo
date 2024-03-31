@@ -1,6 +1,7 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, JoinColumn, OneToOne, PrimaryGeneratedColumn } from "typeorm";
+import { Marca } from "../miscelaneo/marca.model";
 
-@Entity({ schema: 'vehiculo', name: 'modelo' })
+@Entity( )
 export class Modelo {
     @PrimaryGeneratedColumn()
     modeloId: number;
@@ -8,7 +9,11 @@ export class Modelo {
     @Column({ nullable: false })
     descripcion: string;
 
-    @Column({ nullable: false,  default: new Date() })
+    @OneToOne(() => Marca)
+    @JoinColumn()
+    marca: Marca;
+
+    @Column({ nullable: false})
     fechaModificacion: Date;
 
     @Column({ nullable: false, default: true })

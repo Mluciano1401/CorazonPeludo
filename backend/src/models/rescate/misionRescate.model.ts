@@ -1,9 +1,9 @@
-import { Column, Entity, JoinColumn, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, JoinColumn, OneToOne, PrimaryGeneratedColumn } from "typeorm";
 import { SolicitudR } from "./solicitudRescate.model";
 import { Estado } from "../miscelaneo/estado.model";
 
 
-@Entity({ schema: 'rescate', name: 'mision' })
+@Entity( )
 export class Mision{
     @PrimaryGeneratedColumn()
     misionId: number;
@@ -11,15 +11,15 @@ export class Mision{
     @Column()
     fechaInicio: Date;
 
-    @ManyToOne(()=> SolicitudR)
+    @OneToOne(()=> SolicitudR)
     @JoinColumn()
     solicitud: SolicitudR;
 
-    @ManyToOne(()=> Estado)
+    @OneToOne(()=> Estado)
     @JoinColumn()
     estado: Estado;
 
-    @Column({ nullable: false,  default: new Date() })
+    @Column({ nullable: false})
     fechaModificacion: Date;
 
     @Column({ nullable: false, default: true })

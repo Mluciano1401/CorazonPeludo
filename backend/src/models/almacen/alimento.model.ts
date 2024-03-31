@@ -1,7 +1,7 @@
-import { Column, Entity, JoinColumn, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, JoinColumn, OneToOne, PrimaryGeneratedColumn } from "typeorm";
 import { TipoAlimento } from "./tipoAlimento.model";
 
-@Entity({ schema: 'almacen', name: 'Alimento' })
+@Entity( )
 export class Alimento{
     @PrimaryGeneratedColumn()
     alimentoId: number;
@@ -15,11 +15,11 @@ export class Alimento{
     @Column({ nullable: false })
     unidadMedida: string;
 
-    @ManyToOne(()=> TipoAlimento)
+    @OneToOne(()=> TipoAlimento)
     @JoinColumn()
     tipoAlimento: TipoAlimento;
 
-  @Column({ nullable: false,  default: new Date() })
+  @Column({ nullable: false})
     fechaModificacion: Date;
 
   @Column({ nullable: false, default: true })

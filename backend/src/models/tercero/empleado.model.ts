@@ -3,7 +3,7 @@ import { TipoEmpleado } from "./tipoEmpleado.model";
 import { Persona } from "./persona.model";
 import { Sucursal } from "./surcusal.model";
 
-@Entity({ schema: 'tercero', name: 'empleado' })
+@Entity( )
 export class Empleado {
     @PrimaryGeneratedColumn()
     EmpleadoId: number;
@@ -12,11 +12,11 @@ export class Empleado {
     @JoinColumn()
     persona: Persona;
 
-    @ManyToOne(()=> Sucursal)
+    @OneToOne(()=> Sucursal)
     @JoinColumn()
     surcusal: Sucursal;
 
-    @ManyToOne(()=> TipoEmpleado)
+    @OneToOne(()=> TipoEmpleado)
     @JoinColumn()
     tipoEmpleado: TipoEmpleado;
 
@@ -26,7 +26,7 @@ export class Empleado {
     @Column()
     fechaIngreso: Date;
     
-  @Column({ nullable: false,  default: new Date() })
+  @Column({ nullable: false})
     fechaModificacion: Date;
 
   @Column({ nullable: false, default: true })

@@ -2,7 +2,7 @@ import { Column, Entity, JoinColumn, OneToOne, PrimaryGeneratedColumn } from "ty
 import { TipoUsuario } from "./tipoUsuario.model";
 import { Sucursal } from "../tercero/surcusal.model";
 
-@Entity({ schema: 'admin', name: 'usuario' })
+@Entity( )
 export class Usuario {
     @PrimaryGeneratedColumn()
     usuarioId: number;
@@ -27,7 +27,7 @@ export class Usuario {
     @JoinColumn()
     surcusal: Sucursal;
 
-    @Column({ nullable: false,  default: new Date() })
+    @Column({ nullable: false})
     fechaModificacion: Date;
 
     @Column({ nullable: false, default: true })

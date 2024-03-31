@@ -2,7 +2,7 @@ import { Column, Entity, JoinColumn, ManyToOne, OneToOne, PrimaryGeneratedColumn
 import { Especie } from "./especie.model";
 import { RasgosFísicos } from "./rasgosFisicos.model";
 
-@Entity({ schema: 'animal', name: 'animal' })
+@Entity()
 export class Animal {
     @PrimaryGeneratedColumn()
     animalId: number;
@@ -13,7 +13,7 @@ export class Animal {
     @Column()
     identificador: number;
 
-    @ManyToOne(()=> Especie)
+    @OneToOne(()=> Especie)
     @JoinColumn()
     especie: Especie;
 
@@ -45,7 +45,7 @@ export class Animal {
     @Column()
     fechaIngreso: Date;
 
-  @Column({ nullable: false,  default: new Date() })
+  @Column({ nullable: false})
     fechaModificacion: Date;
     
   @Column({ nullable: false, default: true })

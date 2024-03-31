@@ -1,6 +1,6 @@
 import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
 
-@Entity({ schema: 'miscelaneo', name: 'direccion' })
+@Entity( )
 export class Direccion{
     @PrimaryGeneratedColumn()
     direccionId: number;
@@ -11,7 +11,7 @@ export class Direccion{
     @Column({ nullable: false })
     sector: string;
 
-    @Column({ nullable: false,  default: new Date() })
+    @Column({ nullable: false})
     fechaModificacion: Date;
 
     @Column({ nullable: false, default: true })

@@ -1,7 +1,7 @@
-import { Column, Entity, JoinColumn, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, JoinColumn, OneToOne, PrimaryGeneratedColumn } from "typeorm";
 import { Sucursal } from "../tercero/surcusal.model";
 
-@Entity({ schema: 'almacen', name: 'almacen' })
+@Entity( )
 export class Almacen{
     @PrimaryGeneratedColumn()
     almacenId: number;
@@ -9,11 +9,11 @@ export class Almacen{
     @Column({ nullable: false, default:0 })
     capacidad: number;
 
-    @ManyToOne(()=> Sucursal)
+    @OneToOne(()=> Sucursal)
     @JoinColumn()
     surcusal: Sucursal;
 
-  @Column({ nullable: false,  default: new Date() })
+  @Column({ nullable: false})
     fechaModificacion: Date;
 
   @Column({ nullable: false, default: true })

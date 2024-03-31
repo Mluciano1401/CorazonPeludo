@@ -2,7 +2,7 @@ import { Column, Entity, JoinColumn, ManyToOne, OneToOne, PrimaryGeneratedColumn
 import { Estado } from "../miscelaneo/estado.model";
 import { ProcesoAdopcion } from "./proceso.model";
 
-@Entity({ schema: 'adopcion', name: 'postAdopcion' })
+@Entity( )
 export class PostAdopcion{
     @PrimaryGeneratedColumn()
     postAdopcionId: number;
@@ -11,7 +11,7 @@ export class PostAdopcion{
     @JoinColumn()
     adopcion: ProcesoAdopcion;
 
-    @ManyToOne(()=> Estado)
+    @OneToOne(()=> Estado)
     @JoinColumn()
     estado: Estado;
 
@@ -21,7 +21,7 @@ export class PostAdopcion{
     @Column()
     condicionAnimal: string;
 
-  @Column({ nullable: false,  default: new Date() })
+  @Column({ nullable: false})
     fechaModificacion: Date;
 
   @Column({ nullable: false, default: true })

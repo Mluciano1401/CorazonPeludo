@@ -1,6 +1,6 @@
 import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
 
-@Entity({ schema: 'animal', name: 'indentificador' })
+@Entity()
 export class Indentificador{
     @PrimaryGeneratedColumn()
     indentificadorId: number;
@@ -11,7 +11,7 @@ export class Indentificador{
     @Column()
     tipoIdentificador: string;
 
-  @Column({ nullable: false,  default: new Date() })
+  @Column({ nullable: false})
     fechaModificacion: Date;
 
   @Column({ nullable: false, default: true })

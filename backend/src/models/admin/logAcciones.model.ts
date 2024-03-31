@@ -2,7 +2,7 @@ import { Column, Entity, JoinColumn, OneToOne, PrimaryGeneratedColumn } from "ty
 import { Usuario } from "./usuario.model";
 import { Sucursal } from "../tercero/surcusal.model";
 
-@Entity({ schema: 'admin', name: 'logAcciones' })
+@Entity( )
 export class LogAcciones {
     @PrimaryGeneratedColumn()
     id: number;
