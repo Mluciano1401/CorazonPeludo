@@ -17,6 +17,9 @@ export class UsuarioService {
   async findById(id:number):Promise<Usuario>{
     return await this._usuarioRepository.findOneOrFail(id,{where:{status:true}});
   }
+  async getUser(username:string):Promise<Usuario>{
+    return await this._usuarioRepository.findOneOrFail({username: username});
+  }
   async create(user: Usuario):Promise<Usuario> {
     return await this._usuarioRepository.save(user);
   }
