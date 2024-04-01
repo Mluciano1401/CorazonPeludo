@@ -2,7 +2,7 @@ import { Column, Entity, JoinColumn, OneToOne, PrimaryGeneratedColumn } from "ty
 import { TipoPiel } from "./tipoPiel.model";
 
 @Entity()
-export class RasgosFísicos{
+export class RasgosFisicos{
     @PrimaryGeneratedColumn()
     rasgosFísicosId: number;
 

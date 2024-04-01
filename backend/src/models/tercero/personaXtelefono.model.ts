@@ -5,12 +5,12 @@ import { Persona } from "./persona.model";
 @Entity( )
 export class personaXtelefono{
     @PrimaryColumn()
-    @OneToOne(() => Persona)
+    id: number;
+    @OneToOne(()=>Persona)
     @JoinColumn()
     persona: Persona;
 
-    @PrimaryColumn()
-    @OneToOne(() => Telefono)
+    @OneToOne(()=>Telefono)
     @JoinColumn()
     telefono: Telefono;
 

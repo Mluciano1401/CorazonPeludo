@@ -6,13 +6,13 @@ import { Proveedor } from "./proveedor.model";
 
 @Entity( )
 export class proveedorXproducto{
-    @PrimaryColumn()
-    @OneToOne(() => Proveedor)
+  @PrimaryColumn()
+  id: number;
+      @OneToOne(() => Proveedor)
     @JoinColumn()
     proveedor: Proveedor;
 
-    @PrimaryColumn()
-    @OneToOne(() => Producto)
+      @OneToOne(() => Producto)
     @JoinColumn()
     producto: Producto;
 

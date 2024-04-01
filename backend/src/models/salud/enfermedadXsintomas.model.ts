@@ -5,13 +5,13 @@ import { Sintoma } from "./sintomas.model";
 
 @Entity( )
 export class enfermedadXsintomas{
-    @PrimaryColumn()
-    @OneToOne(() => Enfermedad)
+  @PrimaryColumn()
+  id: number;
+      @OneToOne(() => Enfermedad)
     @JoinColumn()
     enfermedad: Enfermedad;
 
-    @PrimaryColumn()
-    @OneToOne(() => Sintoma)
+      @OneToOne(() => Sintoma)
     @JoinColumn()
     sintoma: Sintoma;
 

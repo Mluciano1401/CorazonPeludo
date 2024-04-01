@@ -3,6 +3,7 @@ import { TipoEmpresa } from "./tipoEmpresa.model";
 import { TipoPersona } from "./tipoPersona.model";
 import { EstadoCivil } from "./estadoCivil.model";
 import { Direccion } from "../miscelaneo/direccion.model";
+import { personaXtelefono } from "./personaXtelefono.model";
 
 @Entity( )
 export class Persona {

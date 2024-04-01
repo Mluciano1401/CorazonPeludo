@@ -1,5 +1,6 @@
 import { Column, Entity, JoinColumn, OneToOne, PrimaryGeneratedColumn } from "typeorm";
 import { TipoTelefono } from "./tipoTelefono.model";
+import { personaXtelefono } from "./personaXtelefono.model";
 
 
 

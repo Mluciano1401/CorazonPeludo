@@ -6,13 +6,13 @@ import { Tratamiento } from "./tratamiento.model";
 
 @Entity( )
 export class enfermedadXtartamiento{
-    @PrimaryColumn()
-    @OneToOne(() => Enfermedad)
+  @PrimaryColumn()
+  id: number;
+      @OneToOne(() => Enfermedad)
     @JoinColumn()
     enfermedad: Enfermedad;
 
-    @PrimaryColumn()
-    @OneToOne(() => Tratamiento)
+      @OneToOne(() => Tratamiento)
     @JoinColumn()
     tratamiento: Tratamiento;
 

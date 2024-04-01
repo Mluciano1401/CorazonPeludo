@@ -6,13 +6,13 @@ import { Almacen } from "./almacen.model";
 
 @Entity( )
 export class productoXalmacen{
-    @PrimaryColumn()
-    @OneToOne(() => Producto)
+  @PrimaryColumn()
+  id: number;
+      @OneToOne(() => Producto)
     @JoinColumn()
     producto: Producto;
 
-    @PrimaryColumn()
-    @OneToOne(() => Almacen)
+      @OneToOne(() => Almacen)
     @JoinColumn()
     almacen: Almacen;
 

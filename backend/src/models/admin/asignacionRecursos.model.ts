@@ -7,12 +7,12 @@ import { Estado } from "../miscelaneo/estado.model";
 @Entity( )
 export class AsignacionRecursos{
     @PrimaryColumn()
-    @OneToOne(() => AsignacionTarea)
+     id: number;
+      @OneToOne(() => AsignacionTarea)
     @JoinColumn()
     tarea: AsignacionTarea;
 
-    @PrimaryColumn()
-    @OneToOne(() => Producto)
+      @OneToOne(() => Producto)
     @JoinColumn()
     producto: Producto;
 

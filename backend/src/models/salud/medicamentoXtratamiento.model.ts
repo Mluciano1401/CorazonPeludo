@@ -5,13 +5,13 @@ import { Especie } from "../animal/especie.model";
 
 @Entity( )
 export class medicamentoXespecie{
-    @PrimaryColumn()
-    @OneToOne(() => Especie)
+  @PrimaryColumn()
+  id: number;
+      @OneToOne(() => Especie)
     @JoinColumn()
     especie: Especie;
 
-    @PrimaryColumn()
-    @OneToOne(() => Medicamento)
+      @OneToOne(() => Medicamento)
     @JoinColumn()
     medicamento: Medicamento;
 

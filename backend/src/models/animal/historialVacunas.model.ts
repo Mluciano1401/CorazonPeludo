@@ -1,10 +1,12 @@
-import { Column, Entity, JoinColumn, OneToOne} from "typeorm";
+import { Column, Entity, JoinColumn, OneToOne, PrimaryColumn} from "typeorm";
 import { historialMedico } from "./historialMedico.model";
 import { Vacuna } from "../salud/vacuna.model";
 import { Persona } from "../tercero/persona.model";
 
 @Entity( )
 export class HistorialVacunas{
+    @PrimaryColumn()
+    id: number;
     @OneToOne(() => historialMedico)
     @JoinColumn()
     historial:  historialMedico;
