@@ -7,7 +7,7 @@ import { PolizaSeguro } from "../salud/polizaSeguro.model";
 
 
 @Entity( )
-export class historialMedico {
+export class HistorialMedico {
     @PrimaryGeneratedColumn()
     historialMedicoId: number;
 

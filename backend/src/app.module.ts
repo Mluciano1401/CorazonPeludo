@@ -30,8 +30,15 @@ import { SolicitanteService } from './modules/tercero/solicitante/solicitante.se
 import { SolicitudService } from './modules/adopcion/solicitud/Solicitud.service';
 import { AnimalService } from './modules/animal/animal/animal.service';
 import { SolicitudRService } from './modules/rescate/solicitud/solicitud.service';
+import { TipoUsuario } from './models/admin/tipoUsuario.model';
+import { TipoUsuarioController } from './modules/admin/tipoUsuario/tipoUsuario.controller';
+import { TipoUsuarioService } from './modules/admin/tipoUsuario/tipoUsuario.service';
+import { TipoPersona } from './models/tercero/tipoPersona.model';
+import { Sucursal } from './models/tercero/surcusal.model';
+import { TipoPersonaController } from './modules/tercero/tipoPersona/tipoPersona.controller';
+import { TipoPersonaService } from './modules/tercero/tipoPersona/tipoPersona.service';
 const models = [Animal,Empleado,Enfermedad,Persona,Producto,
-Solicitante,Solicitud,SolicitudR,Usuario];
+Solicitante,Solicitud,SolicitudR,Usuario, TipoUsuario, TipoPersona, Sucursal];
 @Module({
   imports: [
     TypeOrmModule.forRootAsync({useClass: TypeormService}),
@@ -39,9 +46,9 @@ Solicitante,Solicitud,SolicitudR,Usuario];
   ],
   controllers: [AppController,SolicitanteController,EmpleadoController,
   UsuarioController, EnfermedadController, ProductoController, AnimalController,
-   PersonaController],
+   PersonaController, TipoUsuarioController,TipoPersonaController],
   providers: [AppService, TypeormService, PersonaService, ProductoService, UsuarioService,
   EmpleadoService, EnfermedadService, SolicitanteService, 
-  AnimalService],
+  AnimalService, TipoUsuarioService, TipoPersonaService],
 })
 export class AppModule {}

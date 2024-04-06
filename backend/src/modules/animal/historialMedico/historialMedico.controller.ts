@@ -1,18 +1,18 @@
 import { Controller, Get, Post, Body, HttpException, HttpStatus, Param } from '@nestjs/common';
-import {TipoUsuarioService} from  './tipoUsuario.service';
-import { TipoUsuario } from 'src/models/admin/tipoUsuario.model';
+import {HistorialMedicoService} from  './historialMedico.service';
+import { HistorialMedico } from 'src/models/animal/historialMedico.model';
 
 
-@Controller('tipousuario')
-export class TipoUsuarioController {
-  userService: TipoUsuarioService;
-  constructor(private TipoUsuarioService: TipoUsuarioService) {
-    this.userService = this.TipoUsuarioService;
+@Controller('HistorialMedico')
+export class HistorialMedicoController {
+  _HistorialMedicoService: HistorialMedicoService;
+  constructor(private HistorialMedicoService: HistorialMedicoService) {
+    this._HistorialMedicoService = HistorialMedicoService;
   }
 
   @Get()
   get(){
-    return this.userService.findAll().then(res=>{
+    return this._HistorialMedicoService.findAll().then(res=>{
       return {success: true, data: res}
     }).catch(error=>{
       throw new HttpException(error, HttpStatus.INTERNAL_SERVER_ERROR)
@@ -21,7 +21,7 @@ export class TipoUsuarioController {
 
   @Get('/:id')
   getById(@Param('id') id){
-    return this.userService.findById(id).then(res=>{
+    return this._HistorialMedicoService.findById(id).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{
       throw new HttpException(error, HttpStatus.INTERNAL_SERVER_ERROR)
@@ -29,8 +29,8 @@ export class TipoUsuarioController {
   }
 
   @Post()
-  save(@Body() body:TipoUsuario){
-    return this.userService.create(body).then(res=>{
+  save(@Body() body:HistorialMedico){
+    return this._HistorialMedicoService.create(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{
       throw new HttpException(error, HttpStatus.INTERNAL_SERVER_ERROR)
@@ -38,24 +38,24 @@ export class TipoUsuarioController {
   }
 
   @Post('/update/:id')
-  update(@Body() body:TipoUsuario, @Param('id') id){
-    return this.userService.update(id,body).then(res=>{
+  update(@Body() body:HistorialMedico, @Param('id') id){
+    return this._HistorialMedicoService.update(id,body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{
       throw new HttpException(error, HttpStatus.INTERNAL_SERVER_ERROR)
     });
   }
   @Post('/activar/:id')
-  activar(@Body() body:TipoUsuario, @Param('id') id){
-    return this.userService.update(id,body).then(res=>{
+  activar(@Body() body:HistorialMedico, @Param('id') id){
+    return this._HistorialMedicoService.update(id,body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{
       throw new HttpException(error, HttpStatus.INTERNAL_SERVER_ERROR)
     });
   }
   @Post('/desactivar/:id')
-  desactivar(@Body() body:TipoUsuario, @Param('id') id){
-    return this.userService.update(id,body).then(res=>{
+  desactivar(@Body() body:HistorialMedico, @Param('id') id){
+    return this._HistorialMedicoService.update(id,body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{
       throw new HttpException(error, HttpStatus.INTERNAL_SERVER_ERROR)
@@ -63,7 +63,7 @@ export class TipoUsuarioController {
   }
   @Get('delete/:id')
   delete(@Param('id') id){
-    return this.userService.delete(id).then(res=>{
+    return this._HistorialMedicoService.delete(id).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{
       throw new HttpException(error, HttpStatus.INTERNAL_SERVER_ERROR)

@@ -1,13 +1,13 @@
 import { Controller, Get, Post, Body, HttpException, HttpStatus, Param } from '@nestjs/common';
-import {TipoUsuarioService} from  './tipoUsuario.service';
-import { TipoUsuario } from 'src/models/admin/tipoUsuario.model';
+import {PolizaSeguroService} from  './polizaSeguro.service';
+import { PolizaSeguro } from 'src/models/salud/polizaSeguro.model';
 
 
-@Controller('tipousuario')
-export class TipoUsuarioController {
-  userService: TipoUsuarioService;
-  constructor(private TipoUsuarioService: TipoUsuarioService) {
-    this.userService = this.TipoUsuarioService;
+@Controller('PolizaSeguro')
+export class PolizaSeguroController {
+  userService: PolizaSeguroService;
+  constructor(private PolizaSeguroService: PolizaSeguroService) {
+    this.userService = this.PolizaSeguroService;
   }
 
   @Get()
@@ -29,7 +29,7 @@ export class TipoUsuarioController {
   }
 
   @Post()
-  save(@Body() body:TipoUsuario){
+  save(@Body() body:PolizaSeguro){
     return this.userService.create(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{
@@ -38,7 +38,7 @@ export class TipoUsuarioController {
   }
 
   @Post('/update/:id')
-  update(@Body() body:TipoUsuario, @Param('id') id){
+  update(@Body() body:PolizaSeguro, @Param('id') id){
     return this.userService.update(id,body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{
@@ -46,7 +46,7 @@ export class TipoUsuarioController {
     });
   }
   @Post('/activar/:id')
-  activar(@Body() body:TipoUsuario, @Param('id') id){
+  activar(@Body() body:PolizaSeguro, @Param('id') id){
     return this.userService.update(id,body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{
@@ -54,7 +54,7 @@ export class TipoUsuarioController {
     });
   }
   @Post('/desactivar/:id')
-  desactivar(@Body() body:TipoUsuario, @Param('id') id){
+  desactivar(@Body() body:PolizaSeguro, @Param('id') id){
     return this.userService.update(id,body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{

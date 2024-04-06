@@ -1,13 +1,13 @@
 import { Controller, Get, Post, Body, HttpException, HttpStatus, Param } from '@nestjs/common';
-import {TipoUsuarioService} from  './tipoUsuario.service';
-import { TipoUsuario } from 'src/models/admin/tipoUsuario.model';
+import {SucursalService} from  './sucursal.service';
+import { Sucursal } from 'src/models/tercero/surcusal.model';
 
 
-@Controller('tipousuario')
-export class TipoUsuarioController {
-  userService: TipoUsuarioService;
-  constructor(private TipoUsuarioService: TipoUsuarioService) {
-    this.userService = this.TipoUsuarioService;
+@Controller('Sucursal')
+export class SucursalController {
+  userService: SucursalService;
+  constructor(private SucursalService: SucursalService) {
+    this.userService = this.SucursalService;
   }
 
   @Get()
@@ -29,7 +29,7 @@ export class TipoUsuarioController {
   }
 
   @Post()
-  save(@Body() body:TipoUsuario){
+  save(@Body() body:Sucursal){
     return this.userService.create(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{
@@ -38,7 +38,7 @@ export class TipoUsuarioController {
   }
 
   @Post('/update/:id')
-  update(@Body() body:TipoUsuario, @Param('id') id){
+  update(@Body() body:Sucursal, @Param('id') id){
     return this.userService.update(id,body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{
@@ -46,7 +46,7 @@ export class TipoUsuarioController {
     });
   }
   @Post('/activar/:id')
-  activar(@Body() body:TipoUsuario, @Param('id') id){
+  activar(@Body() body:Sucursal, @Param('id') id){
     return this.userService.update(id,body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{
@@ -54,7 +54,7 @@ export class TipoUsuarioController {
     });
   }
   @Post('/desactivar/:id')
-  desactivar(@Body() body:TipoUsuario, @Param('id') id){
+  desactivar(@Body() body:Sucursal, @Param('id') id){
     return this.userService.update(id,body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{

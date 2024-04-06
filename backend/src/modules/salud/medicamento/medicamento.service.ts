@@ -1,0 +1,30 @@
+import { Injectable } from '@nestjs/common';
+import { Medicamento } from '../../../models/salud/medicamento.model';
+import { InjectRepository } from '@nestjs/typeorm';
+import { Repository } from 'typeorm';
+
+@Injectable()
+export class MedicamentoService {
+  _MedicamentoRepository: Repository<any> | any;
+  constructor(
+   @InjectRepository(Medicamento) private MedicamentoRepository: Repository<Medicamento>
+  ) {
+    this._MedicamentoRepository = MedicamentoRepository;
+  }
+  async findAll():Promise<Medicamento[]>{
+    return await this._MedicamentoRepository.findBy({status: true});
+  }
+  async findById(id:number):Promise<Medicamento>{
+    return await this._MedicamentoRepository.findOneOrFail(id,{where:{status:true}});
+  }
+  async create(user: Medicamento):Promise<Medicamento> {
+    return await this._MedicamentoRepository.save(user);
+  }
+  async update(id: number, user: Medicamento): Promise<void> {
+    return await this._MedicamentoRepository.update(id, user);
+  }
+  async delete(id: number): Promise<string> {
+    await this._MedicamentoRepository.softDelete(id);
+    return 'Ok';
+  }
+}

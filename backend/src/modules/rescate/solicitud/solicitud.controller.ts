@@ -3,7 +3,7 @@ import {SolicitudRService} from  './solicitud.service';
 import { SolicitudR } from 'src/models/rescate/solicitudRescate.model';
 
 
-@Controller('Solicitud')
+@Controller('SolicitudRescate')
 export class SolicitudRController {
   userService: SolicitudRService;
   constructor(private SolicitudRService: SolicitudRService) {
