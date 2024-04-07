@@ -4,7 +4,7 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 
 @Injectable()
-export class SolicitudService {
+export class SolicitudAService {
   _SolicitudRepository: Repository<any> | any;
   constructor(
    @InjectRepository(Solicitud) private SolicitudRepository: Repository<Solicitud>

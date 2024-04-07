@@ -1,11 +1,11 @@
 import { Module } from '@nestjs/common';
-import { SolicitudService } from './solicitud.service';
-import { SolicitudController } from './solicitud.controller';
+import { SolicitudAService } from './solicitud.service';
+import { SolicitudAController } from './solicitud.controller';
 
 @Module({
   imports: [
   ],
-  controllers: [SolicitudController],
-  providers: [SolicitudService]
+  controllers: [SolicitudAController],
+  providers: [SolicitudAService]
 })
 export class SolicitudModule {}
