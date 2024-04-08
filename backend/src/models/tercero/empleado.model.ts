@@ -19,7 +19,9 @@ export class Empleado {
     @OneToOne(()=> TipoEmpleado)
     @JoinColumn()
     tipoEmpleado: TipoEmpleado;
-
+    @Column()
+    puesto: string;
+    
     @Column()
     sueldo: number;
 

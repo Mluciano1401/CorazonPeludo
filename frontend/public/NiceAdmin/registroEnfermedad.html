@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Regitro de Alimento</title>
+  <title>Regitro de Enfermedad</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -594,12 +594,12 @@
   <main id="main" class="main">
 
     <div class="pagetitle">
-      <h1>Registro de alimento</h1>
+      <h1>Registro de Enfermedad</h1>
       <nav>
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="index.html">Home</a></li>
           <li class="breadcrumb-item">Formularios</li>
-          <li class="breadcrumb-item active">Registro de alimento</li>
+          <li class="breadcrumb-item active">Registro de Enfermedad</li>
         </ol>
       </nav>
     </div><!-- End Page Title -->
@@ -610,57 +610,27 @@
 
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">Ingreso De Alimentos</h5>
+              <h5 class="card-title">Registro de Enfermedad</h5>
 
               <!-- General Form Elements -->
               <form class="needs-validation" novalidate>
 
                 <div class="row mb-3">
                   <div class="col-md-6">
-                    <label for="alias" class="form-label">Nombre</label>
+                    <label for="nombre" class="form-label">Nombre</label>
                     <input type="text" class="form-control" id="nombre" required>
-                  </div>
+                  </div>                  
                   <div class="col-md-6">
-                    <label for="edad" class="form-label">Lote</label>
-                    <input type="text" class="form-control" id="lote" required>
-                  </div>
-                </div>
-
-
-                <div class="row mb-3">
+                    <label for="tipoEnfermedad" class="form-label">Tipo Enfermedad</label>
+                    <input type="text" class="form-control" id="tipoEnfermedad" required>
+                  </div>  
                   <div class="col-md-6">
-                    <label for="marca" class="form-label">Marca</label>
-                    <input type="text" class="form-control" id="marca" required>
-                  </div>
-
+                    <label for="prevalencia" class="form-label">Prevalencia</label>
+                    <input type="text" class="form-control" id="prevalencia" required>
+                  </div>                    
                   <div class="col-md-6">
-                    <label for="costo" class="form-label">costo</label>
-                    <input type="number" class="form-control" id="costo" required>
-                  </div>
-                </div>
-
-                <div class="row mb-3">
-                  <div class="col-md-6 mb-3">
-                    <label for="tipoAlimento" class="form-label">Tipo de Alimento</label>
-                    <input type="text" class="form-control" id="tipoAlimento" required>
-                  </div>
-                </div>
-
-                <div class="row mb-3">
-                  <div class="col-md-6">
-                    <label for="contenido" class="form-label">Contenido</label>
-                    <input type="number" class="form-control" id="contenido" required>
-                  </div>
-                  <div class="col-md-6">
-                    <label for="unidadMedida" class="form-label">Unidad de medida</label>
-                    <input type="text" class="form-control" id="unidadMedida" required>
-                  </div>
-                </div>
-
-                <div class="row  mb-3">
-                  <div class="col-md-6">
-                    <label for="fechaVencimiento" class="form-label">Fecha De Vencimiento</label>
-                    <input type="fechaVencimiento" class="form-control" required>
+                    <label for="porcientoMortalidad" class="form-label">Porciento de Mortalidad</label>
+                    <input type="number" class="form-control" id="porcientoMortalidad" required>
                   </div>
                 </div>
 
@@ -677,7 +647,7 @@
                     <label for="fechaModificacion" class="form-label">Fecha De Modificacion</label>
                     <input type="fechaModificacion" class="form-control" disabled>
                   </div>
-                
+                </div>
                 <div class="text-center mb-3">
                   <button type="submit" class="btn btn-primary buttonSubmit">Enviar</button>
                   <button type="reset" class="btn btn-outline-danger">Limpiar</button>

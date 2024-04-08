@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Regitro de Alimento</title>
+  <title>Regitro de Solicitante</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -594,12 +594,12 @@
   <main id="main" class="main">
 
     <div class="pagetitle">
-      <h1>Registro de alimento</h1>
+      <h1>Registro de Solicitante de adopción</h1>
       <nav>
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="index.html">Home</a></li>
           <li class="breadcrumb-item">Formularios</li>
-          <li class="breadcrumb-item active">Registro de alimento</li>
+          <li class="breadcrumb-item active">Registro de Solicitante</li>
         </ol>
       </nav>
     </div><!-- End Page Title -->
@@ -610,7 +610,7 @@
 
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">Ingreso De Alimentos</h5>
+              <h5 class="card-title">Ingreso De Solicitante</h5>
 
               <!-- General Form Elements -->
               <form class="needs-validation" novalidate>
@@ -621,46 +621,70 @@
                     <input type="text" class="form-control" id="nombre" required>
                   </div>
                   <div class="col-md-6">
-                    <label for="edad" class="form-label">Lote</label>
-                    <input type="text" class="form-control" id="lote" required>
+                    <label for="apellido" class="form-label">Apellido</label>
+                    <input type="text" class="form-control" id="apellido" required>
                   </div>
                 </div>
 
 
                 <div class="row mb-3">
                   <div class="col-md-6">
-                    <label for="marca" class="form-label">Marca</label>
-                    <input type="text" class="form-control" id="marca" required>
+                    <label for="email" class="form-label">Email</label>
+                    <input type="text" class="form-control" id="email" required>
+                  </div>
+                  <div class="col-md-6">
+                    <label for="telefono" class="form-label">Telefono</label>
+                    <input type="text" class="form-control" id="telefono" required>
                   </div>
 
                   <div class="col-md-6">
-                    <label for="costo" class="form-label">costo</label>
-                    <input type="number" class="form-control" id="costo" required>
+                    <label for="cedula" class="form-label">Cedula</label>
+                    <input type="text" class="form-control" id="cedula" required>
+                  </div>
+                  <div class="col-md-6 mb-3">
+                    <label for="sexo" class="form-label">Sexo</label>
+                    <select id="sexo" class="form-select" required>
+                      <option value="" disabled selected>Selecciona Una Opcion...</option>
+                    <option value="Femenino">Femenino</option>
+                    <option value="Masculino">Masculino</option>
+                    </select>
                   </div>
                 </div>
 
                 <div class="row mb-3">
                   <div class="col-md-6 mb-3">
-                    <label for="tipoAlimento" class="form-label">Tipo de Alimento</label>
-                    <input type="text" class="form-control" id="tipoAlimento" required>
+                    <label for="situacionFamiliar" class="form-label">Situación Familiar</label>
+                    <input type="text" class="form-control" id="situacionFamiliar" required>
+                  </div>
+                  <div class="col-md-6 mb-3">
+                    <label for="dependencia" class="form-label">Depende económicamente de otros</label>
+                    <select id="dependencia" class="form-select" required>
+                      <option value="" disabled selected>Selecciona Una Opcion...</option>
+                      <option value="Si">Si</option>
+                      <option value="No">No</option>
+                    </select>
+                  </div>
+                  <div class="col-md-6 mb-3">
+                    <label for="numeroDependientes" class="form-label">Cantidad de dependientes</label>
+                    <input type="number" class="form-control" id="numeroDependientes" required>
                   </div>
                 </div>
 
                 <div class="row mb-3">
                   <div class="col-md-6">
-                    <label for="contenido" class="form-label">Contenido</label>
-                    <input type="number" class="form-control" id="contenido" required>
+                    <label for="ingresosMensuales" class="form-label">ingresos Mensuales</label>
+                    <input type="number" class="form-control" id="ingresosMensuales" required>
                   </div>
                   <div class="col-md-6">
-                    <label for="unidadMedida" class="form-label">Unidad de medida</label>
-                    <input type="text" class="form-control" id="unidadMedida" required>
+                    <label for="actividadEconomica" class="form-label">Actividad Económica</label>
+                    <input type="text" class="form-control" id="actividadEconomica" required>
                   </div>
                 </div>
 
                 <div class="row  mb-3">
                   <div class="col-md-6">
-                    <label for="fechaVencimiento" class="form-label">Fecha De Vencimiento</label>
-                    <input type="fechaVencimiento" class="form-control" required>
+                    <label for="fechaIngreso" class="form-label">Fecha De Ingreso</label>
+                    <input type="fechaIngreso" class="form-control" required>
                   </div>
                 </div>
 
