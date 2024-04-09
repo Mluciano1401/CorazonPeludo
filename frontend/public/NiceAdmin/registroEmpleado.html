@@ -31,13 +31,6 @@
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
 
-  <!-- =======================================================
-  * Template Name: NiceAdmin
-  * Template URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
-  * Updated: Mar 17 2024 with Bootstrap v5.3.3
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
 </head>
 
 <body>
@@ -78,7 +71,7 @@
 
           <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow notifications">
             <li class="dropdown-header">
-             Tienes 4 notificaciones
+              Tienes 4 notificaciones
               <a href="#"><span class="badge rounded-pill bg-primary p-2 ms-2">Ver todo</span></a>
             </li>
             <li>
@@ -612,89 +605,156 @@
             <div class="card-body">
               <h5 class="card-title">Ingreso De Empleados</h5>
 
-              <!-- General Form Elements -->
               <form class="needs-validation" novalidate>
 
                 <div class="row mb-3">
-                  <div class="col-md-6">
-                    <label for="alias" class="form-label">Nombre</label>
-                    <input type="text" class="form-control" id="nombre" required>
-                  </div>
-                  <div class="col-md-6">
-                    <label for="apellido" class="form-label">Apellido</label>
-                    <input type="text" class="form-control" id="apellido" required>
-                  </div>
-                </div>
-
-
-                <div class="row mb-3">
-                  <div class="col-md-6">
-                    <label for="email" class="form-label">Email</label>
-                    <input type="text" class="form-control" id="email" required>
-                  </div>
-                  <div class="col-md-6">
-                    <label for="telefono" class="form-label">Telefono</label>
-                    <input type="text" class="form-control" id="telefono" required>
-                  </div>
-                  <div class="col-md-6">
-                    <label for="cedula" class="form-label">Cedula</label>
-                    <input type="text" class="form-control" id="cedula" required>
-                  </div>
                   <div class="col-md-6 mb-3">
-                    <label for="sexo" class="form-label">Sexo</label>
-                    <select id="sexo" class="form-select" required>
-                      <option value="" disabled selected>Selecciona Una Opcion...</option>
-                    <option value="Femenino">Femenino</option>
-                    <option value="Masculino">Masculino</option>
+                    <label for="registro-empleado-idEmpleado" class="form-label">ID Empleado</label>
+                    <input type="text" class="form-control" id="registro-empleado-idEmpleado" disabled>
+                  </div>
+
+                  <div class="col-md-6">
+                    <label for="mySelect" class="form-label">Tipo de Empleado</label>
+                    <select id="mySelect" class="form-select" required>
+
                     </select>
                   </div>
                 </div>
 
                 <div class="row mb-3">
                   <div class="col-md-6 mb-3">
-                    <label for="tipoEmpleado" class="form-label">Tipo de Empleado</label>
-                    <input type="text" class="form-control" id="tipoEmpleado" required>
+                    <label for="registro-empleado-name" class="form-label">Nombre</label>
+                    <input type="text" class="form-control" id="registro-empleado--name" required>
+                  </div>
+
+                  <div class="col-md-6">
+                    <label for="registro-empleado-apellido" class="form-label">Apellido</label>
+                    <input type="text" class="form-control" id="registro-empleado-apellido" required>
                   </div>
                 </div>
 
                 <div class="row mb-3">
-                  <div class="col-md-6">
-                    <label for="sueldo" class="form-label">sueldo</label>
-                    <input type="number" class="form-control" id="sueldo" required>
+                  <div class="col-md-6 mb-3">
+                    <label for="registro-empleado-email" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="registro-empleado-email" required>
                   </div>
-                  <div class="col-md-6">
-                    <label for="puesto" class="form-label">Puesto</label>
-                    <input type="text" class="form-control" id="puesto" required>
-                  </div>
-                </div>
 
-                <div class="row  mb-3">
                   <div class="col-md-6">
-                    <label for="fechaIngreso" class="form-label">Fecha De Ingreso</label>
-                    <input type="fechaIngreso" class="form-control" required>
+                    <label for="registro-empleado-fechaNacimiento" class="form-label">Fecha de Nacimiento</label>
+                    <input type="date" class="form-control" id="registro-empleado-fechaNacimiento" required>
                   </div>
                 </div>
 
                 <div class="row mb-4">
                   <div class="col-md-6 mb-3">
-                    <label for="status" class="form-label">Status</label> 
-                    <select id="status" class="form-select" required>
-                      <option value="" disabled selected>Selecciona Una Opcion...</option>
-                      <option value="activo">Activo</option>
-                      <option value="inactivo">Inactivo</option>
+                    <label for="registro-empleado-cedula" class="form-label">Cedula o Pasaporte</label>
+                    <input type="text" class="form-control" id="registro-empleado-cedula">
+                  </div>
+
+                  <div class="col-md-6">
+                    <label for="mySelect" class="form-label">Estado Civil</label>
+                    <select id="mySelect" class="form-select" required>
+
+                    </select>
+                  </div>
+
+                </div>
+
+                <div class="row mb-3" required>
+                  <div class="col-md-6 mb-3">
+                    <label for="mySelect" class="form-label">Sexo</label>
+                    <select id="mySelect" class="form-select" required>
+
+                    </select>
+                  </div>
+                  <div class="col-md-6 mb-3">
+                    <label for="registro-empleado-puestoLaboral" class="form-label">Puesto Laboral</label>
+                    <input type="text" class="form-control" id="registro-empleado-puestoLaboral" required>
+                  </div>
+                </div>
+
+                <div class="row mb-3">
+                  <div class="col-md-6 mb-3">
+                    <label for="registro-empleado-sueldo" class="form-label">Sueldo</label>
+                    <input type="number" class="form-control" id="registro-empleado-sueldo" required>
+                  </div>
+                  <div class="col-md-6">
+                    <label for="registro-empleado-fechIngreso" class="form-label">Fecha de Ingreso</label>
+                    <input type="date" id="registro-empleado-fechaIngreso" class="form-control" disabled>
+                  </div>
+                </div>
+
+
+
+
+                <div class="row mb-3">
+                  <div class="col-md-6 mb-3">
+                    <label for="registro-empleado-direccion" class="form-label">Direccion</label>
+                    <input type="text" class="form-control" id="registro-empleado-direccion" required>
+                  </div>
+                  <div class="col-md-6">
+                    <label for="registro-empleado-ciudad" class="form-label">Ciudad</label>
+                    <input type="text" class="form-control" id="registro-empleado-ciudad" required>
+                  </div>
+
+                </div>
+
+                <div class="row mb-3">
+                  <div class="col-md-6 mb-3">
+                    <label for="registro-empleado-pais" class="form-label">Pais</label>
+                    <input type="text" class="form-control" id="registro-empleado-pais" required>
+                  </div>
+                  <div class="col-md-6">
+                    <label for="registro-empleado-codigoPostal" class="form-label">Codigo Postal</label>
+                    <input type="number" class="form-control" id="registro-empleado-codigoPostal" required>
+                  </div>
+                </div>
+
+
+                <div class="row mb-3">
+                  <div class="col-md-6 mb-3">
+                    <label for="mySelect" class="form-label">¿Tiene Licencia De Conducir?</label>
+                    <select id="mySelect" class="form-select" required>
+
+                    </select>
+                  </div>
+
+                  <div class="col-md-6">
+                    <label for="registro-empleado-licencia" class="form-label">Licencia De Conducir</label>
+                    <input type="text" class="form-control" id="registro-empleado-licencia">
+                  </div>
+                </div>
+
+
+
+                <div class="row mb-3">
+                  <div class="col-md-6 mb-3">
+                    <label for="registro-empleado-foto" class="form-label">Foto del Empleado</label>
+                    <div class="col-sm-12">
+                      <input class="form-control" type="file" id="registro-empleado-foto">
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row mb-5">
+                  <div class="col-md-6 mb-3">
+                    <label for="mySelect" class="form-label">Status</label>
+                    <select id="mySelect" class="form-select" required>
+
                     </select>
                   </div>
                   <div class="col-md-6">
-                    <label for="fechaModificacion" class="form-label">Fecha De Modificacion</label>
-                    <input type="fechaModificacion" class="form-control" disabled>
+                    <label for="registro-empleado-fechaModificacion" class="form-label">Fecha de Modificacion</label>
+                    <input type="date" id="registro-empleado-fechaModificacion" class="form-control" disabled>
                   </div>
-                
-                <div class="text-center mb-3">
-                  <button type="submit" class="btn btn-primary buttonSubmit">Enviar</button>
-                  <button type="reset" class="btn btn-outline-danger">Limpiar</button>
                 </div>
 
+
+
+
               </form><!-- End General Form Elements -->
+
+
 
             </div>
           </div>
@@ -712,10 +772,11 @@
   <!-- ======= Footer ======= -->
   <footer id="footer" class="footer">
     <div class="copyright">
-      <p class="copy copy-inicio">&copy Copyright - <script>
-        document.write(new Date().getFullYear());
-            </script>
-    </p>
+      <p class="copy copy-inicio">&copy Copyright -
+        <script>
+          document.write(new Date().getFullYear());
+        </script>
+      </p>
     </div>
     <div class="credits">
       Designed by Hilary Collado - Maria Luciano
