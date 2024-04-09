@@ -1,6 +1,5 @@
 .bg {
-    /* background-image: url("../IMAGENES/pexels-antoni-shkraba-6749756.jpg"); */
-    background-image: url("../img/catOne.jpg");
+    background-image: url("../../login/img/catOne.jpg");
     background-position: center center;
     background-size: cover;
     position: relative;
