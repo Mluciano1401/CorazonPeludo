@@ -4,6 +4,13 @@
     background-size: cover;
     position: relative;
 }
+
+.bg-registrar{
+    background-image: url("../../NiceAdmin/assets/img/rabbit.jpg");
+    background-position: center center;
+    background-size: cover;
+    position: relative;
+}
   
 .bg::before {
     content: '';
@@ -16,8 +23,19 @@
 }
 
 
-body{
+.bodyLogin{
     background-image: url("../img/catOne.jpg");
+    background-position: center center;
+    background-size: cover;
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    font-family: 'Lora', serif;
+}
+
+.bodyRegistrar{
+    background-image: url("../../NiceAdmin/assets/img/rabbit.jpg");
     background-position: center center;
     background-size: cover;
     position: relative;
