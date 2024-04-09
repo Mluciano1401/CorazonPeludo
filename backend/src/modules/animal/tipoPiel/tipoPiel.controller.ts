@@ -69,4 +69,14 @@ export class TipoPielController {
       throw new HttpException(error, HttpStatus.INTERNAL_SERVER_ERROR)
     });
   }
+  @Get('select')
+  select(){
+    return this._TipoPielService.findAll().then(res=>{
+      const r = [];
+      res.forEach(o=> r.push({option: o.descripcion, value: o.tipoPielId}));
+      return {success: true, data: r}
+    }).catch(error=>{
+      throw new HttpException(error, HttpStatus.INTERNAL_SERVER_ERROR)
+    });
+  }
 }
