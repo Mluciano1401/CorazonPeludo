@@ -31,13 +31,6 @@
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
 
-  <!-- =======================================================
-  * Template Name: NiceAdmin
-  * Template URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
-  * Updated: Mar 17 2024 with Bootstrap v5.3.3
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
 </head>
 
 <body>
@@ -610,33 +603,30 @@
 
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">Registro de Almacen</h5>
+              <h5 class="card-title">Ingreso a Almacen</h5>
 
               <!-- General Form Elements -->
               <form class="needs-validation" novalidate>
 
                 <div class="row mb-3">
-                  <div class="col-md-6">
-                    <label for="sucursal" class="form-label">Sucursal</label>
-                    <input type="text" class="form-control" id="sucursal" required>
+                  <div class="col-md-6 mb-3">
+                    <label for="registro-almacen-sucursal" class="form-label">Sucursal</label>
+                    <input type="text" class="form-control" id="registro-almacen-sucursal" required>
                   </div>                  
                   <div class="col-md-6">
-                    <label for="tipoAlmacen" class="form-label">Tipo Almacen</label>
-                    <input type="text" class="form-control" id="tipoAlmacen" required>
+                    <label for="registro-almacen-tipoAlmacen" class="form-label">Tipo De Almacen</label>
+                    <input type="text" class="form-control" id="registro-almacen-tipoAlmacen" required>
                   </div>  
-                  <div class="col-md-6">
-                    <label for="capacidad" class="form-label">Capacidad</label>
-                    <input type="text" class="form-control" id="capacidad" required>
+                  <div class="col-md-6 mb-3">
+                    <label for="registro-almacen-capacidad" class="form-label">Capacidad</label>
+                    <input type="text" class="form-control" id="registro-almacen-capacidad" required>
                   </div>
                 </div>
 
                 <div class="row mb-4">
                   <div class="col-md-6 mb-3">
-                    <label for="status" class="form-label">Status</label> 
-                    <select id="status" class="form-select" required>
-                      <option value="" disabled selected>Selecciona Una Opcion...</option>
-                      <option value="activo">Activo</option>
-                      <option value="inactivo">Inactivo</option>
+                    <label for="mySelect" class="form-label">Status</label> 
+                    <select id="mySelect" class="form-select" required>
                     </select>
                   </div>
                   <div class="col-md-6">
@@ -651,7 +641,7 @@
 
               </form><!-- End General Form Elements -->
 
-            </div>
+            </div> 
           </div>
 
         </div>
