@@ -1,0 +1,58 @@
+.bg {
+    /* background-image: url("../IMAGENES/pexels-antoni-shkraba-6749756.jpg"); */
+    background-image: url("../img/catOne.jpg");
+    background-position: center center;
+    background-size: cover;
+    position: relative;
+}
+  
+.bg::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to right, rgba(141, 169, 196, .5), rgba(19, 64, 116, .5));
+}
+
+
+body{
+    background-image: url("../img/catOne.jpg");
+    background-position: center center;
+    background-size: cover;
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    font-family: 'Lora', serif;
+}
+
+:root {
+    --azul: #134074;
+    --azulOscuro: #0B2545;
+    --azulClaro: #8DA9C4;
+    --blanco: #FFFFFF;
+    --fuenteLora: font-family: 'Lora', serif;
+    --fuentePoppins: font-family: 'Poppins', sans-serif;
+}
+
+
+.registro{
+    display: grid;
+    place-items: center;
+}
+
+.checkboxR{
+    /*margin: ;*/
+}
+
+.recuperar{
+    text-align: right;
+}
+
+.select{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
