@@ -74,7 +74,7 @@ export class TipoUsuarioController {
     return this.userService.findAll().then(res=>{
       const r = [];
       res.forEach(o=> r.push({option: o.descripcion, value: o.tipoUsuarioId}));
-      return {success: true, data: r}
+      return {success: true, data: res}
     }).catch(error=>{
       throw new HttpException(error, HttpStatus.INTERNAL_SERVER_ERROR)
     });

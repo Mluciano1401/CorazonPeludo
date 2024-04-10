@@ -1,6 +1,7 @@
-import { Controller, Get, Post, Body, HttpException, HttpStatus, Param } from '@nestjs/common';
+import { Controller, Get, Post, Body, HttpException, HttpStatus, Param, Delete } from '@nestjs/common';
 import {ProcesoAdopcionService} from  './procesoAdopcion.service';
 import { ProcesoAdopcion } from 'src/models/adopcion/proceso.model';
+import { Put } from '@nestjs/common';
 
 
 @Controller('ProcesoAdopcion')
@@ -37,7 +38,7 @@ export class ProcesoAdopcionController {
     });
   }
 
-  @Post('/update/:id')
+  @Put('/update/:id')
   update(@Body() body:ProcesoAdopcion, @Param('id') id){
     return this.userService.update(id,body).then(res=>{
       return {success: true, data: res}
@@ -45,7 +46,7 @@ export class ProcesoAdopcionController {
       throw new HttpException(error, HttpStatus.INTERNAL_SERVER_ERROR)
     });
   }
-  @Post('/activar/:id')
+  @Put('/activar/:id')
   activar(@Body() body:ProcesoAdopcion, @Param('id') id){
     return this.userService.update(id,body).then(res=>{
       return {success: true, data: res}
@@ -53,7 +54,7 @@ export class ProcesoAdopcionController {
       throw new HttpException(error, HttpStatus.INTERNAL_SERVER_ERROR)
     });
   }
-  @Post('/desactivar/:id')
+  @Put('/desactivar/:id')
   desactivar(@Body() body:ProcesoAdopcion, @Param('id') id){
     return this.userService.update(id,body).then(res=>{
       return {success: true, data: res}
@@ -61,7 +62,7 @@ export class ProcesoAdopcionController {
       throw new HttpException(error, HttpStatus.INTERNAL_SERVER_ERROR)
     });
   }
-  @Get('delete/:id')
+  @Delete('delete/:id')
   delete(@Param('id') id){
     return this.userService.delete(id).then(res=>{
       return {success: true, data: res}

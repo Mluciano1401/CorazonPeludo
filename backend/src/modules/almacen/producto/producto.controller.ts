@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Body, HttpException, HttpStatus, Param } from '@nestjs/common';
+import { Controller, Get, Post, Body, HttpException, HttpStatus, Param, Put, Delete } from '@nestjs/common';
 import {ProductoService} from  './producto.service';
 import { Producto } from 'src/models/almacen/producto.model';
 
@@ -37,7 +37,7 @@ export class ProductoController {
     });
   }
 
-  @Post('/update/:id')
+  @Put('/update/:id')
   update(@Body() body:Producto, @Param('id') id){
     return this.productoService.update(id,body).then(res=>{
       return {success: true, data: res}
@@ -45,7 +45,7 @@ export class ProductoController {
       throw new HttpException(error, HttpStatus.INTERNAL_SERVER_ERROR)
     });
   }
-  @Post('/activar/:id')
+  @Put('/activar/:id')
   activar(@Body() body:Producto, @Param('id') id){
     return this.productoService.update(id,body).then(res=>{
       return {success: true, data: res}
@@ -53,7 +53,7 @@ export class ProductoController {
       throw new HttpException(error, HttpStatus.INTERNAL_SERVER_ERROR)
     });
   }
-  @Post('/desactivar/:id')
+  @Put('/desactivar/:id')
   desactivar(@Body() body:Producto, @Param('id') id){
     return this.productoService.update(id,body).then(res=>{
       return {success: true, data: res}
@@ -61,7 +61,7 @@ export class ProductoController {
       throw new HttpException(error, HttpStatus.INTERNAL_SERVER_ERROR)
     });
   }
-  @Get('delete/:id')
+  @Delete('delete/:id')
   delete(@Param('id') id){
     return this.productoService.delete(id).then(res=>{
       return {success: true, data: res}

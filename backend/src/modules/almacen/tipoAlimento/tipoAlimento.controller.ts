@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Body, HttpException, HttpStatus, Param } from '@nestjs/common';
+import { Controller, Get, Post, Body, HttpException, HttpStatus, Param, Delete, Put } from '@nestjs/common';
 import {TipoAlimentoService} from  './tipoAlimento.service';
 import { TipoAlimento } from 'src/models/almacen/tipoAlimento.model';
 
@@ -37,7 +37,7 @@ export class TipoAlimentoController {
     });
   }
 
-  @Post('/update/:id')
+  @Put('/update/:id')
   update(@Body() body:TipoAlimento, @Param('id') id){
     return this._TipoAlimentoService.update(id,body).then(res=>{
       return {success: true, data: res}
@@ -45,7 +45,7 @@ export class TipoAlimentoController {
       throw new HttpException(error, HttpStatus.INTERNAL_SERVER_ERROR)
     });
   }
-  @Post('/activar/:id')
+  @Put('/activar/:id')
   activar(@Body() body:TipoAlimento, @Param('id') id){
     return this._TipoAlimentoService.update(id,body).then(res=>{
       return {success: true, data: res}
@@ -53,7 +53,7 @@ export class TipoAlimentoController {
       throw new HttpException(error, HttpStatus.INTERNAL_SERVER_ERROR)
     });
   }
-  @Post('/desactivar/:id')
+  @Put('/desactivar/:id')
   desactivar(@Body() body:TipoAlimento, @Param('id') id){
     return this._TipoAlimentoService.update(id,body).then(res=>{
       return {success: true, data: res}
@@ -61,7 +61,7 @@ export class TipoAlimentoController {
       throw new HttpException(error, HttpStatus.INTERNAL_SERVER_ERROR)
     });
   }
-  @Get('delete/:id')
+  @Delete('delete/:id')
   delete(@Param('id') id){
     return this._TipoAlimentoService.delete(id).then(res=>{
       return {success: true, data: res}
@@ -70,7 +70,7 @@ export class TipoAlimentoController {
     });
   }
   
-  @Get('select')
+  @Get('/select')
   select(){
     return this._TipoAlimentoService.findAll().then(res=>{
       const r = [];

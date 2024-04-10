@@ -12,23 +12,5 @@ form.addEventListener('submit', function(event) {
       descripcion: descripcion,
       fechaModificacion: new Date().toLocaleDateString()
   };
-  const options = {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify(data)
-  };
-
-  // Envía la solicitud a la API
-  fetch(url, options)
-    .then(response => response.json())
-    .then(data => {
-      // Maneja la respuesta de la API
-      console.log(data);
-    })
-    .catch(error => {
-      // Maneja los errores de la API
-      console.error(error);
-    });
+  enviarDatos(url,data);
 });
