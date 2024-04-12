@@ -71,7 +71,7 @@
 
           <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow notifications">
             <li class="dropdown-header">
-             Tienes 4 notificaciones
+              Tienes 4 notificaciones
               <a href="#"><span class="badge rounded-pill bg-primary p-2 ms-2">Ver todo</span></a>
             </li>
             <li>
@@ -610,13 +610,22 @@
 
                 <div class="row mb-3">
                   <div class="col-md-6 mb-3">
+                    <label for="idAlmacen" class="form-label">ID Almacen</label>
+                    <input type="text" class="form-control" id="idAlmacen" disabled>
+                  </div>
+
+                  <div class="col-md-6">
                     <label for="registro-almacen-sucursal" class="form-label">Sucursal</label>
                     <input type="text" class="form-control" id="registro-almacen-sucursal" required>
-                  </div>                  
-                  <div class="col-md-6">
+                  </div>
+                </div>
+
+
+                <div class="row mb-3">
+                  <div class="col-md-6 mb-3">
                     <label for="registro-almacen-tipoAlmacen" class="form-label">Tipo De Almacen</label>
                     <input type="text" class="form-control" id="registro-almacen-tipoAlmacen" required>
-                  </div>  
+                  </div>
                   <div class="col-md-6 mb-3">
                     <label for="registro-almacen-capacidad" class="form-label">Capacidad</label>
                     <input type="text" class="form-control" id="registro-almacen-capacidad" required>
@@ -636,7 +645,7 @@
                   </div>
                 </div>
 
-                
+
                 <div class="text-center mb-3">
                   <button type="submit" class="btn btn-primary buttonSubmit">Enviar</button>
                   <button type="reset" class="btn btn-outline-danger">Limpiar</button>
@@ -644,7 +653,7 @@
 
               </form><!-- End General Form Elements -->
 
-            </div> 
+            </div>
           </div>
 
         </div>
@@ -657,19 +666,20 @@
 
 
 
-   <!-- ======= Footer ======= -->
-   <footer id="footer" class="footer">
+  <!-- ======= Footer ======= -->
+  <footer id="footer" class="footer">
     <div class="copyright">
-      <p class="copy copy-inicio">&copy Copyright - <script>
-        document.write(new Date().getFullYear());
-            </script>
-    </p>
+      <p class="copy copy-inicio">&copy Copyright -
+        <script>
+          document.write(new Date().getFullYear());
+        </script>
+      </p>
     </div>
     <div class="credits">
       Designed by Hilary Collado - Maria Luciano
     </div>
   </footer><!-- End Footer -->
-  
+
 
 
 
