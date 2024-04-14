@@ -21,7 +21,7 @@ export class MarcaService {
     return await this._MarcaRepository.save(user);
   }
   async update(id: number, user: Marca): Promise<void> {
-    return await this._MarcaRepository.update(id, user);
+    return await this._MarcaRepository.save(user);
   }
   async delete(id: number): Promise<string> {
     await this._MarcaRepository.softDelete(id);

@@ -21,7 +21,7 @@ export class LogAccionesService {
     return await this._LogAccionesRepository.save(user);
   }
   async update(id: number, user: LogAcciones): Promise<void> {
-    return await this._LogAccionesRepository.update(id, user);
+    return await this._LogAccionesRepository.save(user);
   }
   async delete(id: number): Promise<string> {
     await this._LogAccionesRepository.softDelete(id);

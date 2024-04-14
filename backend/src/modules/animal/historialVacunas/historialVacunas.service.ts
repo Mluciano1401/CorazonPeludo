@@ -21,7 +21,7 @@ export class HistorialVacunasService {
     return await this._HistorialVacunasRepository.save(user);
   }
   async update(id: number, user: HistorialVacunas): Promise<void> {
-    return await this._HistorialVacunasRepository.update(id, user);
+    return await this._HistorialVacunasRepository.save(user);
   }
   async delete(id: number): Promise<string> {
     await this._HistorialVacunasRepository.softDelete(id);

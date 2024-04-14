@@ -21,7 +21,7 @@ export class PolizaSeguroService {
     return await this._PolizaSeguroRepository.save(user);
   }
   async update(id: number, user: PolizaSeguro): Promise<void> {
-    return await this._PolizaSeguroRepository.update(id, user);
+    return await this._PolizaSeguroRepository.save(user);
   }
   async delete(id: number): Promise<string> {
     await this._PolizaSeguroRepository.softDelete(id);

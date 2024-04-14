@@ -21,7 +21,7 @@ export class TelefonoService {
     return await this._TelefonoRepository.save(user);
   }
   async update(id: number, user: Telefono): Promise<void> {
-    return await this._TelefonoRepository.update(id, user);
+    return await this._TelefonoRepository.save(user);
   }
   async delete(id: number): Promise<string> {
     await this._TelefonoRepository.softDelete(id);

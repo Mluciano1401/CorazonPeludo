@@ -1,3 +1,4 @@
+import { enviarDatos } from "../conection";
 const form = document.getElementById('form');
 
 form.addEventListener('submit', function(event) {

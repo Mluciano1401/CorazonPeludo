@@ -21,7 +21,7 @@ export class MisionService {
     return await this._MisionRepository.save(user);
   }
   async update(id: number, user: Mision): Promise<void> {
-    return await this._MisionRepository.update(id, user);
+    return await this._MisionRepository.save(user);
   }
   async delete(id: number): Promise<string> {
     await this._MisionRepository.softDelete(id);

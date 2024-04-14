@@ -21,7 +21,7 @@ export class EstadoEmergenciaService {
     return await this._EstadoEmergenciaRepository.save(user);
   }
   async update(id: number, user: EstadoEmergencia): Promise<void> {
-    return await this._EstadoEmergenciaRepository.update(id, user);
+    return await this._EstadoEmergenciaRepository.save(user);
   }
   async delete(id: number): Promise<string> {
     await this._EstadoEmergenciaRepository.softDelete(id);

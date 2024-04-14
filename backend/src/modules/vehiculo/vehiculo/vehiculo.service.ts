@@ -21,7 +21,7 @@ export class VehiculoService {
     return await this._VehiculoRepository.save(user);
   }
   async update(id: number, user: Vehiculo): Promise<void> {
-    return await this._VehiculoRepository.update(id, user);
+    return await this._VehiculoRepository.save(user);
   }
   async delete(id: number): Promise<string> {
     await this._VehiculoRepository.softDelete(id);

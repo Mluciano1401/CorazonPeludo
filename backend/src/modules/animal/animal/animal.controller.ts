@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Body, HttpException, HttpStatus, Param } from '@nestjs/common';
+import { Controller, Get, Post, Body, HttpException, HttpStatus, Param  } from '@nestjs/common';
 import {AnimalService} from  './animal.service';
 import { Animal } from 'src/models/animal/animal.model';
 
@@ -7,7 +7,7 @@ import { Animal } from 'src/models/animal/animal.model';
 export class AnimalController {
   animalService: AnimalService;
   constructor(private AnimalService: AnimalService) {
-    this.animalService = AnimalService;
+    this.animalService = this.AnimalService;
   }
 
   @Get()

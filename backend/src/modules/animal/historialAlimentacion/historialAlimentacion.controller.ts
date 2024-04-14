@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Body, HttpException, HttpStatus, Param } from '@nestjs/common';
+import { Controller, Get, Post, Body, HttpException, HttpStatus, Param  } from '@nestjs/common';
 import {HistorialAlimentacionService} from  './historialAlimentacion.service';
 import { HistorialAlimentacion } from 'src/models/animal/HistorialAlimentacion.model';
 
@@ -7,7 +7,7 @@ import { HistorialAlimentacion } from 'src/models/animal/HistorialAlimentacion.m
 export class HistorialAlimentacionController {
   _HistorialAlimentacionService: HistorialAlimentacionService;
   constructor(private HistorialAlimentacionService: HistorialAlimentacionService) {
-    this._HistorialAlimentacionService = HistorialAlimentacionService;
+    this._HistorialAlimentacionService = this.HistorialAlimentacionService;
   }
 
   @Get()

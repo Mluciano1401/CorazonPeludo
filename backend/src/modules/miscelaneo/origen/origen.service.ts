@@ -21,7 +21,7 @@ export class OrigenService {
     return await this._OrigenRepository.save(user);
   }
   async update(id: number, user: Origen): Promise<void> {
-    return await this._OrigenRepository.update(id, user);
+    return await this._OrigenRepository.save(user);
   }
   async delete(id: number): Promise<string> {
     await this._OrigenRepository.softDelete(id);

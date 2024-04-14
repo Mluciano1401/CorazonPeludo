@@ -21,7 +21,7 @@ export class CitaService {
     return await this._CitaRepository.save(user);
   }
   async update(id: number, user: Cita): Promise<void> {
-    return await this._CitaRepository.update(id, user);
+    return await this._CitaRepository.save(user);
   }
   async delete(id: number): Promise<string> {
     await this._CitaRepository.softDelete(id);

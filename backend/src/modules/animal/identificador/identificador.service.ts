@@ -21,7 +21,7 @@ export class IndentificadorService {
     return await this._IndentificadorRepository.save(user);
   }
   async update(id: number, user: Indentificador): Promise<void> {
-    return await this._IndentificadorRepository.update(id, user);
+    return await this._IndentificadorRepository.save(user);
   }
   async delete(id: number): Promise<string> {
     await this._IndentificadorRepository.softDelete(id);

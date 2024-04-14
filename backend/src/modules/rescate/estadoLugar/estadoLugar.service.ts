@@ -21,7 +21,7 @@ export class EstadoLugarService {
     return await this._EstadoLugarRepository.save(user);
   }
   async update(id: number, user: EstadoLugar): Promise<void> {
-    return await this._EstadoLugarRepository.update(id, user);
+    return await this._EstadoLugarRepository.save(user);
   }
   async delete(id: number): Promise<string> {
     await this._EstadoLugarRepository.softDelete(id);

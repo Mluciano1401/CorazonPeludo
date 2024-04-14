@@ -21,7 +21,7 @@ export class HistorialAlimentacionService {
     return await this._HistorialAlimentacionRepository.save(user);
   }
   async update(id: number, user: HistorialAlimentacion): Promise<void> {
-    return await this._HistorialAlimentacionRepository.update(id, user);
+    return await this._HistorialAlimentacionRepository.save(user);
   }
   async delete(id: number): Promise<string> {
     await this._HistorialAlimentacionRepository.softDelete(id);

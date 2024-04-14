@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Body, HttpException, HttpStatus, Param, Put, Delete } from '@nestjs/common';
+import { Controller, Get, Post, Body, HttpException, HttpStatus, Param   } from '@nestjs/common';
 import {PostAdopcionService} from  './postAdopcion.service';
 import { PostAdopcion } from 'src/models/adopcion/postAdopcion.model';
 
@@ -37,7 +37,7 @@ export class PostAdopcionController {
     });
   }
 
-  @Put('/update/:id')
+  @Post('/update/:id')
   update(@Body() body:PostAdopcion, @Param('id') id){
     return this.userService.update(id,body).then(res=>{
       return {success: true, data: res}
@@ -45,7 +45,7 @@ export class PostAdopcionController {
       throw new HttpException(error, HttpStatus.INTERNAL_SERVER_ERROR)
     });
   }
-  @Put('/activar/:id')
+  @Post('/activar/:id')
   activar(@Body() body:PostAdopcion, @Param('id') id){
     return this.userService.update(id,body).then(res=>{
       return {success: true, data: res}
@@ -53,7 +53,7 @@ export class PostAdopcionController {
       throw new HttpException(error, HttpStatus.INTERNAL_SERVER_ERROR)
     });
   }
-  @Put('/desactivar/:id')
+  @Post('/desactivar/:id')
   desactivar(@Body() body:PostAdopcion, @Param('id') id){
     return this.userService.update(id,body).then(res=>{
       return {success: true, data: res}
@@ -61,7 +61,7 @@ export class PostAdopcionController {
       throw new HttpException(error, HttpStatus.INTERNAL_SERVER_ERROR)
     });
   }
-  @Delete('delete/:id')
+  @Get('delete/:id')
   delete(@Param('id') id){
     return this.userService.delete(id).then(res=>{
       return {success: true, data: res}

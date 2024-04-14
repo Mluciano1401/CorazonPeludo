@@ -21,7 +21,7 @@ export class HistorialMantenimientoService {
     return await this._HistorialMantenimientoRepository.save(user);
   }
   async update(id: number, user: HistorialMantenimiento): Promise<void> {
-    return await this._HistorialMantenimientoRepository.update(id, user);
+    return await this._HistorialMantenimientoRepository.save(user);
   }
   async delete(id: number): Promise<string> {
     await this._HistorialMantenimientoRepository.softDelete(id);

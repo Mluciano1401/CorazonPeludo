@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Body, HttpException, HttpStatus, Param } from '@nestjs/common';
+import { Controller, Get, Post, Body, HttpException, HttpStatus, Param  } from '@nestjs/common';
 import {TipoUsuarioService} from  './tipoUsuario.service';
 import { TipoUsuario } from 'src/models/admin/tipoUsuario.model';
 
@@ -37,25 +37,25 @@ export class TipoUsuarioController {
     });
   }
 
-  @Post('/update/:id')
-  update(@Body() body:TipoUsuario, @Param('id') id){
-    return this.userService.update(id,body).then(res=>{
+  @Post('/update/')
+  update(@Body() body:TipoUsuario){
+    return this.userService.update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{
       throw new HttpException(error, HttpStatus.INTERNAL_SERVER_ERROR)
     });
   }
-  @Post('/activar/:id')
-  activar(@Body() body:TipoUsuario, @Param('id') id){
-    return this.userService.update(id,body).then(res=>{
+  @Post('/activar/')
+  activar(@Body() body:TipoUsuario){
+    return this.userService.update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{
       throw new HttpException(error, HttpStatus.INTERNAL_SERVER_ERROR)
     });
   }
-  @Post('/desactivar/:id')
-  desactivar(@Body() body:TipoUsuario, @Param('id') id){
-    return this.userService.update(id,body).then(res=>{
+  @Post('/desactivar/')
+  desactivar(@Body() body:TipoUsuario){
+    return this.userService.update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{
       throw new HttpException(error, HttpStatus.INTERNAL_SERVER_ERROR)
@@ -72,8 +72,6 @@ export class TipoUsuarioController {
   @Get('/select')
   select(){
     return this.userService.findAll().then(res=>{
-      const r = [];
-      res.forEach(o=> r.push({option: o.descripcion, value: o.tipoUsuarioId}));
       return {success: true, data: res}
     }).catch(error=>{
       throw new HttpException(error, HttpStatus.INTERNAL_SERVER_ERROR)

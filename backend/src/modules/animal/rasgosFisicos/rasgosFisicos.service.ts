@@ -21,7 +21,7 @@ export class RasgosFisicosService {
     return await this._RasgosFisicosRepository.save(user);
   }
   async update(id: number, user: RasgosFisicos): Promise<void> {
-    return await this._RasgosFisicosRepository.update(id, user);
+    return await this._RasgosFisicosRepository.save(user);
   }
   async delete(id: number): Promise<string> {
     await this._RasgosFisicosRepository.softDelete(id);

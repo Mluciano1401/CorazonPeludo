@@ -21,7 +21,7 @@ export class AlmacenService {
     return await this._AlmacenRepository.save(user);
   }
   async update(id: number, user: Almacen): Promise<void> {
-    return await this._AlmacenRepository.update(id, user);
+    return await this._AlmacenRepository.save(user);
   }
   async delete(id: number): Promise<string> {
     await this._AlmacenRepository.softDelete(id);

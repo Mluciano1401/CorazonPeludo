@@ -21,7 +21,7 @@ export class DireccionService {
     return await this._DireccionRepository.save(user);
   }
   async update(id: number, user: Direccion): Promise<void> {
-    return await this._DireccionRepository.update(id, user);
+    return await this._DireccionRepository.save(user);
   }
   async delete(id: number): Promise<string> {
     await this._DireccionRepository.softDelete(id);

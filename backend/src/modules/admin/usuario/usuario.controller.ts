@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Body, HttpException, HttpStatus, Param, Put } from '@nestjs/common';
+import { Controller, Get, Post, Body, HttpException, HttpStatus, Param   } from '@nestjs/common';
 import {UsuarioService} from  './usuario.service';
 import { Usuario } from 'src/models/admin/usuario.model';
 
@@ -37,7 +37,7 @@ export class UsuarioController {
     });
   }
 
-  @Put('/update/:id')
+  @Post('/update/:id')
   update(@Body() body:Usuario, @Param('id') id){
     return this.userService.update(id,body).then(res=>{
       return {success: true, data: res}

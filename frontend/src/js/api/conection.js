@@ -1,4 +1,4 @@
-export function enviarDatos(url,data){
+function enviarDatos(url,data){
     const options = {
         method: 'POST',
         headers: {
@@ -6,11 +6,9 @@ export function enviarDatos(url,data){
         },
         body: JSON.stringify(data)
       };
-      console.log("desde enviar datos")
       enviarSolicitud(url,options);
 }
-
-export function traerDatos(url){
+function traerDatos(url){
   const options = {    
     method: 'GET',
     headers: {
@@ -20,7 +18,7 @@ export function traerDatos(url){
   enviarSolicitud(url,options);
 }
 
-export function borrarDato(url,id){
+function borrarDato(url,id){
   const options = {    
     method: 'DELETE',
     headers: {
@@ -30,7 +28,7 @@ export function borrarDato(url,id){
   }
   enviarSolicitud(url,options);
 }
-export function actualizar(url,data,id){
+function actualizar(url,data,id){
   const options = {    
     method: 'PUT',
     headers: {
@@ -54,3 +52,8 @@ function enviarSolicitud(url,options){
     console.error(error);
   });
 }
+
+window.actualizar = actualizar;
+window.borrarDato = borrarDato;
+window.traerDatos = traerDatos;
+window.enviarDatos = enviarDatos;

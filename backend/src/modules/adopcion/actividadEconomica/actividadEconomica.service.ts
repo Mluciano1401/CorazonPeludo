@@ -21,7 +21,7 @@ export class ActividadEconomicaService {
     return await this._ActividadEconomicaRepository.save(user);
   }
   async update(id: number, user: ActividadEconomica): Promise<void> {
-    return await this._ActividadEconomicaRepository.update(id, user);
+    return await this._ActividadEconomicaRepository.save(user);
   }
   async delete(id: number): Promise<string> {
     await this._ActividadEconomicaRepository.softDelete(id);

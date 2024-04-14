@@ -21,7 +21,7 @@ export class EfectosSecundariosService {
     return await this._EfectosSecundariosRepository.save(user);
   }
   async update(id: number, user: EfectosSecundarios): Promise<void> {
-    return await this._EfectosSecundariosRepository.update(id, user);
+    return await this._EfectosSecundariosRepository.save(user);
   }
   async delete(id: number): Promise<string> {
     await this._EfectosSecundariosRepository.softDelete(id);

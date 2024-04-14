@@ -21,7 +21,7 @@ export class ProveedorService {
     return await this._ProveedorRepository.save(user);
   }
   async update(id: number, user: Proveedor): Promise<void> {
-    return await this._ProveedorRepository.update(id, user);
+    return await this._ProveedorRepository.save(user);
   }
   async delete(id: number): Promise<string> {
     await this._ProveedorRepository.softDelete(id);

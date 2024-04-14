@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Body, HttpException, HttpStatus, Param } from '@nestjs/common';
+import { Controller, Get, Post, Body, HttpException, HttpStatus, Param   } from '@nestjs/common';
 import {TipoPielService} from  './tipoPiel.service';
 import { TipoPiel } from 'src/models/animal/tipoPiel.model';
 

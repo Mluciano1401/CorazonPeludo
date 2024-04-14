@@ -21,7 +21,7 @@ export class TipoPielService {
     return await this._TipoPielRepository.save(user);
   }
   async update(id: number, user: TipoPiel): Promise<void> {
-    return await this._TipoPielRepository.update(id, user);
+    return await this._TipoPielRepository.save(user);
   }
   async delete(id: number): Promise<string> {
     await this._TipoPielRepository.softDelete(id);

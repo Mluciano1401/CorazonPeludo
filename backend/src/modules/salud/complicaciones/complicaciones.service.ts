@@ -21,7 +21,7 @@ export class ComplicacionesService {
     return await this._ComplicacionesRepository.save(user);
   }
   async update(id: number, user: Complicaciones): Promise<void> {
-    return await this._ComplicacionesRepository.update(id, user);
+    return await this._ComplicacionesRepository.save(user);
   }
   async delete(id: number): Promise<string> {
     await this._ComplicacionesRepository.softDelete(id);

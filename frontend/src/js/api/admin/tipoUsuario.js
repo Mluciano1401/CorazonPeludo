@@ -1,4 +1,4 @@
-import {enviarDatos} from '../conection';
+const enviarDatos = window.enviarDatos;
 const form = document.getElementById('formtipousuario');
 
 form.addEventListener('submit', function(event) {

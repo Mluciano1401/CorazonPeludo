@@ -21,7 +21,7 @@ export class TipoEnfermedadService {
     return await this._TipoEnfermedadRepository.save(user);
   }
   async update(id: number, user: TipoEnfermedad): Promise<void> {
-    return await this._TipoEnfermedadRepository.update(id, user);
+    return await this._TipoEnfermedadRepository.save(user);
   }
   async delete(id: number): Promise<string> {
     await this._TipoEnfermedadRepository.softDelete(id);

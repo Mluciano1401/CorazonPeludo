@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Body, HttpException, HttpStatus, Param, Delete, Put } from '@nestjs/common';
+import { Controller, Get, Post, Body, HttpException, HttpStatus, Param  } from '@nestjs/common';
 import {TipoProductoService} from  './tipoProducto.service';
 import { TipoProducto } from 'src/models/almacen/tipoProducto.model';
 
@@ -37,7 +37,7 @@ export class TipoProductoController {
     });
   }
 
-  @Put('/update/:id')
+  @Post('/update/:id')
   update(@Body() body:TipoProducto, @Param('id') id){
     return this._TipoProductoService.update(id,body).then(res=>{
       return {success: true, data: res}
@@ -45,7 +45,7 @@ export class TipoProductoController {
       throw new HttpException(error, HttpStatus.INTERNAL_SERVER_ERROR)
     });
   }
-  @Put('/activar/:id')
+  @Post('/activar/:id')
   activar(@Body() body:TipoProducto, @Param('id') id){
     return this._TipoProductoService.update(id,body).then(res=>{
       return {success: true, data: res}
@@ -53,7 +53,7 @@ export class TipoProductoController {
       throw new HttpException(error, HttpStatus.INTERNAL_SERVER_ERROR)
     });
   }
-  @Put('/desactivar/:id')
+  @Post('/desactivar/:id')
   desactivar(@Body() body:TipoProducto, @Param('id') id){
     return this._TipoProductoService.update(id,body).then(res=>{
       return {success: true, data: res}
@@ -61,7 +61,7 @@ export class TipoProductoController {
       throw new HttpException(error, HttpStatus.INTERNAL_SERVER_ERROR)
     });
   }
-  @Delete('delete/:id')
+  @Get('delete/:id')
   delete(@Param('id') id){
     return this._TipoProductoService.delete(id).then(res=>{
       return {success: true, data: res}

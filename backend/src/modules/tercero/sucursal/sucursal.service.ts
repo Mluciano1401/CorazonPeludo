@@ -21,7 +21,7 @@ export class SucursalService {
     return await this._SucursalRepository.save(user);
   }
   async update(id: number, user: Sucursal): Promise<void> {
-    return await this._SucursalRepository.update(id, user);
+    return await this._SucursalRepository.save(user);
   }
   async delete(id: number): Promise<string> {
     await this._SucursalRepository.softDelete(id);

@@ -21,7 +21,7 @@ export class PersonaService {
     return await this._PersonaRepository.save(user);
   }
   async update(id: number, user: Persona): Promise<void> {
-    return await this._PersonaRepository.update(id, user);
+    return await this._PersonaRepository.save(user);
   }
   async delete(id: number): Promise<string> {
     await this._PersonaRepository.softDelete(id);

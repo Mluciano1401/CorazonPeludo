@@ -21,7 +21,7 @@ export class AnimalService {
     return await this._AnimalRepository.save(user);
   }
   async update(id: number, user: Animal): Promise<void> {
-    return await this._AnimalRepository.update(id, user);
+    return await this._AnimalRepository.save(user);
   }
   async delete(id: number): Promise<string> {
     await this._AnimalRepository.softDelete(id);

@@ -21,7 +21,7 @@ export class ComplejidadService {
     return await this._ComplejidadRepository.save(user);
   }
   async update(id: number, user: Complejidad): Promise<void> {
-    return await this._ComplejidadRepository.update(id, user);
+    return await this._ComplejidadRepository.save(user);
   }
   async delete(id: number): Promise<string> {
     await this._ComplejidadRepository.softDelete(id);

@@ -21,7 +21,7 @@ export class HistorialMedicoService {
     return await this._HistorialMedicoRepository.save(user);
   }
   async update(id: number, user: HistorialMedico): Promise<void> {
-    return await this._HistorialMedicoRepository.update(id, user);
+    return await this._HistorialMedicoRepository.save(user);
   }
   async delete(id: number): Promise<string> {
     await this._HistorialMedicoRepository.softDelete(id);

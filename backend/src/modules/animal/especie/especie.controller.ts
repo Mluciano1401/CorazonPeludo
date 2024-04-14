@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Body, HttpException, HttpStatus, Param } from '@nestjs/common';
+import { Controller, Get, Post, Body, HttpException, HttpStatus, Param   } from '@nestjs/common';
 import {EspecieService} from  './especie.service';
 import { Especie } from 'src/models/animal/especie.model';
 
@@ -20,7 +20,7 @@ export class EspecieController {
   }
 
   @Get('/:id')
-  getById(@Param('id') id){
+  getById(@Param('id') id:number){
     return this._EspecieService.findById(id).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{

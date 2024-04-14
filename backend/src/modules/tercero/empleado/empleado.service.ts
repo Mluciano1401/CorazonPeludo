@@ -21,7 +21,7 @@ export class EmpleadoService {
     return await this._EmpleadoRepository.save(user);
   }
   async update(id: number, user: Empleado): Promise<void> {
-    return await this._EmpleadoRepository.update(id, user);
+    return await this._EmpleadoRepository.save(user);
   }
   async delete(id: number): Promise<string> {
     await this._EmpleadoRepository.softDelete(id);

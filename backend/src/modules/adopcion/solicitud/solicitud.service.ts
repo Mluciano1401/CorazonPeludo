@@ -21,7 +21,7 @@ export class SolicitudAService {
     return await this._SolicitudRepository.save(user);
   }
   async update(id: number, user: Solicitud): Promise<void> {
-    return await this._SolicitudRepository.update(id, user);
+    return await this._SolicitudRepository.save(user);
   }
   async delete(id: number): Promise<string> {
     await this._SolicitudRepository.softDelete(id);

@@ -21,7 +21,7 @@ export class TratamientoService {
     return await this._TratamientoRepository.save(user);
   }
   async update(id: number, user: Tratamiento): Promise<void> {
-    return await this._TratamientoRepository.update(id, user);
+    return await this._TratamientoRepository.save(user);
   }
   async delete(id: number): Promise<string> {
     await this._TratamientoRepository.softDelete(id);

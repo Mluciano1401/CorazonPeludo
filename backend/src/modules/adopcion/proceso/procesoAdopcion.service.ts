@@ -21,7 +21,7 @@ export class ProcesoAdopcionService {
     return await this._ProcesoAdopcionRepository.save(user);
   }
   async update(id: number, user: ProcesoAdopcion): Promise<void> {
-    return await this._ProcesoAdopcionRepository.update(id, user);
+    return await this._ProcesoAdopcionRepository.save(user);
   }
   async delete(id: number): Promise<string> {
     await this._ProcesoAdopcionRepository.softDelete(id);

@@ -21,7 +21,7 @@ export class NivelUrgenciaService {
     return await this._NivelUrgenciaRepository.save(user);
   }
   async update(id: number, user: NivelUrgencia): Promise<void> {
-    return await this._NivelUrgenciaRepository.update(id, user);
+    return await this._NivelUrgenciaRepository.save(user);
   }
   async delete(id: number): Promise<string> {
     await this._NivelUrgenciaRepository.softDelete(id);

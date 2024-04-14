@@ -21,7 +21,7 @@ export class CirugiaService {
     return await this._CirugiaRepository.save(user);
   }
   async update(id: number, user: Cirugia): Promise<void> {
-    return await this._CirugiaRepository.update(id, user);
+    return await this._CirugiaRepository.save(user);
   }
   async delete(id: number): Promise<string> {
     await this._CirugiaRepository.softDelete(id);

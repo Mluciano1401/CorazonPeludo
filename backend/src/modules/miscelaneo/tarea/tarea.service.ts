@@ -21,7 +21,7 @@ export class TareaService {
     return await this._TareaRepository.save(user);
   }
   async update(id: number, user: Tarea): Promise<void> {
-    return await this._TareaRepository.update(id, user);
+    return await this._TareaRepository.save(user);
   }
   async delete(id: number): Promise<string> {
     await this._TareaRepository.softDelete(id);

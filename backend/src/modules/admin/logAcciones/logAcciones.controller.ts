@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Body, HttpException, HttpStatus, Param } from '@nestjs/common';
+import { Controller, Get, Post, Body, HttpException, HttpStatus, Param   } from '@nestjs/common';
 import {LogAccionesService} from  './logAcciones.service';
 import { LogAcciones } from 'src/models/admin/logAcciones.model';
 

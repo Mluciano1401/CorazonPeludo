@@ -21,7 +21,7 @@ export class TipoTareaService {
     return await this._TipoTareaRepository.save(user);
   }
   async update(id: number, user: TipoTarea): Promise<void> {
-    return await this._TipoTareaRepository.update(id, user);
+    return await this._TipoTareaRepository.save(user);
   }
   async delete(id: number): Promise<string> {
     await this._TipoTareaRepository.softDelete(id);

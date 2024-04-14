@@ -21,7 +21,7 @@ export class TipoCombustibleService {
     return await this._TipoCombustibleRepository.save(user);
   }
   async update(id: number, user: TipoCombustible): Promise<void> {
-    return await this._TipoCombustibleRepository.update(id, user);
+    return await this._TipoCombustibleRepository.save(user);
   }
   async delete(id: number): Promise<string> {
     await this._TipoCombustibleRepository.softDelete(id);

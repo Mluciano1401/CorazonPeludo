@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Body, HttpException, HttpStatus, Param } from '@nestjs/common';
+import { Controller, Get, Post, Body, HttpException, HttpStatus, Param   } from '@nestjs/common';
 import {IndentificadorService} from  './identificador.service';
 import { Indentificador } from 'src/models/animal/identificador.model';
 

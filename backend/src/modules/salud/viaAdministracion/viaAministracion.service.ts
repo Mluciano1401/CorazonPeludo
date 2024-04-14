@@ -21,7 +21,7 @@ export class ViaAdministracionService {
     return await this._ViaAministracionRepository.save(user);
   }
   async update(id: number, user: ViaAdministracion): Promise<void> {
-    return await this._ViaAministracionRepository.update(id, user);
+    return await this._ViaAministracionRepository.save(user);
   }
   async delete(id: number): Promise<string> {
     await this._ViaAministracionRepository.softDelete(id);

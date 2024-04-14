@@ -21,7 +21,7 @@ export class DiagnosticoService {
     return await this._DiagnosticoRepository.save(user);
   }
   async update(id: number, user: Diagnostico): Promise<void> {
-    return await this._DiagnosticoRepository.update(id, user);
+    return await this._DiagnosticoRepository.save(user);
   }
   async delete(id: number): Promise<string> {
     await this._DiagnosticoRepository.softDelete(id);

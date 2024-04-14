@@ -21,7 +21,7 @@ export class PostAdopcionService {
     return await this._PostAdopcionRepository.save(user);
   }
   async update(id: number, user: PostAdopcion): Promise<void> {
-    return await this._PostAdopcionRepository.update(id, user);
+    return await this._PostAdopcionRepository.save(user);
   }
   async delete(id: number): Promise<string> {
     await this._PostAdopcionRepository.softDelete(id);

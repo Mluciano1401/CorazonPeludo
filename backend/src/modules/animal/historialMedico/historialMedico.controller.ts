@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Body, HttpException, HttpStatus, Param } from '@nestjs/common';
+import { Controller, Get, Post, Body, HttpException, HttpStatus, Param   } from '@nestjs/common';
 import {HistorialMedicoService} from  './historialMedico.service';
 import { HistorialMedico } from 'src/models/animal/historialMedico.model';
 
