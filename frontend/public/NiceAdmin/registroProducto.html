@@ -31,13 +31,6 @@
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
 
-  <!-- =======================================================
-  * Template Name: NiceAdmin
-  * Template URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
-  * Updated: Mar 17 2024 with Bootstrap v5.3.3
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
 </head>
 
 <body>
@@ -594,7 +587,7 @@
   <main id="main" class="main">
 
     <div class="pagetitle">
-      <h1>Registro de producto</h1>
+      <h1>Registro De Producto</h1>
       <nav>
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="index.html">Home</a></li>
@@ -610,18 +603,25 @@
 
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">Ingreso De prodcto</h5>
+              <h5 class="card-title">Ingreso De producto</h5>
 
               <!-- General Form Elements -->
               <form class="needs-validation" novalidate>
 
                 <div class="row mb-3">
+                  <div class="col-md-6 mb-3">
+                    <label for="idProducto" class="form-label">ID Producto</label>
+                    <input type="text" class="form-control" id="idProducto" disabled>
+                  </div> 
+                </div>
+                
+                <div class="row mb-3">
                   <div class="col-md-6">
-                    <label for="alias" class="form-label">Nombre</label>
+                    <label for="nombre" class="form-label">Nombre</label>
                     <input type="text" class="form-control" id="nombre" required>
                   </div>
                   <div class="col-md-6">
-                    <label for="edad" class="form-label">Lote</label>
+                    <label for="lote" class="form-label">Lote</label>
                     <input type="text" class="form-control" id="lote" required>
                   </div>
                 </div>
@@ -632,46 +632,42 @@
                     <label for="marca" class="form-label">Marca</label>
                     <input type="text" class="form-control" id="marca" required>
                   </div>
-                </div>
+                
 
                   <div class="col-md-6">
-                    <label for="costo" class="form-label">costo</label>
+                    <label for="costo" class="form-label">Costo</label>
                     <input type="number" class="form-control" id="costo" required>
                   </div>
                 </div>
 
                 <div class="row mb-3">
                   <div class="col-md-6 mb-3">
-                    <label for="tipoPiel" class="form-label">Tipo de Producto</label>
+                    <label for="tipoProducto" class="form-label">Tipo de Producto</label>
                     <input type="text" class="form-control" id="tipoProducto" required>
                   </div>
-                </div>
-
-                <div class="row  mb-3">
+                
                   <div class="col-md-6">
                     <label for="fechaVencimiento" class="form-label">Fecha De Vencimiento</label>
-                    <input type="fechaVencimiento" class="form-control" required>
+                    <input type="date" id="fechaVencimiento" class="form-control" required>
                   </div>
                 </div>
 
-                <div class="row mb-4">
+                <div class="row mb-5">
                   <div class="col-md-6 mb-3">
-                    <label for="status" class="form-label">Status</label> 
-                    <select id="status" class="form-select" required>
-                      <option value="" disabled selected>Selecciona Una Opcion...</option>
-                      <option value="activo">Activo</option>
-                      <option value="inactivo">Inactivo</option>
+                    <label for="mySelect" class="form-label">Status</label>
+                    <select id="mySelect" class="form-select" required>
+
                     </select>
                   </div>
                   <div class="col-md-6">
-                    <label for="fechaModificacion" class="form-label">Fecha De Modificacion</label>
-                    <input type="fechaModificacion" class="form-control" disabled>
+                    <label for="fechaModificacion" class="form-label">Fecha de Modificacion</label>
+                    <input type="date" id="fechaModificacion" class="form-control" disabled>
                   </div>
                 </div>
 
 
                 <div class="text-center mb-3">
-                  <button type="submit" class="btn btn-primary buttonSubmit">Enviar</button>
+                  <button type="submit" id="buttonSubmit" class="btn btn-primary buttonSubmit">Enviar</button>
                   <button type="reset" class="btn btn-outline-danger">Limpiar</button>
                 </div>
 
@@ -718,6 +714,8 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
+
+
 
 </body>
 

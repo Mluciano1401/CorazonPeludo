@@ -590,11 +590,12 @@
 
 
 
+  
   <!--Principal-->
   <main id="main" class="main">
 
     <div class="pagetitle">
-      <h1>Registro de medicamento</h1>
+      <h1>Registro de Medicamento</h1>
       <nav>
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="index.html">Home</a></li>
@@ -610,25 +611,33 @@
 
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">Registro de medicamento</h5>
+              <h5 class="card-title">Ingreso de Medicamentos</h5>
 
               <!-- General Form Elements -->
               <form class="needs-validation" novalidate>
-
+                
                 <div class="row mb-3">
-                  <div class="col-md-6">
-                    <label for="alias" class="form-label">Nombre</label>
-                    <input type="text" class="form-control" id="nombre" required>
-                  </div>
-                  <div class="col-md-6">
-                    <label for="edad" class="form-label">Lote</label>
-                    <input type="text" class="form-control" id="lote" required>
+                  <div class="col-md-6 mb-3">
+                    <label for="alias" class="form-label">ID Medicamento</label>
+                    <input type="text" class="form-control" id="nombre" disabled>
                   </div>
                 </div>
 
-
                 <div class="row mb-3">
-                  <div class="col-md-6">
+                  <div class="col-md-6 mb-3">
+                    <label for="mySelect" class="form-label">Tipo de Medicamento</label>
+                    <select id="mySelect" class="form-select" required>
+                    </select>
+                  </div>
+                  <div class="col-md-6 mb-3">
+                    <label for="alias" class="form-label">Nombre</label>
+                    <input type="text" class="form-control" id="nombre" required>
+                  </div>
+                </div>
+
+                
+                <div class="row mb-3">
+                  <div class="col-md-6 mb-3">
                     <label for="marca" class="form-label">Marca</label>
                     <input type="text" class="form-control" id="marca" required>
                   </div>
@@ -638,37 +647,35 @@
                   </div>
                 </div>
 
-                  <div class="col-md-6">
+                <div class="row mb-3">
+                  <div class="col-md-6 mb-3">
                     <label for="costo" class="form-label">costo</label>
                     <input type="number" class="form-control" id="costo" required>
+                  </div>
+                  <div class="col-md-6">
+                    <label for="edad" class="form-label">Lote</label>
+                    <input type="text" class="form-control" id="lote" required>
                   </div>
                 </div>
 
                 <div class="row mb-3">
                   <div class="col-md-6 mb-3">
-                    <label for="tipoMedicamento" class="form-label">Tipo de Medicamento</label>
-                    <input type="text" class="form-control" id="tipoMedicamento" required>
-                  </div>
-                  <div class="col-md-6">
                     <label for="viaAdministracion" class="form-label">Via de administración</label>
                     <input type="text" class="form-control" id="viaAdminstracion" required>
                   </div>
-                </div>
 
-                <div class="row  mb-3">
                   <div class="col-md-6">
                     <label for="fechaVencimiento" class="form-label">Fecha De Vencimiento</label>
                     <input type="fechaVencimiento" class="form-control" required>
                   </div>
+
                 </div>
 
                 <div class="row mb-4">
                   <div class="col-md-6 mb-3">
-                    <label for="status" class="form-label">Status</label> 
-                    <select id="status" class="form-select" required>
-                      <option value="" disabled selected>Selecciona Una Opcion...</option>
-                      <option value="activo">Activo</option>
-                      <option value="inactivo">Inactivo</option>
+                    <label for="mySelect" class="form-label">Status</label>
+                    <select id="mySelect" class="form-select" required>
+                      
                     </select>
                   </div>
                   <div class="col-md-6">
@@ -676,6 +683,8 @@
                     <input type="fechaModificacion" class="form-control" disabled>
                   </div>
                 </div>
+
+
                 <div class="text-center mb-3">
                   <button type="submit" class="btn btn-primary buttonSubmit">Enviar</button>
                   <button type="reset" class="btn btn-outline-danger">Limpiar</button>

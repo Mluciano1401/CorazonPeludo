@@ -31,13 +31,6 @@
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
 
-  <!-- =======================================================
-  * Template Name: NiceAdmin
-  * Template URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
-  * Updated: Mar 17 2024 with Bootstrap v5.3.3
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
 </head>
 
 <body>
@@ -599,7 +592,7 @@
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="index.html">Home</a></li>
           <li class="breadcrumb-item">Formularios</li>
-          <li class="breadcrumb-item active">Registro de Origen</li>
+          <li class="breadcrumb-item active">Registro de origen</li>
         </ol>
       </nav>
     </div><!-- End Page Title -->
@@ -616,24 +609,26 @@
               <form class="needs-validation" id="form" novalidate>
 
                 <div class="row mb-3">
+                  <div class="col-md-6 mb-3">
+                    <label for="idOrigen" class="form-label">ID Origen</label>
+                    <input type="text" class="form-control" id="idOrigen" disabled>
+                  </div>
                   <div class="col-md-6">
-                    <label for="alias" class="form-label">Descripcion</label>
-                    <input type="text" class="form-control" id="alias" required>
+                    <label for="descripcion" class="form-label">Descripcion</label>
+                    <input type="text" class="form-control" id="descripcion" required>
                   </div>
                 </div>
-
-                <div class="row mb-4">
+                
+                <div class="row mb-5">
                   <div class="col-md-6 mb-3">
-                    <label for="status" class="form-label">Status</label> 
-                    <select id="status" class="form-select" required>
-                      <option value="" disabled selected>Selecciona Una Opcion...</option>
-                      <option value="activo">Activo</option>
-                      <option value="inactivo">Inactivo</option>
+                    <label for="mySelect" class="form-label">Status</label>
+                    <select id="mySelect" class="form-select" required>
+
                     </select>
                   </div>
                   <div class="col-md-6">
-                    <label for="fechaModificacion" class="form-label">Fecha De Modificacion</label>
-                    <input type="fechaModificacion" class="form-control" disabled>
+                    <label for="fechaModificacion" class="form-label">Fecha de Modificacion</label>
+                    <input type="date" id="fechaModificacion" class="form-control" disabled>
                   </div>
                 </div>
 
