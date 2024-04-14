@@ -31,13 +31,6 @@
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
 
-  <!-- =======================================================
-  * Template Name: NiceAdmin
-  * Template URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
-  * Updated: Mar 17 2024 with Bootstrap v5.3.3
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
 </head>
 
 <body>
@@ -614,9 +607,15 @@
 
               <!-- General Form Elements -->
               <form class="needs-validation" novalidate>
-
                 <div class="row mb-3">
-                  <div class="col-md-6">
+                  <div class="col-md-6 mb-3">
+                    <label for="idSolicitante" class="form-label">ID Solicitante</label>
+                    <input type="text" class="form-control" id="idSolicitante" disabled>
+                  </div>
+                </div>
+
+                <div class="row mb-3"> 
+                  <div class="col-md-6 mb-3">
                     <label for="nombre" class="form-label">Nombre</label>
                     <input type="text" class="form-control" id="nombre" required>
                   </div>
@@ -625,7 +624,6 @@
                     <input type="text" class="form-control" id="apellido" required>
                   </div>
                 </div>
-
 
                 <div class="row mb-3">
                   <div class="col-md-6">
@@ -636,17 +634,18 @@
                     <label for="telefono" class="form-label">Telefono</label>
                     <input type="text" class="form-control" id="telefono" required>
                   </div>
+                </div>
 
+
+                <div class="row mb-3">
                   <div class="col-md-6">
                     <label for="cedula" class="form-label">Cedula</label>
                     <input type="text" class="form-control" id="cedula" required>
                   </div>
                   <div class="col-md-6 mb-3">
-                    <label for="sexo" class="form-label">Sexo</label>
-                    <select id="sexo" class="form-select" required>
-                      <option value="" disabled selected>Selecciona Una Opcion...</option>
-                    <option value="Femenino">Femenino</option>
-                    <option value="Masculino">Masculino</option>
+                    <label for="mySelect" class="form-label">Sexo</label>
+                    <select id="mySelect" class="form-select" required>
+                      
                     </select>
                   </div>
                 </div>
@@ -654,54 +653,62 @@
                 <div class="row mb-3">
                   <div class="col-md-6 mb-3">
                     <label for="situacionFamiliar" class="form-label">Situación Familiar</label>
-                    <input type="text" class="form-control" id="situacionFamiliar" required>
+                    <input type="text" class="form-control" id="situacionFamiliar" placeholder="Buena..." required>
                   </div>
-                  <div class="col-md-6 mb-3">
+                  <div class="col-md-6">
+                    <label for="ingresosMensuales" class="form-label">ingresos Mensuales</label>
+                    <input type="number" class="form-control" id="ingresosMensuales" required>
+                  </div>
+                </div>
+
+
+
+                <div class="row mb-3">
+                  <div class="col-md-6 mb-3" id="campoDependiente">
                     <label for="dependencia" class="form-label">Depende económicamente de otros</label>
-                    <select id="dependencia" class="form-select" required>
+                    <select id="dependencia" class="form-select" required onchange="activar()">
                       <option value="" disabled selected>Selecciona Una Opcion...</option>
                       <option value="Si">Si</option>
                       <option value="No">No</option>
                     </select>
                   </div>
-                  <div class="col-md-6 mb-3">
+                  <div class="col-md-6" id="campoDepen">
                     <label for="numeroDependientes" class="form-label">Cantidad de dependientes</label>
                     <input type="number" class="form-control" id="numeroDependientes" required>
                   </div>
                 </div>
 
+
+
+
+
                 <div class="row mb-3">
-                  <div class="col-md-6">
-                    <label for="ingresosMensuales" class="form-label">ingresos Mensuales</label>
-                    <input type="number" class="form-control" id="ingresosMensuales" required>
-                  </div>
-                  <div class="col-md-6">
+                  <div class="col-md-6 mb-3">
                     <label for="actividadEconomica" class="form-label">Actividad Económica</label>
                     <input type="text" class="form-control" id="actividadEconomica" required>
                   </div>
-                </div>
 
-                <div class="row  mb-3">
                   <div class="col-md-6">
-                    <label for="fechaIngreso" class="form-label">Fecha De Ingreso</label>
+                    <label for="fechaIngreso" class="form-label">Fecha De Inicio</label>
                     <input type="fechaIngreso" class="form-control" required>
                   </div>
                 </div>
 
-                <div class="row mb-4">
+
+
+                <div class="row mb-5">
                   <div class="col-md-6 mb-3">
-                    <label for="status" class="form-label">Status</label> 
-                    <select id="status" class="form-select" required>
-                      <option value="" disabled selected>Selecciona Una Opcion...</option>
-                      <option value="activo">Activo</option>
-                      <option value="inactivo">Inactivo</option>
+                    <label for="mySelect" class="form-label">Status</label>
+                    <select id="mySelect" class="form-select" required>
+
                     </select>
                   </div>
                   <div class="col-md-6">
-                    <label for="fechaModificacion" class="form-label">Fecha De Modificacion</label>
-                    <input type="fechaModificacion" class="form-control" disabled>
+                    <label for="fechaModificacion" class="form-label">Fecha de Modificacion</label>
+                    <input type="date" id="fechaModificacion" class="form-control" disabled>
                   </div>
-                
+                </div>
+
                 <div class="text-center mb-3">
                   <button type="submit" class="btn btn-primary buttonSubmit">Enviar</button>
                   <button type="reset" class="btn btn-outline-danger">Limpiar</button>
@@ -750,6 +757,7 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
+  <script src="visualizar.js"></script>
 
 </body>
 
