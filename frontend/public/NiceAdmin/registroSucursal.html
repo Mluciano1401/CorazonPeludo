@@ -31,13 +31,6 @@
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
 
-  <!-- =======================================================
-  * Template Name: NiceAdmin
-  * Template URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
-  * Updated: Mar 17 2024 with Bootstrap v5.3.3
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
 </head>
 
 <body>
@@ -610,11 +603,18 @@
 
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">Registro de sucursal</h5>
+              <h5 class="card-title">Ingreso de Sucursal</h5>
 
               <!-- General Form Elements -->
               <form class="needs-validation" novalidate>
 
+                <div class="row mb-3">
+                  <div class="col-md-6 mb-3">
+                    <label for="idSucursal" class="form-label">ID Sucursal</label>
+                    <input type="text" class="form-control" id="idSucursal" disabled>
+                  </div>
+                </div>
+                
                 <div class="row mb-3">
                   <div class="col-md-6">
                     <label for="nombre" class="form-label">Nombre</label>
@@ -641,21 +641,18 @@
                   </div>
                 </div>
 
-                <div class="row mb-4">
+                <div class="row mb-5">
                   <div class="col-md-6 mb-3">
-                    <label for="status" class="form-label">Status</label> 
-                    <select id="status" class="form-select" required>
-                      <option value="" disabled selected>Selecciona Una Opcion...</option>
-                      <option value="activo">Activo</option>
-                      <option value="inactivo">Inactivo</option>
+                    <label for="mySelect" class="form-label">Status</label>
+                    <select id="mySelect" class="form-select" required>
+
                     </select>
                   </div>
                   <div class="col-md-6">
-                    <label for="fechaModificacion" class="form-label">Fecha De Modificacion</label>
-                    <input type="fechaModificacion" class="form-control" disabled>
+                    <label for="fechaModificacion" class="form-label">Fecha de Modificacion</label>
+                    <input type="date" id="fechaModificacion" class="form-control" disabled>
                   </div>
                 </div>
-
 
                 <div class="text-center mb-3">
                   <button type="submit" class="btn btn-primary buttonSubmit">Enviar</button>
