@@ -1247,3 +1247,10 @@ h6 {
 .cardDonante{
   padding: 30px;
 }
+table {
+  width: 100%;
+}
+
+th, td {
+  text-align: center;
+}
