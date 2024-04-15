@@ -1,4 +1,4 @@
-import { Column, Entity, JoinColumn, OneToOne, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, JoinColumn, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
 import { TipoTelefono } from "./tipoTelefono.model";
 import { personaXtelefono } from "./personaXtelefono.model";
 
@@ -9,7 +9,7 @@ export class Telefono{
     @PrimaryGeneratedColumn()
     telefonoId: number;
 
-    @OneToOne(()=> TipoTelefono)
+    @ManyToOne(()=> TipoTelefono)
     @JoinColumn()
     tipoTelefono: TipoTelefono;
 

@@ -1,4 +1,4 @@
-import { Column, Entity, JoinColumn, OneToOne, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, JoinColumn, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
 import { Persona } from "./persona.model";
 
 
@@ -7,7 +7,7 @@ export class Sucursal {
     @PrimaryGeneratedColumn()
     sucursalId: number;
 
-    @OneToOne(() => Persona)
+    @ManyToOne(() => Persona)
     @JoinColumn()
     compania: Persona;
 

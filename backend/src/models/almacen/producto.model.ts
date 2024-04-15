@@ -1,5 +1,5 @@
 import { TipoProducto } from './tipoProducto.model';
-import { Column, Entity, JoinColumn, OneToOne, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, JoinColumn, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
 import { Marca } from "../miscelaneo/marca.model";
 
 @Entity( )
@@ -13,14 +13,14 @@ export class Producto {
     @Column()
     lote: string;
 
-    @OneToOne(()=> TipoProducto)
+    @ManyToOne(()=> TipoProducto)
     @JoinColumn()
     tipoProducto: TipoProducto;
 
     @Column()
     costo:number;
 
-    @OneToOne(()=> Marca)
+    @ManyToOne(()=> Marca)
     @JoinColumn()
     marca: Marca;
 

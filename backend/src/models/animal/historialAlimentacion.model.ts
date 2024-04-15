@@ -1,4 +1,4 @@
-import { Column, Entity, JoinColumn, OneToOne, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, JoinColumn, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
 import { Animal } from "./animal.model";
 import { Empleado } from "../tercero/empleado.model";
 
@@ -8,11 +8,11 @@ export class HistorialAlimentacion {
     @PrimaryGeneratedColumn()
     historialMedicoId: number;
 
-    @OneToOne(() => Animal)
+    @ManyToOne(() => Animal)
     @JoinColumn()
     animal: Animal;
 
-    @OneToOne(() => Empleado)
+    @ManyToOne(() => Empleado)
     @JoinColumn()
     veterinario: Empleado;
 

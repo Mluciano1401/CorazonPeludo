@@ -69,12 +69,5 @@ export class TipoUsuarioController {
       throw new HttpException(error, HttpStatus.INTERNAL_SERVER_ERROR)
     });
   }
-  @Get('/select')
-  select(){
-    return this.userService.findAll().then(res=>{
-      return {success: true, data: res}
-    }).catch(error=>{
-      throw new HttpException(error, HttpStatus.INTERNAL_SERVER_ERROR)
-    });
-  }
+   
 }

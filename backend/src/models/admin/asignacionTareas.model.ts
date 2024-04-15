@@ -1,5 +1,5 @@
 import { NivelUrgencia } from './../miscelaneo/nivelUrgencia.model';
-import { Column, Entity, JoinColumn, OneToOne, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, JoinColumn, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
 import { TipoRecurso } from "../miscelaneo/tipoRecurso.model";
 import { Tarea } from "../miscelaneo/tarea.model";
 import { Empleado } from "../tercero/empleado.model";
@@ -11,11 +11,11 @@ export class AsignacionTarea{
     @PrimaryGeneratedColumn()
     asignacionTareaId: number;
 
-    @OneToOne(() => Tarea)
+    @ManyToOne(() => Tarea)
     @JoinColumn()
     tarea: Tarea;
 
-    @OneToOne(() => Empleado)
+    @ManyToOne(() => Empleado)
     @JoinColumn()
     empleado: Empleado;
 
@@ -25,19 +25,19 @@ export class AsignacionTarea{
     @Column()
     fechaLimite: Date;
 
-    @OneToOne(()=> Estado)
+    @ManyToOne(()=> Estado)
     @JoinColumn()
     estado: Estado;
 
-    @OneToOne(()=> Direccion)
+    @ManyToOne(()=> Direccion)
     @JoinColumn()
     ubicacion: Direccion;
 
-    @OneToOne(()=> NivelUrgencia )
+    @ManyToOne(()=> NivelUrgencia )
     @JoinColumn()
     nivelUrgencia: NivelUrgencia ;
 
-    @OneToOne(() => TipoRecurso)
+    @ManyToOne(() => TipoRecurso)
     @JoinColumn()
     tipoRecurso: TipoRecurso;
 

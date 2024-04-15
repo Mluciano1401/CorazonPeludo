@@ -619,7 +619,7 @@
               <h5 class="card-title">Ingreso De Proveedores</h5>
 
               <!-- General Form Elements -->
-              <form class="needs-validation" novalidate>
+              <form class="needs-validation" id="form" novalidate>
 
                 <div class="row mb-3">
                   <div class="col-md-6 mb-3">
@@ -700,7 +700,9 @@
                   <div class="col-md-6 mb-3" id="campoGenero">
                     <label for="mySelect" class="form-label">Sexo</label>
                     <select id="mySelect" class="form-select" required>
-
+                      <option value="" disabled selected>Selecciona Una Opcion...</option>
+                      <option value="F">Femenino</option>
+                      <option value="M">Masculino</option>
                     </select>
                   </div>
 
@@ -732,7 +734,7 @@
 
                   <div class="col-md-6">
                     <label for="codigoPostal" class="form-label">Codigo Postal</label>
-                    <input type="number" class="form-control" id="codigoPostal" required>
+                    <input type="text" class="form-control" id="codigoPostal" required>
                   </div>
 
                 </div>
@@ -741,7 +743,7 @@
                 <div class="row mb-3">
                   <div class="col-md-6 mb-3">
                     <label for="telefono" class="form-label">Numero de Telefono</label>
-                    <input type="number" class="form-control" id="telefono" required>
+                    <input type="text" class="form-control" id="telefono" required>
                   </div>
 
                   <div class="col-md-6">

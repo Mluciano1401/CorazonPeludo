@@ -601,7 +601,7 @@
               <h5 class="card-title">Ingreso De Animales</h5>
 
               <!-- General Form Elements -->
-              <form class="needs-validation" novalidate>
+              <form class="needs-validation" id="form" novalidate>
 
                 <div class="row mb-3">
                   <div class="col-md-6 mb-3">
@@ -637,14 +637,16 @@
                   <div class="col-md-6 mb-3">
                     <label for="mySelect" class="form-label">Sexo</label>
                     <select id="mySelect" class="form-select" required>
-                     
+                      <option value="" disabled selected>Selecciona Una Opcion...</option>
+                      <option value="F">Femenino</option>
+                      <option value="M">Masculino</option>
                     </select>
                   </div>
 
                   <div class="col-md-6">
                     <label for="mySelect" class="form-label">Especie</label>
                     <select id="mySelect" class="form-select" required>
-                      
+                      <div id="data-display">Selecciona Una Opcion...</div>
                     </select>
                   </div>
                 </div>
@@ -653,13 +655,13 @@
                   <div class="col-md-6 mb-3">
                     <label for="mySelect" class="form-label">Tipo de Piel</label>
                     <select id="mySelect" class="form-select" required>
-                      
+                      <div id="data-display0">Selecciona Una Opcion...</div>
                     </select>
                   </div>
                   <div class="col-md-6">
                     <label for="mySelect" class="form-label">Origen Del Animal</label>
                     <select id="mySelect" class="form-select" required>
-                      
+                      <div id="data-display1">Selecciona Una Opcion...</div>
                     </select>
                   </div>
                 </div>
@@ -671,13 +673,13 @@
                     <!-- AQUI ES SI O NO, SI TIENE AMPUTACIONES O NO -->
                     <label for="mySelect" class="form-label">Amputaciones</label>
                     <select id="mySelect" class="form-select" required>
-                     
+                      <div id="data-display2">Selecciona Una Opcion...</div>
                     </select>
                   </div>
                   <div class="col-md-6">
                     <label for="mySelect" class="form-label">Tipo de Amputaciones</label>
                     <select id="mySelect" class="form-select" required>
-                     
+                      <div id="data-display3">Selecciona Una Opcion...</div>
                     </select>
                   </div>
                 </div>
@@ -687,7 +689,7 @@
                   <div class="col-md-6 mb-3">
                     <label for="mySelect" class="form-label">Estado Del Animal</label>
                     <select id="mySelect" class="form-select" required>
-                      
+                      <div id="data-display4">Selecciona Una Opcion...</div>
                     </select>
                   </div>
                   <div class="col-md-6">
@@ -713,10 +715,12 @@
                 
                 <div class="row mb-5">
                   <div class="col-md-6 mb-3">
-                    <label for="mySelect" class="form-label">Status</label>
-                    <select id="mySelect" class="form-select" required>
-
-                    </select>
+                    <label for="status" class="form-label">Status</label>
+                                        <select id="status" class="form-select" required>
+                                            <option value="" disabled selected>Selecciona Una Opcion...</option>
+                                            <option value="1">Activo</option>
+                                            <option value="0">Inactivo</option>
+                                        </select>
                   </div>
                   <div class="col-md-6">
                     <label for="fechaModificacion" class="form-label">Fecha de Modificacion</label>
@@ -773,7 +777,7 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
-
+    <script src="../../src/js/api/animal/animal.js"></script>
 </body>
 
 </html>

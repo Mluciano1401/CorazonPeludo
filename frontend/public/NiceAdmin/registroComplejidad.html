@@ -607,12 +607,12 @@
               <h5 class="card-title">Registro de Complejidad de Tareas</h5>
 
               <!-- General Form Elements -->
-              <form class="needs-validation" novalidate>
+              <form class="needs-validation" id="form" novalidate>
 
                 <div class="row mb-3">
                   <div class="col-md-6 mb-3">
-                    <label for="idAnimales" class="form-label">ID Animales</label>
-                    <input type="text" class="form-control" id="idAnimales" disabled>
+                    <label for="idComplejidad" class="form-label">ID Complejidad</label>
+                    <input type="text" class="form-control" id="idComplejidad" disabled>
                   </div>
                   
                   <div class="col-md-6">
@@ -626,7 +626,9 @@
                   <div class="col-md-6 mb-3">
                     <label for="mySelect" class="form-label">Status</label>
                     <select id="mySelect" class="form-select" required>
-
+                      <option value="" disabled selected>Selecciona Una Opcion...</option>
+                      <option value="1">Activo</option>
+                      <option value="0">Inactivo</option>
                     </select>
                   </div>
                   <div class="col-md-6">
@@ -683,7 +685,7 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
-
+  <script src="../../src/js/api/miscelaneo/complejidad.js"></script>
 </body>
 
 </html>

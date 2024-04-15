@@ -1,4 +1,4 @@
-import { Column, Entity, JoinColumn, OneToOne, PrimaryColumn} from "typeorm";
+import { Column, Entity, JoinColumn, ManyToOne, PrimaryColumn} from "typeorm";
 import { HistorialMedico } from "./historialMedico.model";
 import { Vacuna } from "../salud/vacuna.model";
 import { Persona } from "../tercero/persona.model";
@@ -7,18 +7,18 @@ import { Persona } from "../tercero/persona.model";
 export class HistorialVacunas{
     @PrimaryColumn()
     id: number;
-    @OneToOne(() => HistorialMedico)
+    @ManyToOne(() => HistorialMedico)
     @JoinColumn()
     historial:  HistorialMedico;
 
-    @OneToOne(() => Vacuna)
+    @ManyToOne(() => Vacuna)
     @JoinColumn()
     vacuna:  Vacuna;
 
     @Column()
     fecha: Date;
 
-    @OneToOne(() => Persona)
+    @ManyToOne(() => Persona)
     @JoinColumn()
     persona:  Persona;
 

@@ -1,4 +1,4 @@
-import { Column, Entity, JoinColumn, OneToOne, PrimaryColumn } from "typeorm";
+import { Column, Entity, JoinColumn, ManyToOne, PrimaryColumn } from "typeorm";
 import { TipoRecurso } from "../miscelaneo/tipoRecurso.model";
 import { Producto } from "../almacen/producto.model";
 import { AsignacionTarea } from "./asignacionTareas.model";
@@ -8,22 +8,22 @@ import { Estado } from "../miscelaneo/estado.model";
 export class AsignacionRecursos{
     @PrimaryColumn()
      id: number;
-      @OneToOne(() => AsignacionTarea)
+      @ManyToOne(() => AsignacionTarea)
     @JoinColumn()
     tarea: AsignacionTarea;
 
-      @OneToOne(() => Producto)
+      @ManyToOne(() => Producto)
     @JoinColumn()
     producto: Producto;
 
-    @OneToOne(()=> Estado)
+    @ManyToOne(()=> Estado)
     @JoinColumn()
     estado: Estado;
 
     @Column({ nullable: false })
     fecha: Date;
 
-    @OneToOne(() => TipoRecurso)
+    @ManyToOne(() => TipoRecurso)
     @JoinColumn()
     tipoRecurso: TipoRecurso;
 

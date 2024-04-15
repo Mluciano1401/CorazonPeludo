@@ -1,4 +1,4 @@
-import { Column, Entity, JoinColumn, OneToOne, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, JoinColumn, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
 import { Persona } from "../tercero/persona.model";
 
 @Entity( )
@@ -6,7 +6,7 @@ export class Proveedor {
     @PrimaryGeneratedColumn()
     proveedorId: number;
 
-    @OneToOne(() => Persona)
+    @ManyToOne(() => Persona)
     @JoinColumn()
     persona: Persona;
 

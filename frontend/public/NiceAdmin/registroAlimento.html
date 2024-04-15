@@ -606,7 +606,7 @@
               <h5 class="card-title">Ingreso De Alimentos</h5>
 
               <!-- General Form Elements -->
-              <form class="needs-validation" novalidate>
+              <form class="needs-validation" id="form" novalidate>
 
                 <div class="row mb-3">
                   <div class="col-md-6 mb-3">
@@ -623,7 +623,7 @@
                   </div>
                   <div class="col-md-6">
                     <label for="registro-alimentos-lote" class="form-label">Lote</label>
-                    <input type="text" class="form-control" id="registro-alimentos-Nombre" required>
+                    <input type="text" class="form-control" id="registro-alimentos-lote" required>
                   </div>
                 </div>
 
@@ -631,7 +631,9 @@
                 <div class="row mb-3">
                   <div class="col-md-6 mb-3">
                     <label for="registro-alimentos-marca" class="form-label">Marca</label>
-                    <input type="text" class="form-control" id="registro-alimentos-marca" required>
+                    <select id="marca" class="form-select" required>
+                      <div id="data-display1">Selecciona Una Opcion...</div>
+                    </select>
                   </div>
 
                   <div class="col-md-6">
@@ -642,9 +644,9 @@
 
                 <div class="row mb-3">
                   <div class="col-md-6 mb-3">
-                    <label for="mySelect" class="form-label">Tipo De Alimentos</label>
-                    <select id="mySelect" class="form-select" required>
-                      
+                    <label for="tipoAlimento" class="form-label">Tipo De Alimentos</label>
+                    <select id="tipoAlimento" class="form-select" required>
+                      <div id="data-display">Selecciona Una Opcion...</div>
                     </select>
                   </div>
 
@@ -657,9 +659,13 @@
 
                 <div class="row mb-3">
                   <div class="col-md-6 mb-3">
-                    <label for="mySelect" class="form-label">Unidad De Medida</label>
-                    <select id="mySelect" class="form-select" required>
-                      
+                    <label for="unidadMedida" class="form-label">Unidad De Medida</label>
+                    <select id="unidadMedida" class="form-select" required>
+                      <option value="" disabled selected>Selecciona Una Opcion...</option>
+                        <option value="lb">libras</option>
+                        <option value="gr">gramos</option>
+                        <option value="onz">onzas</option>
+                        <option value="kg">kilogramos</option>
                     </select>
                   </div>
 
@@ -672,9 +678,11 @@
 
                 <div class="row mb-5">
                   <div class="col-md-6 mb-3">
-                    <label for="mySelect" class="form-label">Status</label>
-                    <select id="mySelect" class="form-select" required>
-
+                    <label for="status" class="form-label">Status</label>
+                      <select id="status" class="form-select" required>
+                        <option value="" disabled selected>Selecciona Una Opcion...</option>
+                        <option value="1">Activo</option>
+                        <option value="0">Inactivo</option>
                     </select>
                   </div>
                   <div class="col-md-6">
@@ -734,7 +742,7 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
-
+    <script src="../../src/js/api/almacen/alimento.js"></script>
 </body>
 
 </html>

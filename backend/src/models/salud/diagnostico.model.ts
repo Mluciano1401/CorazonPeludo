@@ -1,16 +1,16 @@
 import { HistorialMedico } from '../animal/historialMedico.model';
 import { Enfermedad } from './enfermedad.model';
-import { Column, Entity, JoinColumn, OneToOne, PrimaryColumn} from "typeorm";
+import { Column, Entity, JoinColumn, ManyToOne, PrimaryColumn} from "typeorm";
 
 @Entity( )
 export class Diagnostico{
     @PrimaryColumn()
     id: number;
-    @OneToOne(() => HistorialMedico)
+    @ManyToOne(() => HistorialMedico)
     @JoinColumn()
     historial:  HistorialMedico;
 
-    @OneToOne(() => Enfermedad)
+    @ManyToOne(() => Enfermedad)
     @JoinColumn()
     enfermedad: Enfermedad;
 

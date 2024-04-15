@@ -8,7 +8,7 @@ export class TipoUsuario {
     @Column({ nullable: false })
     descripcion: string;
 
-    @Column({ nullable: false})
+    @Column({ nullable: false, default: new Date().getDate()})
     fechaModificacion: Date;
 
     @Column({ nullable: false, default: true })

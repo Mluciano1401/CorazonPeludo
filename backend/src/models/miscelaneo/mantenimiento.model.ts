@@ -1,4 +1,5 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { TipoMantenimiento } from 'src/models/miscelaneo/tipoMantenimiento.model';
+import { Column, Entity, JoinColumn, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
 
 
 
@@ -9,6 +10,10 @@ export class Mantenimiento {
 
     @Column({ nullable: false })
     descripcion: string;
+
+    @ManyToOne(()=>TipoMantenimiento)
+    @JoinColumn()
+    tipoMantenimiento: TipoMantenimiento;
 
   @Column({ nullable: false})
     fechaModificacion: Date;

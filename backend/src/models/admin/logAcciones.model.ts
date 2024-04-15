@@ -1,4 +1,4 @@
-import { Column, Entity, JoinColumn, OneToOne, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, JoinColumn, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
 import { Usuario } from "./usuario.model";
 import { Sucursal } from "../tercero/surcusal.model";
 
@@ -7,11 +7,11 @@ export class LogAcciones {
     @PrimaryGeneratedColumn()
     id: number;
 
-    @OneToOne(() => Usuario)
+    @ManyToOne(() => Usuario)
     @JoinColumn()
     usuario: Usuario;
 
-    @OneToOne(() => Sucursal)
+    @ManyToOne(() => Sucursal)
     @JoinColumn()
     surcusal: Sucursal;
 

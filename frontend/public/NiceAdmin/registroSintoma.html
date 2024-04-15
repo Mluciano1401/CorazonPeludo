@@ -606,7 +606,7 @@
               <h5 class="card-title">Registro de Síntomas</h5>
 
               <!-- General Form Elements -->
-              <form class="needs-validation" novalidate>
+              <form class="needs-validation" id="form" novalidate>
                 <div class="row mb-3">
                   <div class="col-md-6 mb-3">
                     <label for="idSintoma" class="form-label">ID Sintoma</label>
@@ -621,7 +621,9 @@
                   </div>
                   <div class="col-md-6">
                     <label for="tipoSintoma" class="form-label">Tipo Síntomas</label>
-                    <input type="text" class="form-control" id="tipoSintoma" required>
+                    <select id="tipoSintoma" class="form-select" required>
+                      <div id="data-display"></div>
+                    </select>
                   </div>
                 </div>
 
@@ -686,7 +688,7 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
-
+  <script src="../../src/js/api/salud/Sintomas.js"></script>
 </body>
 
 </html>

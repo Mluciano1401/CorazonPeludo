@@ -1,4 +1,4 @@
-import { Column, Entity, JoinColumn, OneToOne, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, JoinColumn, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
 import { Medicamento } from "./medicamento.model";
 
 @Entity( )
@@ -6,7 +6,7 @@ export class Vacuna{
     @PrimaryGeneratedColumn()
     vacunaId: number;
 
-    @OneToOne(() => Medicamento)
+    @ManyToOne(() => Medicamento)
     @JoinColumn()
     medicamento: Medicamento;
 

@@ -606,7 +606,7 @@
               <h5 class="card-title">Ingreso a Almacen</h5>
 
               <!-- General Form Elements -->
-              <form class="needs-validation" novalidate>
+              <form class="needs-validation" id="form" novalidate>
 
                 <div class="row mb-3">
                   <div class="col-md-6 mb-3">
@@ -616,7 +616,9 @@
 
                   <div class="col-md-6">
                     <label for="registro-almacen-sucursal" class="form-label">Sucursal</label>
-                    <input type="text" class="form-control" id="registro-almacen-sucursal" required>
+                    <select id="registro-almacen-sucursal" class="form-select" required>
+                      <div id="data-display1">Selecciona Una Opcion...</div>
+                    </select>
                   </div>
                 </div>
 
@@ -624,7 +626,13 @@
                 <div class="row mb-3">
                   <div class="col-md-6 mb-3">
                     <label for="registro-almacen-tipoAlmacen" class="form-label">Tipo De Almacen</label>
-                    <input type="text" class="form-control" id="registro-almacen-tipoAlmacen" required>
+                    <select id="registro-almacen-tipoAlmacen" class="form-select" required>
+                      <option value="" disabled selected>Selecciona Una Opcion...</option>
+                      <option value="Alimento">Alimento</option>
+                      <option value="Medicina">Medicina</option>
+                      <option value="Productos de limpieza">Productos de limpieza</option>
+                      <option value="Combustible">Combustible</option>
+                    </select>
                   </div>
                   <div class="col-md-6 mb-3">
                     <label for="registro-almacen-capacidad" class="form-label">Capacidad</label>
@@ -634,9 +642,11 @@
 
                 <div class="row mb-5">
                   <div class="col-md-6 mb-3">
-                    <label for="mySelect" class="form-label">Status</label>
-                    <select id="mySelect" class="form-select" required>
-
+                    <label for="status" class="form-label">Status</label>
+                    <select id="status" class="form-select" required>
+                      <option value="" disabled selected>Selecciona Una Opcion...</option>
+                      <option value="1">Activo</option>
+                      <option value="0">Inactivo</option>
                     </select>
                   </div>
                   <div class="col-md-6">
@@ -698,7 +708,7 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
-
+    <script src="../../src/js/api/almacen/almacen.js"></script>
 </body>
 
 </html>

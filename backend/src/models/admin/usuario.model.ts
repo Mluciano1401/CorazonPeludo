@@ -1,4 +1,4 @@
-import { Column, Entity, JoinColumn, OneToOne, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, JoinColumn, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
 import { TipoUsuario } from "./tipoUsuario.model";
 import { Sucursal } from "../tercero/surcusal.model";
 
@@ -19,11 +19,11 @@ export class Usuario {
     @Column()
     foto:string;
 
-    @OneToOne(() => TipoUsuario)
+    @ManyToOne(() => TipoUsuario)
     @JoinColumn()
     tipoUsuario: TipoUsuario;
 
-    @OneToOne(()=> Sucursal)
+    @ManyToOne(()=> Sucursal)
     @JoinColumn()
     surcusal: Sucursal;
 

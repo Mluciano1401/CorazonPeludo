@@ -16,7 +16,7 @@ export class ProcesoAdopcion{
     @JoinColumn()
     animal: Animal;
 
-    @OneToOne(()=> Estado)
+    @ManyToOne(()=> Estado)
     @JoinColumn()
     estado: Estado;
 

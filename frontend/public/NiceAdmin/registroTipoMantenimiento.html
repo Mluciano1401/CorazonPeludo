@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Regitro de direccion</title>
+  <title>Regitro de Tipo Mantenimiento</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -31,6 +31,13 @@
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
 
+  <!-- =======================================================
+  * Template Name: NiceAdmin
+  * Template URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
+  * Updated: Mar 17 2024 with Bootstrap v5.3.3
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
 </head>
 
 <body>
@@ -587,12 +594,12 @@
   <main id="main" class="main">
 
     <div class="pagetitle">
-      <h1>Registro de Dirección</h1>
+      <h1>Registro de tipo Mantenimiento</h1>
       <nav>
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="index.html">Home</a></li>
           <li class="breadcrumb-item">Formularios</li>
-          <li class="breadcrumb-item active">Registro de dirección</li>
+          <li class="breadcrumb-item active">Registro de tipo Mantenimiento</li>
         </ol>
       </nav>
     </div><!-- End Page Title -->
@@ -603,55 +610,32 @@
 
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">Ingreso de Dirección</h5>
+              <h5 class="card-title">Ingreso De Tipo Mantenimiento</h5>
 
               <!-- General Form Elements -->
-              <form class="needs-validation" novalidate>
+              <form class="needs-validation" id="form" novalidate>
 
                 <div class="row mb-3">
-                  <div class="col-md-6 mb-3">
-                    <label for="idDireccion" class="form-label">ID Direccion</label>
-                    <input type="text" class="form-control" id="idDireccion" disabled>
+                  <div class="col-md-6">
+                    <label for="descripcion" class="form-label">Descripcion</label>
+                    <input type="text" class="form-control" id="descripcion" required>
                   </div>
                 </div>
 
-
-                <div class="row mb-3">
+                <div class="row mb-4">
                   <div class="col-md-6 mb-3">
-                    <label for="direccion" class="form-label">Direccion</label>
-                    <input type="text" class="form-control" id="registro-direccion-direccion" required>
-                  </div>                  
-                  <div class="col-md-6">
-                    <label for="registro-direccion-ciudad" class="form-label">Ciudad</label>
-                    <input type="text" class="form-control" id="registro-direccion-ciudad" required>
-                  </div>                                    
-                  <div class="col-md-6">
-                    <label for="registro-direccion-pais" class="form-label">Pais</label>
-                    <input type="text" class="form-control" id="registro-direccion-pais" required>
-                  </div>
-                  <div class="col-md-6">
-                    <label for="registro-direccion-codigoPostal" class="form-label">Codigo Postal</label>
-                    <input type="number" class="form-control" id="registro-direccion-codigoPostal" required>
-                  </div>
-                </div>
-
-
-                
-                <div class="row mb-5">
-                  <div class="col-md-6 mb-3">
-                    <label for="mySelect" class="form-label">Status</label>
-                    <select id="mySelect" class="form-select" required>
-
+                    <label for="status" class="form-label">Status</label> 
+                    <select id="status" class="form-select" required>
+                      <option value="" disabled selected>Selecciona Una Opcion...</option>
+                      <option value="1">Activo</option>
+                      <option value="0">Inactivo</option>
                     </select>
                   </div>
                   <div class="col-md-6">
-                    <label for="registro-direccion-fechaModificacion" class="form-label">Fecha de Modificacion</label>
-                    <input type="date" id="registro-direccion-fechaModificacion" class="form-control" disabled>
+                    <label for="fechaModificacion" class="form-label">Fecha De Modificacion</label>
+                    <input type="fechaModificacion" class="form-control" disabled>
                   </div>
                 </div>
-
-
-
                 <div class="text-center mb-3">
                   <button type="submit" class="btn btn-primary buttonSubmit">Enviar</button>
                   <button type="reset" class="btn btn-outline-danger">Limpiar</button>
@@ -700,7 +684,7 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
-
+  <script src="../../src/js/api/salud/tipoMantenimiento.js"></script>
 </body>
 
 </html>

@@ -70,14 +70,4 @@ export class TipoAlimentoController {
     });
   }
   
-  @Get('/select')
-  select(){
-    return this._TipoAlimentoService.findAll().then(res=>{
-      const r = [];
-      res.forEach(o=> r.push({option: o.descripcion, value: o.tipoAlimentoId}));
-      return {success: true, data: r}
-    }).catch(error=>{
-      throw new HttpException(error, HttpStatus.INTERNAL_SERVER_ERROR)
-    });
-  }
 }

@@ -1,4 +1,4 @@
-import { Column, Entity, JoinColumn, ManyToOne, OneToOne, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, JoinColumn, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
 import { Especie } from "./especie.model";
 import { RasgosFisicos } from "./rasgosFisicos.model";
 
@@ -13,7 +13,7 @@ export class Animal {
     @Column()
     identificador: number;
 
-    @OneToOne(()=> Especie)
+    @ManyToOne(()=> Especie)
     @JoinColumn()
     especie: Especie;
 
@@ -32,7 +32,7 @@ export class Animal {
     @Column()
     sexo: string;
 
-    @OneToOne(()=> RasgosFisicos)
+    @ManyToOne(()=> RasgosFisicos)
     @JoinColumn()
     rasgosFisicos: RasgosFisicos;
 

@@ -1,4 +1,4 @@
-import { Column, Entity, JoinColumn, OneToOne, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, JoinColumn, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
 import { TipoTarea } from "./tipoTarea.model";
 import { Complejidad } from "./complejidad.model";
 
@@ -10,11 +10,11 @@ export class Tarea{
     @Column({ nullable: false })
     descripcion: string;
 
-    @OneToOne(()=> TipoTarea)
+    @ManyToOne(()=> TipoTarea)
     @JoinColumn()
     tipoTarea: TipoTarea;
 
-    @OneToOne(()=> Complejidad)
+    @ManyToOne(()=> Complejidad)
     @JoinColumn()
     complejidad: Complejidad;
 

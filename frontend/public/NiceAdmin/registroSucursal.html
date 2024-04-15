@@ -606,7 +606,7 @@
               <h5 class="card-title">Ingreso de Sucursal</h5>
 
               <!-- General Form Elements -->
-              <form class="needs-validation" novalidate>
+              <form class="needs-validation" id="form" novalidate>
 
                 <div class="row mb-3">
                   <div class="col-md-6 mb-3">
@@ -622,7 +622,9 @@
                   </div>
                   <div class="col-md-6">
                     <label for="compania" class="form-label">Compania</label>
-                    <input type="text" class="form-control" id="compania" required>
+                    <select id="compania" class="form-select" required>
+                      <div id="data-display">Selecciona Una Opcion...</div>
+                    </select>
                   </div>
                 </div>
 
@@ -630,14 +632,14 @@
                 <div class="row mb-3">
                   <div class="col-md-6">
                     <label for="rnc" class="form-label">RNC</label>
-                    <input type="text" class="form-control" id="rnc" required>
+                    <input type="text" class="form-control" id="rnc" disabled>
                   </div>
                 </div>
 
                 <div class="row mb-3">
                   <div class="col-md-6 mb-3">
                     <label for="tipoEmpresa" class="form-label">Tipo empresa</label>
-                    <input type="text" class="form-control" id="tipoEmpresa" required>
+                    <input type="text" class="form-control" id="tipoEmpresa" disabled>
                   </div>
                 </div>
 
@@ -702,7 +704,7 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
-
+    <script src="../../src/js/api/tercero/sucursal.js"></script>
 </body>
 
 </html>

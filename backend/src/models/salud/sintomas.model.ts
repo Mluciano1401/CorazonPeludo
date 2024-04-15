@@ -1,4 +1,4 @@
-import { Column, Entity, JoinColumn, OneToOne, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, JoinColumn, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
 import { TipoSintoma } from "./tipoSintomas.model";
 
 
@@ -11,7 +11,7 @@ export class Sintoma {
     @Column({ nullable: false })
     descripcion: string;
 
-    @OneToOne(() => TipoSintoma)
+    @ManyToOne(() => TipoSintoma)
     @JoinColumn()
     tipoSintoma: TipoSintoma;
 

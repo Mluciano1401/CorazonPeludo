@@ -1,4 +1,4 @@
-import { Column, Entity, JoinColumn, OneToOne, PrimaryColumn } from "typeorm";
+import { Column, Entity, JoinColumn, ManyToOne, PrimaryColumn } from "typeorm";
 import { Tratamiento } from "./tratamiento.model";
 import { Persona } from "../tercero/persona.model";
 import { Animal } from "../animal/animal.model";
@@ -7,15 +7,15 @@ import { Animal } from "../animal/animal.model";
 export class Cirugia{
     @PrimaryColumn()
     id: number;
-    @OneToOne(() => Tratamiento)
+    @ManyToOne(() => Tratamiento)
     @JoinColumn()
     tratamiento: Tratamiento;
 
-    @OneToOne(() => Persona)
+    @ManyToOne(() => Persona)
     @JoinColumn()
     persona: Persona;
 
-    @OneToOne(() => Animal)
+    @ManyToOne(() => Animal)
     @JoinColumn()
     animal: Animal;
 

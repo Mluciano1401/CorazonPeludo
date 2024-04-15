@@ -613,7 +613,7 @@
               <h5 class="card-title">Registro de Tareas</h5>
 
               <!-- General Form Elements -->
-              <form class="needs-validation" novalidate>
+              <form class="needs-validation" id="form" novalidate>
 
                 <div class="row mb-3">
                   <div class="col-md-6">
@@ -622,11 +622,15 @@
                   </div>                  
                   <div class="col-md-6">
                     <label for="tipoTarea" class="form-label">Tipo Tarea</label>
-                    <input type="text" class="form-control" id="tipoTarea" required>
+                    <select id="tipoTarea" class="form-select" required>
+                      <div id="data-display">Selecciona Una Opcion...</div>
+                    </select>
                   </div>  
                   <div class="col-md-6">
                     <label for="complejidad" class="form-label">Complejidad</label>
-                    <input type="text" class="form-control" id="complejidad" required>
+                    <select id="complejidad" class="form-select" required>
+                      <div id="data-display1">Selecciona Una Opcion...</div>
+                    </select>
                   </div>
                 </div>
 
@@ -635,8 +639,8 @@
                     <label for="status" class="form-label">Status</label> 
                     <select id="status" class="form-select" required>
                       <option value="" disabled selected>Selecciona Una Opcion...</option>
-                      <option value="activo">Activo</option>
-                      <option value="inactivo">Inactivo</option>
+                      <option value="1">Activo</option>
+                      <option value="0">Inactivo</option>
                     </select>
                   </div>
                   <div class="col-md-6">
@@ -692,7 +696,7 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
-
+    <script src="../../src/js/api/miscelaneo/tarea.js"></script>
 </body>
 
 </html>

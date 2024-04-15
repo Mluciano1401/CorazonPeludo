@@ -10,7 +10,7 @@ export class Persona {
     @PrimaryGeneratedColumn()
     personaId: number;
 
-    @OneToOne(()=> TipoPersona)
+    @ManyToOne(()=> TipoPersona)
     @JoinColumn()
     tipoPersona: TipoPersona;
 
@@ -31,11 +31,16 @@ export class Persona {
 
     @Column()
     cedula:string;
-    
+
+    @Column()
+    pasaporte:string;
+
+    @Column()
+    fechaNacimiento:Date;  
     @Column()
     licenciaConducir:string;
 
-    @OneToOne(()=> Direccion)
+    @ManyToOne(()=> Direccion)
     @JoinColumn()
     direccion: Direccion;
 
@@ -45,15 +50,15 @@ export class Persona {
     @Column()
     genero:string;
     
-    @OneToOne(()=> EstadoCivil)
+    @ManyToOne(()=> EstadoCivil)
     @JoinColumn()
     estadoCivil: EstadoCivil;
 
-    @OneToOne(()=> TipoEmpresa)
+    @ManyToOne(()=> TipoEmpresa)
     @JoinColumn()
     tipoEmpresa: TipoEmpresa;
 
-  @Column({ nullable: false})
+    @Column({ nullable: false})
     fechaModificacion: Date;
     
   @Column({ nullable: false, default: true })

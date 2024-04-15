@@ -606,7 +606,7 @@
                             <h5 class="card-title">Ingreso De Usuarios</h5>
 
                             <!-- General Form Elements -->
-                            <form class="needs-validation" novalidate>
+                            <form class="needs-validation" id="form" novalidate>
 
                                 <div class="row mb-3">
                                     <div class="col-md-6">
@@ -626,7 +626,7 @@
                                     <div class="col-md-6">
                                       <label for="tipoUser" class="form-label">Tipo de usuario</label>
                                       <select id="tipoUser" class="form-select" required>
-                                        <option value="" disabled selected>Selecciona Una Opcion...</option>
+                                        <div id="data-display">Selecciona Una Opcion...</div>
                                       </select>
                                     </div>
                                   </div>
@@ -660,8 +660,8 @@
                                         <label for="status" class="form-label">Status</label>
                                         <select id="status" class="form-select" required>
                                             <option value="" disabled selected>Selecciona Una Opcion...</option>
-                                            <option value="activo">Activo</option>
-                                            <option value="inactivo">Inactivo</option>
+                                            <option value="1">Activo</option>
+                                            <option value="0">Inactivo</option>
                                         </select>
                                     </div>
                                     <div class="col-md-6">
@@ -720,7 +720,7 @@
 
     <!-- Template Main JS File -->
     <script src="assets/js/main.js"></script>
-
+    <script src="../../src/js/api/admin/usuario.js"></script>
 </body>
 
 </html>

@@ -1,4 +1,4 @@
-import { Column, Entity, JoinColumn, OneToOne, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, JoinColumn, ManyToOne, OneToOne, PrimaryGeneratedColumn } from "typeorm";
 import { Persona } from "../tercero/persona.model";
 import { ActividadEconomica } from "./actividadEconomica.model";
 
@@ -17,7 +17,7 @@ export class Solicitante {
     @Column({ nullable: false, default: 0 })
     ingresosMensuales: number;
 
-    @OneToOne(()=> ActividadEconomica)
+    @ManyToOne(()=> ActividadEconomica)
     @JoinColumn()
     actividadEconomica: ActividadEconomica;
 

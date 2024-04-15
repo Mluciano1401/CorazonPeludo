@@ -1,4 +1,4 @@
-import { Column, Entity, JoinColumn, OneToOne, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, JoinColumn, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
 import { Sintoma } from "./sintomas.model";
 
 @Entity( )
@@ -6,7 +6,7 @@ export class EfectosSecundarios{
     @PrimaryGeneratedColumn()
     efectosSecundariosId: number;
 
-    @OneToOne(() => Sintoma)
+    @ManyToOne(() => Sintoma)
     @JoinColumn()
     sintoma: Sintoma;
 

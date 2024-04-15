@@ -1,4 +1,4 @@
-import { Column, Entity, JoinColumn, OneToOne, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, JoinColumn, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
 import { TipoPiel } from "./tipoPiel.model";
 
 @Entity()
@@ -6,7 +6,7 @@ export class RasgosFisicos{
     @PrimaryGeneratedColumn()
     rasgosFísicosId: number;
 
-    @OneToOne(()=> TipoPiel)
+    @ManyToOne(()=> TipoPiel)
     @JoinColumn()
     tipoPiel: TipoPiel;
 

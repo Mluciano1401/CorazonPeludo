@@ -1,4 +1,4 @@
-import { Column, Entity, JoinColumn, OneToOne, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, JoinColumn, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
 import { TipoTratamiento } from "./tipoTratamiento.model";
 
 @Entity( )
@@ -9,7 +9,7 @@ export class Tratamiento{
     @Column({ nullable: false })
     descripcion: string;
 
-    @OneToOne(() => TipoTratamiento)
+    @ManyToOne(() => TipoTratamiento)
     @JoinColumn()
     tipoTratamiento: TipoTratamiento;
 

@@ -1,4 +1,4 @@
-import { Column, Entity, JoinColumn, OneToOne, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, JoinColumn, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
 import { SolicitudR } from "./solicitudRescate.model";
 import { Estado } from "../miscelaneo/estado.model";
 
@@ -11,11 +11,11 @@ export class Mision{
     @Column()
     fechaInicio: Date;
 
-    @OneToOne(()=> SolicitudR)
+    @ManyToOne(()=> SolicitudR)
     @JoinColumn()
     solicitud: SolicitudR;
 
-    @OneToOne(()=> Estado)
+    @ManyToOne(()=> Estado)
     @JoinColumn()
     estado: Estado;
 

@@ -1,4 +1,4 @@
-import { Column, Entity, JoinColumn, OneToOne, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, JoinColumn, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
 import { Persona } from "../tercero/persona.model";
 import { Estado } from "./estado.model";
 
@@ -7,7 +7,7 @@ export class Cita{
     @PrimaryGeneratedColumn()
     citaId: number;
 
-    @OneToOne(()=>Persona)
+    @ManyToOne(()=>Persona)
     @JoinColumn()
     persona: Persona;
 
@@ -17,7 +17,7 @@ export class Cita{
     @Column()
     hora: Date;
     
-    @OneToOne(()=> Estado)
+    @ManyToOne(()=> Estado)
     @JoinColumn()
     estado: Estado
 

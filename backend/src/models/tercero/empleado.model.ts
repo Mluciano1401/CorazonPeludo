@@ -12,11 +12,11 @@ export class Empleado {
     @JoinColumn()
     persona: Persona;
 
-    @OneToOne(()=> Sucursal)
+    @ManyToOne(()=> Sucursal)
     @JoinColumn()
     surcusal: Sucursal;
 
-    @OneToOne(()=> TipoEmpleado)
+    @ManyToOne(()=> TipoEmpleado)
     @JoinColumn()
     tipoEmpleado: TipoEmpleado;
     @Column()

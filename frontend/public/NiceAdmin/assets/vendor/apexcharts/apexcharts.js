@@ -32740,7 +32740,7 @@
 
       };
 
-      ResizeHandler.prototype._extractPosition = function(event) {
+      ResizeHandler.prototype._extractPosition = async (event) =>{
           // Extract a position from a mouse/touch event.
           // Returns { x: .., y: .. }
           return {

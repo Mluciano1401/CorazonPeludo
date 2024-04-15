@@ -1,4 +1,4 @@
-import { Column, Entity, JoinColumn, OneToOne, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, JoinColumn, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
 import { Sucursal } from "../tercero/surcusal.model";
 import { Persona } from "../tercero/persona.model";
 import { Estado } from "../miscelaneo/estado.model";
@@ -13,38 +13,38 @@ export class SolicitudR {
     @PrimaryGeneratedColumn()
     SolicitudId: number;
 
-    @OneToOne(()=>Animal)
+    @ManyToOne(()=>Animal)
     @JoinColumn()
     animal:Animal;
 
-    @OneToOne(()=>Persona)
+    @ManyToOne(()=>Persona)
     @JoinColumn()
     remitente: Persona;
 
-    @OneToOne(()=>EstadoLugar)
+    @ManyToOne(()=>EstadoLugar)
     @JoinColumn()
     estadoLugar: EstadoLugar;
 
-    @OneToOne(()=> NivelUrgencia)
+    @ManyToOne(()=> NivelUrgencia)
     @JoinColumn()
     nivelUrgencia: NivelUrgencia;
 
-    @OneToOne(()=>EstadoEmergencia)
+    @ManyToOne(()=>EstadoEmergencia)
     @JoinColumn()
     estadoEmergencia: EstadoEmergencia;
 
-    @OneToOne(()=> Estado)
+    @ManyToOne(()=> Estado)
     @JoinColumn()
     estado: Estado;
 
-    @OneToOne(()=> Direccion)
+    @ManyToOne(()=> Direccion)
     @JoinColumn()
     ubicacion: Direccion;
 
     @Column()
     fechaCreacion: Date;
 
-    @OneToOne(()=> Sucursal)
+    @ManyToOne(()=> Sucursal)
     @JoinColumn()
     surcusal: Sucursal;
 

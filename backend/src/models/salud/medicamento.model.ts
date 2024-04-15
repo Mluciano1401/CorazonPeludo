@@ -1,5 +1,5 @@
 import { TipoMedicamento } from './tipoMedicamento.model';
-import { Column, Entity, JoinColumn, OneToOne, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, JoinColumn, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
 import { Producto } from "../almacen/producto.model";
 import { ViaAdministracion } from './viaAdministracion.model';
 
@@ -13,18 +13,18 @@ export class Medicamento {
     @Column({ nullable: false })
     descripcion: string;
 
-    @OneToOne(() => Producto)
+    @ManyToOne(() => Producto)
     @JoinColumn()
     producto: Producto;
 
-    @OneToOne(() => TipoMedicamento)
+    @ManyToOne(() => TipoMedicamento)
     @JoinColumn()
     tipoMedicamento: TipoMedicamento;
 
     @Column()
     laboratorio: string;
 
-    @OneToOne(() => ViaAdministracion)
+    @ManyToOne(() => ViaAdministracion)
     @JoinColumn()
     viaAdministracion: ViaAdministracion;
 

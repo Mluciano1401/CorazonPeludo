@@ -11,7 +11,7 @@ export class PostAdopcion{
     @JoinColumn()
     adopcion: ProcesoAdopcion;
 
-    @OneToOne(()=> Estado)
+    @ManyToOne(()=> Estado)
     @JoinColumn()
     estado: Estado;
 

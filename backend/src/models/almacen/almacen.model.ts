@@ -1,4 +1,4 @@
-import { Column, Entity, JoinColumn, OneToOne, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, JoinColumn, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
 import { Sucursal } from "../tercero/surcusal.model";
 
 @Entity( )
@@ -9,7 +9,7 @@ export class Almacen{
     @Column({ nullable: false, default:0 })
     capacidad: number;
 
-    @OneToOne(()=> Sucursal)
+    @ManyToOne(()=> Sucursal)
     @JoinColumn()
     surcusal: Sucursal;
 

@@ -1,4 +1,4 @@
-import { Column, Entity, JoinColumn, OneToOne, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, JoinColumn, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
 import { TipoAlimento } from "./tipoAlimento.model";
 
 @Entity( )
@@ -15,7 +15,7 @@ export class Alimento{
     @Column({ nullable: false })
     unidadMedida: string;
 
-    @OneToOne(()=> TipoAlimento)
+    @ManyToOne(()=> TipoAlimento)
     @JoinColumn()
     tipoAlimento: TipoAlimento;
 

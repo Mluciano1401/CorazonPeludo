@@ -1,5 +1,5 @@
 import { TipoDonacion } from './tipoDonacion.model';
-import { Column, Entity, JoinColumn, OneToOne, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, JoinColumn, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
 import { Persona } from "./persona.model";
 
 
@@ -9,11 +9,11 @@ export class Donacion {
     @PrimaryGeneratedColumn()
     donacionId: number;
 
-    @OneToOne(() => Persona)
+    @ManyToOne(() => Persona)
     @JoinColumn()
     donador: Persona;
 
-    @OneToOne(() => TipoDonacion)
+    @ManyToOne(() => TipoDonacion)
     @JoinColumn()
     tipoDonacion: TipoDonacion;
 

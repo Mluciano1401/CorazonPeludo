@@ -605,18 +605,18 @@
             <div class="card-body">
               <h5 class="card-title">Ingreso De Empleados</h5>
 
-              <form class="needs-validation" novalidate>
+              <form class="needs-validation" id="form" novalidate>
 
                 <div class="row mb-3">
                   <div class="col-md-6 mb-3">
                     <label for="idEmpleado" class="form-label">ID Empleado</label>
-                    <input type="text" class="form-control" id=" \idEmpleado" disabled>
+                    <input type="text" class="form-control" id="idEmpleado" disabled>
                   </div>
 
                   <div class="col-md-6">
-                    <label for="mySelect" class="form-label">Tipo de Empleado</label>
-                    <select id="mySelect" class="form-select" required>
-
+                    <label for="tipoEmpleado" class="form-label">Tipo de Empleado</label>
+                    <select id="tipoEmpleado" class="form-select" required>
+                      <div id="data-display">Selecciona Una Opcion...</div>
                     </select>
                   </div>
                 </div>
@@ -647,14 +647,26 @@
 
                 <div class="row mb-4">
                   <div class="col-md-6 mb-3">
-                    <label for="cedula" class="form-label">Cedula o Pasaporte</label>
+                    <label for="cedula" class="form-label">Cedula</label>
                     <input type="text" class="form-control" id="cedula">
+                  </div>
+                  <div class="col-md-6 mb-3">
+                    <label for="selectpasaporte" class="form-label">¿Tiene Pasaporte?</label>
+                    <select id="selectpasaporte" class="form-select" required>
+                      <option value="" disabled selected>Selecciona Una Opcion...</option>
+                      <option value="1">Si</option>
+                      <option value="0">No</option>
+                    </select>
+                  </div>
+                  <div class="col-md-6 mb-3">
+                    <label for="pasaporte" class="form-label">Pasaporte</label>
+                    <input type="text" class="form-control" id="pasaporte">
                   </div>
 
                   <div class="col-md-6">
-                    <label for="mySelect" class="form-label">Estado Civil</label>
-                    <select id="mySelect" class="form-select" required>
-
+                    <label for="estadocivil" class="form-label">Estado Civil</label>
+                    <select id="estadocivil" class="form-select" required>
+                      <div id="data-display1">Selecciona Una Opcion...</div>
                     </select>
                   </div>
 
@@ -662,9 +674,11 @@
 
                 <div class="row mb-3" required>
                   <div class="col-md-6 mb-3">
-                    <label for="mySelect" class="form-label">Sexo</label>
-                    <select id="mySelect" class="form-select" required>
-
+                    <label for="sexo" class="form-label">Sexo</label>
+                    <select id="sexo" class="form-select" required>
+                      <option value="" disabled selected>Selecciona Una Opcion...</option>
+                      <option value="F">Femenino</option>
+                      <option value="M">Masculino</option>
                     </select>
                   </div>
                   <div class="col-md-6 mb-3">
@@ -683,9 +697,6 @@
                     <input type="date" id="fechaIngreso" class="form-control" disabled>
                   </div>
                 </div>
-
-
-
 
                 <div class="row mb-3">
                   <div class="col-md-6 mb-3">
@@ -713,9 +724,11 @@
 
                 <div class="row mb-3">
                   <div class="col-md-6 mb-3">
-                    <label for="mySelect" class="form-label">¿Tiene Licencia De Conducir?</label>
-                    <select id="mySelect" class="form-select" required>
-
+                    <label for="selectlicencia" class="form-label">¿Tiene Licencia De Conducir?</label>
+                    <select id="selectlicencia" class="form-select" required>
+                      <option value="" disabled selected>Selecciona Una Opcion...</option>
+                      <option value="1">Si</option>
+                      <option value="0">No</option>
                     </select>
                   </div>
 
@@ -724,8 +737,6 @@
                     <input type="text" class="form-control" id="licencia">
                   </div>
                 </div>
-
-
 
                 <div class="row mb-3">
                   <div class="col-md-6 mb-3">
@@ -738,10 +749,12 @@
 
                 <div class="row mb-5">
                   <div class="col-md-6 mb-3">
-                    <label for="mySelect" class="form-label">Status</label>
-                    <select id="mySelect" class="form-select" required>
-
-                    </select>
+                    <label for="status" class="form-label">Status</label>
+                      <select id="status" class="form-select" required>
+                        <option value="" disabled selected>Selecciona Una Opcion...</option>
+                        <option value="1">Activo</option>
+                        <option value="0">Inactivo</option>
+                      </select>
                   </div>
                   <div class="col-md-6">
                     <label for="fechaModificacion" class="form-label">Fecha de Modificacion</label>
@@ -798,7 +811,7 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
-
+    <script src="../../src/js/api/tercero/empleado.js"></script>
 </body>
 
 </html>

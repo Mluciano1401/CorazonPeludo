@@ -1,4 +1,4 @@
-import { Column, Entity, JoinColumn, OneToOne, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, JoinColumn, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
 import { Animal } from "./animal.model";
 import { Empleado } from "../tercero/empleado.model";
 import { EstadoSalud } from "../salud/estadoSalud.model";
@@ -11,19 +11,19 @@ export class HistorialMedico {
     @PrimaryGeneratedColumn()
     historialMedicoId: number;
 
-    @OneToOne(() => Animal)
+    @ManyToOne(() => Animal)
     @JoinColumn()
     animal: Animal;
 
-    @OneToOne(() => Empleado)
+    @ManyToOne(() => Empleado)
     @JoinColumn()
     veterinario: Empleado;
 
-    @OneToOne(() => EstadoSalud)
+    @ManyToOne(() => EstadoSalud)
     @JoinColumn()
     estadoSalud: EstadoSalud;
 
-    @OneToOne(() => PolizaSeguro)
+    @ManyToOne(() => PolizaSeguro)
     @JoinColumn()
     polizaSeguro: PolizaSeguro;
 
