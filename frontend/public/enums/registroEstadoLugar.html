@@ -30,21 +30,13 @@
 
   <!-- Template Main CSS File -->
   <link href="../NiceAdmin/assets/css/style.css" rel="stylesheet">
-
-  <!-- =======================================================
-  * Template Name: NiceAdmin
-  * Template URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
-  * Updated: Mar 17 2024 with Bootstrap v5.3.3
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
 </head>
 
-<body> 
+<body>
 
   <!-- ======= Header ======= -->
   <div id="contenidoReutilizable">
-    
+
   </div>
   <div id="content-section"></div>
   <!--Principal-->
@@ -69,43 +61,43 @@
             <div class="card-body">
               <h5 class="card-title">Registro De Estado Lugar</h5>
 
-             <!-- General Form Elements -->
-             <form class="needs-validation" id="form" novalidate>
+              <!-- General Form Elements -->
+              <form class="needs-validation" id="form" novalidate>
 
-              <div class="row mb-3">
-                <div class="col-md-6 mb-3">
-                  <label for="idMarca" class="form-label">ID Marca</label>
-                  <input type="text" class="form-control" id="idMarca" disabled>
-                </div>                    
-                
-                <div class="col-md-6">
-                  <label for="descripcion" class="form-label">Descripcion</label>
-                  <input type="text" class="form-control" id="descripcion" required>
+                <div class="row mb-3">
+                  <div class="col-md-6 mb-3">
+                    <label for="idMarca" class="form-label">ID Marca</label>
+                    <input type="text" class="form-control" id="idMarca" disabled>
+                  </div>
+
+                  <div class="col-md-6">
+                    <label for="descripcion" class="form-label">Descripcion</label>
+                    <input type="text" class="form-control" id="descripcion" required>
+                  </div>
                 </div>
-              </div>
-              
 
-              <div class="row mb-5">
-                <div class="col-md-6 mb-3">
-                  <label for="status" class="form-label">Status</label>
-                                        <select id="status" class="form-select" required>
-                                            <option value="" disabled selected>Selecciona Una Opcion...</option>
-                                            <option value="1">Activo</option>
-                                            <option value="0">Inactivo</option>
-                                        </select>
+
+                <div class="row mb-5">
+                  <div class="col-md-6 mb-3">
+                    <label for="status" class="form-label">Status</label>
+                    <select id="status" class="form-select" required>
+                      <option value="" disabled selected>Selecciona Una Opcion...</option>
+                      <option value="1">Activo</option>
+                      <option value="0">Inactivo</option>
+                    </select>
+                  </div>
+                  <div class="col-md-6">
+                    <label for="fechaModificacion" class="form-label">Fecha de Modificacion</label>
+                    <input type="date" id="fechaModificacion" class="form-control" disabled>
+                  </div>
                 </div>
-                <div class="col-md-6">
-                  <label for="fechaModificacion" class="form-label">Fecha de Modificacion</label>
-                  <input type="date" id="fechaModificacion" class="form-control" disabled>
+
+                <div class="text-center mb-3">
+                  <button type="submit" class="btn btn-primary buttonSubmit">Enviar</button>
+                  <button type="reset" class="btn btn-outline-danger">Limpiar</button>
                 </div>
-              </div>
 
-              <div class="text-center mb-3">
-                <button type="submit" class="btn btn-primary buttonSubmit">Enviar</button>
-                <button type="reset" class="btn btn-outline-danger">Limpiar</button>
-              </div>
-
-            </form><!-- End General Form Elements -->
+              </form><!-- End General Form Elements -->
 
             </div>
           </div>
@@ -123,10 +115,11 @@
   <!-- ======= Footer ======= -->
   <footer id="footer" class="footer">
     <div class="copyright">
-      <p class="copy copy-inicio">&copy Copyright - <script>
-        document.write(new Date().getFullYear());
-            </script>
-    </p>
+      <p class="copy copy-inicio">&copy Copyright -
+        <script>
+          document.write(new Date().getFullYear());
+        </script>
+      </p>
     </div>
     <div class="credits">
       Designed by Hilary Collado - Maria Luciano
@@ -137,7 +130,7 @@
       class="bi bi-arrow-up-short"></i></a>
 
   <!-- Vendor JS Files -->
-   <script src="../NiceAdmin/assets/vendor/apexcharts/apexcharts.min.js"></script>
+  <script src="../NiceAdmin/assets/vendor/apexcharts/apexcharts.min.js"></script>
   <script src="../NiceAdmin/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="../NiceAdmin/assets/vendor/chart.js/chart.umd.js"></script>
   <script src="../NiceAdmin/assets/vendor/echarts/echarts.min.js"></script>
@@ -150,13 +143,13 @@
   <script src="../NiceAdmin/assets/js/main.js"></script>
   <script src="../../src/js/api/rescate/estadoLugar.js"></script>
 
-<script>
+  <script>
     fetch('../menu/template.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('contenidoReutilizable').innerHTML = data;
-            });
-    </script>
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('contenidoReutilizable').innerHTML = data;
+      });
+  </script>
 </body>
 
 </html>

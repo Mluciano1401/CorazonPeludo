@@ -31,20 +31,13 @@
   <!-- Template Main CSS File -->
   <link href="../NiceAdmin/assets/css/style.css" rel="stylesheet">
 
-  <!-- =======================================================
-  * Template Name: NiceAdmin
-  * Template URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
-  * Updated: Mar 17 2024 with Bootstrap v5.3.3
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
 </head>
 
 <body>
 
   <!-- ======= Header ======= -->
   <div id="contenidoReutilizable">
-    
+
   </div>
   <div id="content-section"></div>
 
@@ -57,7 +50,7 @@
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="index.html">Home</a></li>
           <li class="breadcrumb-item">Formularios</li>
-          <li class="breadcrumb-item active">Registro de TIpo de Alimento</li>
+          <li class="breadcrumb-item active">Registro de Tipo de Alimento</li>
         </ol>
       </nav>
     </div><!-- End Page Title -->
@@ -68,7 +61,7 @@
 
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">Ingreso De TIpo de Alimento</h5>
+              <h5 class="card-title">Ingreso de Tipo de Alimento</h5>
 
               <!-- General Form Elements -->
               <form class="needs-validation" id="form" novalidate>
@@ -80,9 +73,9 @@
                   </div>
                 </div>
 
-                <div class="row mb-4">
+                <div class="row mb-5">
                   <div class="col-md-6 mb-3">
-                    <label for="status" class="form-label">Status</label> 
+                    <label for="status" class="form-label">Status</label>
                     <select id="status" class="form-select" required>
                       <option value="" disabled selected>Selecciona Una Opcion...</option>
                       <option value="1">Activo</option>
@@ -90,8 +83,8 @@
                     </select>
                   </div>
                   <div class="col-md-6">
-                    <label for="fechaModificacion" class="form-label">Fecha De Modificacion</label>
-                    <input type="fechaModificacion" class="form-control" disabled>
+                    <label for="fechaModificacion" class="form-label">Fecha de Modificacion</label>
+                    <input type="date" id="fechaModificacion" class="form-control" disabled>
                   </div>
                 </div>
 
@@ -118,10 +111,11 @@
   <!-- ======= Footer ======= -->
   <footer id="footer" class="footer">
     <div class="copyright">
-      <p class="copy copy-inicio">&copy Copyright - <script>
-        document.write(new Date().getFullYear());
-            </script>
-    </p>
+      <p class="copy copy-inicio">&copy Copyright -
+        <script>
+          document.write(new Date().getFullYear());
+        </script>
+      </p>
     </div>
     <div class="credits">
       Designed by Hilary Collado - Maria Luciano
@@ -132,7 +126,7 @@
       class="bi bi-arrow-up-short"></i></a>
 
   <!-- Vendor JS Files -->
-   <script src="../NiceAdmin/assets/vendor/apexcharts/apexcharts.min.js"></script>
+  <script src="../NiceAdmin/assets/vendor/apexcharts/apexcharts.min.js"></script>
   <script src="../NiceAdmin/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="../NiceAdmin/assets/vendor/chart.js/chart.umd.js"></script>
   <script src="../NiceAdmin/assets/vendor/echarts/echarts.min.js"></script>
@@ -143,14 +137,14 @@
 
   <!-- Template Main JS File -->
   <script src="../NiceAdmin/assets/js/main.js"></script>
-    <script src="../../src/js/api/almacen/tipoAlimento.js"></script>
-<script>
+  <script src="../../src/js/api/almacen/tipoAlimento.js"></script>
+  <script>
     fetch('../menu/template.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('contenidoReutilizable').innerHTML = data;
-            });
-    </script>
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('contenidoReutilizable').innerHTML = data;
+      });
+  </script>
 </body>
 
 </html>
