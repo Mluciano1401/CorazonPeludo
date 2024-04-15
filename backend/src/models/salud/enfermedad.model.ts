@@ -11,7 +11,6 @@ export class Enfermedad {
 
     @ManyToOne(() => TipoEnfermedad)
     @JoinColumn()
-    @Column()
     tipoEnfermedad: TipoEnfermedad;
 
     @Column()

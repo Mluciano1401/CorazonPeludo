@@ -9,7 +9,7 @@
     background-image: url("../../NiceAdmin/assets/img/rabbit.jpg");
     background-position: center center;
     background-size: cover;
-    position: relative;
+    position: relative;    
 }
   
 .bg::before {
