@@ -72,6 +72,13 @@
 
 
 
+<script>
+    fetch('../menu/template.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('contenidoReutilizable').innerHTML = data;
+            });
+    </script>
 </body>
 
 </html>
