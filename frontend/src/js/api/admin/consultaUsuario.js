@@ -25,7 +25,8 @@ document.addEventListener('DOMContentLoaded', async() => {
               }
             }else{
               cell.textContent = item[key];
-            }            
+            }   
+            cell.classList.add("table-light");        
             row.appendChild(cell);
           }
           body.appendChild(row);
