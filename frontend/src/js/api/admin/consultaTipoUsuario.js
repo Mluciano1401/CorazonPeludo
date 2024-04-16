@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', async() => {
           cellu.innerHTML = `
           ${(item.status) ? `<button id="deshabilitar-${item.tipoUsuarioId}" class="btn btn-warning btn-sm me-1">Deshabilitar</button>` 
           : `<button id="habilitar-${item.tipoUsuarioId}" class="btn btn-success btn-sm me-1">Habilitar</button>`}
-          <button id="editar-${item.tipoUsuarioId}" class="btn btn-primary btn-sm me-1">Editar</button>
+          <button id="editar-${item.tipoUsuarioId}" class="btn btn-primary btn-sm me-1"><a style="text-decoration: none;" href="../../../../public/enums/registroTipoUsuario.html?id${item.tipoUsuarioId}">Editar</a></button>
           <button id="eliminar-${item.tipoUsuarioId}" class="btn btn-danger btn-sm">Eliminar</button>
           `;
           row.appendChild(cellu);
@@ -97,7 +97,7 @@ await fetch(urlAPI)
           cellu.innerHTML = `
           ${(item.status) ? `<button id="deshabilitar-${item.tipoUsuarioId}" class="btn btn-warning btn-sm me-1">Deshabilitar</button>` 
           : `<button id="habilitar-${item.tipoUsuarioId}" class="btn btn-success btn-sm me-1">Habilitar</button>`}
-          <button id="editar-${item.tipoUsuarioId}" class="btn btn-primary btn-sm me-1">Editar</button>
+          <button id="editar-${item.tipoUsuarioId}" class="btn btn-primary btn-sm me-1"><a style="text-decoration: none;" href="../../../../public/enums/registroTipoUsuario.html?id${item.tipoUsuarioId}">Editar</a></button>
           <button id="eliminar-${item.tipoUsuarioId}" class="btn btn-danger btn-sm">Eliminar</button>
           `;
           row.appendChild(cellu);

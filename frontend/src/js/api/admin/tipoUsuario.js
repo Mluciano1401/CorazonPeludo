@@ -32,3 +32,10 @@ form.addEventListener('submit', async(event)=> {
     console.error('Error:', error);
   }
 });
+async function llenerFormulario(id){
+ console.log("haleluya", id);
+}
+
+window.onload = function() {
+  llenerFormulario(id);
+};
