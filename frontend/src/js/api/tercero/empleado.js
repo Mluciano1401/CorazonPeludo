@@ -1,4 +1,6 @@
 const form = document.getElementById('form');
+const urlParams = new URLSearchParams(window.location.search);
+const id = urlParams.get('id');
 
 form.addEventListener('submit', async(event)=> {
   event.preventDefault(); // Previene el envío predeterminado del formulario
@@ -21,7 +23,7 @@ form.addEventListener('submit', async(event)=> {
   const idpersona = 0;
 
 
-  // Crea una solicitud HTTP
+   const status = document.getElementById('status').value;    // Crea una solicitud HTTP
   const url = 'http://localhost:3000/persona';
   const data = { 
       nobre: nombre,
@@ -35,7 +37,8 @@ form.addEventListener('submit', async(event)=> {
       licenciaConducir: licencia,
       tipoPersona: 1,
       fechaNacimiento: fechaNacimiento,
-      fechaModificacion: new Date() 
+      fechaModificacion: new Date(),
+      status: (status == '0') ? false : true 
   };
   try {
     console.log(data,data2);
@@ -53,7 +56,8 @@ form.addEventListener('submit', async(event)=> {
       puesto: puesto,
       sueldo:sueldo,
       fechaIngreso: fechaIngreso,
-      fechaModificacion: new Date() 
+      fechaModificacion: new Date(),
+      status: (status == '0') ? false : true 
   };
     const response2 = await fetch(url2, { // Replace with your API URL
       method: 'POST',

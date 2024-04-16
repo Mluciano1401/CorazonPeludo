@@ -1,4 +1,6 @@
 const form = document.getElementById('form');
+const urlParams = new URLSearchParams(window.location.search);
+const id = urlParams.get('id');
 
 form.addEventListener('submit', async (event) =>{
   event.preventDefault(); // Previene el envío predeterminado del formulario
@@ -9,14 +11,15 @@ form.addEventListener('submit', async (event) =>{
   const prevalencia = document.getElementById('prevalencia').value;
   const porcientoMortalidad = document.getElementById('porcientoMortalidad').value;
 
-  // Crea una solicitud HTTP
+   const status = document.getElementById('status').value;    // Crea una solicitud HTTP
   const url = 'http://localhost:3000/enfermedad';
   const data = { 
       nombre: nombre,
       porcientoMortalidad: porcientoMortalidad,
       tipoEnfermedad: tipoEnfermedad,
       prevalencia: prevalencia,
-      fechaModificacion: new Date() 
+      fechaModificacion: new Date(),
+      status: (status == '0') ? false : true 
   };
     try {
     console.log(data);

@@ -1,4 +1,6 @@
 const form = document.getElementById('form');
+const urlParams = new URLSearchParams(window.location.search);
+const id = urlParams.get('id');
 
 form.addEventListener('submit', async (event) =>{
   event.preventDefault(); // Previene el envío predeterminado del formulario
@@ -9,14 +11,13 @@ form.addEventListener('submit', async (event) =>{
   const complejidad = document.getElementById('complejidad').value;
   const status = document.getElementById('status').value;
 
-  // Crea una solicitud HTTP
   const url = 'http://localhost:3000/tarea';
   const data = { 
       descripcion: descripcion,
       complejidad: complejidad,
       tipoTarea: tipoTarea,
       fechaModificacion: new Date(),
-      status: status 
+      status: (status == '0') ? false : true
   };
     try {
     console.log(data);

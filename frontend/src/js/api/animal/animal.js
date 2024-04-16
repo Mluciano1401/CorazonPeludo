@@ -1,16 +1,40 @@
-const form = document.getElementById('formanimal');
+const form = document.getElementById('form');
+const urlParams = new URLSearchParams(window.location.search);
+const id = urlParams.get('id');
 
 form.addEventListener('submit', async (event) =>{
   event.preventDefault(); // Previene el envío predeterminado del formulario
 
   // Recopila los datos del formulario
-  const descripcion = document.getElementById('descripcion').value;
+  const alias = document.getElementById('alias').value;
+  const edad = document.getElementById('edad').value;
+  const peso = document.getElementById('peso').value;
+  const tipoPiel = document.getElementById('TipoPiel').value;  
+  const especie = document.getElementById('especie').value;
+  const sexo = document.getElementById('sexo').value;
+  const origen = document.getElementById('origen').value;
+  const amputaciones = document.getElementById('amputaciones').value;
+  const tipoAmputacion = document.getElementById('tipoAmputacion').value;
+  const estado = document.getElementById('estado').value;
+  const fechaIngreso = document.getElementById('fechaIngreso').value;
+  const colorFifisco = document.getElementById('colorFisico').value;
+  const colorOjos = document.getElementById('colorOjos').value;
 
-  // Crea una solicitud HTTP
+
+   const status = document.getElementById('status').value;    // Crea una solicitud HTTP
   const url = 'http://localhost:3000/animal';
   const data = { 
-      descripcion: descripcion,
-      fechaModificacion: new Date() 
+      alias:alias,
+      edad: edad,
+      peso: peso,
+      tipoPiel: tipoPiel,
+      especie: especie,
+      sexo: sexo,
+      origen: origen,
+      estado: estado,
+      fechaIngreso: fechaIngreso,
+      fechaModificacion: new Date(),
+      status: (status == '0') ? false : true 
   };
     try {
     console.log(data);
@@ -30,42 +54,40 @@ form.addEventListener('submit', async (event) =>{
     console.error('Error:', error);
   }
 });
-//funcion para los enums
-const select = document.getElementById('mySelect');
-
-fetch('URL_DEL_BACKEND')
-  .then(response => response.json())
+async function getData(){
+  await fetch('http://localhost:3000/tipopiel') // Replace with your actual backend URL
+  .then(response => response.json()) // Parse JSON response
   .then(data => {
-    // Recorre los datos obtenidos del backend
-    data.forEach(option => {
-      // Crea un elemento 'option' para cada valor y texto obtenido
-      const optionElement = document.createElement('option');
-      optionElement.value = option.value;
-      optionElement.text = option.text;
-      
-      // Agrega el elemento 'option' al 'select'
-      select.appendChild(optionElement);
+    // Process and populate the select options
+    populateSelectOptions(data);
+    const select = document.getElementById('tipoPiel');
+    select.addEventListener('change', () => {
+      const selectedId = select.value;
+      const selectedData = data.data.find(item => item.tipoPielId === selectedId); // Find selected item
+      if (selectedData) {
+        const dataDisplay = document.getElementById('data-display');
+        dataDisplay.textContent = JSON.stringify(selectedData, null, 2); // Display selected data
+      }
     });
+  })
+  .catch(error => {
+    console.error('Error fetching data:', error);
   });
-//para visualizar en las consultas
-  fetch('URL_DEL_BACKEND')
-  .then(response => response.json())
-  .then(data => {
-    const tableBody = document.querySelector('#myTable tbody');
+  
+}
+function populateSelectOptions(data) {
+  const select = document.getElementById('tipoPiel');
+  // Clear existing options
+  select.options.length = 0;
 
-    // Recorre los datos obtenidos del backend
-    data.forEach(rowData => {
-      // Crea una nueva fila en la tabla
-      const row = document.createElement('tr');
-
-      // Crea las celdas de la fila y asigna los valores de los datos
-      Object.values(rowData).forEach(value => {
-        const cell = document.createElement('td');
-        cell.textContent = value;
-        row.appendChild(cell);
-      });
-
-      // Agrega la fila a la tabla
-      tableBody.appendChild(row);
-    });
+  // Add an option for each data item
+  data.data.forEach(item => {
+    const option = document.createElement('option');
+    option.value = item.tipoPielId; // Replace with your data item's ID property
+    option.text = item.descripcion; // Replace with your data item's label property
+    select.appendChild(option);
   });
+}
+
+
+getData();

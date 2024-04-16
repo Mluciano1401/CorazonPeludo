@@ -1,4 +1,6 @@
 const form = document.getElementById('form');
+const urlParams = new URLSearchParams(window.location.search);
+const id = urlParams.get('id');
 
 form.addEventListener('submit', async (event) =>{
   event.preventDefault(); // Previene el envío predeterminado del formulario
@@ -8,13 +10,14 @@ form.addEventListener('submit', async (event) =>{
   const tipoAlmacen = document.getElementById('registro-almacen-tipoAlmacen').value;
   const capacidad = document.getElementById('registro-almacen-capacidad').value;
   
-  // Crea una solicitud HTTP
+   const status = document.getElementById('status').value;    // Crea una solicitud HTTP
   const url = 'http://localhost:3000/almacen';
   const data = { 
       sucursal: sucursal,
       tipoAlmacen: tipoAlmacen,
       capacidad: capacidad,
-      fechaModificacion: new Date() 
+      fechaModificacion: new Date(),
+      status: (status == '0') ? false : true 
   };
     try {
     console.log(data);

@@ -1,4 +1,6 @@
 const form = document.getElementById('form');
+const urlParams = new URLSearchParams(window.location.search);
+const id = urlParams.get('id');
 
 form.addEventListener('submit', async (event) =>{
   event.preventDefault(); // Previene el envío predeterminado del formulario
@@ -6,12 +8,13 @@ form.addEventListener('submit', async (event) =>{
   // Recopila los datos del formulario
   const descripcion = document.getElementById('descripcion').value;
   const tipoSintoma = document.getElementById('tipoSintoma').value;
-  // Crea una solicitud HTTP
+   const status = document.getElementById('status').value;    // Crea una solicitud HTTP
   const url = 'http://localhost:3000/sintoma';
   const data = { 
       descripcion: descripcion,
       tipoSintoma: tipoSintoma,
-      fechaModificacion: new Date() 
+      fechaModificacion: new Date(),
+      status: (status == '0') ? false : true 
   };
     try {
     console.log(data);

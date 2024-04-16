@@ -1,4 +1,6 @@
 const form = document.getElementById('form');
+const urlParams = new URLSearchParams(window.location.search);
+const id = urlParams.get('id');
 
 form.addEventListener('submit', async (event) =>{
   event.preventDefault(); // Previene el envío predeterminado del formulario
@@ -13,7 +15,7 @@ form.addEventListener('submit', async (event) =>{
   const unidadMedida = document.getElementById('unidadMedida').value;
   const fechavencimiento= document.getElementById('registro-alimentos-fechaVencimiento').value;
   const idproduct = 0;
-  // Crea una solicitud HTTP
+   const status = document.getElementById('status').value;    // Crea una solicitud HTTP
   const url = 'http://localhost:3000/producto';
   const data = { 
       descripcion: nombre,
@@ -22,7 +24,8 @@ form.addEventListener('submit', async (event) =>{
       marca: marca,
       costo: costo,
       fechaVencimiento: fechavencimiento,
-      fechaModificacion: new Date() 
+      fechaModificacion: new Date(),
+      status: (status == '0') ? false : true 
   };
     try {
     console.log(data);
@@ -39,7 +42,8 @@ form.addEventListener('submit', async (event) =>{
       contenido: contenido,
       unidadMedida: unidadMedida,
       productoId: idproduct,
-      fechaModificacion: new Date() 
+      fechaModificacion: new Date(),
+      status: (status == '0') ? false : true 
     };
     const response2 = await fetch(url2, { // Replace with your API URL
       method: 'POST',

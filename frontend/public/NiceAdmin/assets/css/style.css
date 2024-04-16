@@ -1240,3 +1240,16 @@ h6 {
 .cardDonante{
   padding: 30px;
 }
+table {
+  width: 100%;
+}
+
+th, td {
+  text-align: center;
+}
+#buscador i {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+}

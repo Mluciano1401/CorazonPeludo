@@ -1,21 +1,23 @@
 const form = document.getElementById('form');
-const urlParams = new URLSearchParams(window.location.search);
-const id = urlParams.get('id');
 
-form.addEventListener('submit', async(event) => {
+form.addEventListener('submit', async (event) => {
   event.preventDefault(); // Previene el envío predeterminado del formulario
 
   // Recopila los datos del formulario
-  const descripcion = document.getElementById('descripcion').value;
-
-   const status = document.getElementById('status').value;    // Crea una solicitud HTTP
-  const url = 'http://localhost:3000/modelo';
+  const user = document.getElementById('user').value;
+  const password = document.getElementById('password').value;
+  const email = document.getElementById('email').value;
+  // Crea una solicitud HTTP
+  const url = 'http://localhost:3000/usuario';
   const data = { 
-      descripcion: descripcion,
+      userName: user,
+      password: password,
+      email: email,
       fechaModificacion: new Date(),
-      status: (status == '0') ? false : true 
+      status: true
+
   };
-    try {
+  try {
     console.log(data);
     console.log(JSON.stringify(data));
     const response = await fetch(url, { // Replace with your API URL
@@ -25,7 +27,8 @@ form.addEventListener('submit', async(event) => {
     });
 
     if (response.ok) {
-      form.reset(); // Clear form after successful submission
+      form.reset(); 
+      // Clear form after successful submission
     } else {
       console.error('Error:', await response.text()); // Log detailed error
     }

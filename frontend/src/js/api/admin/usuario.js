@@ -1,4 +1,6 @@
 const form = document.getElementById('form');
+const urlParams = new URLSearchParams(window.location.search);
+const id = urlParams.get('id');
 
 form.addEventListener('submit', async (event) => {
   event.preventDefault(); // Previene el envío predeterminado del formulario
@@ -21,7 +23,8 @@ form.addEventListener('submit', async (event) => {
       sucursal: sucursal,
       foto:formFile,
       fechaModificacion: new Date(),
-      status: status 
+      status: (status == '0') ? false : true
+
   };
   try {
     console.log(data);

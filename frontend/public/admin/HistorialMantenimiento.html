@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Consulta Alimentos</title>
+  <title>Historial Mantenimiento</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -40,12 +40,12 @@
   <main id="main" class="main">
 
     <div class="pagetitle">
-      <h1>Consulta a Registro de Alimentos</h1>
+      <h1>Historial Mantenimiento</h1>
       <nav>
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="index.html">Home</a></li>
           <li class="breadcrumb-item">Consultas</li>
-          <li class="breadcrumb-item active">Consulta a Registro de Alimentos</li>
+          <li class="breadcrumb-item active">Historial Mantenimiento</li>
         </ol>
       </nav>
     </div><!-- End Page Title -->
@@ -56,8 +56,9 @@
 
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">Consulta a Registro de Alimentos</h5>
-              <button id="agregar" class="btn btn-success btn-sm me-1" style="float: right;">><a style="text-decoration: none;" href="../almacen/registroAlimento.html">Agregar</a></button>
+              <h5 class="card-title">Historial Mantenimiento</h5>
+
+              <button id="agregar" class="btn btn-success btn-sm me-1" style="float: right;"><a style="text-decoration: none;" href="../enums/registroTipoUsuario.html">Agregar</a></button>
               <!-- TABLA PARA VISUALIZAR LAS CONSULTAS -->
               <div>
                 <input type="text" id="buscador" class="form-control mb-3" placeholder="Buscar">
@@ -108,7 +109,7 @@
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
   <!-- Vendor JS Files -->
-   <script src="../NiceAdmin/assets/vendor/apexcharts/apexcharts.min.js"></script>
+  <script src="../NiceAdmin/assets/vendor/apexcharts/apexcharts.min.js"></script>
   <script src="../NiceAdmin/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="../NiceAdmin/assets/vendor/chart.js/chart.umd.js"></script>
   <script src="../NiceAdmin/assets/vendor/echarts/echarts.min.js"></script>
@@ -116,10 +117,12 @@
   <script src="../NiceAdmin/assets/vendor/simple-datatables/simple-datatables.js"></script>
   <script src="../NiceAdmin/assets/vendor/tinymce/tinymce.min.js"></script>
   <script src="../NiceAdmin/assets/vendor/php-email-form/validate.js"></script>
-
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+  
   <!-- Template Main JS File -->
   <script src="../NiceAdmin/assets/js/main.js"></script>
-  <script src="../../src/js/api/almacen/consultaAlimento.js"></script>
+  <script src="../../src/js/api/miscelaneo/historialMantenimiento.js">
+  </script>
 <script>
     fetch('../menu/template.html')
             .then(response => response.text())
