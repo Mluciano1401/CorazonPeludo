@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Consulta Animales</title>
+  <title>Consulta Alimentos</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -40,15 +40,18 @@
   <main id="main" class="main">
 
     <div class="pagetitle">
-      <h1>Consulta de Registro de Animales</h1>
+      <h1>Consulta a Registro de Animales</h1>
       <nav>
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="index.html">Home</a></li>
           <li class="breadcrumb-item">Consultas</li>
-          <li class="breadcrumb-item active">Consulta de Registro de Animales</li>
+          <li class="breadcrumb-item active">Consulta a Registro de Animales</li>
         </ol>
       </nav>
     </div><!-- End Page Title -->
+
+
+
 
     <section class="section">
       <div class="row">
@@ -56,11 +59,15 @@
 
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">Consulta de Registro de Animales</h5>
+              <h5 class="card-title">Consulta de Animales</h5>
 
+              <div class="text-center mb-3 d-grid gap-2 d-md-flex justify-content-md-end">
+                <a href="../almacen/registroAlimento.html"> <button type="" class="btn btn-primary" >Agregar otro alimento</button></a>
+              </div>
               <!-- TABLA PARA VISUALIZAR LAS CONSULTAS -->
               <table class="table datatable">
                 
+
               </table>
               <!-- End Table with stripped rows -->
 
@@ -103,7 +110,7 @@
 
   <!-- Template Main JS File -->
   <script src="../NiceAdmin/assets/js/main.js"></script>
-
+  <script src="../../src/js/api/almacen/consultaAlimento.js"></script>
 <script>
     fetch('../menu/template.html')
             .then(response => response.text())
