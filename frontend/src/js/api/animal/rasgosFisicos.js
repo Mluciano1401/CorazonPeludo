@@ -6,11 +6,12 @@ form.addEventListener('submit', async (event) =>{
   // Recopila los datos del formulario
   const descripcion = document.getElementById('descripcion').value;
 
-  // Crea una solicitud HTTP
+   const status = document.getElementById('status').value;    // Crea una solicitud HTTP
   const url = 'http://localhost:3000/rasgosfisicos';
   const data = { 
       descripcion: descripcion,
-      fechaModificacion: new Date() 
+      fechaModificacion: new Date(),
+      status: (status == '0') ? false : true 
   };
     try {
     console.log(data);

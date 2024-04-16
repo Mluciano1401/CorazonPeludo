@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', async() => {
 });
      async function populateTable() {
       try {
-        const response = await fetch('http://localhost:3000/usuario'); // Replace with your URL
+        const response = await fetch('http://localhost:3000/tipousuario'); // Replace with your URL
         const data = await response.json();
         // Clear existing table rows (optional)
         tableBody.innerHTML = '';
@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', async() => {
           // Create and append table cells for each data property
           for (const key in item) {
             const cell = document.createElement('td');
-            if(key === "usuarioId"){
+            if(key === "tipoUsuarioId"){
               cell.style.fontWeight = 800;
             }
             if(key === "status"){
@@ -36,23 +36,22 @@ document.addEventListener('DOMContentLoaded', async() => {
           }
           const cellu = document.createElement('td');
           cellu.innerHTML = `
-          ${(item.status) ? `<button id="deshabilitar-${item.usuarioId}" class="btn btn-warning btn-sm me-1">Deshabilitar</button>` 
-          : `<button id="habilitar-${item.usuarioId}" class="btn btn-success btn-sm me-1">Habilitar</button>`}
-          <button id="editar-${item.usuarioId}" class="btn btn-primary btn-sm me-1">Editar</button>
-          <button id="eliminar-${item.usuarioId}" class="btn btn-danger btn-sm">Eliminar</button>
+          ${(item.status) ? `<button id="deshabilitar-${item.tipoUsuarioId}" class="btn btn-warning btn-sm me-1">Deshabilitar</button>` 
+          : `<button id="habilitar-${item.tipoUsuarioId}" class="btn btn-success btn-sm me-1">Habilitar</button>`}
+          <button id="editar-${item.tipoUsuarioId}" class="btn btn-primary btn-sm me-1">Editar</button>
+          <button id="eliminar-${item.tipoUsuarioId}" class="btn btn-danger btn-sm">Eliminar</button>
           `;
           row.appendChild(cellu);
           tableBody.appendChild(row);
           
-        });
-        
+        });        
     
       } catch (error) {
         console.error('Error fetching data:', error);
       }
     }
 async function busqueda(){
-  const urlAPI = "http://localhost:3000/usuario"; // URL de la API
+  const urlAPI = "http://localhost:3000/tipousuario"; // URL de la API
 const buscador = document.getElementById("buscador");
 const tablaCuerpo = document.querySelector('tbody');
 
@@ -76,7 +75,7 @@ await fetch(urlAPI)
           // Create and append table cells for each data property
           for (const key in item) {
             const cell = document.createElement('td');
-            if(key === "usuarioId"){
+            if(key === "tipoUsuarioId"){
               cell.style.fontWeight = 800;
             }
             if(key === "status"){
@@ -93,13 +92,13 @@ await fetch(urlAPI)
             }   
             cell.classList.add("table-light");        
             row.appendChild(cell);
-          }
+          };
           const cellu = document.createElement('td');
           cellu.innerHTML = `
-          ${(item.status) ? `<button id="deshabilitar-${item.usuarioId}" class="btn btn-warning btn-sm me-1">Deshabilitar</button>` 
-          : `<button id="habilitar-${item.usuarioId}" class="btn btn-success btn-sm me-1">Habilitar</button>`}
-          <button id="editar-${item.usuarioId}" class="btn btn-primary btn-sm me-1">Editar</button>
-          <button id="eliminar-${item.usuarioId}" class="btn btn-danger btn-sm">Eliminar</button>
+          ${(item.status) ? `<button id="deshabilitar-${item.tipoUsuarioId}" class="btn btn-warning btn-sm me-1">Deshabilitar</button>` 
+          : `<button id="habilitar-${item.tipoUsuarioId}" class="btn btn-success btn-sm me-1">Habilitar</button>`}
+          <button id="editar-${item.tipoUsuarioId}" class="btn btn-primary btn-sm me-1">Editar</button>
+          <button id="eliminar-${item.tipoUsuarioId}" class="btn btn-danger btn-sm">Eliminar</button>
           `;
           row.appendChild(cellu);
           tablaCuerpo.appendChild(row);

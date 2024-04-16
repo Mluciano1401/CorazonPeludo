@@ -7,11 +7,12 @@ form.addEventListener('submit', async (event) =>{
   //aqui se colocan los ids de los inputs
   const descripcion = document.getElementById('descripcion').value;
 
-  // Crea una solicitud HTTP
+   const status = document.getElementById('status').value;    // Crea una solicitud HTTP
   const url = 'http://localhost:3000/solicitudadopcion';
   const data = { 
       descripcion: descripcion,
-      fechaModificacion: new Date() 
+      fechaModificacion: new Date(),
+      status: (status == '0') ? false : true 
   };
     try {
     console.log(data);

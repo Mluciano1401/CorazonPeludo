@@ -21,7 +21,8 @@ form.addEventListener('submit', async (event) => {
       sucursal: sucursal,
       foto:formFile,
       fechaModificacion: new Date(),
-      status: status 
+      status: (status == '0') ? false : true
+
   };
   try {
     console.log(data);

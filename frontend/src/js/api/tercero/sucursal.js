@@ -9,12 +9,13 @@ form.addEventListener('submit', async(event) => {
   const rnc = document.getElementById('rnc').value;
   const tipoEmpresa = document.getElementById('tipoEmpresa').value;
 
-  // Crea una solicitud HTTP
+   const status = document.getElementById('status').value;    // Crea una solicitud HTTP
   const url = 'http://localhost:3000/sucursal';
   const data = { 
       descripcion: nombre,
       compania: compania,
-      fechaModificacion: new Date() 
+      fechaModificacion: new Date(),
+      status: (status == '0') ? false : true 
   };
   try {
     console.log(data);
