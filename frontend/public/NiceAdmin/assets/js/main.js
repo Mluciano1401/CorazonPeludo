@@ -1,10 +1,3 @@
-/**
-* Template Name: NiceAdmin
-* Template URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
-* Updated: Mar 17 2024 with Bootstrap v5.3.3
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-*/
 
 (function() {
   "use strict";
@@ -42,11 +35,31 @@
   /**
    * Sidebar toggle
    */
-  if (select('.toggle-sidebar-btn')) {
+ /* if (select('.toggle-sidebar-btn')) {
     on('click', '.toggle-sidebar-btn', function(e) {
       select('body').classList.toggle('toggle-sidebar')
     })
   }
+*/
+
+
+  
+  /**
+   * Sidebar toggle
+   */
+
+  
+  if (select('.toggle-sidebar-btn')) {
+    on('click', '.toggle-sidebar-btn', function(e) {
+      const body = select('body');
+      const sidebar = select('aside .sidebar'); // Se ajusta la selección para el aside con clase "sidebar"
+      body.classList.toggle('toggle-sidebar');
+      sidebar.classList.toggle('active'); // Se agrega o quita la clase "active" al menú lateral
+    });
+  }
+  
+  
+
 
   /**
    * Search bar toggle
