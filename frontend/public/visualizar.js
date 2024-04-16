@@ -40,3 +40,31 @@ function mostrarCampos() {
     }
   }
 
+
+
+//   // JavaScript
+// // Simulación de fechas y horas disponibles (puedes obtener estos datos de tu base de datos o de una API)
+// const fechasDisponibles = ['2024-04-17', '2024-04-18', '2024-04-19'];
+// const horasDisponibles = ['09:00', '10:00', '11:00', '15:00', '16:00'];
+
+// // Función para mostrar fechas disponibles
+// function mostrarFechasDisponibles() {
+//   const fechasDiv = document.getElementById('fechasDisponibles');
+//   fechasDiv.innerHTML = '<p>Fechas disponibles:</p>';
+//   fechasDisponibles.forEach(fecha => {
+//     const p = document.createElement('p');
+//     p.textContent = fecha;
+//     fechasDiv.appendChild(p);
+//   });
+// }
+
+// // Función para mostrar horas disponibles
+// function mostrarHorasDisponibles() {
+//   const horasDiv = document.getElementById('horasDisponibles');
+//   horasDiv.innerHTML = '<p>Horas disponibles:</p>';
+//   horasDisponibles.forEach(hora => {
+//     const p = document.createElement('p');
+//     p.textContent = hora;
+//     horasDiv.appendChild(p);
+//   });
+// }

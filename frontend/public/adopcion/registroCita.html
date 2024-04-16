@@ -33,6 +33,15 @@
   <!-- Template Main CSS File -->
   <link href="../NiceAdmin/assets/css/style.css" rel="stylesheet">
 
+  <style>
+    .ocupado {
+      color: red;
+      pointer-events: none; /* Evita que el usuario interactúe con la fecha/hora ocupada */
+    }
+  </style>
+
+  
+
 </head>
 
 <body>
@@ -68,7 +77,7 @@
             <div class="card-body">
               <h5 class="card-title">Ingreso de Citas</h5>
 
-              <form class="needs-validation" id="form" novalidate>
+              <form class="needs-validation" id="citaForm" novalidate>
 
                 <div class="row mb-3">
                   <div class="col-md-6 mb-3">
@@ -96,18 +105,18 @@
                   </div> 
                   <div class="col-md-6 mb-3">
                     <label for="telefono" class="form-label">Telefono</label>
-                    <input type="number" class="form-control" id="emtelefonoail" required>
+                    <input type="number" class="form-control" id="telefono" required>
                   </div> 
                 </div>
 
                 <div class="row mb-3">
-                  <div class="col-md-6 mb-3">
+                  <!-- <div class="col-md-6 mb-3">
                     <label for="mySelect" class="form-label">Tipo de Animal</label>
                     <select id="mySelect" class="form-select" required>
                       <option value="" disabled selected>Selecciona Una Opcion...</option>
                       
                     </select>
-                  </div>
+                  </div> -->
                   <div class="col-md-6">
                     <label for="nombreAnimal" class="form-label">Nombre del animal (si aplica)</label>
                     <input type="text" class="form-control" id="nombreAnimal" >
@@ -141,8 +150,9 @@
                 </div>
 
 
+
                 <div class="text-center mb-3">
-                  <button type="submit" class="btn btn-primary buttonSubmit">Enviar</button>
+                  <button type="submit" class="btn btn-primary buttonSubmit" onclick="EnviarCita()">Enviar</button>
                   <button type="reset" class="btn btn-outline-danger">Limpiar</button>
                 </div>
 
@@ -192,17 +202,66 @@
   <!-- Template Main JS File -->
   <script src="../NiceAdmin/assets/js/main.js"></script>  
   <script src="../../src/js/api/animal/Cita.js"></script>
-<!-- 
+
 <script>
     fetch('../menu/template.html')
             .then(response => response.text())
             .then(data => {
                 document.getElementById('contenidoReutilizable').innerHTML = data;
             });
-    </script> -->
+    </script>
 
 
-  </script>
+<script>
+
+const sgMail = require('@sendgrid/mail');
+sgMail.setApiKey('TU_API_KEY');
+
+function enviarCita() {
+  // Obtener los datos del formulario
+  var nombre = document.getElementById('name').value;
+  var apellido = document.getElementById('apellido').value;
+  var email = document.getElementById('email').value;
+  var telefono = document.getElementById('telefono').value;
+ // var tipoAnimal = document.getElementById('mySelect').value;
+  var nombreAnimal = document.getElementById('nombreAnimal').value;
+  var fechaCita = document.getElementById('fechaCita').value;
+  var hora = document.getElementById('hora').value;
+  var status = document.getElementById('status').value;
+
+
+  // Crear el cuerpo del correo con los datos del formulario
+  var cuerpoCorreo = "Nombre: " + nombre + " " + apellido + "\n" +
+                     "Email: " + email + "\n" +
+                     "Teléfono: " + telefono + "\n" +
+                    //  "Tipo de Animal: " + tipoAnimal + "\n" +
+                     "Nombre del Animal: " + nombreAnimal + "\n" +
+                     "Fecha de la Cita: " + fechaCita + "\n" +
+                     "Hora de la Cita: " + hora + "\n" +
+                     "Status: " + (status === "1" ? "Activo" : "Inactivo");
+
+  const msg = {
+    to: email,
+    from: 'clasesdehelen@gmail.com', // Reemplaza con tu dirección de correo electrónico verificada en SendGrid
+    subject: 'Cita Registrada',
+    text: cuerpoCorreo,
+  };
+
+  sgMail.send(msg)
+    .then(() => {
+      console.log('Correo enviado exitosamente');
+    })
+    .catch((error) => {
+      console.error(error);
+    });
+}
+
+
+</script>
+
+  
+
+<script src="../visualizar.js"></script>
 
 </body>
 
