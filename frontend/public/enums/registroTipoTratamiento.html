@@ -45,12 +45,12 @@
  <main id="main" class="main">
 
   <div class="pagetitle">
-    <h1>Registro de Enfermedad</h1>
+    <h1>Registro de Tipo de Tratamiento</h1>
     <nav>
       <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="index.html">Home</a></li>
         <li class="breadcrumb-item">Formularios</li>
-        <li class="breadcrumb-item active">Registro de enfermedad</li>
+        <li class="breadcrumb-item active">Registro de tipo de tratamiento</li>
       </ol>
     </nav>
   </div><!-- End Page Title -->
@@ -61,50 +61,30 @@
 
         <div class="card">
           <div class="card-body">
-            <h5 class="card-title">Registro de Enfermedad</h5>
+            <h5 class="card-title">Registro de Tipo de Tratamiento</h5>
 
             <!-- General Form Elements -->
             <form class="needs-validation" id="form" novalidate>
 
               <div class="row mb-3">
                 <div class="col-md-6 mb-3">
-                  <label for="idEnfermedad" class="form-label">ID Enfermedad</label>
-                  <input type="text" class="form-control" id="idEnfermedad" disabled>
-                </div>                  
-                  
-              </div>
-
-              <div class="row mb-3">
-                <div class="col-md-6 mb-3">
-                  <label for="nombre" class="form-label">Nombre</label>
-                  <input type="text" class="form-control" id="nombre" required>
+                  <label for="idTipoEnfermedad" class="form-label">ID Tipo de Tratamiento</label>
+                  <input type="text" class="form-control" id="idTipoEnfermedad" disabled>
                 </div>                  
                 <div class="col-md-6">
-                  <label for="tipoEnfermedad" class="form-label">Tipo de Enfermedad</label>
-                  <select id="tipoEnfermedad" class="form-select" required>
-                    <div id="data-display">Selecciona Una Opcion...</div>
-                  </select>
-                </div>  
-              </div>
-
-              <div class="row mb-3">
-                <div class="col-md-6 mb-3">
-                  <label for="prevalencia" class="form-label">Prevalencia</label>
-                  <input type="text" class="form-control" id="prevalencia" required>
-                </div>                    
-                <div class="col-md-6">
-                  <label for="porcientoMortalidad" class="form-label">Porciento de Mortalidad</label>
-                  <input type="number" class="form-control" id="porcientoMortalidad" required>
-                </div>
+                  <label for="descripcion" class="form-label">Descripcion</label>
+                  <input type="text" class="form-control" id="descripcion" required>
+                </div> 
               </div>
             
               <div class="row mb-5">
                 <div class="col-md-6 mb-3">
-                  <select id="status" class="form-select" required>
-                    <option value="" disabled selected>Selecciona Una Opcion...</option>
-                    <option value="1">Activo</option>
-                    <option value="0">Inactivo</option>
-                  </select>
+                  <label for="status" class="form-label">Status</label>
+                    <select id="status" class="form-select" required>
+                        <option value="" disabled selected>Selecciona Una Opcion...</option>
+                        <option value="1">Activo</option>
+                        <option value="0">Inactivo</option>
+                    </select>
                 </div>
                 <div class="col-md-6">
                   <label for="fechaModificacion" class="form-label">Fecha de Modificacion</label>

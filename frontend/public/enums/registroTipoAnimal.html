@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Regitro de tipo vehículo</title>
+  <title>Regitro de tipo síntomas</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -31,6 +31,7 @@
   <!-- Template Main CSS File -->
   <link href="../NiceAdmin/assets/css/style.css" rel="stylesheet">
 
+ 
 </head>
 
 <body>
@@ -44,12 +45,12 @@
   <main id="main" class="main">
 
     <div class="pagetitle">
-      <h1>Registro de Tipo de Vehículo</h1>
+      <h1>Registro de Tipo de Animal</h1>
       <nav>
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="index.html">Home</a></li>
           <li class="breadcrumb-item">Formularios</li>
-          <li class="breadcrumb-item active">Registro de tipo de vehículo</li>
+          <li class="breadcrumb-item active">Registro de tipo de animal</li>
         </ol>
       </nav>
     </div><!-- End Page Title -->
@@ -60,10 +61,10 @@
 
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">Ingreso de Tipo de Vehículo</h5>
+              <h5 class="card-title">Ingreso de Tipo de Animal</h5>
 
               <!-- General Form Elements -->
-              <form class="needs-validation" id="form" >
+              <form class="needs-validation" id="form" novalidate>
 
                 <div class="row mb-3">
                   <div class="col-md-6">
@@ -86,7 +87,7 @@
                     <input type="date" id="fechaModificacion" class="form-control" disabled>
                   </div>
                 </div>
-
+                
                 <div class="text-center mb-3">
                   <button type="submit" class="btn btn-primary buttonSubmit">Enviar</button>
                   <button type="reset" class="btn btn-outline-danger">Limpiar</button>
@@ -135,8 +136,7 @@
 
   <!-- Template Main JS File -->
   <script src="../NiceAdmin/assets/js/main.js"></script>
-  <script src="../../src/js/api/vehiculo/tipoVehiculo.js"></script>
-
+  <script src="../../src/js/api/salud/tipoSintomas.js"></script>
 <script>
     fetch('../menu/template.html')
             .then(response => response.text())
