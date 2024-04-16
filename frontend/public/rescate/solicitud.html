@@ -2,10 +2,10 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
+  <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Regitro de Animales</title>
+  <title>Regitro de Solicitante</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -35,25 +35,22 @@
 
 <body>
 
-  <!-- ======= Header ======= -->
   <div id="contenidoReutilizable">
     
   </div>
   <div id="content-section"></div>
 
 
-
-
   <!--Principal-->
   <main id="main" class="main">
 
     <div class="pagetitle">
-      <h1>Registro de animales</h1>
+      <h1>Registro de Solicitante de adopción</h1>
       <nav>
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="index.html">Home</a></li>
           <li class="breadcrumb-item">Formularios</li>
-          <li class="breadcrumb-item active">Registro de animales</li>
+          <li class="breadcrumb-item active">Registro de Solicitante</li>
         </ol>
       </nav>
     </div><!-- End Page Title -->
@@ -64,136 +61,113 @@
 
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">Ingreso De Animales</h5>
+              <h5 class="card-title">Ingreso De Solicitante</h5>
 
               <!-- General Form Elements -->
               <form class="needs-validation" id="form" novalidate>
+                <div class="row mb-3">
+                  <div class="col-md-6 mb-3">
+                    <label for="idSolicitante" class="form-label">ID Solicitante</label>
+                    <input type="text" class="form-control" id="idSolicitante" disabled>
+                  </div>
+                </div>
+
+                <div class="row mb-3"> 
+                  <div class="col-md-6 mb-3">
+                    <label for="nombre" class="form-label">Nombre</label>
+                    <input type="text" class="form-control" id="nombre" required>
+                  </div>
+                  <div class="col-md-6">
+                    <label for="apellido" class="form-label">Apellido</label>
+                    <input type="text" class="form-control" id="apellido" required>
+                  </div>
+                </div>
+
+                <div class="row mb-3">
+                  <div class="col-md-6">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="text" class="form-control" id="email" required>
+                  </div>
+                  <div class="col-md-6">
+                    <label for="telefono" class="form-label">Telefono</label>
+                    <input type="text" class="form-control" id="telefono" required>
+                  </div>
+                </div>
+
+
+                <div class="row mb-3">
+                  <div class="col-md-6">
+                    <label for="cedula" class="form-label">Cedula</label>
+                    <input type="text" class="form-control" id="cedula" required>
+                  </div>
+                  <div class="col-md-6 mb-3">
+                    <label for="mySelect" class="form-label">Sexo</label>
+                    <select id="mySelect" class="form-select" required>
+                      
+                    </select>
+                  </div>
+                </div>
 
                 <div class="row mb-3">
                   <div class="col-md-6 mb-3">
-                    <label for="idAnimales" class="form-label">ID Animales</label>
-                    <input type="text" class="form-control" id="idAnimales" disabled>
-                  </div>
-                </div>
-
-                <div class="row mb-3">
-                  <div class="col-md-6">
-                    <label for="alias" class="form-label">Alias</label>
-                    <input type="text" class="form-control" id="alias" required>
+                    <label for="situacionFamiliar" class="form-label">Situación Familiar</label>
+                    <input type="text" class="form-control" id="situacionFamiliar" placeholder="Buena..." required>
                   </div>
                   <div class="col-md-6">
-                    <label for="edad" class="form-label">Edad</label>
-                    <input type="number" class="form-control" id="edad" required>
+                    <label for="ingresosMensuales" class="form-label">ingresos Mensuales</label>
+                    <input type="number" class="form-control" id="ingresosMensuales" required>
                   </div>
                 </div>
 
 
-                <div class="row mb-3">
-                  <div class="col-md-6">
-                    <label for="peso" class="form-label">Peso</label>
-                    <input type="number" class="form-control" id="peso" required>
-                  </div>
-                  <div class="col-md-6">
-                    <label for="altura" class="form-label">Altura</label>
-                    <input type="number" class="form-control" id="altura" required>
-                  </div>
-                </div>
 
                 <div class="row mb-3">
-                  <div class="col-md-6 mb-3">
-                    <label for="sexo" class="form-label">Sexo</label>
-                    <select id="sexot" class="form-select" required>
+                  <div class="col-md-6 mb-3" id="campoDependiente">
+                    <label for="dependencia" class="form-label">Depende económicamente de otros</label>
+                    <select id="dependencia" class="form-select" required onchange="activar()">
                       <option value="" disabled selected>Selecciona Una Opcion...</option>
-                      <option value="F">Femenino</option>
-                      <option value="M">Masculino</option>
+                      <option value="Si">Si</option>
+                      <option value="No">No</option>
                     </select>
                   </div>
-
-                  <div class="col-md-6">
-                    <label for="especie" class="form-label">Especie</label>
-                    <select id="especie" class="form-select" required>
-                      <div id="data-display">Selecciona Una Opcion...</div>
-                    </select>
+                  <div class="col-md-6" id="campoDepen">
+                    <label for="numeroDependientes" class="form-label">Cantidad de dependientes</label>
+                    <input type="number" class="form-control" id="numeroDependientes" required>
                   </div>
                 </div>
 
-                <div class="row mb-3">
-                  <div class="col-md-6 mb-3">
-                    <label for="tipoPiel" class="form-label">Tipo de Piel</label>
-                    <select id="tipoPiel" class="form-select" required>
-                      <div id="data-display0">Selecciona Una Opcion...</div>
-                    </select>
-                  </div>
-                  <div class="col-md-6">
-                    <label for="origen" class="form-label">Origen Del Animal</label>
-                    <select id="origen" class="form-select" required>
-                      <div id="data-display1">Selecciona Una Opcion...</div>
-                    </select>
-                  </div>
-                </div>
+
 
 
 
                 <div class="row mb-3">
                   <div class="col-md-6 mb-3">
-                    <!-- AQUI ES SI O NO, SI TIENE AMPUTACIONES O NO -->
-                    <label for="amputaciones" class="form-label">Amputaciones</label>
-                    <select id="amputaciones" class="form-select" required>
-                      <div id="data-display2">Selecciona Una Opcion...</div>
-                    </select>
+                    <label for="actividadEconomica" class="form-label">Actividad Económica</label>
+                    <input type="text" class="form-control" id="actividadEconomica" required>
                   </div>
-                  <div class="col-md-6">
-                    <label for="tipoAmputacion" class="form-label">Tipo de Amputaciones</label>
-                    <select id="tipoAmputacion" class="form-select" required>
-                      <div id="data-display3">Selecciona Una Opcion...</div>
-                    </select>
-                  </div>
-                </div>
 
-
-                <div class="row mb-3">
-                  <div class="col-md-6 mb-3">
-                    <label for="estado" class="form-label">Estado Del Animal</label>
-                    <select id="estado" class="form-select" required>
-                      <div id="data-display4">Selecciona Una Opcion...</div>
-                    </select>
-                  </div>
                   <div class="col-md-6">
-                    <label for="fechaIngreso" class="form-label">Fecha De Ingreso</label>
-                    <input type="date" id="fechaIngreso" class="form-control" required>
+                    <label for="fechaIngreso" class="form-label">Fecha De Inicio</label>
+                    <input type="fechaIngreso" class="form-control" required>
                   </div>
                 </div>
 
 
 
-                <div class="row  mb-3">
-                  <div class="col-md-6 mb-3">
-                    <label for="colorFisico" class="form-label">Color Fisico Del Animal</label>
-                    <input type="text" class="form-control" id="colorFisico"
-                      placeholder="Ejemplo: Blanco con manchas negras" required>
-                  </div>
-                  <div class="col-md-6">
-                    <label for="colorOjos" class="form-label">Color De Ojos Del Animal</label>
-                    <input type="text" class="form-control" id="colorOjos" placeholder="Ejemplo: Azules" required>
-                  </div>
-                </div>
-
-                
                 <div class="row mb-5">
                   <div class="col-md-6 mb-3">
                     <label for="status" class="form-label">Status</label>
-                        <select id="status" class="form-select" required>
-                            <option value="" disabled selected>Selecciona Una Opcion...</option>
-                              <option value="1">Activo</option>
-                              <option value="0">Inactivo</option>
-                        </select>
+                      <select id="status" class="form-select" required>
+                        <option value="" disabled selected>Selecciona Una Opcion...</option>
+                        <option value="1">Activo</option>
+                        <option value="0">Inactivo</option>
+                      </select>
                   </div>
                   <div class="col-md-6">
                     <label for="fechaModificacion" class="form-label">Fecha de Modificacion</label>
                     <input type="date" id="fechaModificacion" class="form-control" disabled>
                   </div>
                 </div>
-
 
                 <div class="text-center mb-3">
                   <button type="submit" class="btn btn-primary buttonSubmit">Enviar</button>
@@ -243,7 +217,8 @@
 
   <!-- Template Main JS File -->
   <script src="../NiceAdmin/assets/js/main.js"></script>
-    <script src="../../src/js/api/animal/animal.js"></script>
+  <script src="../visualizar.js"></script>
+
 <script>
     fetch('../menu/template.html')
             .then(response => response.text())

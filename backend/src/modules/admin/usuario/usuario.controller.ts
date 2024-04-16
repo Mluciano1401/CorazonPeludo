@@ -18,7 +18,14 @@ export class UsuarioController {
       throw new HttpException(error, HttpStatus.INTERNAL_SERVER_ERROR)
     });
   }
-
+  @Get('/login/')
+  login(@Param('id') id){
+    return this.userService.delete(id).then(res=>{
+      return {success: true, data: res}
+    }).catch(error=>{
+      throw new HttpException(error, HttpStatus.INTERNAL_SERVER_ERROR)
+    });
+  }
   @Get('/:id')
   getById(@Param('id') id){
     return this.userService.findById(id).then(res=>{
@@ -69,4 +76,5 @@ export class UsuarioController {
       throw new HttpException(error, HttpStatus.INTERNAL_SERVER_ERROR)
     });
   }
+  
 }

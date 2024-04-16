@@ -1,15 +1,42 @@
-const form = document.getElementById('formanimal');
+const form = document.getElementById('form');
+const urlParams = new URLSearchParams(window.location.search);
+const id = urlParams.get('id');
 
 form.addEventListener('submit', async (event) =>{
   event.preventDefault(); // Previene el envío predeterminado del formulario
 
   // Recopila los datos del formulario
-  const descripcion = document.getElementById('descripcion').value;
+  const alias = document.getElementById('alias').value;
+  const edad = document.getElementById('edad').value;
+  const peso = document.getElementById('peso').value;
+  const tipoPiel = document.getElementById('TipoPiel').value;  
+  const especie = document.getElementById('especie').value;
+  const sexo = document.getElementById('sexo').value;
+  const origen = document.getElementById('origen').value;
+  const amputaciones = document.getElementById('amputaciones').value;
+  const tipoAmputacion = document.getElementById('tipoAmputacion').value;
+  const estado = document.getElementById('estado').value;
+  const fechaIngreso = document.getElementById('fechaIngreso').value;
+  const colorFifisco = document.getElementById('colorFisico').value;
+  const colorOjos = document.getElementById('colorOjos').value;
+
 
    const status = document.getElementById('status').value;    // Crea una solicitud HTTP
   const url = 'http://localhost:3000/animal';
   const data = { 
-      descripcion: descripcion,
+      alias:alias,
+      edad: edad,
+      peso: peso,
+      tipoPiel: tipoPiel,
+      especie: especie,
+      sexo: sexo,
+      origen: origen,
+      amputaciones: amputaciones,
+      tipoAmputacion: tipoAmputacion,
+      estado: estado,
+      fechaIngreso: fechaIngreso,
+      colorFisico: colorFifisco,
+      colorOjos: colorOjos,
       fechaModificacion: new Date(),
       status: (status == '0') ? false : true 
   };

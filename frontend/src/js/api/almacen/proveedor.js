@@ -6,10 +6,15 @@ form.addEventListener('submit', async (event) =>{
   event.preventDefault(); // Previene el envío predeterminado del formulario
 
   // Recopila los datos del formulario
-  const descripcion = document.getElementById('descripcion').value;
+  const nombre = document.getElementById('nombre').value;
+  const apellido = document.getElementById('apellido').value;
+  const nombreCompania = document.getElementById('nombreCompania').value;
+  const rnc = document.getElementById('rnc').value;
+  const documento = document.getElementById('documento').value;
+  const sexo = document.getElementById('sexo').value;
 
    const status = document.getElementById('status').value;    // Crea una solicitud HTTP
-  const url = 'http://localhost:3000/proveedor';
+  const url = 'http://localhost:3000/persona';
   const data = { 
       descripcion: descripcion,
       fechaModificacion: new Date(),
