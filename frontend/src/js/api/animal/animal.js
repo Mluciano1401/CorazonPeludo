@@ -21,17 +21,13 @@ form.addEventListener('submit', async (event) =>{
   const colorOjos = document.getElementById('colorOjos').value;
 
 
-   const status = document.getElementById('status').value;    // Crea una solicitud HTTP
+  const status = document.getElementById('status').value;    // Crea una solicitud HTTP
   const url = 'http://localhost:3000/animal';
   const data = { 
       alias:alias,
       edad: edad,
       peso: peso,
-      tipoPiel: tipoPiel,
-      especie: especie,
       sexo: sexo,
-      origen: origen,
-      estado: estado,
       fechaIngreso: fechaIngreso,
       fechaModificacion: new Date(),
       status: (status == '0') ? false : true 
@@ -120,4 +116,4 @@ function selectOptions(data) {
     select.appendChild(option);
   });
 }
-getData();
+//getData();
