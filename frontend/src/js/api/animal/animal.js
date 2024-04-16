@@ -31,12 +31,8 @@ form.addEventListener('submit', async (event) =>{
       especie: especie,
       sexo: sexo,
       origen: origen,
-      amputaciones: amputaciones,
-      tipoAmputacion: tipoAmputacion,
       estado: estado,
       fechaIngreso: fechaIngreso,
-      colorFisico: colorFifisco,
-      colorOjos: colorOjos,
       fechaModificacion: new Date(),
       status: (status == '0') ? false : true 
   };
@@ -58,42 +54,40 @@ form.addEventListener('submit', async (event) =>{
     console.error('Error:', error);
   }
 });
-//funcion para los enums
-const select = document.getElementById('mySelect');
-
-fetch('URL_DEL_BACKEND')
-  .then(response => response.json())
+async function getData(){
+  await fetch('http://localhost:3000/tipopiel') // Replace with your actual backend URL
+  .then(response => response.json()) // Parse JSON response
   .then(data => {
-    // Recorre los datos obtenidos del backend
-    data.forEach(option => {
-      // Crea un elemento 'option' para cada valor y texto obtenido
-      const optionElement = document.createElement('option');
-      optionElement.value = option.value;
-      optionElement.text = option.text;
-      
-      // Agrega el elemento 'option' al 'select'
-      select.appendChild(optionElement);
+    // Process and populate the select options
+    populateSelectOptions(data);
+    const select = document.getElementById('tipoPiel');
+    select.addEventListener('change', () => {
+      const selectedId = select.value;
+      const selectedData = data.data.find(item => item.tipoPielId === selectedId); // Find selected item
+      if (selectedData) {
+        const dataDisplay = document.getElementById('data-display');
+        dataDisplay.textContent = JSON.stringify(selectedData, null, 2); // Display selected data
+      }
     });
+  })
+  .catch(error => {
+    console.error('Error fetching data:', error);
   });
-//para visualizar en las consultas
-  fetch('URL_DEL_BACKEND')
-  .then(response => response.json())
-  .then(data => {
-    const tableBody = document.querySelector('#myTable tbody');
+  
+}
+function populateSelectOptions(data) {
+  const select = document.getElementById('tipoPiel');
+  // Clear existing options
+  select.options.length = 0;
 
-    // Recorre los datos obtenidos del backend
-    data.forEach(rowData => {
-      // Crea una nueva fila en la tabla
-      const row = document.createElement('tr');
-
-      // Crea las celdas de la fila y asigna los valores de los datos
-      Object.values(rowData).forEach(value => {
-        const cell = document.createElement('td');
-        cell.textContent = value;
-        row.appendChild(cell);
-      });
-
-      // Agrega la fila a la tabla
-      tableBody.appendChild(row);
-    });
+  // Add an option for each data item
+  data.data.forEach(item => {
+    const option = document.createElement('option');
+    option.value = item.tipoPielId; // Replace with your data item's ID property
+    option.text = item.descripcion; // Replace with your data item's label property
+    select.appendChild(option);
   });
+}
+
+
+getData();
