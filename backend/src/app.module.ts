@@ -219,6 +219,8 @@ import { TipoTareaService } from './modules/miscelaneo/tipoTarea/tipoTarea.servi
 import { DiagnosticoService } from './modules/salud/diagnostico/diagnostico.service';
 import { TipoEnfermedadService } from './modules/salud/tipoEnfermedad/tipoEnfermedad.service';
 import { ViaAdministracionService } from './modules/salud/viaAdministracion/viaAministracion.service';
+import { AuthService } from './modules/admin/auth/auth.service';
+import { JwtService } from '@nestjs/jwt';
 
 const models = [Animal,Empleado,Enfermedad,Persona,Producto,Solicitante,Solicitud,SolicitudR,Usuario, 
   TipoUsuario, TipoPersona, Sucursal, AsignacionRecursos, AsignacionTarea, LogAcciones,ActividadEconomica,
@@ -263,6 +265,6 @@ TipoCombustible];
   EstadoSaludService, MedicamentoService, PolizaSeguroService, SintomasService, TipoEnfermedadService, TipoMedicamentoService, 
   TipoSintomasService, TipoTratamientoService, TratamientoService, VacunaService, ViaAdministracionService, EstadoCivilService,
   TelefonoService, TipoDonacionService, DonacionService, TipoEmpleadoService, TipoEmpresaService, TipoTelefonoService, 
-  VehiculoService, ModeloService, TipoVehiculoService, TipoCombustibleService],
+  VehiculoService, ModeloService, TipoVehiculoService, TipoCombustibleService,AuthService,JwtService],
 })
 export class AppModule {}

@@ -9,11 +9,11 @@ export class AuthService {
   _usersService: UsuarioService;
   _jwtService: JwtService;
   constructor(
-    private usersService: UsuarioService,
-    private jwtService: JwtService,
+    private UsuarioService: UsuarioService,
+    private JwtService: JwtService,
   ) {
-    this._jwtService = jwtService;
-    this._usersService = usersService;
+    this._jwtService = this.JwtService;
+    this._usersService = this.UsuarioService;
   }
 
   // Extract the user from the database
@@ -22,8 +22,11 @@ export class AuthService {
     if (!user) {
       throw new UnauthorizedException('Username or password incorrect');
     }
-    const isPasswordValid = await bcrypt.compare(password, user.password);
+    /*const isPasswordValid = await bcrypt.compare(password, user.password);
     if (!isPasswordValid) {
+      throw new UnauthorizedException('Username or password incorrect');
+    }*/
+    if (password !== user.password) {
       throw new UnauthorizedException('Username or password incorrect');
     }
     return user;
