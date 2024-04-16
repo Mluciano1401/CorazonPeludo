@@ -27,8 +27,8 @@ form.addEventListener('submit', async (event) => {
     });
 
     if (response.ok) {
-      form.reset(); 
-      // Clear form after successful submission
+      window.location.href = '../../../../public/NiceAdmin/index.html'; // Clear and concise redirection
+      console.log('Login successful! Redirected to index.html');
     } else {
       console.error('Error:', await response.text()); // Log detailed error
     }
