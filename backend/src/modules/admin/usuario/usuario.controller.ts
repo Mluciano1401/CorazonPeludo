@@ -1,26 +1,22 @@
 import { Controller, Get, Post, Body, HttpException, HttpStatus, Param   } from '@nestjs/common';
 import {UsuarioService} from  './usuario.service';
 import { Usuario } from 'src/models/admin/usuario.model';
+import { AuthService } from '../auth/auth.service';
+import { LoginDto } from '../auth/dtos/login.dto';
 
 
 @Controller('usuario')
 export class UsuarioController {
   userService: UsuarioService;
-  constructor(private UsuarioService: UsuarioService) {
+  authService: AuthService;
+  constructor(private UsuarioService: UsuarioService, private AuthService: AuthService) {
     this.userService = this.UsuarioService;
+    this.authService = this.AuthService;
   }
 
   @Get()
   get(){
     return this.userService.findAll().then(res=>{
-      return {success: true, data: res}
-    }).catch(error=>{
-      throw new HttpException(error, HttpStatus.INTERNAL_SERVER_ERROR)
-    });
-  }
-  @Get('/login/')
-  login(@Param('id') id){
-    return this.userService.delete(id).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{
       throw new HttpException(error, HttpStatus.INTERNAL_SERVER_ERROR)
@@ -38,6 +34,14 @@ export class UsuarioController {
   @Post()
   save(@Body() body:Usuario){
     return this.userService.create(body).then(res=>{
+      return {success: true, data: res}
+    }).catch(error=>{
+      throw new HttpException(error, HttpStatus.INTERNAL_SERVER_ERROR)
+    });
+  }
+  @Post('/login')
+  login(@Body() body:LoginDto){
+    return this.authService.validateUser(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{
       throw new HttpException(error, HttpStatus.INTERNAL_SERVER_ERROR)
