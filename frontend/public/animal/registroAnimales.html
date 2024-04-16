@@ -112,7 +112,7 @@
                   <div class="col-md-6">
                     <label for="especie" class="form-label">Especie</label>
                     <select id="especie" class="form-select" required>
-                      <div id="data-display">Selecciona Una Opcion...</div>
+                      <div id="data-display0">Selecciona Una Opcion...</div>
                     </select>
                   </div>
                 </div>
@@ -127,7 +127,10 @@
                   <div class="col-md-6">
                     <label for="origen" class="form-label">Origen Del Animal</label>
                     <select id="origen" class="form-select" required>
-                      <div id="data-display1">Selecciona Una Opcion...</div>
+                      <option value="" disabled selected>Selecciona Una Opcion...</option>
+                      <option value="F">Nacido en el albergue</option>
+                      <option value="M">Dado en adopcion</option>
+                      <option value="M">Rescatado</option>
                     </select>
                   </div>
                 </div>
@@ -139,13 +142,19 @@
                     <!-- AQUI ES SI O NO, SI TIENE AMPUTACIONES O NO -->
                     <label for="amputaciones" class="form-label">Amputaciones</label>
                     <select id="amputaciones" class="form-select" required>
-                      <div id="data-display2">Selecciona Una Opcion...</div>
+                      <option value="" disabled selected>Selecciona Una Opcion...</option>
+                      <option value="F">Si</option>
+                      <option value="M">No</option>
                     </select>
                   </div>
                   <div class="col-md-6">
                     <label for="tipoAmputacion" class="form-label">Tipo de Amputaciones</label>
                     <select id="tipoAmputacion" class="form-select" required>
-                      <div id="data-display3">Selecciona Una Opcion...</div>
+                      <option value="" disabled selected>Selecciona Una Opcion...</option>
+                      <option value="pierna">Pierna</option>
+                      <option value="oreja">Oreja</option>
+                      <option value="cola">Cola</option>
+                      <option value="castacion">Castracion</option>
                     </select>
                   </div>
                 </div>
@@ -155,7 +164,11 @@
                   <div class="col-md-6 mb-3">
                     <label for="estado" class="form-label">Estado Del Animal</label>
                     <select id="estado" class="form-select" required>
-                      <div id="data-display4">Selecciona Una Opcion...</div>
+                      <option value="" disabled selected>Selecciona Una Opcion...</option>
+                      <option value="saludable">Saludable</option>
+                      <option value="enfermo">Enfermo</option>
+                      <option value="desorientado">Desorientado</option>
+                      <option value="agresivo">Agresivo</option>
                     </select>
                   </div>
                   <div class="col-md-6">

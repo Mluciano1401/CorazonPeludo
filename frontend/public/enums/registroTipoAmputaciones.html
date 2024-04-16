@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Regitro de Tipo de Producto</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.gstatic.com" rel="preconnect">
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+    rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="../NiceAdmin/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../NiceAdmin/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="../NiceAdmin/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="../NiceAdmin/assets/vendor/quill/quill.snow.css" rel="stylesheet">
+  <link href="../NiceAdmin/assets/vendor/quill/quill.bubble.css" rel="stylesheet">
+  <link href="../NiceAdmin/assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="../NiceAdmin/assets/vendor/simple-datatables/style.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="../NiceAdmin/assets/css/style.css" rel="stylesheet">
+
+
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <div id="contenidoReutilizable">
+    
+  </div>
+  <div id="content-section"></div>
+  <!--Principal-->
+  <main id="main" class="main">
+
+    <div class="pagetitle">
+      <h1>Registro de Tipo de Amputaciones</h1>
+      <nav>
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+          <li class="breadcrumb-item">Formularios</li>
+          <li class="breadcrumb-item active">Registro de tipo de Amputaciones</li>
+        </ol>
+      </nav>
+    </div><!-- End Page Title -->
+
+    <section class="section">
+      <div class="row">
+        <div class="col-lg-12">
+
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Ingreso De Tipo de Amputaciones</h5>
+
+              <!-- General Form Elements -->
+              <form class="needs-validation" id="form" novalidate>
+
+                <div class="row mb-3">
+                  <div class="col-md-6">
+                    <label for="descripcion" class="form-label">Descripcion</label>
+                    <input type="text" class="form-control" id="descripcion" required>
+                  </div>
+                </div>
+
+                <div class="row mb-5">
+                  <div class="col-md-6 mb-3">
+                    <label for="status" class="form-label">Status</label>
+                      <select id="status" class="form-select" required>
+                          <option value="" disabled selected>Selecciona Una Opcion...</option>
+                          <option value="1">Activo</option>
+                          <option value="0">Inactivo</option>
+                      </select>
+                  </div>
+                  <div class="col-md-6">
+                    <label for="fechaModificacion" class="form-label">Fecha de Modificacion</label>
+                    <input type="date" id="fechaModificacion" class="form-control" disabled>
+                  </div>
+                </div>
+
+                <div class="text-center mb-3">
+                  <button type="submit" class="btn btn-primary buttonSubmit">Enviar</button>
+                  <button type="reset" class="btn btn-outline-danger">Limpiar</button>
+                </div>
+
+              </form><!-- End General Form Elements -->
+
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+  <!-- End #main -->
+
+
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer" class="footer">
+    <div class="copyright">
+      <p class="copy copy-inicio">&copy Copyright - <script>
+        document.write(new Date().getFullYear());
+            </script>
+    </p>
+    </div>
+    <div class="credits">
+      Designed by Hilary Collado - Maria Luciano
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+   <script src="../NiceAdmin/assets/vendor/apexcharts/apexcharts.min.js"></script>
+  <script src="../NiceAdmin/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../NiceAdmin/assets/vendor/chart.js/chart.umd.js"></script>
+  <script src="../NiceAdmin/assets/vendor/echarts/echarts.min.js"></script>
+  <script src="../NiceAdmin/assets/vendor/quill/quill.min.js"></script>
+  <script src="../NiceAdmin/assets/vendor/simple-datatables/simple-datatables.js"></script>
+  <script src="../NiceAdmin/assets/vendor/tinymce/tinymce.min.js"></script>
+  <script src="../NiceAdmin/assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="../NiceAdmin/assets/js/main.js"></script>
+    <script src="../../src/js/api/almacen/tipoProducto.js"></script>
+<script>
+    fetch('../menu/template.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('contenidoReutilizable').innerHTML = data;
+            });
+    </script>
+</body>
+
+</html>
