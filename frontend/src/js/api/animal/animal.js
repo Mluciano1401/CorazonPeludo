@@ -9,16 +9,16 @@ form.addEventListener('submit', async (event) =>{
   const alias = document.getElementById('alias').value;
   const edad = document.getElementById('edad').value;
   const peso = document.getElementById('peso').value;
-  const tipoPiel = document.getElementById('TipoPiel').value;  
-  const especie = document.getElementById('especie').value;
-  const sexo = document.getElementById('sexo').value;
-  const origen = document.getElementById('origen').value;
-  const amputaciones = document.getElementById('amputaciones').value;
-  const tipoAmputacion = document.getElementById('tipoAmputacion').value;
-  const estado = document.getElementById('estado').value;
+  //const tipoPiel = document.getElementById('TipoPiel').value;  
+  //const especie = document.getElementById('especie').value;
+ // const sexo = document.getElementById('sexo').value;
+  //const origen = document.getElementById('origen').value;
+  //const amputaciones = document.getElementById('amputaciones').value;
+  //const tipoAmputacion = document.getElementById('tipoAmputacion').value;
+  //const estado = document.getElementById('estado').value;
   const fechaIngreso = document.getElementById('fechaIngreso').value;
-  const colorFifisco = document.getElementById('colorFisico').value;
-  const colorOjos = document.getElementById('colorOjos').value;
+  //const colorFifisco = document.getElementById('colorFisico').value;
+  //const colorOjos = document.getElementById('colorOjos').value;
 
 
   const status = document.getElementById('status').value;    // Crea una solicitud HTTP
@@ -27,7 +27,6 @@ form.addEventListener('submit', async (event) =>{
       alias:alias,
       edad: edad,
       peso: peso,
-      sexo: sexo,
       fechaIngreso: fechaIngreso,
       fechaModificacion: new Date(),
       status: (status == '0') ? false : true 
@@ -40,7 +39,7 @@ form.addEventListener('submit', async (event) =>{
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(data)
     });
-
+    console.log(response);
     if (response.ok) {
       form.reset(); // Clear form after successful submission
     } else {
