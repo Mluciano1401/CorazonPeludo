@@ -27,7 +27,7 @@ export class AnimalController {
       throw new HttpException(error, HttpStatus.INTERNAL_SERVER_ERROR)
     });
   }
-
+/*
   @Post()
   save(@Body() body:Animal){
     return this.animalService.create(body).then(res=>{
@@ -35,7 +35,7 @@ export class AnimalController {
     }).catch(error=>{
       throw new HttpException(error, HttpStatus.INTERNAL_SERVER_ERROR)
     });
-  }
+  }*/
 
   @Post('/update/:id')
   update(@Body() body:Animal, @Param('id') id){
