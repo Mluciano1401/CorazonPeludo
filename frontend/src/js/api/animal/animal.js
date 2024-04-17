@@ -9,29 +9,24 @@ form.addEventListener('submit', async (event) =>{
   const alias = document.getElementById('alias').value;
   const edad = document.getElementById('edad').value;
   const peso = document.getElementById('peso').value;
-  const tipoPiel = document.getElementById('TipoPiel').value;  
-  const especie = document.getElementById('especie').value;
-  const sexo = document.getElementById('sexo').value;
-  const origen = document.getElementById('origen').value;
-  const amputaciones = document.getElementById('amputaciones').value;
-  const tipoAmputacion = document.getElementById('tipoAmputacion').value;
-  const estado = document.getElementById('estado').value;
+  //const tipoPiel = document.getElementById('TipoPiel').value;  
+  //const especie = document.getElementById('especie').value;
+ // const sexo = document.getElementById('sexo').value;
+  //const origen = document.getElementById('origen').value;
+  //const amputaciones = document.getElementById('amputaciones').value;
+  //const tipoAmputacion = document.getElementById('tipoAmputacion').value;
+  //const estado = document.getElementById('estado').value;
   const fechaIngreso = document.getElementById('fechaIngreso').value;
-  const colorFifisco = document.getElementById('colorFisico').value;
-  const colorOjos = document.getElementById('colorOjos').value;
+  //const colorFifisco = document.getElementById('colorFisico').value;
+  //const colorOjos = document.getElementById('colorOjos').value;
 
 
-   const status = document.getElementById('status').value;    // Crea una solicitud HTTP
+  const status = document.getElementById('status').value;    // Crea una solicitud HTTP
   const url = 'http://localhost:3000/animal';
   const data = { 
       alias:alias,
       edad: edad,
       peso: peso,
-      tipoPiel: tipoPiel,
-      especie: especie,
-      sexo: sexo,
-      origen: origen,
-      estado: estado,
       fechaIngreso: fechaIngreso,
       fechaModificacion: new Date(),
       status: (status == '0') ? false : true 
@@ -44,7 +39,7 @@ form.addEventListener('submit', async (event) =>{
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(data)
     });
-
+    console.log(response);
     if (response.ok) {
       form.reset(); // Clear form after successful submission
     } else {
@@ -64,6 +59,24 @@ async function getData(){
     select.addEventListener('change', () => {
       const selectedId = select.value;
       const selectedData = data.data.find(item => item.tipoPielId === selectedId); // Find selected item
+      if (selectedData) {
+        const dataDisplay = document.getElementById('data-display0');
+        dataDisplay.textContent = JSON.stringify(selectedData, null, 2); // Display selected data
+      }
+    });
+  })
+  .catch(error => {
+    console.error('Error fetching data:', error);
+  });
+  await fetch('http://localhost:3000/especie') // Replace with your actual backend URL
+  .then(response => response.json()) // Parse JSON response
+  .then(data => {
+    // Process and populate the select options
+    selectOptions(data);
+    const select = document.getElementById('especie');
+    select.addEventListener('change', () => {
+      const selectedId = select.value;
+      const selectedData = data.data.find(item => item.especieId === selectedId); // Find selected item
       if (selectedData) {
         const dataDisplay = document.getElementById('data-display');
         dataDisplay.textContent = JSON.stringify(selectedData, null, 2); // Display selected data
@@ -89,5 +102,17 @@ function populateSelectOptions(data) {
   });
 }
 
+function selectOptions(data) {
+  const select = document.getElementById('especie');
+  // Clear existing options
+  select.options.length = 0;
 
-getData();
+  // Add an option for each data item
+  data.data.forEach(item => {
+    const option = document.createElement('option');
+    option.value = item.especieId; // Replace with your data item's ID property
+    option.text = item.descripcion; // Replace with your data item's label property
+    select.appendChild(option);
+  });
+}
+//getData();

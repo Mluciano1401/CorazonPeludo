@@ -58,30 +58,27 @@ function mostrarCampos() {
     }
   } 
 
+  //DATATABLE
+document.addEventListener('DOMContentLoaded', () => {
+  // Realizar la solicitud al backend para obtener los datos de animales
+  fetch('http://localhost:3000/animales') // Ajusta la URL según la configuración de tu servidor NestJS
+    .then(response => response.json())
+    .then(data => {
+      // Obtener la tabla donde se mostrarán los datos
+      const table = document.querySelector('.datatable');
 
-//   // JavaScript
-// // Simulación de fechas y horas disponibles (puedes obtener estos datos de tu base de datos o de una API)
-// const fechasDisponibles = ['2024-04-17', '2024-04-18', '2024-04-19'];
-// const horasDisponibles = ['09:00', '10:00', '11:00', '15:00', '16:00'];
+      // Iterar sobre los datos y crear filas en la tabla
+      data.forEach(animal => {
+        const row = table.insertRow();
+        row.insertCell(0).textContent = animal.id.toString(); // Suponiendo que tienes un campo 'id' en tu entidad Animal
+        row.insertCell(1).textContent = animal.nombre; // Suponiendo que tienes un campo 'nombre' en tu entidad Animal
+        // Inserta más celdas según las columnas que desees mostrar en tu DataTable
+      });
 
-// // Función para mostrar fechas disponibles
-// function mostrarFechasDisponibles() {
-//   const fechasDiv = document.getElementById('fechasDisponibles');
-//   fechasDiv.innerHTML = '<p>Fechas disponibles:</p>';
-//   fechasDisponibles.forEach(fecha => {
-//     const p = document.createElement('p');
-//     p.textContent = fecha;
-//     fechasDiv.appendChild(p);
-//   });
-// }
-
-// // Función para mostrar horas disponibles
-// function mostrarHorasDisponibles() {
-//   const horasDiv = document.getElementById('horasDisponibles');
-//   horasDiv.innerHTML = '<p>Horas disponibles:</p>';
-//   horasDisponibles.forEach(hora => {
-//     const p = document.createElement('p');
-//     p.textContent = hora;
-//     horasDiv.appendChild(p);
-//   });
-// }
+      // Inicializar el DataTable de Bootstrap 5
+      new simpleDatatables.DataTable('.datatable', {
+        searchable: false, // Opcional: desactiva la búsqueda si no la necesitas
+      });
+    })
+    .catch(error => console.error('Error al obtener animales:', error));
+});

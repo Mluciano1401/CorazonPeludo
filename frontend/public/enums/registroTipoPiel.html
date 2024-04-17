@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Historial Medico</title>
+  <title>Regitro de Tipo de Producto</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -15,7 +15,9 @@
 
   <!-- Google Fonts -->
   <link href="https://fonts.gstatic.com" rel="preconnect">
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+    rel="stylesheet">
 
   <!-- Vendor CSS Files -->
   <link href="../NiceAdmin/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -27,7 +29,10 @@
   <link href="../NiceAdmin/assets/vendor/simple-datatables/style.css" rel="stylesheet">
 
   <!-- Template Main CSS File -->
-  <link href="../NiceAdmin/assets/css/style.css" rel="stylesheet"></head>
+  <link href="../NiceAdmin/assets/css/style.css" rel="stylesheet">
+
+
+</head>
 
 <body>
 
@@ -36,16 +41,16 @@
     
   </div>
   <div id="content-section"></div>
-
+  <!--Principal-->
   <main id="main" class="main">
 
     <div class="pagetitle">
-      <h1>Historial Medico</h1>
+      <h1>Registro de Tipo de Piel</h1>
       <nav>
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-          <li class="breadcrumb-item">Consultas</li>
-          <li class="breadcrumb-item active">Historial Medico</li>
+          <li class="breadcrumb-item">Formularios</li>
+          <li class="breadcrumb-item active">Registro de tipo de piel</li>
         </ol>
       </nav>
     </div><!-- End Page Title -->
@@ -56,60 +61,71 @@
 
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">Historial Medico</h5>
+              <h5 class="card-title">Ingreso De Tipo de Piel</h5>
 
-              <button id="agregar" class="btn btn-success btn-sm me-1" style="float: right;"><a style="text-decoration: none;" href="../enums/registroTipoUsuario.html">Agregar</a></button>
-              <!-- TABLA PARA VISUALIZAR LAS CONSULTAS -->
-              <div>
-                <input type="text" id="buscador" class="form-control mb-3" placeholder="Buscar">
-                 <i></i>
-              </input>   
-              </div>
-              <table class="table table-striped table-bordered">
-                <thead>
-                  <tr>
-                    <th scope="col">Id</th>
-                    <th scope="col">Descripción</th>
-                    <th scope="col">Última modificación</th>
-                     <th scope="col">Estado</th>
-                    <th scope="col">Acciones</th>
-                  </tr>
-                </thead>
-                <tbody id="tablebody">
+              <!-- General Form Elements -->
+              <form class="needs-validation" id="form" novalidate>
 
-                </tbody>
-              </table>
-              <!-- End Table with stripped rows -->
+                <div class="row mb-3">
+                  <div class="col-md-6">
+                    <label for="descripcion" class="form-label">Descripcion</label>
+                    <input type="text" class="form-control" id="descripcion" required>
+                  </div>
+                </div>
+
+                <div class="row mb-5">
+                  <div class="col-md-6 mb-3">
+                    <label for="status" class="form-label">Status</label>
+                      <select id="status" class="form-select" required>
+                          <option value="" disabled selected>Selecciona Una Opcion...</option>
+                          <option value="1">Activo</option>
+                          <option value="0">Inactivo</option>
+                      </select>
+                  </div>
+                  <div class="col-md-6">
+                    <label for="fechaModificacion" class="form-label">Fecha de Modificacion</label>
+                    <input type="date" id="fechaModificacion" class="form-control" disabled>
+                  </div>
+                </div>
+
+                <div class="text-center mb-3">
+                  <button type="submit" class="btn btn-primary buttonSubmit">Enviar</button>
+                  <button type="reset" class="btn btn-outline-danger">Limpiar</button>
+                </div>
+
+              </form><!-- End General Form Elements -->
 
             </div>
           </div>
 
-          
-          </div>
         </div>
+
       </div>
     </section>
 
-  </main><!-- End #main -->
+  </main>
+  <!-- End #main -->
+
+
 
   <!-- ======= Footer ======= -->
   <footer id="footer" class="footer">
     <div class="copyright">
-      <p class="copy copy-inicio">&copy Copyright -
-        <script>
-          document.write(new Date().getFullYear());
-        </script>
-      </p>
+      <p class="copy copy-inicio">&copy Copyright - <script>
+        document.write(new Date().getFullYear());
+            </script>
+    </p>
     </div>
     <div class="credits">
       Designed by Hilary Collado - Maria Luciano
     </div>
   </footer><!-- End Footer -->
 
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
 
   <!-- Vendor JS Files -->
-  <script src="../NiceAdmin/assets/vendor/apexcharts/apexcharts.min.js"></script>
+   <script src="../NiceAdmin/assets/vendor/apexcharts/apexcharts.min.js"></script>
   <script src="../NiceAdmin/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="../NiceAdmin/assets/vendor/chart.js/chart.umd.js"></script>
   <script src="../NiceAdmin/assets/vendor/echarts/echarts.min.js"></script>
@@ -117,12 +133,10 @@
   <script src="../NiceAdmin/assets/vendor/simple-datatables/simple-datatables.js"></script>
   <script src="../NiceAdmin/assets/vendor/tinymce/tinymce.min.js"></script>
   <script src="../NiceAdmin/assets/vendor/php-email-form/validate.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-  
+
   <!-- Template Main JS File -->
   <script src="../NiceAdmin/assets/js/main.js"></script>
-  <script src="../../src/js/api/animal/historialMedico.js">
-  </script>
+    <script src="../../src/js/api/almacen/tipoProducto.js"></script>
 <script>
     fetch('../menu/template.html')
             .then(response => response.text())
