@@ -16,7 +16,7 @@ export class Usuario {
     @Column({ nullable: false })
     email:string;
 
-    @Column()
+    @Column({ nullable: true})
     foto:string;
 
     @ManyToOne(() => TipoUsuario)

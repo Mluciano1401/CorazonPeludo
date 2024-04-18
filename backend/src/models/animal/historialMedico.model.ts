@@ -27,7 +27,7 @@ export class HistorialMedico {
     @JoinColumn()
     polizaSeguro: PolizaSeguro;
 
-    @Column()
+    @Column({ nullable: true})
     fecha: Date;
 
   @Column({ nullable: false})

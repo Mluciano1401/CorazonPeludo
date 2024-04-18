@@ -13,10 +13,10 @@ export class Enfermedad {
     @JoinColumn()
     tipoEnfermedad: TipoEnfermedad;
 
-    @Column()
+    @Column({ nullable: true})
     prevalencia:string;
 
-    @Column()
+    @Column({ nullable: true})
     porcientoMortalidad: number;
 
   @Column({ nullable: false})

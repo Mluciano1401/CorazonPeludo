@@ -17,37 +17,37 @@ export class Persona {
     @Column({ nullable: false })
     nombre: string;
 
-    @Column()
+    @Column({ nullable: true})
     apellido: string;
 
-    @Column()
+    @Column({ nullable: true})
     email:string;
 
-    @Column()
+    @Column({ nullable: true})
     foto:string;
 
-    @Column()
+    @Column({ nullable: true})
     rnc:string;
 
-    @Column()
+    @Column({ nullable: true})
     cedula:string;
 
-    @Column()
+    @Column({ nullable: true})
     pasaporte:string;
 
-    @Column()
+    @Column({ nullable: true})
     fechaNacimiento:Date;  
-    @Column()
+    @Column({ nullable: true})
     licenciaConducir:string;
 
     @ManyToOne(()=> Direccion)
     @JoinColumn()
     direccion: Direccion;
 
-    @Column()
+    @Column({ nullable: true})
     sexo:string;
     
-    @Column()
+    @Column({ nullable: true})
     genero:string;
     
     @ManyToOne(()=> EstadoCivil)

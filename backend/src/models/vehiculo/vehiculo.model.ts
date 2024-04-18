@@ -11,32 +11,32 @@ export class Vehiculo {
     @JoinColumn()
     tipoVehiculo: TipoVehiculo;
 
-    @Column()
+    @Column({ nullable: true})
     numeroChasis: string;
 
     @Column({ nullable: false })
     placa: string;
 
-    @Column()
+    @Column({ nullable: true})
     es4x4:boolean;
 
-    @Column()
+    @Column({ nullable: true})
     anio:number;
 
     @OneToOne(()=> TipoCombustible)
     @JoinColumn()
     tipoCombustible: TipoCombustible;
 
-    @Column()
+    @Column({ nullable: true})
     kilometrajeMaximo:number;
     
-    @Column()
+    @Column({ nullable: true})
     capacidadPasajeros:number;
 
-    @Column()
+    @Column({ nullable: true})
     capacidadCarga:number;
     
-    @Column()
+    @Column({ nullable: true})
     color:string;
 
   @Column({ nullable: false})

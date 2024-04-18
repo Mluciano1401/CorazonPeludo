@@ -10,7 +10,7 @@ export class EfectosSecundarios{
     @JoinColumn()
     sintoma: Sintoma;
 
-    @Column()
+    @Column({ nullable: true})
     duracion: number;
 
     @Column({ nullable: false})

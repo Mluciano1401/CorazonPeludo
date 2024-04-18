@@ -16,7 +16,7 @@ export class enfermedadXtartamiento{
     @JoinColumn()
     tratamiento: Tratamiento;
 
-    @Column()
+    @Column({ nullable: true})
     duracion: number;
 
   @Column({ nullable: false})

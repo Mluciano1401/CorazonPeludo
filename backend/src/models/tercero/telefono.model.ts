@@ -16,7 +16,7 @@ export class Telefono{
     @Column({ nullable: false })
     descripcion: string;
 
-    @Column()
+    @Column({ nullable: true})
     extension: string;
 
   @Column({ nullable: false})
