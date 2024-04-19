@@ -16,7 +16,7 @@ export class Solicitud {
     @JoinColumn()
     estado: Estado;
 
-    @Column()
+    @Column({ nullable: true})
     fechaCreacion: Date;
 
     @ManyToOne(()=> Sucursal)

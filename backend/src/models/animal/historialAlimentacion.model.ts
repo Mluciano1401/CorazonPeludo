@@ -16,7 +16,7 @@ export class HistorialAlimentacion {
     @JoinColumn()
     veterinario: Empleado;
 
-    @Column()
+    @Column({ nullable: true})
     fecha: Date;
 
   @Column({ nullable: false})

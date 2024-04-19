@@ -11,7 +11,7 @@ export class Solicitante {
     @JoinColumn()
     persona: Persona;
 
-    @Column()
+    @Column({ nullable: true})
     situacionFamiliar: number;
 
     @Column({ nullable: false, default: 0 })
@@ -21,10 +21,10 @@ export class Solicitante {
     @JoinColumn()
     actividadEconomica: ActividadEconomica;
 
-    @Column()
+    @Column({ nullable: true})
     dependencia: boolean;
 
-    @Column()
+    @Column({ nullable: true})
     numeroDependientes: number;
 
   @Column({ nullable: false})

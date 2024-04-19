@@ -11,10 +11,10 @@ export class Cita{
     @JoinColumn()
     persona: Persona;
 
-    @Column()
+    @Column({ nullable: true})
     fecha: Date;
 
-    @Column()
+    @Column({ nullable: true})
     hora: Date;
     
     @ManyToOne(()=> Estado)

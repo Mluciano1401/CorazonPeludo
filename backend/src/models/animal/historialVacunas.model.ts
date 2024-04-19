@@ -15,7 +15,7 @@ export class HistorialVacunas{
     @JoinColumn()
     vacuna:  Vacuna;
 
-    @Column()
+    @Column({ nullable: true})
     fecha: Date;
 
     @ManyToOne(() => Persona)

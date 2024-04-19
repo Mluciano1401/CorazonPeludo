@@ -21,7 +21,7 @@ export class Medicamento {
     @JoinColumn()
     tipoMedicamento: TipoMedicamento;
 
-    @Column()
+    @Column({ nullable: true})
     laboratorio: string;
 
     @ManyToOne(() => ViaAdministracion)

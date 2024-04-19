@@ -7,42 +7,42 @@ export class Animal {
     @PrimaryGeneratedColumn()
     animalId: number;
 
-    @Column()
+    @Column({ nullable: true})
     alias: string;
 
-    @Column()
+    @Column({ nullable: true})
     identificador: number;
 
     @ManyToOne(()=> Especie)
     @JoinColumn()
     especie: Especie;
 
-    @Column()
+    @Column({ nullable: true})
     foto:string;
 
-    @Column()
+    @Column({ nullable: true})
     edad: number;
 
-    @Column()
+    @Column({ nullable: true})
     altura: number;
 
-    @Column()
+    @Column({ nullable: true})
     peso: number;
 
-    @Column()
+    @Column({ nullable: true})
     sexo: string;
 
     @ManyToOne(()=> RasgosFisicos)
     @JoinColumn()
     rasgosFisicos: RasgosFisicos;
 
-    @Column()
+    @Column({ nullable: true})
     origen: number;
 
-    @Column()
+    @Column({ nullable: true})
     estado: number;
 
-    @Column()
+    @Column({ nullable: true})
     fechaIngreso: Date;
 
   @Column({ nullable: false})

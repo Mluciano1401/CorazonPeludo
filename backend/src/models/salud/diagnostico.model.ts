@@ -14,7 +14,7 @@ export class Diagnostico{
     @JoinColumn()
     enfermedad: Enfermedad;
 
-    @Column()
+    @Column({ nullable: true})
     fecha: Date;
 
     @Column({ nullable: false})
