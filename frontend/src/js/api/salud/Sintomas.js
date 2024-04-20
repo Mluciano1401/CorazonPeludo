@@ -11,7 +11,7 @@ form.addEventListener('submit', async (event) =>{
    const status = document.getElementById('status').value;    // Crea una solicitud HTTP
   const url = 'http://localhost:3000/sintoma';
   const data = { 
-      descripcion: descripcion,
+      descripcion: descripcion ? descripcion : "",
       tipoSintoma: tipoSintoma,
       fechaModificacion: new Date(),
       status: (status == '0') ? false : true 
