@@ -16,7 +16,7 @@ form.addEventListener('submit', async (event) => {
    const url = 'http://localhost:3000/asignaciontarea';
    const data = { 
        idTareas: idtareas,
-       descripcion: descripcion,
+       descripcion: descripcion ? descripcion : "" ,
        tipoTarea: tipotarea,
        complejidad: complejidad,
        fechaModificacion: new Date(),
