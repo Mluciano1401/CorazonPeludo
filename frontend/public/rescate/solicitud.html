@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Regitro de Solicitante</title>
+  <title>Regitro de Solicitud de Rescate</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -45,12 +45,12 @@
   <main id="main" class="main">
 
     <div class="pagetitle">
-      <h1>Registro de Solicitante de adopción</h1>
+      <h1>Registro de Solicitud de Rescate</h1>
       <nav>
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="index.html">Home</a></li>
           <li class="breadcrumb-item">Formularios</li>
-          <li class="breadcrumb-item active">Registro de Solicitante</li>
+          <li class="breadcrumb-item active">Registro de solicitud de rescate</li>
         </ol>
       </nav>
     </div><!-- End Page Title -->
@@ -61,32 +61,28 @@
 
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">Ingreso De Solicitante</h5>
+              <h5 class="card-title">Ingreso De Solicitud de Rescate</h5>
 
               <!-- General Form Elements -->
               <form class="needs-validation" id="form" novalidate>
                 <div class="row mb-3">
                   <div class="col-md-6 mb-3">
-                    <label for="idSolicitante" class="form-label">ID Solicitante</label>
+                    <label for="idSolicitante" class="form-label">ID Solicitud de Rescate</label>
                     <input type="text" class="form-control" id="idSolicitante" disabled>
+                  </div>
+
+                  <div class="col-md-6">
+                    <label for="especie" class="form-label">Especie</label>
+                    <select id="especie" class="form-select"  >
+                      <div class="data-display0"></div>
+                    </select>
                   </div>
                 </div>
 
                 <div class="row mb-3"> 
                   <div class="col-md-6 mb-3">
-                    <label for="nombre" class="form-label">Nombre</label>
+                    <label for="nombre" class="form-label">Nombre del Solicitante</label>
                     <input type="text" class="form-control" id="nombre" required>
-                  </div>
-                  <div class="col-md-6">
-                    <label for="apellido" class="form-label">Apellido</label>
-                    <input type="text" class="form-control" id="apellido" required>
-                  </div>
-                </div>
-
-                <div class="row mb-3">
-                  <div class="col-md-6">
-                    <label for="email" class="form-label">Email</label>
-                    <input type="text" class="form-control" id="email" required>
                   </div>
                   <div class="col-md-6">
                     <label for="telefono" class="form-label">Telefono</label>
@@ -94,65 +90,39 @@
                   </div>
                 </div>
 
+                <div class="row  mb-3">
+                  <div class="col-md-6 mb-3">
+                    <label for="colorFisico" class="form-label">Color Fisico Del Animal</label>
+                    <input type="text" class="form-control" id="colorFisico"
+                      placeholder="Ejemplo: Blanco con manchas negras"  >
+                  </div>
+                  <div class="col-md-6">
+                    <label for="tamanho" class="form-label">Tamaño</label>
+                    <input type="text" class="form-control" id="tamanho" placeholder="Ejemplo: Grande, pequeño"  >
+                  </div>
+                </div>                
 
                 <div class="row mb-3">
                   <div class="col-md-6">
-                    <label for="cedula" class="form-label">Cedula</label>
-                    <input type="text" class="form-control" id="cedula" required>
-                  </div>
-                  <div class="col-md-6 mb-3">
-                    <label for="mySelect" class="form-label">Sexo</label>
-                    <select id="mySelect" class="form-select" required>
-                      
-                    </select>
-                  </div>
-                </div>
-
-                <div class="row mb-3">
-                  <div class="col-md-6 mb-3">
-                    <label for="situacionFamiliar" class="form-label">Situación Familiar</label>
-                    <input type="text" class="form-control" id="situacionFamiliar" placeholder="Buena..." required>
+                    <label for="ubicacion" class="form-label">Ubicacion</label>
+                    <input type="text" class="form-control" id="ubicacion" required>
                   </div>
                   <div class="col-md-6">
-                    <label for="ingresosMensuales" class="form-label">ingresos Mensuales</label>
-                    <input type="number" class="form-control" id="ingresosMensuales" required>
-                  </div>
+                    <label for="ciudad" class="form-label">Ciudad</label>
+                    <input type="text" class="form-control" id="ciudad" required>
+                  </div> 
                 </div>
-
-
-
-                <div class="row mb-3">
-                  <div class="col-md-6 mb-3" id="campoDependiente">
-                    <label for="dependencia" class="form-label">Depende económicamente de otros</label>
-                    <select id="dependencia" class="form-select" required onchange="activar()">
-                      <option value="" disabled selected>Selecciona Una Opcion...</option>
-                      <option value="Si">Si</option>
-                      <option value="No">No</option>
-                    </select>
-                  </div>
-                  <div class="col-md-6" id="campoDepen">
-                    <label for="numeroDependientes" class="form-label">Cantidad de dependientes</label>
-                    <input type="number" class="form-control" id="numeroDependientes" required>
-                  </div>
-                </div>
-
-
-
-
 
                 <div class="row mb-3">
                   <div class="col-md-6 mb-3">
-                    <label for="actividadEconomica" class="form-label">Actividad Económica</label>
-                    <input type="text" class="form-control" id="actividadEconomica" required>
+                    <label for="pais" class="form-label">Pais</label>
+                    <input type="text" class="form-control" id="pais" required>
                   </div>
-
                   <div class="col-md-6">
-                    <label for="fechaIngreso" class="form-label">Fecha De Inicio</label>
-                    <input type="fechaIngreso" class="form-control" required>
-                  </div>
+                    <label for="comportamiento" class="form-label">Comportamiento</label>
+                    <input type="text" class="form-control" id="comportamiento" required placeholder="asustado, agresivo">
+                  </div> 
                 </div>
-
-
 
                 <div class="row mb-5">
                   <div class="col-md-6 mb-3">

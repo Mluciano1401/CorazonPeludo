@@ -29,6 +29,10 @@ function mostrarCampos() {
     }
 }
 
+
+
+
+
   function activar() {
     var dependencia = document.getElementById("dependencia").value;
     var campoDepen = document.getElementById("numeroDependientes");
@@ -40,6 +44,19 @@ function mostrarCampos() {
     }
   }
 
+  
+
+
+  function activarLicencia() {
+    var selectlicencia = document.getElementById("selectlicencia").value;
+    var campoLicencia = document.getElementById("licencia");
+
+    if (selectlicencia === "1") {
+      campoLicencia.disabled = false ;
+    } else if (selectlicencia === "0") {
+      campoLicencia.disabled = true;
+    }
+  } 
 
   //DATATABLE
 document.addEventListener('DOMContentLoaded', () => {
