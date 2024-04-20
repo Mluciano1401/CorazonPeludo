@@ -24,13 +24,13 @@ form.addEventListener('submit', async (event) =>{
   const status = document.getElementById('status').value;    // Crea una solicitud HTTP
   const url = 'http://localhost:3000/animal';
   const data = { 
-      alias:alias,
-      edad: edad,
-      peso: peso,
+      alias:alias ? alias : "",
+      edad: edad ? edad : 0,
+      peso: peso ? peso : 0,
       especie: especie,
-      sexo: sexo,
+      sexo: sexo ? sexo : "",
       origen: 0,
-      fechaIngreso: fechaIngreso,
+      fechaIngreso: fechaIngreso ? fechaIngreso : new Date(),
       fechaModificacion: new Date(),
       status: (status == '0') ? false : true 
   };
