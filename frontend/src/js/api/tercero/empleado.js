@@ -21,9 +21,9 @@ form.addEventListener('submit', async(event)=> {
   const fechaIngreso = document.getElementById('fechaIngreso').value;  
   const foto = document.getElementById('foto').value;
   const idpersona = 0;
-
-
-   const status = document.getElementById('status').value;    // Crea una solicitud HTTP
+  const status = document.getElementById('status').value;   
+   
+   // Crea una solicitud HTTP
   const url = 'http://localhost:3000/persona';
   const data = { 
       nobre: nombre,

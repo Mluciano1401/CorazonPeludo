@@ -31,13 +31,6 @@
   <!-- Template Main CSS File -->
   <link href="../NiceAdmin/assets/css/style.css" rel="stylesheet">
 
-  <!-- =======================================================
-  * Template Name: NiceAdmin
-  * Template URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
-  * Updated: Mar 17 2024 with Bootstrap v5.3.3
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
 </head>
 
 <body>
@@ -74,11 +67,18 @@
               <form class="needs-validation" id="form" novalidate>
 
                 <div class="row mb-3">
+                  <div class="col-md-6 mb-3">
+                    <label for="idTareas" class="form-label">Id Tareas</label>
+                    <input type="text" class="form-control" id="idTareas" disabled>
+                  </div> 
                   <div class="col-md-6">
                     <label for="descripcion" class="form-label">Descripción</label>
                     <input type="text" class="form-control" id="descripcion" required>
-                  </div>                  
-                  <div class="col-md-6">
+                  </div>  
+                </div>
+
+                <div class="row mb-3">            
+                  <div class="col-md-6 mb-3">
                     <label for="tipoTarea" class="form-label">Tipo Tarea</label>
                     <select id="tipoTarea" class="form-select" required>
                       <div id="data-display">Selecciona Una Opcion...</div>
@@ -92,9 +92,9 @@
                   </div>
                 </div>
 
-                <div class="row mb-4">
+                <div class="row mb-5">
                   <div class="col-md-6 mb-3">
-                    <label for="status" class="form-label">Status</label> 
+                    <label for="status" class="form-label">Status</label>
                     <select id="status" class="form-select" required>
                       <option value="" disabled selected>Selecciona Una Opcion...</option>
                       <option value="1">Activo</option>
@@ -102,10 +102,12 @@
                     </select>
                   </div>
                   <div class="col-md-6">
-                    <label for="fechaModificacion" class="form-label">Fecha De Modificacion</label>
-                    <input type="fechaModificacion" class="form-control" disabled>
+                    <label for="fechaModificacion" class="form-label">Fecha de Modificacion</label>
+                    <input type="date" id="fechaModificacion" class="form-control" disabled>
                   </div>
                 </div>
+
+                 
                 <div class="text-center mb-3">
                   <button type="submit" class="btn btn-primary buttonSubmit">Enviar</button>
                   <button type="reset" class="btn btn-outline-danger">Limpiar</button>

@@ -33,12 +33,6 @@
   <!-- Template Main CSS File -->
   <link href="../NiceAdmin/assets/css/style.css" rel="stylesheet">
 
-  <style>
-    .ocupado {
-      color: red;
-      pointer-events: none; /* Evita que el usuario interactúe con la fecha/hora ocupada */
-    }
-  </style>
 
   
 
@@ -478,20 +472,20 @@
                 </div>
 
                 <div class="row mb-3">
-                  <!-- <div class="col-md-6 mb-3">
+                  <div class="col-md-6 mb-3">
                     <label for="mySelect" class="form-label">Tipo de Animal</label>
                     <select id="mySelect" class="form-select" required>
                       <option value="" disabled selected>Selecciona Una Opcion...</option>
                       
                     </select>
-                  </div> -->
+                  </div>
                   <div class="col-md-6">
                     <label for="nombreAnimal" class="form-label">Nombre del animal (si aplica)</label>
                     <input type="text" class="form-control" id="nombreAnimal" >
                   </div>
                 </div>  
 
-                <div class="row mb-3">
+                <!-- <div class="row mb-3">
                   <div class="col-md-6  mb-3">
                     <label for="fechaCita" class="form-label">Fecha de la Cita</label>
                     <input type="date" class="form-control" id="fechaCita" required>
@@ -500,7 +494,27 @@
                     <label for="hora" class="form-label">Hora de la Cita</label>
                     <input type="time" class="form-control" id="hora" required>
                   </div>
-                </div>
+                </div> -->
+
+
+                <!-- controlando citas  -->
+                <div class="row mb-3">
+                  <div class="col-md-6  mb-3">
+                      <label for="fechaCita" class="form-label">Fecha de la Cita</label>
+                      <input type="date" class="form-control" id="fechaCita" required data-disponible="">
+                  </div>
+                  <div class="col-md-6">
+                      <label for="hora" class="form-label">Hora de la Cita</label>
+                      <input type="time" class="form-control" id="hora" required data-disponible="">
+                  </div>
+              </div> 
+
+
+              <!-- Elemento para mostrar el mensaje de disponibilidad -->
+            <div id="disponibilidadMensaje"></div>
+
+
+            
 
                 <div class="row mb-5">
                   <div class="col-md-6 mb-3">
@@ -628,6 +642,47 @@ function enviarCita() {
 </script>
 
   
+
+
+
+
+
+<!-- FUNCION PARA VERIFICAR SI LA FECHA Y HORA ESTA TOMADA  -->
+
+<script>
+  document.getElementById('fechaCita').addEventListener('change', verificarDisponibilidad);
+  document.getElementById('hora').addEventListener('change', verificarDisponibilidad);
+
+  async function verificarDisponibilidad() {
+      const fecha = document.getElementById('fechaCita').value;
+      const hora = document.getElementById('hora').value;
+      
+      try {
+          const response = await fetch('/api/verificar-cita', {
+              method: 'POST',
+              headers: {
+                  'Content-Type': 'application/json'
+              },
+              body: JSON.stringify({ fecha, hora })
+          });
+          const data = await response.json();
+          const mensaje = document.getElementById('disponibilidadMensaje');
+          mensaje.innerText = data.disponible ? 'Fecha y hora disponibles' : 'Fecha y hora no disponibles. Por favor elige otra.';
+          mensaje.classList.toggle('text-success', data.disponible);
+          mensaje.classList.toggle('text-danger', !data.disponible);
+          document.getElementById('fechaCita').dataset.disponible = data.disponible;
+          document.getElementById('hora').dataset.disponible = data.disponible;
+      } catch (error) {
+          console.error('Error al verificar cita:', error);
+      }
+  }
+
+  // Función para enviar el formulario de cita
+  function EnviarCita() {
+      // Aquí puedes agregar la lógica para enviar el formulario al backend
+      // Puedes acceder a los valores de los campos de formulario con document.getElementById
+  }
+</script>  
 
 <script src="../visualizar.js"></script>
 
