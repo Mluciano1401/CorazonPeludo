@@ -1,6 +1,7 @@
 import { Controller, Get, Post, Body, HttpException, HttpStatus, Param } from '@nestjs/common';
 import {CitaService} from  './cita.service';
 import { Cita } from 'src/models/miscelaneo/cita.model';
+import { VerificarCitaDto } from '../dto/VerificarCita';
 
 
 @Controller('Cita')
@@ -69,4 +70,11 @@ export class CitaController {
       throw new HttpException(error, HttpStatus.INTERNAL_SERVER_ERROR)
     });
   }
+  async verificarCita(@Body() verificarCitaDto: VerificarCitaDto): Promise<{ disponible: boolean }> {
+    // Lógica para verificar si la fecha y hora están disponibles en la base de datos
+    // Supongamos que tienes un servicio de citas que maneja la lógica de negocio
+    const disponible = await this._CitaService.verificarDisponibilidad(verificarCitaDto.fecha, verificarCitaDto.hora);
+    return { disponible};
+  }
+
 }

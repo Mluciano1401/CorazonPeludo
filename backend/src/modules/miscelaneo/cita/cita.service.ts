@@ -27,4 +27,9 @@ export class CitaService {
     await this._CitaRepository.softDelete(id);
     return 'Ok';
   }
+  async verificarDisponibilidad(fecha: string, hora: string): Promise<boolean> {
+    const existeCita = await this._CitaRepository.findOne({ where: { fecha, hora } });
+    return !existeCita;
+  }
+
 }
