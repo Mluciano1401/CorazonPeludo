@@ -1,7 +1,7 @@
 const form = document.getElementById('form');
 const urlParams = new URLSearchParams(window.location.search);
-const id = urlParams.get('id');
-
+//const id = urlParams.get('id');
+console.log('ok ko');
 form.addEventListener('submit', async (event) => {
   event.preventDefault(); // Previene el envío predeterminado del formulario
 

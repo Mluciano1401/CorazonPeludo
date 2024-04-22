@@ -9,7 +9,6 @@ document.addEventListener('DOMContentLoaded', async() => {
         // Clear existing table rows (optional)
         tableBody.innerHTML = '';
         // Process and populate the table with data
-        
         data.data.forEach(item => {
           const row = document.createElement('tr');
           
@@ -109,3 +108,39 @@ await fetch(urlAPI)
   .catch(error => console.error('Error:', error));
 }
 busqueda();
+tableBody.addEventListener('click', (event) => {
+  if (event.target.id.startsWith('editar-')) {
+    const userId = event.target.id.split('-')[1]; // Extract user ID from button ID
+
+    // Handle edit functionality (replace with your logic)
+    // You can open a modal, redirect to an edit page with the user ID as a parameter, etc.
+    window.location.href = `../../../../../../frontend/public/admin/registroUsuario.html?id=${userId}`;
+    console.log(`Edit user with ID: ${userId}`); // Example placeholder
+  }
+});
+/*tableBody.addEventListener('click', (event) => {
+  if (event.target.id.startsWith('eliminar-')) {
+    const userId = event.target.id.split('-')[1]; // Extract user ID from button ID
+
+    // Confirmation logic (optional)
+    if (confirm(`¿Está seguro de eliminar al usuario con ID ${userId}?`)) {
+      // Logic to delete user (replace with your API call)
+      fetch(`http://localhost:3000/usuario/delete/${userId}`, {
+        method: 'DELETE',
+      })
+        .then(response => {
+          if (response.ok) {
+            // Remove user from dataArray and update table
+            const userIndex = dataArray.findIndex(user => user.usuarioId === parseInt(userId));
+            dataArray.splice(userIndex, 1);
+
+            const rowToDelete = event.target.parentElement.parentElement; // Get the parent row
+            tableBody.removeChild(rowToDelete);
+          } else {
+            console.error('Error deleting user:', response.statusText);
+          }
+        })
+        .catch(error => console.error('Error deleting user:', error));
+    }
+  }
+});*/
