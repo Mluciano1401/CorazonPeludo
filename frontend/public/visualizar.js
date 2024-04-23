@@ -155,43 +155,6 @@ function activarCantNinos() {
 }   
 
 
-/*
-
-function generarCamposEdadNinos() {
-  const cantidadNinosInput = document.getElementById("cantidadNinos");
-  const camposEdadNinosContainer = document.getElementById("camposEdadNinos");
-
-  // Limpiar campos existentes
-  camposEdadNinosContainer.innerHTML = "";
-
-  const cantidadNinos = parseInt(cantidadNinosInput.value);
-  if (cantidadNinos > 0) {
-    for (let i = 1; i <= cantidadNinos; i++) {
-      const label = document.createElement("label");
-      label.setAttribute("for", "edadNino" + i);
-      label.textContent = "Edad del " + i + "º niño/a";
-
-      const input = document.createElement("input");
-      input.setAttribute("type", "number");
-      input.setAttribute("class", "form-control");
-      input.setAttribute("id", "edadNino" + i);
-      input.setAttribute("required", "");
-
-      camposEdadNinosContainer.appendChild(label);
-      camposEdadNinosContainer.appendChild(input);
-      camposEdadNinosContainer.appendChild(document.createElement("br"));
-    }
-  }
-}
-
-// Llamada a la función al cargar el DOM
-document.addEventListener("DOMContentLoaded", function() {
-  const cantidadNinosInput = document.getElementById("cantidadNinos");
-
-  // Agregar listener al input para generar campos de edad
-  cantidadNinosInput.addEventListener("input", generarCamposEdadNinos);
-});*/
-
 
 
 function generarCamposEdadNinos() {
