@@ -12,7 +12,7 @@ export class Solicitante {
     persona: Persona;
 
     @Column({ nullable: true})
-    situacionFamiliar: number;
+    situacionFamiliar: string;
 
     @Column({ nullable: false, default: 0 })
     ingresosMensuales: number;
