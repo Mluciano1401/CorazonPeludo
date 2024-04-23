@@ -3,9 +3,11 @@ const urlParams = new URLSearchParams(window.location.search);
 const id = urlParams.get('id');
 
 form.addEventListener('submit', async (event) => {
-  event.preventDefault(); // Previene el envío predeterminado del formulario
+  event.preventDefault();
 
-  // Recopila los datos del formulario
+  // Recopilando los datos del formulario
+  const idSolicitante = document.getElementById('idSolicitante').value;
+  const idAnimal = document.getElementById('idAnimal').value;
   const nombre = document.getElementById('nombre').value;
   const apellido = document.getElementById('apellido').value;
   const email = document.getElementById('email').value;
@@ -33,10 +35,12 @@ form.addEventListener('submit', async (event) => {
   const desparasitados = document.getElementById('desparasitados').value;
   const esterilizados = document.getElementById('esterilizados').value;
 
-  const status = document.getElementById('status').value;    // Crea una solicitud HTTP
+  const status = document.getElementById('status').value;  
   const url = 'http://localhost:3000/solicitante';
 
   const data = {
+    idSolicitante,
+    idAnimal,
     nombre,
     apellido,
     email,
@@ -69,16 +73,16 @@ form.addEventListener('submit', async (event) => {
   try {
     console.log(data);
     console.log(JSON.stringify(data));
-    const response = await fetch(url, { // Replace with your API URL
+    const response = await fetch(url, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(data)
     });
 
     if (response.ok) {
-      form.reset(); // Clear form after successful submission
+      form.reset(); // Para limpiar el formulario
     } else {
-      console.error('Error:', await response.text()); // Log detailed error
+      console.error('Error:', await response.text()); // error
     }
   } catch (error) {
     console.error('Error:', error);

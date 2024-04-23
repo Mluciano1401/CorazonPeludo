@@ -497,7 +497,12 @@
                   <div class="col-md-6 mb-3">
                     <label for="estadoCivil" class="form-label">Estado Civil</label>
                     <select id="estadoCivil" class="form-select" required>
-                      <div id="data-display1">Selecciona Una Opcion...</div>
+                      <!-- <div id="data-display1">Selecciona Una Opcion...</div> -->
+                      <option value="" disabled selected>Selecciona Una Opcion...</option>
+                      <option value="1">Casado/a</option>
+                      <option value="0">Soltero/a</option>
+                      <option value="0">En una relacion/a</option>
+                      <option value="0">Divorsiado/a</option>
                     </select>
                   </div>
                   <div class="col-md-6 mb-3">
@@ -512,7 +517,7 @@
                 </div>
 
                 <!-- DIVISOR -->
-                <hr class="bg-danger border-2 border-top " />
+                <hr class="bg-danger border-2 border-top border-primary-subtle" />
 
                 <div class="row mb-3">
                   <div class="col-md-6 mb-3" id="campoNumPersonas">
@@ -595,7 +600,7 @@
 
 
                 <!-- DIVISOR -->
-                <hr class="bg-danger border-2 border-top " />
+                <hr class="bg-danger border-2 border-top border-primary-subtle" />
 
                 <div class="row mb-3">
                   <div class="col-md-6 mb-3" id="campoNinos">
@@ -618,7 +623,7 @@
 
 
                 <!-- DIVISOR -->
-                <hr class="bg-danger border-2 border-top " />
+                <hr class="bg-danger border-2 border-top border-primary-subtle" />
 
                 <div class="row mb-3">
                   <div class="col-md-6 mb-3" id="campoOtrosAnimales">
@@ -667,9 +672,6 @@
                     </select>
                   </div>
                 </div>
-
-
-
 
 
                 <div class="row mb-5">

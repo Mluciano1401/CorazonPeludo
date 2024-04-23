@@ -33,9 +33,6 @@
   <!-- Template Main CSS File -->
   <link href="../NiceAdmin/assets/css/style.css" rel="stylesheet">
 
-
-  
-
 </head>
 
 <body>
@@ -450,7 +447,7 @@
 
                 <div class="row mb-3">
                   <div class="col-md-6 mb-3">
-                    <label for="-name" class="form-label">Nombre del Solicitante</label>
+                    <label for="name" class="form-label">Nombre del Solicitante</label>
                     <input type="text" class="form-control" id="name" required>
                   </div>
 
@@ -485,23 +482,11 @@
                   </div>
                 </div>  
 
-                <!-- <div class="row mb-3">
-                  <div class="col-md-6  mb-3">
-                    <label for="fechaCita" class="form-label">Fecha de la Cita</label>
-                    <input type="date" class="form-control" id="fechaCita" required>
-                  </div>
-                  <div class="col-md-6">
-                    <label for="hora" class="form-label">Hora de la Cita</label>
-                    <input type="time" class="form-control" id="hora" required>
-                  </div>
-                </div> -->
-
-
                 <!-- controlando citas  -->
                 <div class="row mb-3">
                   <div class="col-md-6  mb-3">
                       <label for="fechaCita" class="form-label">Fecha de la Cita</label>
-                      <input type="date" class="form-control" id="fechaCita" required data-disponible="">
+                      <input type="date" class="form-control" id="nombreAnimal" required data-disponible="">
                   </div>
                   <div class="col-md-6">
                       <label for="hora" class="form-label">Hora de la Cita</label>
@@ -585,104 +570,11 @@
   <script src="../NiceAdmin/assets/js/main.js"></script>  
   <script src="../../src/js/api/animal/Cita.js"></script>
 
-<script>
-    fetch('../menu/template.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('contenidoReutilizable').innerHTML = data;
-            });
-    </script>
-
-
-<script>
-
-const sgMail = require('@sendgrid/mail');
-sgMail.setApiKey('TU_API_KEY');
-
-function enviarCita() {
-  // Obtener los datos del formulario
-  var nombre = document.getElementById('name').value;
-  var apellido = document.getElementById('apellido').value;
-  var email = document.getElementById('email').value;
-  var telefono = document.getElementById('telefono').value;
- // var tipoAnimal = document.getElementById('mySelect').value;
-  var nombreAnimal = document.getElementById('nombreAnimal').value;
-  var fechaCita = document.getElementById('fechaCita').value;
-  var hora = document.getElementById('hora').value;
-  var status = document.getElementById('status').value;
-
-
-  // Crear el cuerpo del correo con los datos del formulario
-  var cuerpoCorreo = "Nombre: " + nombre + " " + apellido + "\n" +
-                     "Email: " + email + "\n" +
-                     "Teléfono: " + telefono + "\n" +
-                    //  "Tipo de Animal: " + tipoAnimal + "\n" +
-                     "Nombre del Animal: " + nombreAnimal + "\n" +
-                     "Fecha de la Cita: " + fechaCita + "\n" +
-                     "Hora de la Cita: " + hora + "\n" +
-                     "Status: " + (status === "1" ? "Activo" : "Inactivo");
-
-  const msg = {
-    to: email,
-    from: 'clasesdehelen@gmail.com', // Reemplaza con tu dirección de correo electrónico verificada en SendGrid
-    subject: 'Cita Registrada',
-    text: cuerpoCorreo,
-  };
-
-  sgMail.send(msg)
-    .then(() => {
-      console.log('Correo enviado exitosamente');
-    })
-    .catch((error) => {
-      console.error(error);
-    });
-}
-
-
-</script>
 
   
 
 
 
-
-
-<!-- FUNCION PARA VERIFICAR SI LA FECHA Y HORA ESTA TOMADA  -->
-
-<script>
-  document.getElementById('fechaCita').addEventListener('change', verificarDisponibilidad);
-  document.getElementById('hora').addEventListener('change', verificarDisponibilidad);
-
-  async function verificarDisponibilidad() {
-      const fecha = document.getElementById('fechaCita').value;
-      const hora = document.getElementById('hora').value;
-      
-      try {
-          const response = await fetch('/api/verificar-cita', {
-              method: 'POST',
-              headers: {
-                  'Content-Type': 'application/json'
-              },
-              body: JSON.stringify({ fecha, hora })
-          });
-          const data = await response.json();
-          const mensaje = document.getElementById('disponibilidadMensaje');
-          mensaje.innerText = data.disponible ? 'Fecha y hora disponibles' : 'Fecha y hora no disponibles. Por favor elige otra.';
-          mensaje.classList.toggle('text-success', data.disponible);
-          mensaje.classList.toggle('text-danger', !data.disponible);
-          document.getElementById('fechaCita').dataset.disponible = data.disponible;
-          document.getElementById('hora').dataset.disponible = data.disponible;
-      } catch (error) {
-          console.error('Error al verificar cita:', error);
-      }
-  }
-
-  // Función para enviar el formulario de cita
-  function EnviarCita() {
-      // Aquí puedes agregar la lógica para enviar el formulario al backend
-      // Puedes acceder a los valores de los campos de formulario con document.getElementById
-  }
-</script>  
 
 <script src="../visualizar.js"></script>
 
