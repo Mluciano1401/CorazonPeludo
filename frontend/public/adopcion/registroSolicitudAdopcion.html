@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Regitro de Solicitante</title>
+  <title>Regitro de Solicitud de Adopción</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -34,16 +34,13 @@
 </head>
 
 <body>
-<!-- 
-  <div id="contenidoReutilizable">
+
+  <!-- <div id="contenidoReutilizable">
     
   </div>
   <div id="content-section"></div> -->
 
 
-
-
-  
   <header id="header" class="header fixed-top d-flex align-items-center">
 
     <div class="d-flex align-items-center justify-content-between">
@@ -369,11 +366,11 @@
               <i class="bi bi-circle"></i><span>Registro de Almacen</span>
             </a>
           </li>
-          
+
         </ul>
       </li><!-- End Components Nav -->
 
-    
+
       <!-- consultas  -->
       <li class="nav-item">
         <a class="nav-link collapsed" data-bs-target="#consulta" data-bs-toggle="collapse" href="#">
@@ -390,7 +387,7 @@
               <i class="bi bi-circle"></i><span>Consulta de Animales</span>
             </a>
           </li>
-          
+
         </ul>
       </li><!-- End Components Nav -->
 
@@ -415,19 +412,20 @@
     </ul>
 
   </aside><!-- End Sidebar-->
-  
+
+
 
 
   <!--Principal-->
   <main id="main" class="main">
 
     <div class="pagetitle">
-      <h1>Registro de Solicitante de adopción</h1>
+      <h1>Regitro de Solicitud de Adopción</h1>
       <nav>
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="index.html">Home</a></li>
           <li class="breadcrumb-item">Formularios</li>
-          <li class="breadcrumb-item active">Registro de Solicitante</li>
+          <li class="breadcrumb-item active">Regitro de solicitud de adopción</li>
         </ol>
       </nav>
     </div><!-- End Page Title -->
@@ -438,7 +436,7 @@
 
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">Ingreso De Solicitante</h5>
+              <h5 class="card-title">Ingreso de Solicitante de Adopción</h5>
 
               <!-- General Form Elements -->
               <form class="needs-validation" id="form" novalidate>
@@ -449,7 +447,7 @@
                   </div>
                 </div>
 
-                <div class="row mb-3"> 
+                <div class="row mb-3">
                   <div class="col-md-6 mb-3">
                     <label for="nombre" class="form-label">Nombre</label>
                     <input type="text" class="form-control" id="nombre" required>
@@ -467,20 +465,63 @@
                   </div>
                   <div class="col-md-6">
                     <label for="telefono" class="form-label">Telefono</label>
-                    <input type="text" class="form-control" id="telefono" required>
+                    <input type="number" class="form-control" id="telefono" required>
+                  </div>
+                </div>
+
+                <div class="row mb-3">
+                  <div class="col-md-6 mb-3">
+                    <label for="tipoDocumento" class="form-label">Tipo de documento</label>
+                    <select id="tipoDocumento" class="form-select" required>
+                      <option value="" disabled selected>Selecciona Una Opcion...</option>
+                      <option value="1">Cedula</option>
+                      <option value="0">Pasaporte</option>
+                    </select>
+                  </div>
+
+                  <div class="col-md-6">
+                    <label for="documento" class="form-label">Documento</label>
+                    <input type="text" class="form-control" id="documento">
+
                   </div>
                 </div>
 
 
-                <div class="row mb-3">
-                  <div class="col-md-6">
-                    <label for="cedula" class="form-label">Cedula</label>
-                    <input type="text" class="form-control" id="cedula" required>
+
+                <div class="row mb-4">
+                  <div class="col-md-6 mb-3">
+                    <label for="estadocivil" class="form-label">Estado Civil</label>
+                    <select id="estadocivil" class="form-select" required>
+                      <div id="data-display1">Selecciona Una Opcion...</div>
+                    </select>
                   </div>
                   <div class="col-md-6 mb-3">
-                    <label for="mySelect" class="form-label">Sexo</label>
-                    <select id="mySelect" class="form-select" required>
-                      
+                    <label for="sexo" class="form-label">Sexo</label>
+                    <select id="sexo" class="form-select" required>
+                      <option value="" disabled selected>Selecciona Una Opcion...</option>
+                      <option value="F">Femenino</option>
+                      <option value="M">Masculino</option>
+                      <option value="O">Otro</option>
+                    </select>
+                  </div>
+                </div>
+
+                <!-- DIVISOR -->
+                <hr class="bg-danger border-2 border-top " />
+
+                <div class="row mb-3">
+                  <div class="col-md-6 mb-3" id="campoNumPersonas">
+                    <label for="numeroPersonas" class="form-label">Numero de personas que viven en el hogar</label>
+                    <input type="number" class="form-control" id="numeroPersonas" required
+                      onchange="cantidadPersonas()">
+                  </div>
+                  <div class="col-md-6 mb-3" id="campoConocer">
+                    <label for="conocerAceptacion" class="form-label">¿Están todos los miembros de la familia enterados
+                      de la adopción?</label>
+                    <select id="conocerAceptacion" class="form-select" required>
+                      <option value="" disabled selected>Selecciona Una Opcion...</option>
+                      <option value="Si">Si</option>
+                      <option value="No">No</option>
                     </select>
                   </div>
                 </div>
@@ -497,9 +538,8 @@
                 </div>
 
 
-
                 <div class="row mb-3">
-                  <div class="col-md-6 mb-3" id="campoDependiente">
+                  <div class="col-md-6 mb-3" id="campoDependo">
                     <label for="dependencia" class="form-label">Depende económicamente de otros</label>
                     <select id="dependencia" class="form-select" required onchange="activar()">
                       <option value="" disabled selected>Selecciona Una Opcion...</option>
@@ -508,37 +548,193 @@
                     </select>
                   </div>
                   <div class="col-md-6" id="campoDepen">
+                    <label for="soyDependiente" class="form-label">¿De quien depende?</label>
+                    <input type="text" class="form-control" id="soyDependiente" required placeholder="Mi madre...">
+                  </div>
+                </div>
+
+
+
+                <div class="row mb-3">
+                  <div class="col-md-6 mb-3" id="campoDependiente">
+                    <label for="dependientes" class="form-label">¿Tiene dependientes?</label>
+                    <select id="dependientes" class="form-select" required onchange="activarDependientes()">
+                      <option value="" disabled selected>Selecciona Una Opcion...</option>
+                      <option value="Si">Si</option>
+                      <option value="No">No</option>
+                    </select>
+                  </div>
+                  <div class="col-md-6" id="campoDependientes">
                     <label for="numeroDependientes" class="form-label">Cantidad de dependientes</label>
                     <input type="number" class="form-control" id="numeroDependientes" required>
                   </div>
                 </div>
 
 
-
-
-
                 <div class="row mb-3">
                   <div class="col-md-6 mb-3">
                     <label for="actividadEconomica" class="form-label">Actividad Económica</label>
-                    <input type="text" class="form-control" id="actividadEconomica" required>
+                    <input type="text" class="form-control" id="actividadEconomica" required
+                      placeholder="Estudiante, Maestro...">
                   </div>
 
                   <div class="col-md-6">
                     <label for="fechaIngreso" class="form-label">Fecha De Inicio</label>
-                    <input type="fechaIngreso" class="form-control" required>
+                    <input type="date" id="fechaIngreso" class="form-control" required>
                   </div>
                 </div>
+
+
+
+
+
+
+                <!-- DIVISOR -->
+                <hr class="bg-danger border-2 border-top " />
+
+                <div class="row mb-3">
+                  <div class="col-md-6 mb-3" id="campoNinos">
+                    <label for="ninos" class="form-label">¿Tiene niños en casa?</label>
+                    <select id="ninos" class="form-select" required onchange="activarCantNinos()">
+                      <option value="" disabled selected>Selecciona Una Opcion...</option>
+                      <option value="Si">Si</option>
+                      <option value="No">No</option>
+                    </select>
+                  </div>
+                  <div class="col-md-6" id="campoCantidadNinos">
+                    <label for="cantidadNinos" class="form-label">¿Cuantos?</label>
+                    <input type="number" class="form-control" id="cantidadNinos" required
+                      onchange="generarCamposEdadNinos()">
+                  </div>
+                </div>
+
+                <div id="camposEdadNinos"></div>
+
+
+
+                <!-- DIVISOR -->
+                <hr class="bg-danger border-2 border-top " />
+
+                <div class="row mb-3">
+                  <div class="col-md-6 mb-3" id="campoOtrosAnimales">
+                    <label for="otrosAnimales" class="form-label">¿Tiene otros animales en casa?</label>
+                    <select id="otrosAnimales" class="form-select" required onchange="activarOtrosAnimales()">
+                      <option value="" disabled selected>Selecciona Una Opcion...</option>
+                      <option value="Si">Si</option>
+                      <option value="No">No</option>
+                    </select>
+                  </div>
+                  <div class="col-md-6" id="campoCantidad">
+                    <label for="cantidadOtrosAnimales" class="form-label">¿Cuantos?</label>
+                    <input type="number" class="form-control" id="cantidadOtrosAnimales" required>
+                  </div>
+                </div>
+
+
+
+                <div class="row mb-3">
+                  <div class="col-md-6 mb-3" id="campoVacunados">
+                    <label for="vacunados" class="form-label">¿Están vacundos?</label>
+                    <select id="vacunados" class="form-select" required onchange="activarOtrosAnimales()">
+                      <option value="" disabled selected>Selecciona Una Opcion...</option>
+                      <option value="Si">Si</option>
+                      <option value="No">No</option>
+                    </select>
+                  </div>
+                  <div class="col-md-6 mb-3" id="campoDesparasitados">
+                    <label for="desparasitados" class="form-label">¿Están desparasitados?</label>
+                    <select id="desparasitados" class="form-select" required onchange="activarOtrosAnimales()">
+                      <option value="" disabled selected>Selecciona Una Opcion...</option>
+                      <option value="Si">Si</option>
+                      <option value="No">No</option>
+                    </select>
+                  </div>
+                </div>
+
+
+                <div class="row mb-3">
+                  <div class="col-md-6 mb-3" id="campoEsterilizados">
+                    <label for="esterilizados" class="form-label">¿Están esterilizados?</label>
+                    <select id="esterilizados" class="form-select" required onchange="activarOtrosAnimales()">
+                      <option value="" disabled selected>Selecciona Una Opcion...</option>
+                      <option value="Si">Si</option>
+                      <option value="No">No</option>
+                    </select>
+                  </div>
+                </div>
+
+
+                <!-- DIVISOR -->
+                <hr class="bg-danger border-2 border-top " />
+                <h5 class="card-title">Informacion del animal a adoptar</h5>
+                <div class="row mb-3">
+                  <div class="col-md-6">
+                    <label for="alias" class="form-label">Alias</label>
+                    <input type="text" class="form-control" id="alias">
+                  </div>
+                  <div class="col-md-6">
+                    <label for="edad" class="form-label">Edad</label>
+                    <input type="number" class="form-control" id="edad">
+                  </div>
+                </div>
+
+                <div class="row mb-3">
+                  <div class="col-md-6 mb-3">
+                    <label for="sexo" class="form-label">Sexo</label>
+                    <select id="sexo" class="form-select">
+                      <option value="" disabled selected>Selecciona Una Opcion...</option>
+                      
+                    </select>
+                  </div>
+
+                  <div class="col-md-6">
+                    <label for="especie" class="form-label">Especie</label>
+                    <select id="especie" class="form-select">
+                      <div class="data-display0"></div>
+                    </select>
+                  </div>
+                </div>
+
+
+                <div class="row  mb-3">
+                  <div class="col-md-6 mb-3">
+                    <label for="colorFisico" class="form-label">Color Fisico Del Animal</label>
+                    <input type="text" class="form-control" id="colorFisico"
+                      placeholder="Ejemplo: Blanco con manchas negras"  >
+                  </div>
+                  <div class="col-md-6">
+                    <label for="colorOjos" class="form-label">Color De Ojos Del Animal</label>
+                    <input type="text" class="form-control" id="colorOjos" placeholder="Ejemplo: Azules"  >
+                  </div>
+                </div>
+
+
+                <div class="row mb-3">
+                  <div class="col-md-6 mb-3">
+                    <label for="estado" class="form-label">Estado de Salud del Animal</label>
+                    <select id="estado" class="form-select"  >
+                      <option value="" disabled selected>Selecciona Una Opcion...</option>
+                      <option value="saludable">Saludable</option>
+                      <option value="enfermo">Enfermo</option>
+                      <option value="desorientado">Desorientado</option>
+                      <option value="agresivo">Agresivo</option>
+                    </select>
+                  </div>
+                </div>
+
+
+
 
 
 
                 <div class="row mb-5">
                   <div class="col-md-6 mb-3">
                     <label for="status" class="form-label">Status</label>
-                      <select id="status" class="form-select" required>
-                        <option value="" disabled selected>Selecciona Una Opcion...</option>
-                        <option value="1">Activo</option>
-                        <option value="0">Inactivo</option>
-                      </select>
+                    <select id="status" class="form-select" required>
+                      <option value="" disabled selected>Selecciona Una Opcion...</option>
+                      <option value="1">Activo</option>
+                      <option value="0">Inactivo</option>
+                    </select>
                   </div>
                   <div class="col-md-6">
                     <label for="fechaModificacion" class="form-label">Fecha de Modificacion</label>
@@ -569,10 +765,11 @@
   <!-- ======= Footer ======= -->
   <footer id="footer" class="footer">
     <div class="copyright">
-      <p class="copy copy-inicio">&copy Copyright - <script>
-        document.write(new Date().getFullYear());
-            </script>
-    </p>
+      <p class="copy copy-inicio">&copy Copyright -
+        <script>
+          document.write(new Date().getFullYear());
+        </script>
+      </p>
     </div>
     <div class="credits">
       Designed by Hilary Collado - Maria Luciano
@@ -583,7 +780,7 @@
       class="bi bi-arrow-up-short"></i></a>
 
   <!-- Vendor JS Files -->
-   <script src="../NiceAdmin/assets/vendor/apexcharts/apexcharts.min.js"></script>
+  <script src="../NiceAdmin/assets/vendor/apexcharts/apexcharts.min.js"></script>
   <script src="../NiceAdmin/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="../NiceAdmin/assets/vendor/chart.js/chart.umd.js"></script>
   <script src="../NiceAdmin/assets/vendor/echarts/echarts.min.js"></script>
@@ -596,13 +793,13 @@
   <script src="../NiceAdmin/assets/js/main.js"></script>
   <script src="../visualizar.js"></script>
 
-<script>
+  <script>
     fetch('../menu/template.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('contenidoReutilizable').innerHTML = data;
-            });
-    </script>
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('contenidoReutilizable').innerHTML = data;
+      });
+  </script>
 </body>
 
 </html>
