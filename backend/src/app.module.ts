@@ -18,7 +18,7 @@ import { UsuarioController } from './modules/admin/usuario/usuario.controller';
 import { EnfermedadController } from './modules/salud/enfermedad/enfermedad.controller';
 import { ProductoController } from './modules/almacen/producto/producto.controller';
 import { AnimalController } from './modules/animal/animal/animal.controller';
-import { SolicitudAController } from './modules/adopcion/solicitud/solicitud.controller';
+import { SolicitudAController } from './modules/adopcion/solicitud/solicitudA.controller';
 import { SolicitudRController } from './modules/rescate/solicitud/solicitud.controller';
 import { PersonaController } from './modules/tercero/persona/persona.controller';
 import { PersonaService } from './modules/tercero/persona/persona.service';
@@ -27,7 +27,7 @@ import { UsuarioService } from './modules/admin/usuario/usuario.service';
 import { EmpleadoService } from './modules/tercero/empleado/empleado.service';
 import { EnfermedadService } from './modules/salud/enfermedad/enfermedad.service';
 import { SolicitanteService } from './modules/tercero/solicitante/solicitante.service';
-import { SolicitudAService } from './modules/adopcion/solicitud/Solicitud.service';
+import { SolicitudAService } from './modules/adopcion/solicitud/solicitudA.service';
 import { AnimalService } from './modules/animal/animal/animal.service';
 import { SolicitudRService } from './modules/rescate/solicitud/solicitud.service';
 import { TipoUsuario } from './models/admin/tipoUsuario.model';
@@ -221,6 +221,8 @@ import { TipoEnfermedadService } from './modules/salud/tipoEnfermedad/tipoEnferm
 import { ViaAdministracionService } from './modules/salud/viaAdministracion/viaAministracion.service';
 import { AuthService } from './modules/admin/auth/auth.service';
 import { JwtService } from '@nestjs/jwt';
+import { TipoAlmacen } from './models/almacen/tipoAlmacen.model';
+import { AnimalAlbergue } from './models/animal/animalAlbergue';
 
 const models = [Animal,Empleado,Enfermedad,Persona,Producto,Solicitante,Solicitud,SolicitudR,Usuario, 
   TipoUsuario, TipoPersona, Sucursal, AsignacionRecursos, AsignacionTarea, LogAcciones,ActividadEconomica,
@@ -231,7 +233,7 @@ Origen, Tarea, TipoMantenimiento, TipoRecurso, TipoTarea, EstadoEmergencia, Esta
 Complicaciones, Diagnostico, EfectosSecundarios, EstadoSalud, Medicamento, PolizaSeguro, Sintoma,
 TipoEnfermedad, TipoMedicamento, TipoSintoma, TipoTratamiento, Tratamiento, Vacuna, ViaAdministracion, EstadoCivil,
 Telefono, TipoDonacion, Donacion, TipoEmpleado, TipoEmpresa, TipoTelefono, Vehiculo, Modelo, TipoVehiculo,
-TipoCombustible];
+TipoCombustible, TipoAlmacen, AnimalAlbergue];
 @Module({
   imports: [
     TypeOrmModule.forRootAsync({useClass: TypeormService}),
@@ -252,7 +254,7 @@ TipoCombustible];
   SintomasController,TipoEnfermedadController, TipoMedicamentoController, TipoSintomasController, TipoTratamientoController, 
   TratamientoController, VacunaController, ViaAdministracionController, EstadoCivilController,TelefonoController, 
   TipoDonacionController, DonacionController, TipoEmpleadoController, TipoEmpresaController, TipoTelefonoController, 
-  VehiculoController, ModeloController, TipoVehiculoController, TipoCombustibleController],
+  VehiculoController, ModeloController, TipoVehiculoController, TipoCombustibleController, SolicitudAController],
   providers: [AppService, TypeormService,AnimalService,EmpleadoService,EnfermedadService,PersonaService,
   ProductoService,SolicitanteService,SolicitudRService,UsuarioService, TipoUsuarioService, TipoPersonaService, 
   SucursalService, AsignacionRecursosService, AsignacionTareaService, LogAccionesService,ActividadEconomicaService,
@@ -265,6 +267,6 @@ TipoCombustible];
   EstadoSaludService, MedicamentoService, PolizaSeguroService, SintomasService, TipoEnfermedadService, TipoMedicamentoService, 
   TipoSintomasService, TipoTratamientoService, TratamientoService, VacunaService, ViaAdministracionService, EstadoCivilService,
   TelefonoService, TipoDonacionService, DonacionService, TipoEmpleadoService, TipoEmpresaService, TipoTelefonoService, 
-  VehiculoService, ModeloService, TipoVehiculoService, TipoCombustibleService,AuthService,JwtService],
+  VehiculoService, ModeloService, TipoVehiculoService, TipoCombustibleService,AuthService,JwtService, SolicitudAService],
 })
 export class AppModule {}

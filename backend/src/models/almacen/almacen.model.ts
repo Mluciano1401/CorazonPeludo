@@ -1,5 +1,6 @@
 import { Column, Entity, JoinColumn, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
 import { Sucursal } from "../tercero/surcusal.model";
+import { TipoAlmacen } from "./tipoAlmacen.model";
 
 @Entity( )
 export class Almacen{
@@ -12,6 +13,10 @@ export class Almacen{
     @ManyToOne(()=> Sucursal)
     @JoinColumn()
     surcusal: Sucursal;
+    
+    @ManyToOne(()=> TipoAlmacen)
+    @JoinColumn()
+    tipoAlmacen: TipoAlmacen;
 
   @Column({ nullable: false})
     fechaModificacion: Date;

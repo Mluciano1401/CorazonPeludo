@@ -1,6 +1,6 @@
 import { Module } from '@nestjs/common';
-import { SolicitudAService } from './solicitud.service';
-import { SolicitudAController } from './solicitud.controller';
+import { SolicitudAService } from './solicitudA.service';
+import { SolicitudAController } from './solicitudA.controller';
 
 @Module({
   imports: [
