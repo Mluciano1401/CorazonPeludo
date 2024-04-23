@@ -28,11 +28,10 @@ function mostrarCampos() {
   }
 }
 
-<<<<<<< HEAD
 function activar() {
   var dependencia = document.getElementById("dependencia").value;
   var campoDepen = document.getElementById("numeroDependientes");
-=======
+}
 
 
 
