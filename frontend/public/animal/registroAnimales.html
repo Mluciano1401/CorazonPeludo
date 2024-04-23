@@ -301,7 +301,7 @@
             </a>
           </li>
           <li>
-            <a href="tables-data.html">
+            <a href="../consultas/ConsultaAnimales.html">
               <i class="bi bi-circle"></i><span>Consulta Animales</span>
             </a>
           </li>
@@ -478,8 +478,8 @@
                     <label for="sexo" class="form-label">Sexo</label>
                     <select id="sexot" class="form-select"  >
                       <option value="" disabled selected>Selecciona Una Opcion...</option>
-                      <option value="F">Femenino</option>
-                      <option value="M">Masculino</option>
+                      <option value="F">Hembra</option>
+                      <option value="M">Macho</option>
                     </select>
                   </div>
 
@@ -534,20 +534,21 @@
                   <div class="col-md-6 mb-3">
                     <!-- AQUI ES SI O NO, SI TIENE AMPUTACIONES O NO -->
                     <label for="amputaciones" class="form-label">Amputaciones</label>
-                    <select id="amputaciones" class="form-select"  >
+                    <select id="amputaciones" class="form-select"  onchange="activarAmp()">
                       <option value="" disabled selected>Selecciona Una Opcion...</option>
-                      <option value="F">Si</option>
-                      <option value="M">No</option>
+                      <option value="si">Si</option>
+                      <option value="no">No</option>
                     </select>
                   </div>
                   <div class="col-md-6">
                     <label for="tipoAmputacion" class="form-label">Tipo de Amputaciones</label>
-                    <select id="tipoAmputacion" class="form-select"  >
+                    <select id="tipoAmputacion" class="form-select">
                       <option value="" disabled selected>Selecciona Una Opcion...</option>
                       <option value="pierna">Pierna</option>
                       <option value="oreja">Oreja</option>
                       <option value="cola">Cola</option>
                       <option value="castacion">Castracion</option>
+                      <option value="castacion">Ninguna</option>
                     </select>
                   </div>
                 </div>

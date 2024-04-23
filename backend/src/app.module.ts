@@ -3,7 +3,7 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { TypeormService } from './config/db-config/typeorm/typeorm.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { Animal } from './models/animal/animal.model';
+//import { Animal } from './models/animal/npm i -g @nestjs/climodel';
 import { Empleado } from './models/tercero/empleado.model';
 import { Enfermedad } from './models/salud/enfermedad.model';
 import { Persona } from './models/tercero/persona.model';
@@ -221,6 +221,7 @@ import { TipoEnfermedadService } from './modules/salud/tipoEnfermedad/tipoEnferm
 import { ViaAdministracionService } from './modules/salud/viaAdministracion/viaAministracion.service';
 import { AuthService } from './modules/admin/auth/auth.service';
 import { JwtService } from '@nestjs/jwt';
+import { Animal } from './models/animal/animal.model';
 
 const models = [Animal,Empleado,Enfermedad,Persona,Producto,Solicitante,Solicitud,SolicitudR,Usuario, 
   TipoUsuario, TipoPersona, Sucursal, AsignacionRecursos, AsignacionTarea, LogAcciones,ActividadEconomica,

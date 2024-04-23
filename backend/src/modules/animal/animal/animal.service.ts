@@ -1,7 +1,9 @@
 import { Injectable } from '@nestjs/common';
 import { Animal } from '../../../models/animal/animal.model';
-import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
+import { InjectRepository } from '@nestjs/typeorm';
+
+
 
 @Injectable()
 export class AnimalService {

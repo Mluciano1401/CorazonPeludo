@@ -2,6 +2,7 @@ import { Column, Entity, JoinColumn, ManyToOne, PrimaryGeneratedColumn } from "t
 import { Especie } from "./especie.model";
 import { RasgosFisicos } from "./rasgosFisicos.model";
 
+
 @Entity()
 export class Animal {
     @PrimaryGeneratedColumn()

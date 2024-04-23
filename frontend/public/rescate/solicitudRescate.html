@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Regitro de Solicitante</title>
+  <title>Regitro de Solicitud de Rescate</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -36,7 +36,7 @@
 <body>
 
   <div id="contenidoReutilizable">
-    
+
   </div>
   <div id="content-section"></div>
 
@@ -45,12 +45,12 @@
   <main id="main" class="main">
 
     <div class="pagetitle">
-      <h1>Registro de Solicitante de adopción</h1>
+      <h1>Regitro de Solicitud de Rescate</h1>
       <nav>
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="index.html">Home</a></li>
           <li class="breadcrumb-item">Formularios</li>
-          <li class="breadcrumb-item active">Registro de Solicitante</li>
+          <li class="breadcrumb-item active">Regitro de Solicitud de Rescate</li>
         </ol>
       </nav>
     </div><!-- End Page Title -->
@@ -61,20 +61,42 @@
 
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">Ingreso De Solicitante</h5>
+              <h5 class="card-title">Ingreso de Solicitud de Rescate</h5>
 
               <!-- General Form Elements -->
               <form class="needs-validation" id="form" novalidate>
                 <div class="row mb-3">
                   <div class="col-md-6 mb-3">
-                    <label for="idSolicitante" class="form-label">ID Solicitante</label>
+                    <label for="idSolicitante" class="form-label">ID Solicitud de Rescate</label>
                     <input type="text" class="form-control" id="idSolicitante" disabled>
+                  </div>
+
+                  <div class="col-md-6">
+                    <label for="especie" class="form-label">Especie</label>
+                    <select id="especie" class="form-select">
+                      <!-- <div class="data-display0"></div> -->
+                      <option value="" disabled selected>Selecciona Una Opcion...</option>
+                      <option value="1">Perro</option>
+                      <option value="2">Gato</option>
+                      <option value="3">León</option>
+                      <option value="4">Elefante</option>
+                      <option value="5">Ballena</option>
+                      <option value="6">Tigre</option>
+                      <option value="7">Jirafa</option>
+                      <option value="8">Oso</option>
+                      <option value="9">Cebra</option>
+                      <option value="10">Hipopótamo</option>
+                      <option value="11">Pavo</option>
+                      <option value="12">Gallina</option>
+                      <option value="13">Reno</option>
+                    </select>
                   </div>
                 </div>
 
-                <div class="row mb-3"> 
+
+                <div class="row mb-3">
                   <div class="col-md-6 mb-3">
-                    <label for="nombre" class="form-label">Nombre</label>
+                    <label for="nombre" class="form-label">Ubicacion</label>
                     <input type="text" class="form-control" id="nombre" required>
                   </div>
                   <div class="col-md-6">
@@ -103,7 +125,7 @@
                   <div class="col-md-6 mb-3">
                     <label for="mySelect" class="form-label">Sexo</label>
                     <select id="mySelect" class="form-select" required>
-                      
+
                     </select>
                   </div>
                 </div>
@@ -157,11 +179,11 @@
                 <div class="row mb-5">
                   <div class="col-md-6 mb-3">
                     <label for="status" class="form-label">Status</label>
-                      <select id="status" class="form-select" required>
-                        <option value="" disabled selected>Selecciona Una Opcion...</option>
-                        <option value="1">Activo</option>
-                        <option value="0">Inactivo</option>
-                      </select>
+                    <select id="status" class="form-select" required>
+                      <option value="" disabled selected>Selecciona Una Opcion...</option>
+                      <option value="1">Activo</option>
+                      <option value="0">Inactivo</option>
+                    </select>
                   </div>
                   <div class="col-md-6">
                     <label for="fechaModificacion" class="form-label">Fecha de Modificacion</label>
@@ -192,10 +214,11 @@
   <!-- ======= Footer ======= -->
   <footer id="footer" class="footer">
     <div class="copyright">
-      <p class="copy copy-inicio">&copy Copyright - <script>
-        document.write(new Date().getFullYear());
-            </script>
-    </p>
+      <p class="copy copy-inicio">&copy Copyright -
+        <script>
+          document.write(new Date().getFullYear());
+        </script>
+      </p>
     </div>
     <div class="credits">
       Designed by Hilary Collado - Maria Luciano
@@ -206,7 +229,7 @@
       class="bi bi-arrow-up-short"></i></a>
 
   <!-- Vendor JS Files -->
-   <script src="../NiceAdmin/assets/vendor/apexcharts/apexcharts.min.js"></script>
+  <script src="../NiceAdmin/assets/vendor/apexcharts/apexcharts.min.js"></script>
   <script src="../NiceAdmin/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="../NiceAdmin/assets/vendor/chart.js/chart.umd.js"></script>
   <script src="../NiceAdmin/assets/vendor/echarts/echarts.min.js"></script>
@@ -219,13 +242,13 @@
   <script src="../NiceAdmin/assets/js/main.js"></script>
   <script src="../visualizar.js"></script>
 
-<script>
+  <script>
     fetch('../menu/template.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('contenidoReutilizable').innerHTML = data;
-            });
-    </script>
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('contenidoReutilizable').innerHTML = data;
+      });
+  </script>
 </body>
 
 </html>
