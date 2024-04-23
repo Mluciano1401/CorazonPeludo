@@ -21,22 +21,22 @@ form.addEventListener('submit', async(event)=> {
   const fechaIngreso = document.getElementById('fechaIngreso').value;  
   const foto = document.getElementById('foto').value;
   const idpersona = 0;
-
-
-   const status = document.getElementById('status').value;    // Crea una solicitud HTTP
+  const status = document.getElementById('status').value;   
+   
+   // Crea una solicitud HTTP
   const url = 'http://localhost:3000/persona';
   const data = { 
-      nobre: nombre,
-      apellido: apellido,
-      cedula: cedula,
-      pasaporte: pasaporte,
-      email: email,
+      nobre: nombre ? nombre : "",
+      apellido: apellido ? apellido : "",
+      cedula: cedula ? cedula : "",
+      pasaporte: pasaporte ? pasaporte : "",
+      email: email ? email : "",
       estadoCivil: estadoCivil,
-      sexo: sexo,
-      licencia: licencia,
-      licenciaConducir: licencia,
+      sexo: sexo ? sexo : "",
+      licenciaConducir: licencia ? licencia : "",
       tipoPersona: 1,
-      fechaNacimiento: fechaNacimiento,
+      fechaNacimiento: fechaNacimiento ? fechaNacimiento : null,
+      foto: foto ? foto : "",
       fechaModificacion: new Date(),
       status: (status == '0') ? false : true 
   };
@@ -48,23 +48,27 @@ form.addEventListener('submit', async(event)=> {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(data)
     });
-    idpersona = response.data.personaId;
-    const url2 = 'http://localhost:3000/empleado';
-    const data2 = { 
-      personaId:idpersona,
-      tipoEmpleado:tipoempleado,
-      puesto: puesto,
-      sueldo:sueldo,
-      fechaIngreso: fechaIngreso,
-      fechaModificacion: new Date(),
-      status: (status == '0') ? false : true 
-  };
-    const response2 = await fetch(url2, { // Replace with your API URL
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(data2)
-    });
-    if (response.ok && response2.ok) {
+    let response2 = undefined;
+    if(response.ok){
+      idpersona = response.data.personaId;
+      const url2 = 'http://localhost:3000/empleado';
+      const data2 = { 
+        personaId:idpersona,
+        tipoEmpleado:tipoempleado,
+        puesto: puesto ? puesto : "",
+        sueldo:sueldo ? sueldo : 0,
+        fechaIngreso: fechaIngreso ? fechaIngreso : new Date(),
+        fechaModificacion: new Date(),
+        status: (status == '0') ? false : true 
+      };
+      response2 = await fetch(url2, { // Replace with your API URL
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data2)
+      });
+    }
+    
+    if (response2.ok) {
       form.reset(); // Clear form after successful submission
     } else {
       console.error('Error:', await response.text()); // Log detailed error

@@ -6,26 +6,22 @@ form.addEventListener('submit', async (event) => {
   event.preventDefault(); // Previene el envío predeterminado del formulario
 
   // Recopila los datos del formulario
-  const user = document.getElementById('user').value;
-  const tipouser = document.getElementById('tipoUser').value;
-  const password = document.getElementById('password').value;
-  const email = document.getElementById('email').value;
-  const sucursal = document.getElementById('sucursal').value;
-  const formFile = document.getElementById('formFile').value;
+  const idtareas = document.getElementById('idTareas').value;
+  const descripcion = document.getElementById('descripcion').value;
+  const tipotarea = document.getElementById('tipoTarea').value;
+  const complejidad = document.getElementById('complejidad').value;
   const status = document.getElementById('status').value;
-  // Crea una solicitud HTTP
-  const url = 'http://localhost:3000/asignaciontarea';
-  const data = { 
-      userName: user,
-      password: password,
-      email: email,
-      asignacionTarea: tipouser,
-      sucursal: sucursal,
-      foto:formFile,
-      fechaModificacion: new Date(),
-      status: (status == '0') ? false : true
 
-  };
+   // Crea una solicitud HTTP
+   const url = 'http://localhost:3000/asignaciontarea';
+   const data = { 
+       idTareas: idtareas,
+       descripcion: descripcion,
+       tipoTarea: tipotarea,
+       complejidad: complejidad,
+       fechaModificacion: new Date(),
+       status: (status == '0') ? false : true
+   };
   try {
     console.log(data);
     console.log(JSON.stringify(data));

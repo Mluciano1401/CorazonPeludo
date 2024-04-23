@@ -8,7 +8,7 @@ export class Indentificador{
     @Column({ nullable: false })
     codigoBarra: string;
 
-    @Column()
+    @Column({ nullable: true})
     tipoIdentificador: string;
 
   @Column({ nullable: false})

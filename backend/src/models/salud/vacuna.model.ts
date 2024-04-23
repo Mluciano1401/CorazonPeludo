@@ -10,10 +10,10 @@ export class Vacuna{
     @JoinColumn()
     medicamento: Medicamento;
 
-    @Column()
+    @Column({ nullable: true})
     edadMinima:number;
 
-    @Column()
+    @Column({ nullable: true})
     edadMaxima: number;
 
     @Column({ nullable: false})

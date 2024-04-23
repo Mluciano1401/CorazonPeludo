@@ -18,7 +18,7 @@ export class PostAdopcion{
     @Column({ nullable: false})
     fechaInicio: Date;
 
-    @Column()
+    @Column({ nullable: true})
     condicionAnimal: string;
 
   @Column({ nullable: false})

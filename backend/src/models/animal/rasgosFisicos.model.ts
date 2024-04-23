@@ -10,10 +10,10 @@ export class RasgosFisicos{
     @JoinColumn()
     tipoPiel: TipoPiel;
 
-    @Column()
+    @Column({ nullable: true})
     amputaciones: boolean;
 
-    @Column()
+    @Column({ nullable: true})
     tipoAmputacion: string;
 
   @Column({ nullable: false})

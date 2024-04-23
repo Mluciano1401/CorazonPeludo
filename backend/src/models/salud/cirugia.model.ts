@@ -19,10 +19,10 @@ export class Cirugia{
     @JoinColumn()
     animal: Animal;
 
-    @Column()
+    @Column({ nullable: true})
     duracion: number;
 
-    @Column()
+    @Column({ nullable: true})
     fechaProgramada: Date;
 
     @Column({ nullable: false})

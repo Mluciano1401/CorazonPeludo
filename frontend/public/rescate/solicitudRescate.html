@@ -45,12 +45,20 @@
   <main id="main" class="main">
 
     <div class="pagetitle">
+<<<<<<< HEAD:frontend/public/rescate/solicitudRescate.html
       <h1>Regitro de Solicitud de Rescate</h1>
+=======
+      <h1>Registro de Solicitud de Rescate</h1>
+>>>>>>> ab23bdc19743bdff9fed863a3b19d5ee40a47533:frontend/public/rescate/solicitud.html
       <nav>
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="index.html">Home</a></li>
           <li class="breadcrumb-item">Formularios</li>
+<<<<<<< HEAD:frontend/public/rescate/solicitudRescate.html
           <li class="breadcrumb-item active">Regitro de Solicitud de Rescate</li>
+=======
+          <li class="breadcrumb-item active">Registro de solicitud de rescate</li>
+>>>>>>> ab23bdc19743bdff9fed863a3b19d5ee40a47533:frontend/public/rescate/solicitud.html
         </ol>
       </nav>
     </div><!-- End Page Title -->
@@ -61,7 +69,11 @@
 
           <div class="card">
             <div class="card-body">
+<<<<<<< HEAD:frontend/public/rescate/solicitudRescate.html
               <h5 class="card-title">Ingreso de Solicitud de Rescate</h5>
+=======
+              <h5 class="card-title">Ingreso De Solicitud de Rescate</h5>
+>>>>>>> ab23bdc19743bdff9fed863a3b19d5ee40a47533:frontend/public/rescate/solicitud.html
 
               <!-- General Form Elements -->
               <form class="needs-validation" id="form" novalidate>
@@ -73,6 +85,7 @@
 
                   <div class="col-md-6">
                     <label for="especie" class="form-label">Especie</label>
+<<<<<<< HEAD:frontend/public/rescate/solicitudRescate.html
                     <select id="especie" class="form-select">
                       <!-- <div class="data-display0"></div> -->
                       <option value="" disabled selected>Selecciona Una Opcion...</option>
@@ -89,6 +102,10 @@
                       <option value="11">Pavo</option>
                       <option value="12">Gallina</option>
                       <option value="13">Reno</option>
+=======
+                    <select id="especie" class="form-select"  >
+                      <div class="data-display0"></div>
+>>>>>>> ab23bdc19743bdff9fed863a3b19d5ee40a47533:frontend/public/rescate/solicitud.html
                     </select>
                   </div>
                 </div>
@@ -96,19 +113,12 @@
 
                 <div class="row mb-3">
                   <div class="col-md-6 mb-3">
+<<<<<<< HEAD:frontend/public/rescate/solicitudRescate.html
                     <label for="nombre" class="form-label">Ubicacion</label>
+=======
+                    <label for="nombre" class="form-label">Nombre del Solicitante</label>
+>>>>>>> ab23bdc19743bdff9fed863a3b19d5ee40a47533:frontend/public/rescate/solicitud.html
                     <input type="text" class="form-control" id="nombre" required>
-                  </div>
-                  <div class="col-md-6">
-                    <label for="apellido" class="form-label">Apellido</label>
-                    <input type="text" class="form-control" id="apellido" required>
-                  </div>
-                </div>
-
-                <div class="row mb-3">
-                  <div class="col-md-6">
-                    <label for="email" class="form-label">Email</label>
-                    <input type="text" class="form-control" id="email" required>
                   </div>
                   <div class="col-md-6">
                     <label for="telefono" class="form-label">Telefono</label>
@@ -116,9 +126,21 @@
                   </div>
                 </div>
 
+                <div class="row  mb-3">
+                  <div class="col-md-6 mb-3">
+                    <label for="colorFisico" class="form-label">Color Fisico Del Animal</label>
+                    <input type="text" class="form-control" id="colorFisico"
+                      placeholder="Ejemplo: Blanco con manchas negras"  >
+                  </div>
+                  <div class="col-md-6">
+                    <label for="tamanho" class="form-label">Tamaño</label>
+                    <input type="text" class="form-control" id="tamanho" placeholder="Ejemplo: Grande, pequeño"  >
+                  </div>
+                </div>                
 
                 <div class="row mb-3">
                   <div class="col-md-6">
+<<<<<<< HEAD:frontend/public/rescate/solicitudRescate.html
                     <label for="cedula" class="form-label">Cedula</label>
                     <input type="text" class="form-control" id="cedula" required>
                   </div>
@@ -127,54 +149,27 @@
                     <select id="mySelect" class="form-select" required>
 
                     </select>
+=======
+                    <label for="ubicacion" class="form-label">Ubicacion</label>
+                    <input type="text" class="form-control" id="ubicacion" required>
+>>>>>>> ab23bdc19743bdff9fed863a3b19d5ee40a47533:frontend/public/rescate/solicitud.html
                   </div>
+                  <div class="col-md-6">
+                    <label for="ciudad" class="form-label">Ciudad</label>
+                    <input type="text" class="form-control" id="ciudad" required>
+                  </div> 
                 </div>
 
                 <div class="row mb-3">
                   <div class="col-md-6 mb-3">
-                    <label for="situacionFamiliar" class="form-label">Situación Familiar</label>
-                    <input type="text" class="form-control" id="situacionFamiliar" placeholder="Buena..." required>
+                    <label for="pais" class="form-label">Pais</label>
+                    <input type="text" class="form-control" id="pais" required>
                   </div>
                   <div class="col-md-6">
-                    <label for="ingresosMensuales" class="form-label">ingresos Mensuales</label>
-                    <input type="number" class="form-control" id="ingresosMensuales" required>
-                  </div>
+                    <label for="comportamiento" class="form-label">Comportamiento</label>
+                    <input type="text" class="form-control" id="comportamiento" required placeholder="asustado, agresivo">
+                  </div> 
                 </div>
-
-
-
-                <div class="row mb-3">
-                  <div class="col-md-6 mb-3" id="campoDependiente">
-                    <label for="dependencia" class="form-label">Depende económicamente de otros</label>
-                    <select id="dependencia" class="form-select" required onchange="activar()">
-                      <option value="" disabled selected>Selecciona Una Opcion...</option>
-                      <option value="Si">Si</option>
-                      <option value="No">No</option>
-                    </select>
-                  </div>
-                  <div class="col-md-6" id="campoDepen">
-                    <label for="numeroDependientes" class="form-label">Cantidad de dependientes</label>
-                    <input type="number" class="form-control" id="numeroDependientes" required>
-                  </div>
-                </div>
-
-
-
-
-
-                <div class="row mb-3">
-                  <div class="col-md-6 mb-3">
-                    <label for="actividadEconomica" class="form-label">Actividad Económica</label>
-                    <input type="text" class="form-control" id="actividadEconomica" required>
-                  </div>
-
-                  <div class="col-md-6">
-                    <label for="fechaIngreso" class="form-label">Fecha De Inicio</label>
-                    <input type="fechaIngreso" class="form-control" required>
-                  </div>
-                </div>
-
-
 
                 <div class="row mb-5">
                   <div class="col-md-6 mb-3">

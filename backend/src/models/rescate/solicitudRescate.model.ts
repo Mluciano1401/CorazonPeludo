@@ -41,7 +41,7 @@ export class SolicitudR {
     @JoinColumn()
     ubicacion: Direccion;
 
-    @Column()
+    @Column({ nullable: true})
     fechaCreacion: Date;
 
     @ManyToOne(()=> Sucursal)

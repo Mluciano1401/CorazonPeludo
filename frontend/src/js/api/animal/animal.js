@@ -9,9 +9,9 @@ form.addEventListener('submit', async (event) =>{
   const alias = document.getElementById('alias').value;
   const edad = document.getElementById('edad').value;
   const peso = document.getElementById('peso').value;
-  //const tipoPiel = document.getElementById('TipoPiel').value;  
-  //const especie = document.getElementById('especie').value;
- // const sexo = document.getElementById('sexo').value;
+  const tipoPiel = document.getElementById('tipoPiel').value;  
+  const especie = document.getElementById('especie').value;
+  const sexo = document.getElementById('sexo').value;
   //const origen = document.getElementById('origen').value;
   //const amputaciones = document.getElementById('amputaciones').value;
   //const tipoAmputacion = document.getElementById('tipoAmputacion').value;
@@ -24,10 +24,13 @@ form.addEventListener('submit', async (event) =>{
   const status = document.getElementById('status').value;    // Crea una solicitud HTTP
   const url = 'http://localhost:3000/animal';
   const data = { 
-      alias:alias,
-      edad: edad,
-      peso: peso,
-      fechaIngreso: fechaIngreso,
+      alias:alias ? alias : "",
+      edad: edad ? edad : 0,
+      peso: peso ? peso : 0,
+      especie: especie,
+      sexo: sexo ? sexo : "",
+      origen: 0,
+      fechaIngreso: fechaIngreso ? fechaIngreso : new Date(),
       fechaModificacion: new Date(),
       status: (status == '0') ? false : true 
   };
@@ -60,7 +63,7 @@ async function getData(){
       const selectedId = select.value;
       const selectedData = data.data.find(item => item.tipoPielId === selectedId); // Find selected item
       if (selectedData) {
-        const dataDisplay = document.getElementById('data-display0');
+        const dataDisplay = document.getElementById('data-display1');
         dataDisplay.textContent = JSON.stringify(selectedData, null, 2); // Display selected data
       }
     });
@@ -78,7 +81,7 @@ async function getData(){
       const selectedId = select.value;
       const selectedData = data.data.find(item => item.especieId === selectedId); // Find selected item
       if (selectedData) {
-        const dataDisplay = document.getElementById('data-display');
+        const dataDisplay = document.getElementById('data-display0');
         dataDisplay.textContent = JSON.stringify(selectedData, null, 2); // Display selected data
       }
     });
@@ -115,4 +118,4 @@ function selectOptions(data) {
     select.appendChild(option);
   });
 }
-//getData();
+getData();

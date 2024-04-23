@@ -10,21 +10,21 @@ export class Producto {
     @Column({ nullable: false })
     nombre: string;
 
-    @Column()
+    @Column({ nullable: true})
     lote: string;
 
     @ManyToOne(()=> TipoProducto)
     @JoinColumn()
     tipoProducto: TipoProducto;
 
-    @Column()
+    @Column({ nullable: true})
     costo:number;
 
     @ManyToOne(()=> Marca)
     @JoinColumn()
     marca: Marca;
 
-    @Column()
+    @Column({ nullable: true})
     fechaVencimiento: Date;
 
   @Column({ nullable: false})

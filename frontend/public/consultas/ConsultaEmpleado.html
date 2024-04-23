@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Regitro de Solicitante</title>
+  <title>Consulta Empleado</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -15,9 +15,7 @@
 
   <!-- Google Fonts -->
   <link href="https://fonts.gstatic.com" rel="preconnect">
-  <link
-    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
-    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
   <link href="../NiceAdmin/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -29,18 +27,19 @@
   <link href="../NiceAdmin/assets/vendor/simple-datatables/style.css" rel="stylesheet">
 
   <!-- Template Main CSS File -->
-  <link href="../NiceAdmin/assets/css/style.css" rel="stylesheet">
-
-</head>
+  <link href="../NiceAdmin/assets/css/style.css" rel="stylesheet"></head>
 
 <body>
 
+  <!-- ======= Header ======= -->
   <!-- <div id="contenidoReutilizable">
     
   </div>
   <div id="content-section"></div> -->
 
 
+
+  
   <header id="header" class="header fixed-top d-flex align-items-center">
 
     <div class="d-flex align-items-center justify-content-between">
@@ -358,7 +357,7 @@
         <ul id="Almacen" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
             <a href="../almacen/registroAlimento.html">
-              <i class="bi bi-circle"></i><span>Registro de Alimentos</span>
+              <i class="bi bi-circle"></i><span>Registro de Empleado</span>
             </a>
           </li>
           <li>
@@ -379,7 +378,7 @@
         <ul id="consulta" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
             <a href="../consultas/ConsultaAlimento.html">
-              <i class="bi bi-circle"></i><span>Consulta de Alimentos</span>
+              <i class="bi bi-circle"></i><span>Consulta de Empleado</span>
             </a>
           </li>
           <li>
@@ -416,19 +415,22 @@
 
 
 
-  <!--Principal-->
+
   <main id="main" class="main">
 
     <div class="pagetitle">
-      <h1>Registro de Solicitante de adopción</h1>
+      <h1>Consulta a Registro de Animales</h1>
       <nav>
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-          <li class="breadcrumb-item">Formularios</li>
-          <li class="breadcrumb-item active">Registro de Solicitante</li>
+          <li class="breadcrumb-item">Consultas</li>
+          <li class="breadcrumb-item active">Consulta a Registro de Animales</li>
         </ol>
       </nav>
     </div><!-- End Page Title -->
+
+
+
 
     <section class="section">
       <div class="row">
@@ -436,149 +438,54 @@
 
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">Ingreso De Solicitante</h5>
+              <h5 class="card-title">Consulta de Animales</h5>
 
-              <!-- General Form Elements -->
-              <form class="needs-validation" id="form" novalidate>
-                <div class="row mb-3">
-                  <div class="col-md-6 mb-3">
-                    <label for="idSolicitante" class="form-label">ID Solicitante</label>
-                    <input type="text" class="form-control" id="idSolicitante" disabled>
-                  </div>
-                </div>
+              <div class="text-center mb-3 d-grid gap-2 d-md-flex justify-content-md-end">
+                <a href="../almacen/registroAlimento.html"> <button type="" class="btn btn-primary" >Agregar otro elemento</button></a>
+              </div>
+              <!-- TABLA PARA VISUALIZAR LAS CONSULTAS -->
+              <table class="table table-striped table-bordered">
+                <thead>
+                  <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Descripción</th>
+                    <th scope="col">Última modificación</th>
+                     <th scope="col">Estado</th>
+                    <th scope="col">Acciones</th>
+                  </tr>
+                </thead>
+                <tbody id="tablebody">
 
-                <div class="row mb-3"> 
-                  <div class="col-md-6 mb-3">
-                    <label for="nombre" class="form-label">Nombre</label>
-                    <input type="text" class="form-control" id="nombre" required>
-                  </div>
-                  <div class="col-md-6">
-                    <label for="apellido" class="form-label">Apellido</label>
-                    <input type="text" class="form-control" id="apellido" required>
-                  </div>
-                </div>
-
-                <div class="row mb-3">
-                  <div class="col-md-6">
-                    <label for="email" class="form-label">Email</label>
-                    <input type="text" class="form-control" id="email" required>
-                  </div>
-                  <div class="col-md-6">
-                    <label for="telefono" class="form-label">Telefono</label>
-                    <input type="text" class="form-control" id="telefono" required>
-                  </div>
-                </div>
-
-
-                <div class="row mb-3">
-                  <div class="col-md-6">
-                    <label for="cedula" class="form-label">Cedula</label>
-                    <input type="text" class="form-control" id="cedula" required>
-                  </div>
-                  <div class="col-md-6 mb-3">
-                    <label for="mySelect" class="form-label">Sexo</label>
-                    <select id="mySelect" class="form-select" required>
-                      
-                    </select>
-                  </div>
-                </div>
-
-                <div class="row mb-3">
-                  <div class="col-md-6 mb-3">
-                    <label for="situacionFamiliar" class="form-label">Situación Familiar</label>
-                    <input type="text" class="form-control" id="situacionFamiliar" placeholder="Buena..." required>
-                  </div>
-                  <div class="col-md-6">
-                    <label for="ingresosMensuales" class="form-label">ingresos Mensuales</label>
-                    <input type="number" class="form-control" id="ingresosMensuales" required>
-                  </div>
-                </div>
-
-
-
-                <div class="row mb-3">
-                  <div class="col-md-6 mb-3" id="campoDependiente">
-                    <label for="dependencia" class="form-label">Depende económicamente de otros</label>
-                    <select id="dependencia" class="form-select" required onchange="activar()">
-                      <option value="" disabled selected>Selecciona Una Opcion...</option>
-                      <option value="Si">Si</option>
-                      <option value="No">No</option>
-                    </select>
-                  </div>
-                  <div class="col-md-6" id="campoDepen">
-                    <label for="numeroDependientes" class="form-label">Cantidad de dependientes</label>
-                    <input type="number" class="form-control" id="numeroDependientes" required>
-                  </div>
-                </div>
-
-
-
-
-
-                <div class="row mb-3">
-                  <div class="col-md-6 mb-3">
-                    <label for="actividadEconomica" class="form-label">Actividad Económica</label>
-                    <input type="text" class="form-control" id="actividadEconomica" required>
-                  </div>
-
-                  <div class="col-md-6">
-                    <label for="fechaIngreso" class="form-label">Fecha De Inicio</label>
-                    <input type="fechaIngreso" class="form-control" required>
-                  </div>
-                </div>
-
-
-
-                <div class="row mb-5">
-                  <div class="col-md-6 mb-3">
-                    <label for="status" class="form-label">Status</label>
-                      <select id="status" class="form-select" required>
-                        <option value="" disabled selected>Selecciona Una Opcion...</option>
-                        <option value="1">Activo</option>
-                        <option value="0">Inactivo</option>
-                      </select>
-                  </div>
-                  <div class="col-md-6">
-                    <label for="fechaModificacion" class="form-label">Fecha de Modificacion</label>
-                    <input type="date" id="fechaModificacion" class="form-control" disabled>
-                  </div>
-                </div>
-
-                <div class="text-center mb-3">
-                  <button type="submit" class="btn btn-primary buttonSubmit">Enviar</button>
-                  <button type="reset" class="btn btn-outline-danger">Limpiar</button>
-                </div>
-
-              </form><!-- End General Form Elements -->
+                </tbody>
+              </table>
+              <!-- End Table with stripped rows -->
 
             </div>
           </div>
 
+          
+          </div>
         </div>
-
       </div>
     </section>
 
-  </main>
-  <!-- End #main -->
-
-
+  </main><!-- End #main -->
 
   <!-- ======= Footer ======= -->
   <footer id="footer" class="footer">
     <div class="copyright">
-      <p class="copy copy-inicio">&copy Copyright - <script>
-        document.write(new Date().getFullYear());
-            </script>
-    </p>
+      <p class="copy copy-inicio">&copy Copyright -
+        <script>
+          document.write(new Date().getFullYear());
+        </script>
+      </p>
     </div>
     <div class="credits">
       Designed by Hilary Collado - Maria Luciano
     </div>
   </footer><!-- End Footer -->
 
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
-      class="bi bi-arrow-up-short"></i></a>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
   <!-- Vendor JS Files -->
    <script src="../NiceAdmin/assets/vendor/apexcharts/apexcharts.min.js"></script>
@@ -592,15 +499,29 @@
 
   <!-- Template Main JS File -->
   <script src="../NiceAdmin/assets/js/main.js"></script>
-  <script src="../visualizar.js"></script>
-
+  <script src="../../src/js/api/tercero/ConsultaEmpleado.js"></script>
 <script>
-    fetch('../menu/template.html')
+    fetch('../visualizar.js')
             .then(response => response.text())
             .then(data => {
                 document.getElementById('contenidoReutilizable').innerHTML = data;
             });
     </script>
+
+
+
+
+
+<script>
+  fetch('../menu/template.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('contenidoReutilizable').innerHTML = data;
+    });
+</script>
+
+
+
 </body>
 
 </html>

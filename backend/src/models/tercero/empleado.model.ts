@@ -19,13 +19,13 @@ export class Empleado {
     @ManyToOne(()=> TipoEmpleado)
     @JoinColumn()
     tipoEmpleado: TipoEmpleado;
-    @Column()
+    @Column({ nullable: true})
     puesto: string;
     
-    @Column()
+    @Column({ nullable: true})
     sueldo: number;
 
-    @Column()
+    @Column({ nullable: true})
     fechaIngreso: Date;
     
   @Column({ nullable: false})

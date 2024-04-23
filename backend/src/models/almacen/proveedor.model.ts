@@ -10,7 +10,7 @@ export class Proveedor {
     @JoinColumn()
     persona: Persona;
 
-    @Column()
+    @Column({ nullable: true})
     tipoCredito: string;
 
   @Column({ nullable: false})

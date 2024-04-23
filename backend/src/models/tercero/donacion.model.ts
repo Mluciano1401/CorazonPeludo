@@ -17,7 +17,7 @@ export class Donacion {
     @JoinColumn()
     tipoDonacion: TipoDonacion;
 
-    @Column()
+    @Column({ nullable: true})
     fecha: Date;
 
     @Column({ nullable: false})

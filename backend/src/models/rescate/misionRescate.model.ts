@@ -8,7 +8,7 @@ export class Mision{
     @PrimaryGeneratedColumn()
     misionId: number;
 
-    @Column()
+    @Column({ nullable: true})
     fechaInicio: Date;
 
     @ManyToOne(()=> SolicitudR)

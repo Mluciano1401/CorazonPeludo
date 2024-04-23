@@ -19,10 +19,10 @@ export class AsignacionTarea{
     @JoinColumn()
     empleado: Empleado;
 
-    @Column()
+    @Column({ nullable: true})
     fechaInicio: Date;
 
-    @Column()
+    @Column({ nullable: true})
     fechaLimite: Date;
 
     @ManyToOne(()=> Estado)

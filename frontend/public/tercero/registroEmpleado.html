@@ -37,7 +37,7 @@
 
   <!-- ======= Header ======= -->
   <div id="contenidoReutilizable">
-    
+
   </div>
   <div id="content-section"></div>
 
@@ -70,13 +70,6 @@
                     <label for="idEmpleado" class="form-label">ID Empleado</label>
                     <input type="text" class="form-control" id="idEmpleado" disabled>
                   </div>
-
-                  <div class="col-md-6">
-                    <label for="tipoEmpleado" class="form-label">Tipo de Empleado</label>
-                    <select id="tipoEmpleado" class="form-select" required>
-                      <div id="data-display">Selecciona Una Opcion...</div>
-                    </select>
-                  </div>
                 </div>
 
                 <div class="row mb-3">
@@ -103,34 +96,39 @@
                   </div>
                 </div>
 
-                <!-- ARREGLAR ESTOS CAMPOS  -->
+                <!-- en este espacio estaba la cedula  -->
+                <div class="row  mb-3">
+                  <div class="col-md-6 mb-3">
+                    <label for="tipoDocumento" class="form-label">Tipo de documento</label>
+                    <select id="tipoDocumento" class="form-select" required>
+                      <option value="" disabled selected>Selecciona Una Opcion...</option>
+                      <option value="1">Cedula</option>
+                      <option value="0">Pasaporte</option>
+                    </select>
+                  </div>
+
+                  <div class="col-md-6">
+                    <label for="documento" class="form-label">Documento</label>
+                    <input type="text" class="form-control" id="documento">
+
+                  </div>
+                </div>  
+
+
 
                 <div class="row mb-4">
                   <div class="col-md-6 mb-3">
-                    <label for="cedula" class="form-label">Cedula</label>
-                    <input type="text" class="form-control" id="cedula">
-                  </div>
-                  <div class="col-md-6 mb-3">
-                    <label for="selectpasaporte" class="form-label">¿Tiene Pasaporte?</label>
-                    <select id="selectpasaporte" class="form-select" required>
-                      <option value="" disabled selected>Selecciona Una Opcion...</option>
-                      <option value="1">Si</option>
-                      <option value="0">No</option>
-                    </select>
-                  </div>
-                  <div class="col-md-6">
-                    <label for="pasaporte" class="form-label">Pasaporte</label>
-                    <input type="text" class="form-control" id="pasaporte">
-                  </div>
-
-                  <div class="col-md-6">
-
                     <label for="estadocivil" class="form-label">Estado Civil</label>
                     <select id="estadocivil" class="form-select" required>
                       <div id="data-display1">Selecciona Una Opcion...</div>
                     </select>
                   </div>
-
+                  <div class="col-md-6">
+                    <label for="tipoEmpleado" class="form-label">Tipo de Empleado</label>
+                    <select id="tipoEmpleado" class="form-select" required>
+                      <div id="data-display">Selecciona Una Opcion...</div>
+                    </select>
+                  </div>
                 </div>
 
                 <div class="row mb-3" required>
@@ -155,7 +153,7 @@
                   </div>
                   <div class="col-md-6">
                     <label for="fechIngreso" class="form-label">Fecha de Ingreso</label>
-                    <input type="date" id="fechaIngreso" class="form-control" disabled>
+                    <input type="date" id="fechaIngreso" class="form-control">
                   </div>
                 </div>
 
@@ -186,18 +184,19 @@
                 <div class="row mb-3">
                   <div class="col-md-6">
                     <label for="selectlicencia" class="form-label">¿Tiene Licencia De Conducir?</label>
-                    <select id="selectlicencia" class="form-select" required>
+                    <select id="selectlicencia" class="form-select" required onchange="activarLicencia()">
                       <option value="" disabled selected>Selecciona Una Opcion...</option>
                       <option value="1">Si</option>
                       <option value="0">No</option>
                     </select>
                   </div>
 
-                  <div class="col-md-6">
+                  <div class="col-md-6" id="campoLicencia">
                     <label for="licencia" class="form-label">Licencia De Conducir</label>
-                    <input type="text" class="form-control" id="licencia">
+                    <input type="text" class="form-control" id="licencia" required>
                   </div>
                 </div>
+
 
                 <div class="row mb-3">
                   <div class="col-md-6 mb-3">
@@ -211,11 +210,11 @@
                 <div class="row mb-5">
                   <div class="col-md-6 mb-3">
                     <label for="status" class="form-label">Status</label>
-                      <select id="status" class="form-select" required>
-                        <option value="" disabled selected>Selecciona Una Opcion...</option>
-                        <option value="1">Activo</option>
-                        <option value="0">Inactivo</option>
-                      </select>
+                    <select id="status" class="form-select" required>
+                      <option value="" disabled selected>Selecciona Una Opcion...</option>
+                      <option value="1">Activo</option>
+                      <option value="0">Inactivo</option>
+                    </select>
                   </div>
                   <div class="col-md-6">
                     <label for="fechaModificacion" class="form-label">Fecha de Modificacion</label>
@@ -229,14 +228,15 @@
                   <button type="submit" class="btn btn-primary buttonSubmit">Enviar</button>
                   <button type="reset" class="btn btn-outline-danger">Limpiar</button>
                 </div>
-              </form><!-- End General Form Elements -->
-
-
-
             </div>
-          </div>
+            </form><!-- End General Form Elements -->
 
+
+
+          </div>
         </div>
+
+      </div>
 
       </div>
     </section>
@@ -264,7 +264,7 @@
       class="bi bi-arrow-up-short"></i></a>
 
   <!-- Vendor JS Files -->
-   <script src="../NiceAdmin/assets/vendor/apexcharts/apexcharts.min.js"></script>
+  <script src="../NiceAdmin/assets/vendor/apexcharts/apexcharts.min.js"></script>
   <script src="../NiceAdmin/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="../NiceAdmin/assets/vendor/chart.js/chart.umd.js"></script>
   <script src="../NiceAdmin/assets/vendor/echarts/echarts.min.js"></script>
@@ -275,14 +275,16 @@
 
   <!-- Template Main JS File -->
   <script src="../NiceAdmin/assets/js/main.js"></script>
-    <script src="../../src/js/api/tercero/empleado.js"></script>
-<script>
+  <script src="../../src/js/api/tercero/empleado.js"></script>
+
+  <script src="../visualizar.js"></script>
+  <script>
     fetch('../menu/template.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('contenidoReutilizable').innerHTML = data;
-            });
-    </script>
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('contenidoReutilizable').innerHTML = data;
+      });
+  </script>
 </body>
 
 </html>
