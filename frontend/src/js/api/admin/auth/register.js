@@ -4,13 +4,13 @@ form.addEventListener('submit', async (event) => {
   event.preventDefault(); // Previene el envío predeterminado del formulario
 
   // Recopila los datos del formulario
-  const user = document.getElementById('user').value;
+  const name = document.getElementById('name').value;
   const password = document.getElementById('password').value;
   const email = document.getElementById('email').value;
   // Crea una solicitud HTTP
   const url = 'http://localhost:3000/usuario';
   const data = { 
-      userName: user,
+      userName: name,
       password: password,
       email: email,
       fechaModificacion: new Date(),
