@@ -1,34 +1,37 @@
 function mostrarCampos() {
-    if (document.getElementById("persona").checked) {
-        document.getElementById("campoCedula").style.display = "block";
-        document.getElementById("campodoc").style.display = "block";
-        document.getElementById("campoNombre").style.display = "block";
-        document.getElementById("campoApellido").style.display = "block";
-        document.getElementById("campoGenero").style.display = "block";
-        document.getElementById("campoFechaN").style.display = "block";
+  if (document.getElementById("persona").checked) {
+    document.getElementById("campoCedula").style.display = "block";
+    document.getElementById("campodoc").style.display = "block";
+    document.getElementById("campoNombre").style.display = "block";
+    document.getElementById("campoApellido").style.display = "block";
+    document.getElementById("campoGenero").style.display = "block";
+    document.getElementById("campoFechaN").style.display = "block";
 
-        document.getElementById("campoRNC").style.display = "none";
-        document.getElementById("campoNombreCompania").style.display = "none";
-        document.getElementById("campoPersonaContacto").style.display = "none";
-        document.getElementById("campoCargo").style.display = "none";
+    document.getElementById("campoRNC").style.display = "none";
+    document.getElementById("campoNombreCompania").style.display = "none";
+    document.getElementById("campoPersonaContacto").style.display = "none";
+    document.getElementById("campoCargo").style.display = "none";
 
- 
-    } else if (document.getElementById("compania").checked) {
-        document.getElementById("campoCedula").style.display = "none";
-        document.getElementById("campodoc").style.display = "none";
-        document.getElementById("campoNombre").style.display = "none";
-        document.getElementById("campoApellido").style.display = "none"; 
-        document.getElementById("campoGenero").style.display = "none"; 
-        document.getElementById("campoFechaN").style.display = "none"; 
+  } else if (document.getElementById("compania").checked) {
+    document.getElementById("campoCedula").style.display = "none";
+    document.getElementById("campodoc").style.display = "none";
+    document.getElementById("campoNombre").style.display = "none";
+    document.getElementById("campoApellido").style.display = "none";
+    document.getElementById("campoGenero").style.display = "none";
+    document.getElementById("campoFechaN").style.display = "none";
 
-        document.getElementById("campoRNC").style.display = "block";
-        document.getElementById("campoNombreCompania").style.display = "block";
-        document.getElementById("campoPersonaContacto").style.display = "block";
-        document.getElementById("campoCargo").style.display = "block";
+    document.getElementById("campoRNC").style.display = "block";
+    document.getElementById("campoNombreCompania").style.display = "block";
+    document.getElementById("campoPersonaContacto").style.display = "block";
+    document.getElementById("campoCargo").style.display = "block";
 
-    }
+  }
 }
 
+function activar() {
+  var dependencia = document.getElementById("dependencia").value;
+  var campoDepen = document.getElementById("numeroDependientes");
+}
 
 
 
@@ -48,15 +51,29 @@ function mostrarCampos() {
   function activarDependientes() {
     var dependencia = document.getElementById("dependientes").value;
     var campoDepen = document.getElementById("numeroDependientes");
+>>>>>>> ab23bdc19743bdff9fed863a3b19d5ee40a47533
 
-    if (dependencia === "Si") {
-      campoDepen.disabled = false ;
-    } else if (dependencia === "No") {
-      campoDepen.disabled = true;
-    }
+  if (dependencia === "Si") {
+    campoDepen.disabled = false;
+  } else if (dependencia === "No") {
+    campoDepen.disabled = true;
   }
+}
 
 
+<<<<<<< HEAD
+
+function activarAmp() {
+  var amputaciones = document.getElementById("amputaciones").value;
+  var tipoAmputacion = document.getElementById("tipoAmputacion");
+
+  if (amputaciones === "si") {
+    tipoAmputacion.disabled = false ;
+  } else if (amputaciones === "no") {
+    tipoAmputacion.disabled = true;
+  }
+}
+=======
   function activarLicencia() {
     var selectlicencia = document.getElementById("selectlicencia").value;
     var campoLicencia = document.getElementById("licencia");
@@ -67,12 +84,17 @@ function mostrarCampos() {
       campoLicencia.disabled = true;
     }
   } 
+>>>>>>> ab23bdc19743bdff9fed863a3b19d5ee40a47533
 
 
 
 
+<<<<<<< HEAD
+//DATATABLE
+=======
 
   //DATATABLE
+>>>>>>> ab23bdc19743bdff9fed863a3b19d5ee40a47533
 document.addEventListener('DOMContentLoaded', () => {
   // Realizar la solicitud al backend para obtener los datos de animales
   fetch('http://localhost:3000/animales') // Ajusta la URL según la configuración de tu servidor NestJS

@@ -7,6 +7,7 @@ export class Marca{
 
     @Column({ nullable: false })
     descripcion: string;
+    
 
   @Column({ nullable: false})
     fechaModificacion: Date;

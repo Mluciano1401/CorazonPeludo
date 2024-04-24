@@ -11,8 +11,8 @@ form.addEventListener('submit', async(event)=> {
   const apellido = document.getElementById('apellido').value;
   const email = document.getElementById('email').value;
   const fechaNacimiento = document.getElementById('fechaNacimiento').value;
-  const cedula = document.getElementById('cedula').value;
-  const pasaporte = document.getElementById('pasaporte').value;
+  const cedula = document.getElementById('documento').value;
+  const pasaporte = document.getElementById('documento').value;
   const estadoCivil = document.getElementById('estadocivil').value;
   const sexo = document.getElementById('sexo').value;
   const licencia = document.getElementById('licencia').value;
@@ -20,16 +20,20 @@ form.addEventListener('submit', async(event)=> {
   const sueldo = document.getElementById('sueldo').value;  
   const fechaIngreso = document.getElementById('fechaIngreso').value;  
   const foto = document.getElementById('foto').value;
-  const idpersona = 0;
-  const status = document.getElementById('status').value;   
+  const status = document.getElementById('status').value;
+  const tipoDocumento = document.getElementById('tipoDocumento').value;   
+  const direccion = document.getElementById('direccion').value;
+  const ciudad = document.getElementById('ciudad').value;
+  const pais = document.getElementById('provincia').value;
+  const codigoPostal = document.getElementById('codigoPostal').value;
    
    // Crea una solicitud HTTP
-  const url = 'http://localhost:3000/persona';
+  const url = 'http://localhost:3000/empleado';
   const data = { 
-      nobre: nombre ? nombre : "",
+      nombre: nombre ? nombre : "",
       apellido: apellido ? apellido : "",
-      cedula: cedula ? cedula : "",
-      pasaporte: pasaporte ? pasaporte : "",
+      cedula: (tipoDocumento == 1) ? cedula : "",
+      pasaporte: (tipoDocumento == 0) ? pasaporte : "",
       email: email ? email : "",
       estadoCivil: estadoCivil,
       sexo: sexo ? sexo : "",
@@ -37,6 +41,10 @@ form.addEventListener('submit', async(event)=> {
       tipoPersona: 1,
       fechaNacimiento: fechaNacimiento ? fechaNacimiento : null,
       foto: foto ? foto : "",
+      tipoEmpleado:tipoempleado,
+      puesto: puesto ? puesto : "",
+      sueldo:sueldo ? sueldo : 0,
+      fechaIngreso: fechaIngreso ? fechaIngreso : new Date(),
       fechaModificacion: new Date(),
       status: (status == '0') ? false : true 
   };
@@ -48,27 +56,8 @@ form.addEventListener('submit', async(event)=> {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(data)
     });
-    let response2 = undefined;
-    if(response.ok){
-      idpersona = response.data.personaId;
-      const url2 = 'http://localhost:3000/empleado';
-      const data2 = { 
-        personaId:idpersona,
-        tipoEmpleado:tipoempleado,
-        puesto: puesto ? puesto : "",
-        sueldo:sueldo ? sueldo : 0,
-        fechaIngreso: fechaIngreso ? fechaIngreso : new Date(),
-        fechaModificacion: new Date(),
-        status: (status == '0') ? false : true 
-      };
-      response2 = await fetch(url2, { // Replace with your API URL
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data2)
-      });
-    }
-    
-    if (response2.ok) {
+       
+    if (response.ok) {
       form.reset(); // Clear form after successful submission
     } else {
       console.error('Error:', await response.text()); // Log detailed error

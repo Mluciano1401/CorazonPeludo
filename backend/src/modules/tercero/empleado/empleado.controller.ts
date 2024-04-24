@@ -1,13 +1,18 @@
 import { Controller, Get, Post, Body, HttpException, HttpStatus, Param } from '@nestjs/common';
 import {EmpleadoService} from  './empleado.service';
 import { Empleado } from 'src/models/tercero/empleado.model';
+import { PersonaService } from '../persona/persona.service';
+import { empleadoDTO } from './dto/empleadoDto';
+import { Persona } from 'src/models/tercero/persona.model';
 
 
 @Controller('empleado')
 export class EmpleadoController {
   userService: EmpleadoService;
-  constructor(private EmpleadoService: EmpleadoService) {
+  personaService: PersonaService;
+  constructor(private EmpleadoService: EmpleadoService,private PersonaService: PersonaService) {
     this.userService = this.EmpleadoService;
+    this.personaService = this.PersonaService;
   }
 
   @Get()
@@ -29,8 +34,45 @@ export class EmpleadoController {
   }
 
   @Post()
-  save(@Body() body:Empleado){
-    return this.userService.create(body).then(res=>{
+  save(@Body() body:empleadoDTO){
+    const persona: Persona = {
+      personaId: null,
+      nombre: body.nombre,
+      apellido: body.apellido,
+      email: body.email,
+      foto: body.foto,
+      rnc: "",
+      sexo: body.sexo,
+      pasaporte: body.pasaporte,
+      cedula: body.cedula,
+      licenciaConducir: body.licenciaConducir,
+      fechaNacimiento: body.fechaNacimiento,
+      genero: "",
+      tipoPersona: body.tipoPersona,
+      direccion: null,
+      estadoCivil: body.estadoCivil,
+      tipoEmpresa: null,
+      fechaModificacion: body.fechaModificacion,
+      status: body.status
+    };
+    let idpersona: Persona;
+    this.personaService.create(persona).then(res=>{
+      idpersona = res;
+      return idpersona;
+    });
+    
+    const empleado: Empleado = {
+      EmpleadoId: null,
+      persona: idpersona,
+      surcusal: null,
+      tipoEmpleado: body.tipoEmpleado,
+      puesto: body.puesto,
+      sueldo: body.sueldo,
+      fechaIngreso: body.fechaIngreso,
+      fechaModificacion: body.fechaModificacion,
+      status: body.status
+    };
+    return this.userService.create(empleado).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{
       throw new HttpException(error, HttpStatus.INTERNAL_SERVER_ERROR)

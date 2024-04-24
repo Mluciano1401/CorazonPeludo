@@ -5,13 +5,13 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Regitro de Solicitud de Rescate</title>
+  <title>Regitro de Compañia</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link href="../NiceAdmin/assets/img/favicon.png" rel="icon">
+  <link href="../NiceAdmin/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
   <link href="https://fonts.gstatic.com" rel="preconnect">
@@ -35,22 +35,25 @@
 
 <body>
 
+  <!-- ======= Header ======= -->
   <div id="contenidoReutilizable">
     
   </div>
   <div id="content-section"></div>
 
 
+
+
   <!--Principal-->
   <main id="main" class="main">
 
     <div class="pagetitle">
-      <h1>Registro de Solicitud de Rescate</h1>
+      <h1>Registro de Compañia</h1>
       <nav>
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="index.html">Home</a></li>
           <li class="breadcrumb-item">Formularios</li>
-          <li class="breadcrumb-item active">Registro de solicitud de rescate</li>
+          <li class="breadcrumb-item active">Registro de Compañia</li>
         </ol>
       </nav>
     </div><!-- End Page Title -->
@@ -61,67 +64,36 @@
 
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">Ingreso De Solicitud de Rescate</h5>
+              <h5 class="card-title">Ingreso de Compañia</h5>
 
               <!-- General Form Elements -->
               <form class="needs-validation" id="form" novalidate>
+
                 <div class="row mb-3">
                   <div class="col-md-6 mb-3">
-                    <label for="idSolicitante" class="form-label">ID Solicitud de Rescate</label>
-                    <input type="text" class="form-control" id="idSolicitante" disabled>
-                  </div>
-
-                  <div class="col-md-6">
-                    <label for="especie" class="form-label">Especie</label>
-                    <select id="especie" class="form-select"  >
-                      <div class="data-display0"></div>
-                    </select>
+                    <label for="idCompañia" class="form-label">ID Compañia</label>
+                    <input type="text" class="form-control" id="idCompañia" disabled>
                   </div>
                 </div>
-
-                <div class="row mb-3"> 
-                  <div class="col-md-6 mb-3">
-                    <label for="nombre" class="form-label">Nombre del Solicitante</label>
+                
+                <div class="row mb-3">
+                  <div class="col-md-6">
+                    <label for="nombre" class="form-label">Nombre</label>
                     <input type="text" class="form-control" id="nombre" required>
                   </div>
-                  <div class="col-md-6">
-                    <label for="telefono" class="form-label">Telefono</label>
-                    <input type="text" class="form-control" id="telefono" required>
-                  </div>
-                </div>
 
-                <div class="row  mb-3">
-                  <div class="col-md-6 mb-3">
-                    <label for="colorFisico" class="form-label">Color Fisico Del Animal</label>
-                    <input type="text" class="form-control" id="colorFisico"
-                      placeholder="Ejemplo: Blanco con manchas negras"  >
-                  </div>
+                  <div class="row mb-3">
                   <div class="col-md-6">
-                    <label for="tamanho" class="form-label">Tamaño</label>
-                    <input type="text" class="form-control" id="tamanho" placeholder="Ejemplo: Grande, pequeño"  >
+                    <label for="rnc" class="form-label">RNC</label>
+                    <input type="text" class="form-control" id="rnc" disabled>
                   </div>
-                </div>                
-
-                <div class="row mb-3">
-                  <div class="col-md-6">
-                    <label for="ubicacion" class="form-label">Ubicacion</label>
-                    <input type="text" class="form-control" id="ubicacion" required>
-                  </div>
-                  <div class="col-md-6">
-                    <label for="ciudad" class="form-label">Ciudad</label>
-                    <input type="text" class="form-control" id="ciudad" required>
-                  </div> 
                 </div>
 
                 <div class="row mb-3">
                   <div class="col-md-6 mb-3">
-                    <label for="pais" class="form-label">Pais</label>
-                    <input type="text" class="form-control" id="pais" required>
+                    <label for="tipoEmpresa" class="form-label">Tipo empresa</label>
+                    <input type="text" class="form-control" id="tipoEmpresa">
                   </div>
-                  <div class="col-md-6">
-                    <label for="comportamiento" class="form-label">Comportamiento</label>
-                    <input type="text" class="form-control" id="comportamiento" required placeholder="asustado, agresivo">
-                  </div> 
                 </div>
 
                 <div class="row mb-5">
@@ -176,7 +148,7 @@
       class="bi bi-arrow-up-short"></i></a>
 
   <!-- Vendor JS Files -->
-   <script src="../NiceAdmin/assets/vendor/apexcharts/apexcharts.min.js"></script>
+   
   <script src="../NiceAdmin/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="../NiceAdmin/assets/vendor/chart.js/chart.umd.js"></script>
   <script src="../NiceAdmin/assets/vendor/echarts/echarts.min.js"></script>
@@ -187,8 +159,7 @@
 
   <!-- Template Main JS File -->
   <script src="../NiceAdmin/assets/js/main.js"></script>
-  <script src="../visualizar.js"></script>
-
+    <script src="../../src/js/api/tercero/Compañia.js"></script>
 <script>
     fetch('../menu/template.html')
             .then(response => response.text())

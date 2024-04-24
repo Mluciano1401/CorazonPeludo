@@ -1,5 +1,5 @@
 import { Controller, Get, Post, Body, HttpException, HttpStatus, Param   } from '@nestjs/common';
-import {SolicitudAService} from  './solicitud.service';
+import {SolicitudAService} from  './solicitudA.service';
 import { Solicitud } from 'src/models/adopcion/solicitudAdopcion.model';
 
 

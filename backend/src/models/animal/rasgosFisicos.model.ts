@@ -16,6 +16,9 @@ export class RasgosFisicos{
     @Column({ nullable: true})
     tipoAmputacion: string;
 
+    @Column({ nullable: true})
+    color: string;
+
   @Column({ nullable: false})
     fechaModificacion: Date;
 

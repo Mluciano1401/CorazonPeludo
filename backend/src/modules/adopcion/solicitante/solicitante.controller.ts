@@ -1,13 +1,16 @@
 import { Controller, Get, Post, Body, HttpException, HttpStatus, Param   } from '@nestjs/common';
 import {SolicitanteService} from  './solicitante.service';
 import { Solicitante } from 'src/models/adopcion/solicitante.model';
+import { PersonaService } from 'src/modules/tercero/persona/persona.service';
 
 
 @Controller('Solicitante')
 export class SolicitanteController {
   userService: SolicitanteService;
-  constructor(private SolicitanteService: SolicitanteService) {
+  personaService: PersonaService;
+  constructor(private SolicitanteService: SolicitanteService,private PersonaService: PersonaService) {
     this.userService = this.SolicitanteService;
+    this.personaService = this.PersonaService;
   }
 
   @Get()
