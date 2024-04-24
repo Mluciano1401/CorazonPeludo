@@ -31,7 +31,6 @@
 
 <body>
 
-<<<<<<< HEAD
   <!-- ======= Header ======= -->
   <!-- <div id="contenidoReutilizable">
     
@@ -39,9 +38,6 @@
   <div id="content-section"></div> -->
 
 
-
-  <div id="contenidoReutilizable">
-=======
   <header id="header" class="header fixed-top d-flex align-items-center">
 
     <div class="d-flex align-items-center justify-content-between">
@@ -164,7 +160,7 @@
 
             <li class="message-item">
               <a href="#">
-                <img src="assets/img/messages-1.jpg" alt="" class="rounded-circle">
+                <img src="../NiceAdmin/assets/img/messages-1.jpg" alt="" class="rounded-circle">
                 <div>
                   <h4>Maria Hudson</h4>
                   <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
@@ -178,7 +174,7 @@
 
             <li class="message-item">
               <a href="#">
-                <img src="assets/img/messages-2.jpg" alt="" class="rounded-circle">
+                <img src="../NiceAdmin/assets/img/messages-2.jpg" alt="" class="rounded-circle">
                 <div>
                   <h4>Anna Nelson</h4>
                   <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
@@ -192,7 +188,7 @@
 
             <li class="message-item">
               <a href="#">
-                <img src="assets/img/messages-3.jpg" alt="" class="rounded-circle">
+                <img src="../NiceAdmin/assets/img/messages-3.jpg" alt="" class="rounded-circle">
                 <div>
                   <h4>David Muldon</h4>
                   <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
@@ -302,7 +298,7 @@
           </li>
           <li>
             <a href="../consultas/ConsultaAnimales.html">
-              <i class="bi bi-circle"></i><span>Consulta Animales</span>
+              <i class="bi bi-circle"></i><span>Consulta de Animales</span>
             </a>
           </li>
         </ul>
@@ -317,6 +313,13 @@
         </a>
         <ul id="enum-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
+            <a href="../rescate/solicitud.html">
+              <i class="bi bi-circle"></i><span>Registro solicitud de rescate</span>
+            </a>
+          </li>
+          <li>
+            <a href="../consultas/ConsultaSolicitudRescate.html">
+              <i class="bi bi-circle"></i><span>Solicitudes</span>
             <a href="../rescate/solicitudRescate.html">
               <i class="bi bi-circle"></i><span>Solicitud de Rescate</span>
             </a>
@@ -340,6 +343,17 @@
               <i class="bi bi-circle"></i><span>Registro de Solicitante</span>
             </a>
           </li>
+          <li>
+            <a href="../adopcion/solicitud.html">
+              <i class="bi bi-circle"></i><span>Solicitud de adopcion</span>
+            </a>
+          </li>
+          <li>
+            <a href="../consultas/ConsultaSolicitudAdopcion.html">
+              <i class="bi bi-circle"></i><span>Solicitudes</span>
+            </a>
+          </li>
+
         </ul>
       </li><!-- End Components Nav -->
 
@@ -364,12 +378,101 @@
         </ul>
       </li><!-- End Components Nav -->
 
->>>>>>> 59bcf51465f61ba0c9cd663056c87bb77f383403
+      <!-- Salud  -->
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#Salud" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-menu-button-wide"></i><span>Salud</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="Salud" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li>
+            <a href="../consultas/HistorialVacunacion.html">
+              <i class="bi bi-circle"></i><span>Vacunas</span>
+            </a>
+          </li>
+          <li>
+            <a href="../almacen/registroAlmacen.html">
+              <i class="bi bi-circle"></i><span>Cirugias</span>
+            </a>
+          </li>
+          
+        </ul>
+      </li><!-- End Components Nav -->
+       <!-- Salud  -->
+       <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#gestion" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-menu-button-wide"></i><span>Gestión</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="gestion" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li>
+            <a href="../tercero/registroEmpleado.html">
+              <i class="bi bi-circle"></i><span>Registro de empleados</span>
+            </a>
+          </li>
+          <li>
+            <a href="../consultas/ConsultaEmpleado.html">
+              <i class="bi bi-circle"></i><span>Empleados</span>
+            </a>
+          </li>
+          <li>
+            <a href="../admin/registroTarea.html">
+              <i class="bi bi-circle"></i><span>Asignación de tareas</span>
+            </a>
+          </li>
+          <li>
+            <a href="../consultas/ConsultaUsuario.html">
+              <i class="bi bi-circle"></i><span>Usuarios</span>
+            </a>
+          </li>
+          <li>
+            <a href="../vehiculo/registroVehiculo.html">
+              <i class="bi bi-circle"></i><span>Registro de vehiculos</span>
+            </a>
+          </li>
+        </ul>
+      </li><!-- End Components Nav -->
+
     
-  </div>
-  <div id="content-section"></div>
+      <!-- consultas  -->
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#consulta" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-menu-button-wide"></i><span>Consultas</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="consulta" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li>
+            <a href="../consultas/ConsultaAlimento.html">
+              <i class="bi bi-circle"></i><span>Consulta de Alimentos</span>
+            </a>
+          </li>
+          <li>
+            <a href="../consultas/ConsultaAnimales.html">
+              <i class="bi bi-circle"></i><span>Consulta de Animales</span>
+            </a>
+          </li>
+          
+        </ul>
+      </li><!-- End Components Nav -->
 
+      <!-- consultas  -->
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#otros-nav" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-menu-button-wide"></i><span>Otros registros</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="otros-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li>
+            <a href="../enums/registroTipoPiel.html">
+              <i class="bi bi-circle"></i><span>Tipo de Piel</span>
+            </a>
+          </li>
+          <li>
+            <a href="../enums/registroEspecie.html">
+              <i class="bi bi-circle"></i><span>Registro de Especie</span>
+            </a>
+          </li>
+        </ul>
+      </li><!-- End Components Nav -->
+    </ul>
 
+  </aside><!-- End Sidebar-->
 
   <main id="main" class="main">
 
@@ -443,7 +546,7 @@
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
   <!-- Vendor JS Files -->
-   <script src="../NiceAdmin/assets/vendor/apexcharts/apexcharts.min.js"></script>
+   
   <script src="../NiceAdmin/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="../NiceAdmin/assets/vendor/chart.js/chart.umd.js"></script>
   <script src="../NiceAdmin/assets/vendor/echarts/echarts.min.js"></script>

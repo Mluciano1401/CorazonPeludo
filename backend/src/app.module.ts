@@ -221,12 +221,9 @@ import { TipoEnfermedadService } from './modules/salud/tipoEnfermedad/tipoEnferm
 import { ViaAdministracionService } from './modules/salud/viaAdministracion/viaAministracion.service';
 import { AuthService } from './modules/admin/auth/auth.service';
 import { JwtService } from '@nestjs/jwt';
-<<<<<<< HEAD
 import { TipoAlmacen } from './models/almacen/tipoAlmacen.model';
 import { AnimalAlbergue } from './models/animal/animalAlbergue';
-=======
 import { Animal } from './models/animal/animal.model';
->>>>>>> 2c385eebee5f9a2e38c8c871dd4651f16ac262ff
 
 const models = [Animal,Empleado,Enfermedad,Persona,Producto,Solicitante,Solicitud,SolicitudR,Usuario, 
   TipoUsuario, TipoPersona, Sucursal, AsignacionRecursos, AsignacionTarea, LogAcciones,ActividadEconomica,

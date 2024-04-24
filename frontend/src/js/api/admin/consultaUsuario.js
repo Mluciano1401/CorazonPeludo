@@ -110,12 +110,9 @@ await fetch(urlAPI)
 busqueda();
 tableBody.addEventListener('click', (event) => {
   if (event.target.id.startsWith('editar-')) {
-    const userId = event.target.id.split('-')[1]; // Extract user ID from button ID
-
-    // Handle edit functionality (replace with your logic)
-    // You can open a modal, redirect to an edit page with the user ID as a parameter, etc.
+    const userId = event.target.id.split('-')[1]; 
     window.location.href = `../../../../../../frontend/public/admin/registroUsuario.html?id=${userId}`;
-    console.log(`Edit user with ID: ${userId}`); // Example placeholder
+    console.log(`Edit user with ID: ${userId}`); 
   }
 });
 /*tableBody.addEventListener('click', (event) => {
