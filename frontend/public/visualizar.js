@@ -51,17 +51,12 @@ function activar() {
   function activarDependientes() {
     var dependencia = document.getElementById("dependientes").value;
     var campoDepen = document.getElementById("numeroDependientes");
->>>>>>> ab23bdc19743bdff9fed863a3b19d5ee40a47533
-
   if (dependencia === "Si") {
     campoDepen.disabled = false;
   } else if (dependencia === "No") {
     campoDepen.disabled = true;
   }
 }
-
-
-<<<<<<< HEAD
 
 function activarAmp() {
   var amputaciones = document.getElementById("amputaciones").value;
@@ -73,7 +68,6 @@ function activarAmp() {
     tipoAmputacion.disabled = true;
   }
 }
-=======
   function activarLicencia() {
     var selectlicencia = document.getElementById("selectlicencia").value;
     var campoLicencia = document.getElementById("licencia");
@@ -84,17 +78,8 @@ function activarAmp() {
       campoLicencia.disabled = true;
     }
   } 
->>>>>>> ab23bdc19743bdff9fed863a3b19d5ee40a47533
 
 
-
-
-<<<<<<< HEAD
-//DATATABLE
-=======
-
-  //DATATABLE
->>>>>>> ab23bdc19743bdff9fed863a3b19d5ee40a47533
 document.addEventListener('DOMContentLoaded', () => {
   // Realizar la solicitud al backend para obtener los datos de animales
   fetch('http://localhost:3000/animales') // Ajusta la URL según la configuración de tu servidor NestJS
