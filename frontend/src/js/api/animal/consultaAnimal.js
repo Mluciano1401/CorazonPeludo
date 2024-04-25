@@ -1,9 +1,11 @@
 const tableBody = document.getElementById('tablebody');
+const datos = [];
 document.addEventListener('DOMContentLoaded', async() => {
   await populateTable();
 });
      async function populateTable() {
       try {
+        datos = [];
         const response = await fetch('http://localhost:3000/animal'); // Replace with your URL
         const data = await response.json();
         // Clear existing table rows (optional)
@@ -12,7 +14,7 @@ document.addEventListener('DOMContentLoaded', async() => {
         
         data.data.forEach(item => {
           const row = document.createElement('tr');
-          
+          datos.push(item);
           // Create and append table cells for each data property
           for (const key in item) {
             const cell = document.createElement('td');
@@ -133,6 +135,52 @@ tableBody.addEventListener('click', (event) => {
 
             const rowToDelete = event.target.parentElement.parentElement; // Get the parent row
             tableBody.removeChild(rowToDelete);
+          } else {
+            console.error('Error deleting user:', response.statusText);
+          }
+        })
+        .catch(error => console.error('Error deleting user:', error));
+    }
+  }
+});
+tableBody.addEventListener('click', (event) => {
+  if (event.target.id.startsWith('eliminar-')) {
+    const userId = event.target.id.split('-')[1]; // Extract user ID from button ID
+
+    // Confirmation logic (optional)
+    if (confirm(`¿Está seguro de eliminar al usuario con ID ${userId}?`)) {
+      // Logic to delete user (replace with your API call)
+      fetch(`http://localhost:3000/animal/habilitar/${userId}`, {
+        method: 'POST',
+        body: datos[userId-1]
+      })
+        .then(response => {
+          if (response.ok) {
+            // Remove user from dataArray and update table
+            console.log('cambio estado');
+          } else {
+            console.error('Error deleting user:', response.statusText);
+          }
+        })
+        .catch(error => console.error('Error deleting user:', error));
+    }
+  }
+});
+tableBody.addEventListener('click', (event) => {
+  if (event.target.id.startsWith('eliminar-')) {
+    const userId = event.target.id.split('-')[1]; // Extract user ID from button ID
+
+    // Confirmation logic (optional)
+    if (confirm(`¿Está seguro de eliminar al usuario con ID ${userId}?`)) {
+      // Logic to delete user (replace with your API call)
+      fetch(`http://localhost:3000/animal/deshabilitar/${userId}`, {
+        method: 'POST',
+        body: datos[userId-1]
+      })
+        .then(response => {
+          if (response.ok) {
+            // Remove user from dataArray and update table
+            console.log('cambio estado');
           } else {
             console.error('Error deleting user:', response.statusText);
           }
