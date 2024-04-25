@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', async() => {
 });
      async function populateTable() {
       try {
-        const response = await fetch('http://localhost:3000/alimento'); // Replace with your URL
+        const response = await fetch('http://localhost:3000/logacciones'); // Replace with your URL
         const data = await response.json();
         // Clear existing table rows (optional)
         tableBody.innerHTML = '';
@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', async() => {
           // Create and append table cells for each data property
           for (const key in item) {
             const cell = document.createElement('td');
-            if(key === "alimentoId"){
+            if(key === "id"){
               cell.style.fontWeight = 800;
             }
             if(key === "status"){
@@ -34,14 +34,6 @@ document.addEventListener('DOMContentLoaded', async() => {
             cell.classList.add("table-light");        
             row.appendChild(cell);
           }
-          const cellu = document.createElement('td');
-          cellu.innerHTML = `
-          ${(item.status) ? `<button id="deshabilitar-${item.alimentoId}" class="btn btn-warning btn-sm me-1">Deshabilitar</button>` 
-          : `<button id="habilitar-${item.alimentoId}" class="btn btn-success btn-sm me-1">Habilitar</button>`}
-          <button id="editar-${item.alimentoId}" class="btn btn-primary btn-sm me-1"><a style="text-decoration: none;" href="../../../../public/almacen/registroalimento.html?id${item.alimentoId}">Editar</a></button>
-          <button id="eliminar-${item.alimentoId}" class="btn btn-danger btn-sm">Eliminar</button>
-          `;
-          row.appendChild(cellu);
           tableBody.appendChild(row);
           
         });        
@@ -51,7 +43,7 @@ document.addEventListener('DOMContentLoaded', async() => {
       }
     }
 async function busqueda(){
-  const urlAPI = "http://localhost:3000/alimento"; // URL de la API
+  const urlAPI = "http://localhost:3000/logacciones"; // URL de la API
 const buscador = document.getElementById("buscador");
 const tablaCuerpo = document.querySelector('tbody');
 
@@ -75,7 +67,7 @@ await fetch(urlAPI)
           // Create and append table cells for each data property
           for (const key in item) {
             const cell = document.createElement('td');
-            if(key === "alimentoId"){
+            if(key === "id"){
               cell.style.fontWeight = 800;
             }
             if(key === "status"){
@@ -93,14 +85,6 @@ await fetch(urlAPI)
             cell.classList.add("table-light");        
             row.appendChild(cell);
           };
-          const cellu = document.createElement('td');
-          cellu.innerHTML = `
-          ${(item.status) ? `<button id="deshabilitar-${item.alimentoId}" class="btn btn-warning btn-sm me-1">Deshabilitar</button>` 
-          : `<button id="habilitar-${item.alimentoId}" class="btn btn-success btn-sm me-1">Habilitar</button>`}
-          <button id="editar-${item.alimentoId}" class="btn btn-primary btn-sm me-1"><a style="text-decoration: none;" href="../../../../public/almacen/registroalimento.html?id${item.alimentoId}">Editar</a></button>
-          <button id="eliminar-${item.alimentoId}" class="btn btn-danger btn-sm">Eliminar</button>
-          `;
-          row.appendChild(cellu);
           tablaCuerpo.appendChild(row);
       });
     });
@@ -108,13 +92,3 @@ await fetch(urlAPI)
   .catch(error => console.error('Error:', error));
 }
 busqueda();
-tableBody.addEventListener('click', (event) => {
-  if (event.target.id.startsWith('editar-')) {
-    const userId = event.target.id.split('-')[1]; // Extract user ID from button ID
-
-    // Handle edit functionality (replace with your logic)
-    // You can open a modal, redirect to an edit page with the user ID as a parameter, etc.
-    window.location.href = `../../../../../../frontend/public/almacen/registroalimento.html?id=${userId}`;
-    console.log(`Edit user with ID: ${userId}`); // Example placeholder
-  }
-});
