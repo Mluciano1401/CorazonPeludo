@@ -38,7 +38,7 @@ export class ComplicacionesController {
   }
 
   @Post('/update/:id')
-  update(@Body() body:Complicaciones, @Param('id') id){
+  update(@Body() body:Complicaciones ){
     return this.userService. update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{
@@ -46,7 +46,7 @@ export class ComplicacionesController {
     });
   }
   @Post('/activar/:id')
-  activar(@Body() body:Complicaciones, @Param('id') id){
+  activar(@Body() body:Complicaciones ){
     return this.userService. update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{
@@ -54,7 +54,7 @@ export class ComplicacionesController {
     });
   }
   @Post('/desactivar/:id')
-  desactivar(@Body() body:Complicaciones, @Param('id') id){
+  desactivar(@Body() body:Complicaciones ){
     return this.userService. update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{

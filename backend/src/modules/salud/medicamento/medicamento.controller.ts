@@ -38,7 +38,7 @@ export class MedicamentoController {
   }
 
   @Post('/update/:id')
-  update(@Body() body:Medicamento, @Param('id') id){
+  update(@Body() body:Medicamento ){
     return this.userService. update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{
@@ -46,7 +46,7 @@ export class MedicamentoController {
     });
   }
   @Post('/activar/:id')
-  activar(@Body() body:Medicamento, @Param('id') id){
+  activar(@Body() body:Medicamento ){
     return this.userService. update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{
@@ -54,7 +54,7 @@ export class MedicamentoController {
     });
   }
   @Post('/desactivar/:id')
-  desactivar(@Body() body:Medicamento, @Param('id') id){
+  desactivar(@Body() body:Medicamento ){
     return this.userService. update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{

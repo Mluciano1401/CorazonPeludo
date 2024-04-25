@@ -38,7 +38,7 @@ export class EfectosSecundariosController {
   }
 
   @Post('/update/:id')
-  update(@Body() body:EfectosSecundarios, @Param('id') id){
+  update(@Body() body:EfectosSecundarios ){
     return this.userService. update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{
@@ -46,7 +46,7 @@ export class EfectosSecundariosController {
     });
   }
   @Post('/activar/:id')
-  activar(@Body() body:EfectosSecundarios, @Param('id') id){
+  activar(@Body() body:EfectosSecundarios ){
     return this.userService. update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{
@@ -54,7 +54,7 @@ export class EfectosSecundariosController {
     });
   }
   @Post('/desactivar/:id')
-  desactivar(@Body() body:EfectosSecundarios, @Param('id') id){
+  desactivar(@Body() body:EfectosSecundarios ){
     return this.userService. update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{

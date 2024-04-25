@@ -38,7 +38,7 @@ export class TipoVehiculoController {
   }
 
   @Post('/update/:id')
-  update(@Body() body:TipoVehiculo, @Param('id') id){
+  update(@Body() body:TipoVehiculo ){
     return this.userService. update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{
@@ -46,7 +46,7 @@ export class TipoVehiculoController {
     });
   }
   @Post('/activar/:id')
-  activar(@Body() body:TipoVehiculo, @Param('id') id){
+  activar(@Body() body:TipoVehiculo ){
     return this.userService. update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{
@@ -54,7 +54,7 @@ export class TipoVehiculoController {
     });
   }
   @Post('/desactivar/:id')
-  desactivar(@Body() body:TipoVehiculo, @Param('id') id){
+  desactivar(@Body() body:TipoVehiculo ){
     return this.userService. update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{

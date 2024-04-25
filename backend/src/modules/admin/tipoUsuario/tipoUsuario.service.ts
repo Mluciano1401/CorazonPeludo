@@ -2,7 +2,6 @@ import { Injectable } from '@nestjs/common';
 import { TipoUsuario } from '../../../models/admin/TipoUsuario.model';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
-import { TipoUsuarioDto } from './dto/tipoUsuario.dto';
 
 @Injectable()
 export class TipoUsuarioService {
@@ -27,15 +26,5 @@ export class TipoUsuarioService {
   async delete(id: number): Promise<string> {
     await this._TipoUsuarioRepository.save(id);
     return 'Ok';
-  }
-  async findItemsSelect():Promise<TipoUsuarioDto[]>{
-    const data:TipoUsuario[] = await this._TipoUsuarioRepository.findBy({status: true});
-    const newdata: TipoUsuarioDto[] = data.map(item => {
-      return {
-        id: item.tipoUsuarioId,
-        descripcion: item.descripcion
-      }
-    })
-    return newdata
   }
 }

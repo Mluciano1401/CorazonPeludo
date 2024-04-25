@@ -38,7 +38,7 @@ export class SolicitudRController {
   }
 
   @Post('/update/:id')
-  update(@Body() body:SolicitudR, @Param('id') id){
+  update(@Body() body:SolicitudR ){
     return this.userService. update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{
@@ -46,7 +46,7 @@ export class SolicitudRController {
     });
   }
   @Post('/activar/:id')
-  activar(@Body() body:SolicitudR, @Param('id') id){
+  activar(@Body() body:SolicitudR ){
     return this.userService. update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{
@@ -54,7 +54,7 @@ export class SolicitudRController {
     });
   }
   @Post('/desactivar/:id')
-  desactivar(@Body() body:SolicitudR, @Param('id') id){
+  desactivar(@Body() body:SolicitudR ){
     return this.userService. update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{

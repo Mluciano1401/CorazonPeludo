@@ -38,7 +38,7 @@ export class HistorialAlimentacionController {
   }
 
   @Post('/update/:id')
-  update(@Body() body:HistorialAlimentacion, @Param('id') id){
+  update(@Body() body:HistorialAlimentacion ){
     return this._HistorialAlimentacionService. update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{
@@ -46,7 +46,7 @@ export class HistorialAlimentacionController {
     });
   }
   @Post('/activar/:id')
-  activar(@Body() body:HistorialAlimentacion, @Param('id') id){
+  activar(@Body() body:HistorialAlimentacion ){
     return this._HistorialAlimentacionService. update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{
@@ -54,7 +54,7 @@ export class HistorialAlimentacionController {
     });
   }
   @Post('/desactivar/:id')
-  desactivar(@Body() body:HistorialAlimentacion, @Param('id') id){
+  desactivar(@Body() body:HistorialAlimentacion ){
     return this._HistorialAlimentacionService. update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{

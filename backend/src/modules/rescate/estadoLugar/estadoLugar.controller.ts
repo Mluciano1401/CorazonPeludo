@@ -38,7 +38,7 @@ export class EstadoLugarController {
   }
 
   @Post('/update/:id')
-  update(@Body() body:EstadoLugar, @Param('id') id){
+  update(@Body() body:EstadoLugar ){
     return this.userService. update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{
@@ -46,7 +46,7 @@ export class EstadoLugarController {
     });
   }
   @Post('/activar/:id')
-  activar(@Body() body:EstadoLugar, @Param('id') id){
+  activar(@Body() body:EstadoLugar ){
     return this.userService. update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{
@@ -54,7 +54,7 @@ export class EstadoLugarController {
     });
   }
   @Post('/desactivar/:id')
-  desactivar(@Body() body:EstadoLugar, @Param('id') id){
+  desactivar(@Body() body:EstadoLugar ){
     return this.userService. update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{

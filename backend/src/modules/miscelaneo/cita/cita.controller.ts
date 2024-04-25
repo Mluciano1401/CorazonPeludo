@@ -39,7 +39,7 @@ export class CitaController {
   }
 
   @Post('/update/:id')
-  update(@Body() body:Cita, @Param('id') id){
+  update(@Body() body:Cita ){
     return this._CitaService. update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{
@@ -47,7 +47,7 @@ export class CitaController {
     });
   }
   @Post('/activar/:id')
-  activar(@Body() body:Cita, @Param('id') id){
+  activar(@Body() body:Cita ){
     return this._CitaService. update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{
@@ -55,7 +55,7 @@ export class CitaController {
     });
   }
   @Post('/desactivar/:id')
-  desactivar(@Body() body:Cita, @Param('id') id){
+  desactivar(@Body() body:Cita ){
     return this._CitaService. update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{

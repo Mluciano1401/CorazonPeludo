@@ -38,7 +38,7 @@ export class TipoSintomasController {
   }
 
   @Post('/update/:id')
-  update(@Body() body:TipoSintoma, @Param('id') id){
+  update(@Body() body:TipoSintoma ){
     return this.userService. update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{
@@ -46,7 +46,7 @@ export class TipoSintomasController {
     });
   }
   @Post('/activar/:id')
-  activar(@Body() body:TipoSintoma, @Param('id') id){
+  activar(@Body() body:TipoSintoma ){
     return this.userService. update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{
@@ -54,7 +54,7 @@ export class TipoSintomasController {
     });
   }
   @Post('/desactivar/:id')
-  desactivar(@Body() body:TipoSintoma, @Param('id') id){
+  desactivar(@Body() body:TipoSintoma ){
     return this.userService. update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{

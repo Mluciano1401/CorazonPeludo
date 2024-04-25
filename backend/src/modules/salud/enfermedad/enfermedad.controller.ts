@@ -38,7 +38,7 @@ export class EnfermedadController {
   }
 
   @Post('/update/:id')
-  update(@Body() body:Enfermedad, @Param('id') id){
+  update(@Body() body:Enfermedad ){
     return this.userService. update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{
@@ -46,7 +46,7 @@ export class EnfermedadController {
     });
   }
   @Post('/activar/:id')
-  activar(@Body() body:Enfermedad, @Param('id') id){
+  activar(@Body() body:Enfermedad ){
     return this.userService. update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{
@@ -54,7 +54,7 @@ export class EnfermedadController {
     });
   }
   @Post('/desactivar/:id')
-  desactivar(@Body() body:Enfermedad, @Param('id') id){
+  desactivar(@Body() body:Enfermedad ){
     return this.userService. update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{

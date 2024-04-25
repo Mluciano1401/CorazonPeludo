@@ -38,7 +38,7 @@ export class TipoAlimentoController {
   }
 
   @Post('/update/:id')
-  update(@Body() body:TipoAlimento, @Param('id') id){
+  update(@Body() body:TipoAlimento ){
     return this._TipoAlimentoService. update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{
@@ -46,7 +46,7 @@ export class TipoAlimentoController {
     });
   }
   @Post('/activar/:id')
-  activar(@Body() body:TipoAlimento, @Param('id') id){
+  activar(@Body() body:TipoAlimento ){
     return this._TipoAlimentoService. update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{
@@ -54,7 +54,7 @@ export class TipoAlimentoController {
     });
   }
   @Post('/desactivar/:id')
-  desactivar(@Body() body:TipoAlimento, @Param('id') id){
+  desactivar(@Body() body:TipoAlimento ){
     return this._TipoAlimentoService. update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{

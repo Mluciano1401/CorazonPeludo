@@ -38,7 +38,7 @@ export class AlmacenController {
   }
 
   @Post('/update/:id')
-  update(@Body() body:Almacen, @Param('id') id){
+  update(@Body() body:Almacen ){
     return this._AlmacenService. update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{
@@ -46,7 +46,7 @@ export class AlmacenController {
     });
   }
   @Post('/activar/:id')
-  activar(@Body() body:Almacen, @Param('id') id){
+  activar(@Body() body:Almacen ){
     return this._AlmacenService. update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{
@@ -54,7 +54,7 @@ export class AlmacenController {
     });
   }
   @Post('/desactivar/:id')
-  desactivar(@Body() body:Almacen, @Param('id') id){
+  desactivar(@Body() body:Almacen ){
     return this._AlmacenService. update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{

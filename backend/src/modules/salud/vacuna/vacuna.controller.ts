@@ -38,7 +38,7 @@ export class VacunaController {
   }
 
   @Post('/update/:id')
-  update(@Body() body:Vacuna, @Param('id') id){
+  update(@Body() body:Vacuna ){
     return this.userService. update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{
@@ -46,7 +46,7 @@ export class VacunaController {
     });
   }
   @Post('/activar/:id')
-  activar(@Body() body:Vacuna, @Param('id') id){
+  activar(@Body() body:Vacuna ){
     return this.userService. update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{
@@ -54,7 +54,7 @@ export class VacunaController {
     });
   }
   @Post('/desactivar/:id')
-  desactivar(@Body() body:Vacuna, @Param('id') id){
+  desactivar(@Body() body:Vacuna ){
     return this.userService. update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{

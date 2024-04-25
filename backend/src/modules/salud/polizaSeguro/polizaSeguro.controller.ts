@@ -38,7 +38,7 @@ export class PolizaSeguroController {
   }
 
   @Post('/update/:id')
-  update(@Body() body:PolizaSeguro, @Param('id') id){
+  update(@Body() body:PolizaSeguro ){
     return this.userService. update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{
@@ -46,7 +46,7 @@ export class PolizaSeguroController {
     });
   }
   @Post('/activar/:id')
-  activar(@Body() body:PolizaSeguro, @Param('id') id){
+  activar(@Body() body:PolizaSeguro ){
     return this.userService. update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{
@@ -54,7 +54,7 @@ export class PolizaSeguroController {
     });
   }
   @Post('/desactivar/:id')
-  desactivar(@Body() body:PolizaSeguro, @Param('id') id){
+  desactivar(@Body() body:PolizaSeguro ){
     return this.userService. update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{

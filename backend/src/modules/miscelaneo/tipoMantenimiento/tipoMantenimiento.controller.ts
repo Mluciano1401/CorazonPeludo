@@ -38,7 +38,7 @@ export class TipoMantenimientoController {
   }
 
   @Post('/update/:id')
-  update(@Body() body:TipoMantenimiento, @Param('id') id){
+  update(@Body() body:TipoMantenimiento ){
     return this._TipoMantenimientoService. update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{
@@ -46,7 +46,7 @@ export class TipoMantenimientoController {
     });
   }
   @Post('/activar/:id')
-  activar(@Body() body:TipoMantenimiento, @Param('id') id){
+  activar(@Body() body:TipoMantenimiento ){
     return this._TipoMantenimientoService. update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{
@@ -54,7 +54,7 @@ export class TipoMantenimientoController {
     });
   }
   @Post('/desactivar/:id')
-  desactivar(@Body() body:TipoMantenimiento, @Param('id') id){
+  desactivar(@Body() body:TipoMantenimiento ){
     return this._TipoMantenimientoService. update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{
@@ -65,16 +65,6 @@ export class TipoMantenimientoController {
   delete(@Param('id') id){
     return this._TipoMantenimientoService.delete(id).then(res=>{
       return {success: true, data: res}
-    }).catch(error=>{
-      throw new HttpException(error, HttpStatus.INTERNAL_SERVER_ERROR)
-    });
-  }
-  @Get('select')
-  select(){
-    return this._TipoMantenimientoService.findAll().then(res=>{
-      const r = [];
-      res.forEach(o=> r.push({option: o.descripcion, value: o.tipoMantenimientoId}));
-      return {success: true, data: r}
     }).catch(error=>{
       throw new HttpException(error, HttpStatus.INTERNAL_SERVER_ERROR)
     });

@@ -38,7 +38,7 @@ export class OrigenController {
   }
 
   @Post('/update/:id')
-  update(@Body() body:Origen, @Param('id') id){
+  update(@Body() body:Origen ){
     return this._OrigenService. update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{
@@ -46,7 +46,7 @@ export class OrigenController {
     });
   }
   @Post('/activar/:id')
-  activar(@Body() body:Origen, @Param('id') id){
+  activar(@Body() body:Origen ){
     return this._OrigenService. update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{
@@ -54,7 +54,7 @@ export class OrigenController {
     });
   }
   @Post('/desactivar/:id')
-  desactivar(@Body() body:Origen, @Param('id') id){
+  desactivar(@Body() body:Origen ){
     return this._OrigenService. update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{

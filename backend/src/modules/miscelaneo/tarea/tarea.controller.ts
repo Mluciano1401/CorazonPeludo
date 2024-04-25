@@ -38,7 +38,7 @@ export class TareaController {
   }
 
   @Post('/update/:id')
-  update(@Body() body:Tarea, @Param('id') id){
+  update(@Body() body:Tarea ){
     return this._TareaService. update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{
@@ -46,7 +46,7 @@ export class TareaController {
     });
   }
   @Post('/activar/:id')
-  activar(@Body() body:Tarea, @Param('id') id){
+  activar(@Body() body:Tarea ){
     return this._TareaService. update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{
@@ -54,7 +54,7 @@ export class TareaController {
     });
   }
   @Post('/desactivar/:id')
-  desactivar(@Body() body:Tarea, @Param('id') id){
+  desactivar(@Body() body:Tarea ){
     return this._TareaService. update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{

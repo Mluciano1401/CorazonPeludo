@@ -38,7 +38,7 @@ export class TipoDonacionController {
   }
 
   @Post('/update/:id')
-  update(@Body() body:TipoDonacion, @Param('id') id){
+  update(@Body() body:TipoDonacion ){
     return this.userService. update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{
@@ -46,7 +46,7 @@ export class TipoDonacionController {
     });
   }
   @Post('/activar/:id')
-  activar(@Body() body:TipoDonacion, @Param('id') id){
+  activar(@Body() body:TipoDonacion ){
     return this.userService. update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{
@@ -54,7 +54,7 @@ export class TipoDonacionController {
     });
   }
   @Post('/desactivar/:id')
-  desactivar(@Body() body:TipoDonacion, @Param('id') id){
+  desactivar(@Body() body:TipoDonacion ){
     return this.userService. update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{

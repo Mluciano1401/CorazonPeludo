@@ -38,7 +38,7 @@ export class DireccionController {
   }
 
   @Post('/update/:id')
-  update(@Body() body:Direccion, @Param('id') id){
+  update(@Body() body:Direccion ){
     return this._DireccionService. update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{
@@ -46,7 +46,7 @@ export class DireccionController {
     });
   }
   @Post('/activar/:id')
-  activar(@Body() body:Direccion, @Param('id') id){
+  activar(@Body() body:Direccion ){
     return this._DireccionService. update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{
@@ -54,7 +54,7 @@ export class DireccionController {
     });
   }
   @Post('/desactivar/:id')
-  desactivar(@Body() body:Direccion, @Param('id') id){
+  desactivar(@Body() body:Direccion ){
     return this._DireccionService. update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{

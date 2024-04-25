@@ -38,7 +38,7 @@ export class SucursalController {
   }
 
   @Post('/update/:id')
-  update(@Body() body:Sucursal, @Param('id') id){
+  update(@Body() body:Sucursal ){
     return this.userService. update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{
@@ -46,7 +46,7 @@ export class SucursalController {
     });
   }
   @Post('/activar/:id')
-  activar(@Body() body:Sucursal, @Param('id') id){
+  activar(@Body() body:Sucursal ){
     return this.userService. update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{
@@ -54,7 +54,7 @@ export class SucursalController {
     });
   }
   @Post('/desactivar/:id')
-  desactivar(@Body() body:Sucursal, @Param('id') id){
+  desactivar(@Body() body:Sucursal ){
     return this.userService. update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{

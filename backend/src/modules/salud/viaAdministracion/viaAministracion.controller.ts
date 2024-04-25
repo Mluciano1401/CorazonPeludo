@@ -38,7 +38,7 @@ export class ViaAdministracionController {
   }
 
   @Post('/update/:id')
-  update(@Body() body:ViaAdministracion, @Param('id') id){
+  update(@Body() body:ViaAdministracion ){
     return this.userService. update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{
@@ -46,7 +46,7 @@ export class ViaAdministracionController {
     });
   }
   @Post('/activar/:id')
-  activar(@Body() body:ViaAdministracion, @Param('id') id){
+  activar(@Body() body:ViaAdministracion ){
     return this.userService. update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{
@@ -54,7 +54,7 @@ export class ViaAdministracionController {
     });
   }
   @Post('/desactivar/:id')
-  desactivar(@Body() body:ViaAdministracion, @Param('id') id){
+  desactivar(@Body() body:ViaAdministracion ){
     return this.userService. update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{

@@ -38,7 +38,7 @@ export class MisionController {
   }
 
   @Post('/update/:id')
-  update(@Body() body:Mision, @Param('id') id){
+  update(@Body() body:Mision ){
     return this.userService. update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{
@@ -46,7 +46,7 @@ export class MisionController {
     });
   }
   @Post('/activar/:id')
-  activar(@Body() body:Mision, @Param('id') id){
+  activar(@Body() body:Mision ){
     return this.userService. update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{
@@ -54,7 +54,7 @@ export class MisionController {
     });
   }
   @Post('/desactivar/:id')
-  desactivar(@Body() body:Mision, @Param('id') id){
+  desactivar(@Body() body:Mision ){
     return this.userService. update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{

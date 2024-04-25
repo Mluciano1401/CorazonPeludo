@@ -38,7 +38,7 @@ export class NivelUrgenciaController {
   }
 
   @Post('/update/:id')
-  update(@Body() body:NivelUrgencia, @Param('id') id){
+  update(@Body() body:NivelUrgencia ){
     return this._NivelUrgenciaService. update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{
@@ -46,7 +46,7 @@ export class NivelUrgenciaController {
     });
   }
   @Post('/activar/:id')
-  activar(@Body() body:NivelUrgencia, @Param('id') id){
+  activar(@Body() body:NivelUrgencia ){
     return this._NivelUrgenciaService. update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{
@@ -54,7 +54,7 @@ export class NivelUrgenciaController {
     });
   }
   @Post('/desactivar/:id')
-  desactivar(@Body() body:NivelUrgencia, @Param('id') id){
+  desactivar(@Body() body:NivelUrgencia ){
     return this._NivelUrgenciaService. update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{

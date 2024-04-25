@@ -38,7 +38,7 @@ export class IndentificadorController {
   }
 
   @Post('/update/:id')
-  update(@Body() body:Indentificador, @Param('id') id){
+  update(@Body() body:Indentificador ){
     return this._IndentificadorService. update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{
@@ -46,7 +46,7 @@ export class IndentificadorController {
     });
   }
   @Post('/activar/:id')
-  activar(@Body() body:Indentificador, @Param('id') id){
+  activar(@Body() body:Indentificador ){
     return this._IndentificadorService. update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{
@@ -54,7 +54,7 @@ export class IndentificadorController {
     });
   }
   @Post('/desactivar/:id')
-  desactivar(@Body() body:Indentificador, @Param('id') id){
+  desactivar(@Body() body:Indentificador ){
     return this._IndentificadorService. update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{

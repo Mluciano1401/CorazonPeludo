@@ -38,7 +38,7 @@ export class HistorialVacunasController {
   }
 
   @Post('/update/:id')
-  update(@Body() body:HistorialVacunas, @Param('id') id){
+  update(@Body() body:HistorialVacunas ){
     return this._HistorialVacunasService. update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{
@@ -46,7 +46,7 @@ export class HistorialVacunasController {
     });
   }
   @Post('/activar/:id')
-  activar(@Body() body:HistorialVacunas, @Param('id') id){
+  activar(@Body() body:HistorialVacunas ){
     return this._HistorialVacunasService. update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{
@@ -54,7 +54,7 @@ export class HistorialVacunasController {
     });
   }
   @Post('/desactivar/:id')
-  desactivar(@Body() body:HistorialVacunas, @Param('id') id){
+  desactivar(@Body() body:HistorialVacunas ){
     return this._HistorialVacunasService. update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{

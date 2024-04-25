@@ -38,7 +38,7 @@ export class ProveedorController {
   }
 
   @Post('/update/:id')
-  update(@Body() body:Proveedor, @Param('id') id){
+  update(@Body() body:Proveedor ){
     return this._ProveedorService. update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{
@@ -46,7 +46,7 @@ export class ProveedorController {
     });
   }
   @Post('/activar/:id')
-  activar(@Body() body:Proveedor, @Param('id') id){
+  activar(@Body() body:Proveedor ){
     return this._ProveedorService. update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{
@@ -54,7 +54,7 @@ export class ProveedorController {
     });
   }
   @Post('/desactivar/:id')
-  desactivar(@Body() body:Proveedor, @Param('id') id){
+  desactivar(@Body() body:Proveedor ){
     return this._ProveedorService. update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{

@@ -38,7 +38,7 @@ export class TipoPielController {
   }
 
   @Post('/update/:id')
-  update(@Body() body:TipoPiel, @Param('id') id){
+  update(@Body() body:TipoPiel ){
     return this._TipoPielService. update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{
@@ -46,7 +46,7 @@ export class TipoPielController {
     });
   }
   @Post('/activar/:id')
-  activar(@Body() body:TipoPiel, @Param('id') id){
+  activar(@Body() body:TipoPiel ){
     return this._TipoPielService. update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{
@@ -54,7 +54,7 @@ export class TipoPielController {
     });
   }
   @Post('/desactivar/:id')
-  desactivar(@Body() body:TipoPiel, @Param('id') id){
+  desactivar(@Body() body:TipoPiel ){
     return this._TipoPielService. update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{
@@ -69,14 +69,5 @@ export class TipoPielController {
       throw new HttpException(error, HttpStatus.INTERNAL_SERVER_ERROR)
     });
   }
-  @Get('select')
-  select(){
-    return this._TipoPielService.findAll().then(res=>{
-      const r = [];
-      res.forEach(o=> r.push({option: o.descripcion, value: o.tipoPielId}));
-      return {success: true, data: r}
-    }).catch(error=>{
-      throw new HttpException(error, HttpStatus.INTERNAL_SERVER_ERROR)
-    });
-  }
+
 }

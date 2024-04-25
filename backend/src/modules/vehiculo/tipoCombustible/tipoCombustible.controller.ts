@@ -38,7 +38,7 @@ export class TipoCombustibleController {
   }
 
   @Post('/update/:id')
-  update(@Body() body:TipoCombustible, @Param('id') id){
+  update(@Body() body:TipoCombustible ){
     return this.userService. update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{
@@ -46,7 +46,7 @@ export class TipoCombustibleController {
     });
   }
   @Post('/activar/:id')
-  activar(@Body() body:TipoCombustible, @Param('id') id){
+  activar(@Body() body:TipoCombustible ){
     return this.userService. update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{
@@ -54,7 +54,7 @@ export class TipoCombustibleController {
     });
   }
   @Post('/desactivar/:id')
-  desactivar(@Body() body:TipoCombustible, @Param('id') id){
+  desactivar(@Body() body:TipoCombustible ){
     return this.userService. update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{

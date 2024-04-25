@@ -38,7 +38,7 @@ export class RasgosFisicosController {
   }
 
   @Post('/update/:id')
-  update(@Body() body:RasgosFisicos, @Param('id') id){
+  update(@Body() body:RasgosFisicos ){
     return this._RasgosFisicosService. update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{
@@ -46,7 +46,7 @@ export class RasgosFisicosController {
     });
   }
   @Post('/activar/:id')
-  activar(@Body() body:RasgosFisicos, @Param('id') id){
+  activar(@Body() body:RasgosFisicos ){
     return this._RasgosFisicosService. update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{
@@ -54,7 +54,7 @@ export class RasgosFisicosController {
     });
   }
   @Post('/desactivar/:id')
-  desactivar(@Body() body:RasgosFisicos, @Param('id') id){
+  desactivar(@Body() body:RasgosFisicos ){
     return this._RasgosFisicosService. update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{

@@ -38,7 +38,7 @@ export class TipoTratamientoController {
   }
 
   @Post('/update/:id')
-  update(@Body() body:TipoTratamiento, @Param('id') id){
+  update(@Body() body:TipoTratamiento ){
     return this.userService. update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{
@@ -46,7 +46,7 @@ export class TipoTratamientoController {
     });
   }
   @Post('/activar/:id')
-  activar(@Body() body:TipoTratamiento, @Param('id') id){
+  activar(@Body() body:TipoTratamiento ){
     return this.userService. update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{
@@ -54,7 +54,7 @@ export class TipoTratamientoController {
     });
   }
   @Post('/desactivar/:id')
-  desactivar(@Body() body:TipoTratamiento, @Param('id') id){
+  desactivar(@Body() body:TipoTratamiento ){
     return this.userService. update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{

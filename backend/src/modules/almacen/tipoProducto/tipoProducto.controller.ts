@@ -38,7 +38,7 @@ export class TipoProductoController {
   }
 
   @Post('/update/:id')
-  update(@Body() body:TipoProducto, @Param('id') id){
+  update(@Body() body:TipoProducto ){
     return this._TipoProductoService. update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{
@@ -46,7 +46,7 @@ export class TipoProductoController {
     });
   }
   @Post('/activar/:id')
-  activar(@Body() body:TipoProducto, @Param('id') id){
+  activar(@Body() body:TipoProducto ){
     return this._TipoProductoService. update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{
@@ -54,7 +54,7 @@ export class TipoProductoController {
     });
   }
   @Post('/desactivar/:id')
-  desactivar(@Body() body:TipoProducto, @Param('id') id){
+  desactivar(@Body() body:TipoProducto ){
     return this._TipoProductoService. update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{

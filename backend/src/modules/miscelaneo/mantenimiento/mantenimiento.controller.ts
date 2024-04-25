@@ -38,7 +38,7 @@ export class MantenimientoController {
   }
 
   @Post('/update/:id')
-  update(@Body() body:Mantenimiento, @Param('id') id){
+  update(@Body() body:Mantenimiento ){
     return this._MantenimientoService. update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{
@@ -46,7 +46,7 @@ export class MantenimientoController {
     });
   }
   @Post('/activar/:id')
-  activar(@Body() body:Mantenimiento, @Param('id') id){
+  activar(@Body() body:Mantenimiento ){
     return this._MantenimientoService. update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{
@@ -54,7 +54,7 @@ export class MantenimientoController {
     });
   }
   @Post('/desactivar/:id')
-  desactivar(@Body() body:Mantenimiento, @Param('id') id){
+  desactivar(@Body() body:Mantenimiento ){
     return this._MantenimientoService. update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{

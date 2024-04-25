@@ -36,7 +36,7 @@ export class EmpleadoController {
   @Post()
   save(@Body() body:empleadoDTO){
     const persona: Persona = {
-      personaId: null,
+      id: null,
       nombre: body.nombre,
       apellido: body.apellido,
       email: body.email,
@@ -62,7 +62,7 @@ export class EmpleadoController {
     });
     
     const empleado: Empleado = {
-      EmpleadoId: null,
+      id: null,
       persona: idpersona,
       surcusal: null,
       tipoEmpleado: body.tipoEmpleado,
@@ -79,24 +79,24 @@ export class EmpleadoController {
     });
   }
 
-  @Post('/update/:id')
-  update(@Body() body:Empleado, @Param('id') id){
+  @Post('/update/')
+  update(@Body() body:Empleado){
     return this.userService. update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{
       throw new HttpException(error, HttpStatus.INTERNAL_SERVER_ERROR)
     });
   }
-  @Post('/activar/:id')
-  activar(@Body() body:Empleado, @Param('id') id){
+  @Post('/activar/')
+  activar(@Body() body:Empleado){
     return this.userService. update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{
       throw new HttpException(error, HttpStatus.INTERNAL_SERVER_ERROR)
     });
   }
-  @Post('/desactivar/:id')
-  desactivar(@Body() body:Empleado, @Param('id') id){
+  @Post('/desactivar/')
+  desactivar(@Body() body:Empleado){
     return this.userService. update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{

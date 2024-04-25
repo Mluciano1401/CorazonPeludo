@@ -38,7 +38,7 @@ export class TipoRecursoController {
   }
 
   @Post('/update/:id')
-  update(@Body() body:TipoRecurso, @Param('id') id){
+  update(@Body() body:TipoRecurso ){
     return this._TipoRecursoService. update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{
@@ -46,7 +46,7 @@ export class TipoRecursoController {
     });
   }
   @Post('/activar/:id')
-  activar(@Body() body:TipoRecurso, @Param('id') id){
+  activar(@Body() body:TipoRecurso ){
     return this._TipoRecursoService. update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{
@@ -54,7 +54,7 @@ export class TipoRecursoController {
     });
   }
   @Post('/desactivar/:id')
-  desactivar(@Body() body:TipoRecurso, @Param('id') id){
+  desactivar(@Body() body:TipoRecurso ){
     return this._TipoRecursoService. update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{
@@ -69,14 +69,5 @@ export class TipoRecursoController {
       throw new HttpException(error, HttpStatus.INTERNAL_SERVER_ERROR)
     });
   }
-  @Get('select')
-  select(){
-    return this._TipoRecursoService.findAll().then(res=>{
-      const r = [];
-      res.forEach(o=> r.push({option: o.descripcion, value: o.tipoRecursoId}));
-      return {success: true, data: r}
-    }).catch(error=>{
-      throw new HttpException(error, HttpStatus.INTERNAL_SERVER_ERROR)
-    });
-  }
+
 }

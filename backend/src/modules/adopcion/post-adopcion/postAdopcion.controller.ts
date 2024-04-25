@@ -38,7 +38,7 @@ export class PostAdopcionController {
   }
 
   @Post('/update/:id')
-  update(@Body() body:PostAdopcion, @Param('id') id){
+  update(@Body() body:PostAdopcion ){
     return this.userService. update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{
@@ -46,7 +46,7 @@ export class PostAdopcionController {
     });
   }
   @Post('/activar/:id')
-  activar(@Body() body:PostAdopcion, @Param('id') id){
+  activar(@Body() body:PostAdopcion ){
     return this.userService. update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{
@@ -54,7 +54,7 @@ export class PostAdopcionController {
     });
   }
   @Post('/desactivar/:id')
-  desactivar(@Body() body:PostAdopcion, @Param('id') id){
+  desactivar(@Body() body:PostAdopcion ){
     return this.userService. update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{

@@ -38,7 +38,7 @@ export class TipoEmpleadoController {
   }
 
   @Post('/update/:id')
-  update(@Body() body:TipoEmpleado, @Param('id') id){
+  update(@Body() body:TipoEmpleado ){
     return this.userService. update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{
@@ -46,7 +46,7 @@ export class TipoEmpleadoController {
     });
   }
   @Post('/activar/:id')
-  activar(@Body() body:TipoEmpleado, @Param('id') id){
+  activar(@Body() body:TipoEmpleado ){
     return this.userService. update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{
@@ -54,7 +54,7 @@ export class TipoEmpleadoController {
     });
   }
   @Post('/desactivar/:id')
-  desactivar(@Body() body:TipoEmpleado, @Param('id') id){
+  desactivar(@Body() body:TipoEmpleado ){
     return this.userService. update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{

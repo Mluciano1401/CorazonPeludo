@@ -38,7 +38,7 @@ export class PersonaController {
   }
 
   @Post('/update/:id')
-  update(@Body() body:Persona, @Param('id') id){
+  update(@Body() body:Persona ){
     return this.personaService. update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{
@@ -46,7 +46,7 @@ export class PersonaController {
     });
   }
   @Post('/activar/:id')
-  activar(@Body() body:Persona, @Param('id') id){
+  activar(@Body() body:Persona ){
     return this.personaService. update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{
@@ -54,7 +54,7 @@ export class PersonaController {
     });
   }
   @Post('/desactivar/:id')
-  desactivar(@Body() body:Persona, @Param('id') id){
+  desactivar(@Body() body:Persona ){
     return this.personaService. update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{

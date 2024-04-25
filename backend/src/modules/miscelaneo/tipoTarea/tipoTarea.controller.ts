@@ -38,7 +38,7 @@ export class TipoTareaController {
   }
 
   @Post('/update/:id')
-  update(@Body() body:TipoTarea, @Param('id') id){
+  update(@Body() body:TipoTarea ){
     return this._TipoTareaService. update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{
@@ -46,7 +46,7 @@ export class TipoTareaController {
     });
   }
   @Post('/activar/:id')
-  activar(@Body() body:TipoTarea, @Param('id') id){
+  activar(@Body() body:TipoTarea ){
     return this._TipoTareaService. update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{
@@ -54,7 +54,7 @@ export class TipoTareaController {
     });
   }
   @Post('/desactivar/:id')
-  desactivar(@Body() body:TipoTarea, @Param('id') id){
+  desactivar(@Body() body:TipoTarea ){
     return this._TipoTareaService. update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{
@@ -65,16 +65,6 @@ export class TipoTareaController {
   delete(@Param('id') id){
     return this._TipoTareaService.delete(id).then(res=>{
       return {success: true, data: res}
-    }).catch(error=>{
-      throw new HttpException(error, HttpStatus.INTERNAL_SERVER_ERROR)
-    });
-  }
-  @Get('select')
-  select(){
-    return this._TipoTareaService.findAll().then(res=>{
-      const r = [];
-      res.forEach(o=> r.push({option: o.descripcion, value: o.tipoTareaId}));
-      return {success: true, data: r}
     }).catch(error=>{
       throw new HttpException(error, HttpStatus.INTERNAL_SERVER_ERROR)
     });

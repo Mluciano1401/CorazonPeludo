@@ -38,7 +38,7 @@ export class ModeloController {
   }
 
   @Post('/update/:id')
-  update(@Body() body:Modelo, @Param('id') id){
+  update(@Body() body:Modelo ){
     return this.userService. update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{
@@ -46,7 +46,7 @@ export class ModeloController {
     });
   }
   @Post('/activar/:id')
-  activar(@Body() body:Modelo, @Param('id') id){
+  activar(@Body() body:Modelo ){
     return this.userService. update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{
@@ -54,7 +54,7 @@ export class ModeloController {
     });
   }
   @Post('/desactivar/:id')
-  desactivar(@Body() body:Modelo, @Param('id') id){
+  desactivar(@Body() body:Modelo ){
     return this.userService. update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{

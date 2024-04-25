@@ -38,7 +38,7 @@ export class TipoTelefonoController {
   }
 
   @Post('/update/:id')
-  update(@Body() body:TipoTelefono, @Param('id') id){
+  update(@Body() body:TipoTelefono ){
     return this.userService. update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{
@@ -46,7 +46,7 @@ export class TipoTelefonoController {
     });
   }
   @Post('/activar/:id')
-  activar(@Body() body:TipoTelefono, @Param('id') id){
+  activar(@Body() body:TipoTelefono ){
     return this.userService. update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{
@@ -54,7 +54,7 @@ export class TipoTelefonoController {
     });
   }
   @Post('/desactivar/:id')
-  desactivar(@Body() body:TipoTelefono, @Param('id') id){
+  desactivar(@Body() body:TipoTelefono ){
     return this.userService. update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{

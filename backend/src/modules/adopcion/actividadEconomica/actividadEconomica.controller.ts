@@ -38,7 +38,7 @@ export class ActividadEconomicaController {
   }
 
   @Post('/update/:id')
-  update(@Body() body:ActividadEconomica, @Param('id') id){
+  update(@Body() body:ActividadEconomica ){
     return this.userService. update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{
@@ -46,7 +46,7 @@ export class ActividadEconomicaController {
     });
   }
   @Post('/activar/:id')
-  activar(@Body() body:ActividadEconomica, @Param('id') id){
+  activar(@Body() body:ActividadEconomica ){
     return this.userService. update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{
@@ -54,7 +54,7 @@ export class ActividadEconomicaController {
     });
   }
   @Post('/desactivar/:id')
-  desactivar(@Body() body:ActividadEconomica, @Param('id') id){
+  desactivar(@Body() body:ActividadEconomica ){
     return this.userService. update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{

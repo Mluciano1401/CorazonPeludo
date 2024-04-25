@@ -38,7 +38,7 @@ export class LogAccionesController {
   }
 
   @Post('/update/:id')
-  update(@Body() body:LogAcciones, @Param('id') id){
+  update(@Body() body:LogAcciones ){
     return this.userService. update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{
@@ -46,7 +46,7 @@ export class LogAccionesController {
     });
   }
   @Post('/activar/:id')
-  activar(@Body() body:LogAcciones, @Param('id') id){
+  activar(@Body() body:LogAcciones ){
     return this.userService. update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{
@@ -54,7 +54,7 @@ export class LogAccionesController {
     });
   }
   @Post('/desactivar/:id')
-  desactivar(@Body() body:LogAcciones, @Param('id') id){
+  desactivar(@Body() body:LogAcciones ){
     return this.userService. update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{

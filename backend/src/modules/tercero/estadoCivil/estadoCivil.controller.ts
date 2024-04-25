@@ -38,7 +38,7 @@ export class EstadoCivilController {
   }
 
   @Post('/update/:id')
-  update(@Body() body:EstadoCivil, @Param('id') id){
+  update(@Body() body:EstadoCivil ){
     return this.userService. update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{
@@ -46,7 +46,7 @@ export class EstadoCivilController {
     });
   }
   @Post('/activar/:id')
-  activar(@Body() body:EstadoCivil, @Param('id') id){
+  activar(@Body() body:EstadoCivil ){
     return this.userService. update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{
@@ -54,7 +54,7 @@ export class EstadoCivilController {
     });
   }
   @Post('/desactivar/:id')
-  desactivar(@Body() body:EstadoCivil, @Param('id') id){
+  desactivar(@Body() body:EstadoCivil ){
     return this.userService. update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{
