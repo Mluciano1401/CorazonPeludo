@@ -16,12 +16,12 @@ form.addEventListener('submit', async (event) => {
   // Crea una solicitud HTTP
   const url = 'http://localhost:3000/usuario';
   const data = { 
-      userName: user ? user : "",
-      password: password ? password : "",
-      email: email ? email : "",
+      userName: user,
+      password: password,
+      email: email,
       tipoUsuario: tipouser,
       sucursal: sucursal,
-      foto:formFile ? formFile : "",
+      foto:formFile,
       fechaModificacion: new Date(),
       status: (status == '0') ? false : true
 
