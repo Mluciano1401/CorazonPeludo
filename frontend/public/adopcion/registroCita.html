@@ -282,8 +282,6 @@
         </a>
       </li><!-- End Dashboard Nav -->
 
-
-
       <!--Resgitro -->
       <li class="nav-item">
         <a class="nav-link collapsed" data-bs-target="#animales-nav" data-bs-toggle="collapse" href="#">
@@ -302,8 +300,6 @@
           </li>
         </ul>
       </li><!-- End registro Nav -->
-
-
 
       <!--rescate -->
       <li class="nav-item">
@@ -355,13 +351,12 @@
               <i class="bi bi-circle"></i><span>Registro de Almacen</span>
             </a>
           </li>
-          
+
         </ul>
       </li><!-- End Components Nav -->
+    </ul>
+  </aside>
 
-    
-  </div>
-  <div id="content-section"></div>
 
   <!--Principal-->
   <main id="main" class="main">
@@ -410,11 +405,11 @@
                   <div class="col-md-6 mb-3">
                     <label for="email" class="form-label">Email</label>
                     <input type="email" class="form-control" id="email" required>
-                  </div> 
+                  </div>
                   <div class="col-md-6 mb-3">
                     <label for="telefono" class="form-label">Telefono</label>
                     <input type="number" class="form-control" id="telefono" required>
-                  </div> 
+                  </div>
                 </div>
 
                 <div class="row mb-3">
@@ -422,42 +417,42 @@
                     <label for="mySelect" class="form-label">Tipo de Animal</label>
                     <select id="mySelect" class="form-select" required>
                       <option value="" disabled selected>Selecciona Una Opcion...</option>
-                      
+
                     </select>
                   </div>
                   <div class="col-md-6">
                     <label for="nombreAnimal" class="form-label">Nombre del animal (si aplica)</label>
-                    <input type="text" class="form-control" id="nombreAnimal" >
+                    <input type="text" class="form-control" id="nombreAnimal">
                   </div>
-                </div>  
+                </div>
 
                 <!-- controlando citas  -->
                 <div class="row mb-3">
                   <div class="col-md-6  mb-3">
-                      <label for="fechaCita" class="form-label">Fecha de la Cita</label>
-                      <input type="date" class="form-control" id="nombreAnimal" required data-disponible="">
+                    <label for="fechaCita" class="form-label">Fecha de la Cita</label>
+                    <input type="date" class="form-control" id="nombreAnimal" required data-disponible="">
                   </div>
                   <div class="col-md-6">
-                      <label for="hora" class="form-label">Hora de la Cita</label>
-                      <input type="time" class="form-control" id="hora" required data-disponible="">
+                    <label for="hora" class="form-label">Hora de la Cita</label>
+                    <input type="time" class="form-control" id="hora" required data-disponible="">
                   </div>
-              </div> 
+                </div>
 
 
-              <!-- Elemento para mostrar el mensaje de disponibilidad -->
-            <div id="disponibilidadMensaje"></div>
+                <!-- Elemento para mostrar el mensaje de disponibilidad -->
+                <div id="disponibilidadMensaje"></div>
 
 
-            
+
 
                 <div class="row mb-5">
                   <div class="col-md-6 mb-3">
                     <label for="status" class="form-label">Status</label>
-                      <select id="status" class="form-select" required>
-                        <option value="" disabled selected>Selecciona Una Opcion...</option>
-                        <option value="1">Activo</option>
-                        <option value="0">Inactivo</option>
-                      </select>
+                    <select id="status" class="form-select" required>
+                      <option value="" disabled selected>Selecciona Una Opcion...</option>
+                      <option value="1">Activo</option>
+                      <option value="0">Inactivo</option>
+                    </select>
                   </div>
                   <div class="col-md-6">
                     <label for="fechaModificacion" class="form-label">Fecha de Modificacion</label>
@@ -492,10 +487,11 @@
   <!-- ======= Footer ======= -->
   <footer id="footer" class="footer">
     <div class="copyright">
-      <p class="copy copy-inicio">&copy Copyright - <script>
-        document.write(new Date().getFullYear());
-            </script>
-    </p>
+      <p class="copy copy-inicio">&copy Copyright -
+        <script>
+          document.write(new Date().getFullYear());
+        </script>
+      </p>
     </div>
     <div class="credits">
       Designed by Hilary Collado - Maria Luciano
@@ -506,7 +502,7 @@
       class="bi bi-arrow-up-short"></i></a>
 
   <!-- Vendor JS Files -->
-   
+
   <script src="../NiceAdmin/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="../NiceAdmin/assets/vendor/chart.js/chart.umd.js"></script>
   <script src="../NiceAdmin/assets/vendor/echarts/echarts.min.js"></script>
@@ -516,16 +512,16 @@
   <script src="../NiceAdmin/assets/vendor/php-email-form/validate.js"></script>
 
   <!-- Template Main JS File -->
-  <script src="../NiceAdmin/assets/js/main.js"></script>  
+  <script src="../NiceAdmin/assets/js/main.js"></script>
   <script src="../../src/js/api/adopcion/cita.js"></script>
 
 
-  
 
 
 
 
-<script src="../visualizar.js"></script>
+
+  <script src="../visualizar.js"></script>
 
 </body>
 
