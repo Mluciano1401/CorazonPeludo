@@ -426,7 +426,7 @@
                             <h5 class="card-title">Ingreso De Usuarios</h5>
 
                             <!-- General Form Elements -->
-                            <form class="needs-validation" id="form" novalidate>
+                            <form class="needs-validation" method="post" enctype="multipart/form-data" action="../../src/js/api/admin/usuario.js" id="form" novalidate>
 
                                 <div class="row mb-3">
                                     <div class="col-md-6">
@@ -530,18 +530,18 @@
             class="bi bi-arrow-up-short"></i></a>
 
     <!-- Vendor JS Files -->
-    <script src="assets/vendor/apexcharts/apexcharts.min.js"></script>
-    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/vendor/chart.js/chart.umd.js"></script>
-    <script src="assets/vendor/echarts/echarts.min.js"></script>
-    <script src="assets/vendor/quill/quill.min.js"></script>
-    <script src="assets/vendor/simple-datatables/simple-datatables.js"></script>
-    <script src="assets/vendor/tinymce/tinymce.min.js"></script>
-    <script src="assets/vendor/php-email-form/validate.js"></script>
+    <script src="../NiceAdmin/assets/vendor/apexcharts/apexcharts.min.js"></script>
+    <script src="../NiceAdmin/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../NiceAdmin/assets/vendor/chart.js/chart.umd.js"></script>
+    <script src="../NiceAdmin/assets/vendor/echarts/echarts.min.js"></script>
+    <script src="../NiceAdmin/assets/vendor/quill/quill.min.js"></script>
+    <script src="../NiceAdmin/assets/vendor/simple-datatables/simple-datatables.js"></script>
+    <script src="../NiceAdmin/assets/vendor/tinymce/tinymce.min.js"></script>
+    <script src="../NiceAdmin/assets/vendor/php-email-form/validate.js"></script>
 
     <!-- Template Main JS File -->
-    <script src="assets/js/main.js"></script>
-    <script src="../../src/js/api/admin/usuario.js"></script>
+    <script src="../NiceAdmin/assets/js/main.js"></script>
+    <script src="../../src/js/api/admin/RegistroUsuario.js"></script>
 <script>
     fetch('../menu/template.html')
             .then(response => response.text())

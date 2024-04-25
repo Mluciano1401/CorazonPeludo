@@ -1,5 +1,5 @@
 .bg {
-    background-image: url("../../login/img/catOne.jpg");
+    background-image: url("../img/catOne.jpg");
     background-position: center center;
     background-size: cover;
     position: relative;
@@ -60,9 +60,6 @@
     place-items: center;
 }
 
-.checkboxR{
-    /*margin: ;*/
-}
 
 .recuperar{
     text-align: right;
