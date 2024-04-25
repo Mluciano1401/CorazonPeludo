@@ -39,7 +39,7 @@ export class HistorialMantenimientoController {
 
   @Post('/update/:id')
   update(@Body() body:HistorialMantenimiento, @Param('id') id){
-    return this._HistorialMantenimientoService.update(id,body).then(res=>{
+    return this._HistorialMantenimientoService. update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{
       throw new HttpException(error, HttpStatus.INTERNAL_SERVER_ERROR)
@@ -47,7 +47,7 @@ export class HistorialMantenimientoController {
   }
   @Post('/activar/:id')
   activar(@Body() body:HistorialMantenimiento, @Param('id') id){
-    return this._HistorialMantenimientoService.update(id,body).then(res=>{
+    return this._HistorialMantenimientoService. update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{
       throw new HttpException(error, HttpStatus.INTERNAL_SERVER_ERROR)
@@ -55,7 +55,7 @@ export class HistorialMantenimientoController {
   }
   @Post('/desactivar/:id')
   desactivar(@Body() body:HistorialMantenimiento, @Param('id') id){
-    return this._HistorialMantenimientoService.update(id,body).then(res=>{
+    return this._HistorialMantenimientoService. update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{
       throw new HttpException(error, HttpStatus.INTERNAL_SERVER_ERROR)

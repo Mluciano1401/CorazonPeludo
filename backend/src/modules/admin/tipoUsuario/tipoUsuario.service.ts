@@ -16,7 +16,7 @@ export class TipoUsuarioService {
     return await this._TipoUsuarioRepository.findBy({status: true});
   }
   async findById(id:number):Promise<TipoUsuario>{
-    return await this._TipoUsuarioRepository.findOneBy({tipoUsuarioId : id, status:true});
+    return await this._TipoUsuarioRepository.findOneBy({id : id, status:true});
   }
   async create(user: TipoUsuario):Promise<TipoUsuario> {
     return await this._TipoUsuarioRepository.save(user);

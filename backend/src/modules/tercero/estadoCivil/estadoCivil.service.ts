@@ -15,12 +15,12 @@ export class EstadoCivilService {
     return await this._EstadoCivilRepository.findBy({status: true});
   }
   async findById(id:number):Promise<EstadoCivil>{
-    return await this._EstadoCivilRepository.findOneOrFail(id,{where:{status:true}});
+    return await this._EstadoCivilRepository.findOneBy({id:id,status:true});
   }
   async create(user: EstadoCivil):Promise<EstadoCivil> {
     return await this._EstadoCivilRepository.save(user);
   }
-  async update(id: number, user: EstadoCivil): Promise<void> {
+  async  update( user: EstadoCivil): Promise<void> {
     return await this._EstadoCivilRepository.save(user);
   }
   async delete(id: number): Promise<string> {

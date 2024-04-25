@@ -15,12 +15,12 @@ export class NivelUrgenciaService {
     return await this._NivelUrgenciaRepository.findBy({status: true});
   }
   async findById(id:number):Promise<NivelUrgencia>{
-    return await this._NivelUrgenciaRepository.findOneOrFail(id,{where:{status:true}});
+    return await this._NivelUrgenciaRepository.findOneBy({id:id,status:true});
   }
   async create(user: NivelUrgencia):Promise<NivelUrgencia> {
     return await this._NivelUrgenciaRepository.save(user);
   }
-  async update(id: number, user: NivelUrgencia): Promise<void> {
+  async  update( user: NivelUrgencia): Promise<void> {
     return await this._NivelUrgenciaRepository.save(user);
   }
   async delete(id: number): Promise<string> {

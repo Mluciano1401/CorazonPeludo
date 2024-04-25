@@ -15,12 +15,12 @@ export class HistorialMantenimientoService {
     return await this._HistorialMantenimientoRepository.findBy({status: true});
   }
   async findById(id:number):Promise<HistorialMantenimiento>{
-    return await this._HistorialMantenimientoRepository.findOneOrFail(id,{where:{status:true}});
+    return await this._HistorialMantenimientoRepository.findOneBy({id:id,status:true});
   }
   async create(user: HistorialMantenimiento):Promise<HistorialMantenimiento> {
     return await this._HistorialMantenimientoRepository.save(user);
   }
-  async update(id: number, user: HistorialMantenimiento): Promise<void> {
+  async  update( user: HistorialMantenimiento): Promise<void> {
     return await this._HistorialMantenimientoRepository.save(user);
   }
   async delete(id: number): Promise<string> {

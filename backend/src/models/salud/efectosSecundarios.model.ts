@@ -4,7 +4,7 @@ import { Sintoma } from "./sintomas.model";
 @Entity( )
 export class EfectosSecundarios{
     @PrimaryGeneratedColumn()
-    efectosSecundariosId: number;
+    id: number;
 
     @ManyToOne(() => Sintoma)
     @JoinColumn()

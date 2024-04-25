@@ -4,7 +4,7 @@ import { Persona } from "../tercero/persona.model";
 @Entity( )
 export class Proveedor {
     @PrimaryGeneratedColumn()
-    proveedorId: number;
+    id: number;
 
     @ManyToOne(() => Persona)
     @JoinColumn()

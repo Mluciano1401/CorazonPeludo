@@ -15,12 +15,12 @@ export class DiagnosticoService {
     return await this._DiagnosticoRepository.findBy({status: true});
   }
   async findById(id:number):Promise<Diagnostico>{
-    return await this._DiagnosticoRepository.findOneOrFail(id,{where:{status:true}});
+    return await this._DiagnosticoRepository.findOneBy({id:id,status:true});
   }
   async create(user: Diagnostico):Promise<Diagnostico> {
     return await this._DiagnosticoRepository.save(user);
   }
-  async update(id: number, user: Diagnostico): Promise<void> {
+  async  update( user: Diagnostico): Promise<void> {
     return await this._DiagnosticoRepository.save(user);
   }
   async delete(id: number): Promise<string> {

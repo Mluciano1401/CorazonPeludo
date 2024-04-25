@@ -39,7 +39,7 @@ export class EnfermedadController {
 
   @Post('/update/:id')
   update(@Body() body:Enfermedad, @Param('id') id){
-    return this.userService.update(id,body).then(res=>{
+    return this.userService. update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{
       throw new HttpException(error, HttpStatus.INTERNAL_SERVER_ERROR)
@@ -47,7 +47,7 @@ export class EnfermedadController {
   }
   @Post('/activar/:id')
   activar(@Body() body:Enfermedad, @Param('id') id){
-    return this.userService.update(id,body).then(res=>{
+    return this.userService. update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{
       throw new HttpException(error, HttpStatus.INTERNAL_SERVER_ERROR)
@@ -55,7 +55,7 @@ export class EnfermedadController {
   }
   @Post('/desactivar/:id')
   desactivar(@Body() body:Enfermedad, @Param('id') id){
-    return this.userService.update(id,body).then(res=>{
+    return this.userService. update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{
       throw new HttpException(error, HttpStatus.INTERNAL_SERVER_ERROR)

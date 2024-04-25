@@ -6,7 +6,7 @@ import { Persona } from "../tercero/persona.model";
 @Entity( )
 export class PolizaSeguro {
     @PrimaryGeneratedColumn()
-    polizaSeguroId: number;
+    id: number;
 
     @Column({ nullable: false })
     descripcion: string;

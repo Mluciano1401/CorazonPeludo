@@ -39,7 +39,7 @@ export class RasgosFisicosController {
 
   @Post('/update/:id')
   update(@Body() body:RasgosFisicos, @Param('id') id){
-    return this._RasgosFisicosService.update(id,body).then(res=>{
+    return this._RasgosFisicosService. update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{
       throw new HttpException(error, HttpStatus.INTERNAL_SERVER_ERROR)
@@ -47,7 +47,7 @@ export class RasgosFisicosController {
   }
   @Post('/activar/:id')
   activar(@Body() body:RasgosFisicos, @Param('id') id){
-    return this._RasgosFisicosService.update(id,body).then(res=>{
+    return this._RasgosFisicosService. update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{
       throw new HttpException(error, HttpStatus.INTERNAL_SERVER_ERROR)
@@ -55,7 +55,7 @@ export class RasgosFisicosController {
   }
   @Post('/desactivar/:id')
   desactivar(@Body() body:RasgosFisicos, @Param('id') id){
-    return this._RasgosFisicosService.update(id,body).then(res=>{
+    return this._RasgosFisicosService. update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{
       throw new HttpException(error, HttpStatus.INTERNAL_SERVER_ERROR)

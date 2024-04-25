@@ -15,12 +15,12 @@ export class TareaService {
     return await this._TareaRepository.findBy({status: true});
   }
   async findById(id:number):Promise<Tarea>{
-    return await this._TareaRepository.findOneOrFail(id,{where:{status:true}});
+    return await this._TareaRepository.findOneBy({id:id,status:true});
   }
   async create(user: Tarea):Promise<Tarea> {
     return await this._TareaRepository.save(user);
   }
-  async update(id: number, user: Tarea): Promise<void> {
+  async  update( user: Tarea): Promise<void> {
     return await this._TareaRepository.save(user);
   }
   async delete(id: number): Promise<string> {

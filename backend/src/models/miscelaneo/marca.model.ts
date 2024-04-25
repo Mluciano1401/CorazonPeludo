@@ -3,7 +3,7 @@ import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
 @Entity( )
 export class Marca{
     @PrimaryGeneratedColumn()
-    marcaId: number;
+    id: number;
 
     @Column({ nullable: false })
     descripcion: string;

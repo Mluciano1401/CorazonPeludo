@@ -3,7 +3,7 @@ import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
 @Entity()
 export class TipoPiel{
     @PrimaryGeneratedColumn()
-    tipoPielId: number;
+    id: number;
 
     @Column({ nullable: false })
     descripcion: string;

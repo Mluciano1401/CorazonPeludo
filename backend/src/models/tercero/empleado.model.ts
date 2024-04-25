@@ -6,7 +6,7 @@ import { Sucursal } from "./surcusal.model";
 @Entity( )
 export class Empleado {
     @PrimaryGeneratedColumn()
-    EmpleadoId: number;
+    id: number;
 
     @OneToOne(() => Persona)
     @JoinColumn()

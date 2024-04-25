@@ -15,12 +15,12 @@ export class DonacionService {
     return await this._DonacionRepository.findBy({status: true});
   }
   async findById(id:number):Promise<Donacion>{
-    return await this._DonacionRepository.findOneOrFail(id,{where:{status:true}});
+    return await this._DonacionRepository.findOneBy({id:id,status:true});
   }
   async create(user: Donacion):Promise<Donacion> {
     return await this._DonacionRepository.save(user);
   }
-  async update(id: number, user: Donacion): Promise<void> {
+  async  update( user: Donacion): Promise<void> {
     return await this._DonacionRepository.save(user);
   }
   async delete(id: number): Promise<string> {

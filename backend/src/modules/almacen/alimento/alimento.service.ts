@@ -15,12 +15,12 @@ export class AlimentoService {
     return await this._AlimentoRepository.findBy({status: true});
   }
   async findById(id:number):Promise<Alimento>{
-    return await this._AlimentoRepository.findOneOrFail(id,{where:{status:true}});
+    return await this._AlimentoRepository.findOneBy({id:id,status:true});
   }
   async create(user: Alimento):Promise<Alimento> {
     return await this._AlimentoRepository.save(user);
   }
-  async update(id: number, user: Alimento): Promise<void> {
+  async  update( user: Alimento): Promise<void> {
     return await this._AlimentoRepository.save(user);
   }
   async delete(id: number): Promise<string> {

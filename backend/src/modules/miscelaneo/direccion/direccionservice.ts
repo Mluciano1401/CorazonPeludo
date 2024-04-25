@@ -15,12 +15,12 @@ export class DireccionService {
     return await this._DireccionRepository.findBy({status: true});
   }
   async findById(id:number):Promise<Direccion>{
-    return await this._DireccionRepository.findOneOrFail(id,{where:{status:true}});
+    return await this._DireccionRepository.findOneBy({id:id,status:true});
   }
   async create(user: Direccion):Promise<Direccion> {
     return await this._DireccionRepository.save(user);
   }
-  async update(id: number, user: Direccion): Promise<void> {
+  async  update( user: Direccion): Promise<void> {
     return await this._DireccionRepository.save(user);
   }
   async delete(id: number): Promise<string> {

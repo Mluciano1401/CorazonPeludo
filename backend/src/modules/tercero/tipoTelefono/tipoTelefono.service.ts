@@ -15,12 +15,12 @@ export class TipoTelefonoService {
     return await this._TipoTelefonoRepository.findBy({status: true});
   }
   async findById(id:number):Promise<TipoTelefono>{
-    return await this._TipoTelefonoRepository.findOneOrFail(id,{where:{status:true}});
+    return await this._TipoTelefonoRepository.findOneBy({id:id,status:true});
   }
   async create(user: TipoTelefono):Promise<TipoTelefono> {
     return await this._TipoTelefonoRepository.save(user);
   }
-  async update(id: number, user: TipoTelefono): Promise<void> {
+  async  update( user: TipoTelefono): Promise<void> {
     return await this._TipoTelefonoRepository.save(user);
   }
   async delete(id: number): Promise<string> {

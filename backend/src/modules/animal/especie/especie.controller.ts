@@ -39,7 +39,7 @@ export class EspecieController {
 
   @Post('/update/:id')
   update(@Body() body:Especie, @Param('id') id){
-    return this._EspecieService.update(id,body).then(res=>{
+    return this._EspecieService. update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{
       throw new HttpException(error, HttpStatus.INTERNAL_SERVER_ERROR)
@@ -47,7 +47,7 @@ export class EspecieController {
   }
   @Post('/activar/:id')
   activar(@Body() body:Especie, @Param('id') id){
-    return this._EspecieService.update(id,body).then(res=>{
+    return this._EspecieService. update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{
       throw new HttpException(error, HttpStatus.INTERNAL_SERVER_ERROR)
@@ -55,7 +55,7 @@ export class EspecieController {
   }
   @Post('/desactivar/:id')
   desactivar(@Body() body:Especie, @Param('id') id){
-    return this._EspecieService.update(id,body).then(res=>{
+    return this._EspecieService. update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{
       throw new HttpException(error, HttpStatus.INTERNAL_SERVER_ERROR)

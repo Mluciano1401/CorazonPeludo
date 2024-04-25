@@ -15,12 +15,12 @@ export class TipoEmpleadoService {
     return await this._TipoEmpleadoRepository.findBy({status: true});
   }
   async findById(id:number):Promise<TipoEmpleado>{
-    return await this._TipoEmpleadoRepository.findOneOrFail(id,{where:{status:true}});
+    return await this._TipoEmpleadoRepository.findOneBy({id:id,status:true});
   }
   async create(user: TipoEmpleado):Promise<TipoEmpleado> {
     return await this._TipoEmpleadoRepository.save(user);
   }
-  async update(id: number, user: TipoEmpleado): Promise<void> {
+  async  update( user: TipoEmpleado): Promise<void> {
     return await this._TipoEmpleadoRepository.save(user);
   }
   async delete(id: number): Promise<string> {

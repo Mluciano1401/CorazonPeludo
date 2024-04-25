@@ -15,12 +15,12 @@ export class EstadoLugarService {
     return await this._EstadoLugarRepository.findBy({status: true});
   }
   async findById(id:number):Promise<EstadoLugar>{
-    return await this._EstadoLugarRepository.findOneOrFail(id,{where:{status:true}});
+    return await this._EstadoLugarRepository.findOneBy({id:id,status:true});
   }
   async create(user: EstadoLugar):Promise<EstadoLugar> {
     return await this._EstadoLugarRepository.save(user);
   }
-  async update(id: number, user: EstadoLugar): Promise<void> {
+  async  update( user: EstadoLugar): Promise<void> {
     return await this._EstadoLugarRepository.save(user);
   }
   async delete(id: number): Promise<string> {

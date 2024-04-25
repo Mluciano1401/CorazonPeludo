@@ -15,12 +15,12 @@ export class PersonaService {
     return await this._PersonaRepository.findBy({status: true});
   }
   async findById(id:number):Promise<Persona>{
-    return await this._PersonaRepository.findOneOrFail(id,{where:{status:true}});
+    return await this._PersonaRepository.findOneBy({id:id,status:true});
   }
   async create(user: Persona):Promise<Persona> {
     return await this._PersonaRepository.save(user);
   }
-  async update(id: number, user: Persona): Promise<void> {
+  async  update( user: Persona): Promise<void> {
     return await this._PersonaRepository.save(user);
   }
   async delete(id: number): Promise<string> {

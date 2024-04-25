@@ -9,7 +9,7 @@ import { Estado } from '../miscelaneo/estado.model';
 @Entity( )
 export class AsignacionTarea{
     @PrimaryGeneratedColumn()
-    asignacionTareaId: number;
+    id: number;
 
     @ManyToOne(() => Tarea)
     @JoinColumn()

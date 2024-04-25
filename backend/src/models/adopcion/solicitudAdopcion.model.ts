@@ -6,7 +6,7 @@ import { Solicitante } from "./solicitante.model";
 @Entity( )
 export class Solicitud {
     @PrimaryGeneratedColumn()
-    SolicitudId: number;
+    id: number;
 
     @ManyToOne(()=> Solicitante)
     @JoinColumn()

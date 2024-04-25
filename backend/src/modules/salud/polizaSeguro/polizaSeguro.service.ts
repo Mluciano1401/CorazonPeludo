@@ -15,12 +15,12 @@ export class PolizaSeguroService {
     return await this._PolizaSeguroRepository.findBy({status: true});
   }
   async findById(id:number):Promise<PolizaSeguro>{
-    return await this._PolizaSeguroRepository.findOneOrFail(id,{where:{status:true}});
+    return await this._PolizaSeguroRepository.findOneBy({id:id,status:true});
   }
   async create(user: PolizaSeguro):Promise<PolizaSeguro> {
     return await this._PolizaSeguroRepository.save(user);
   }
-  async update(id: number, user: PolizaSeguro): Promise<void> {
+  async  update( user: PolizaSeguro): Promise<void> {
     return await this._PolizaSeguroRepository.save(user);
   }
   async delete(id: number): Promise<string> {

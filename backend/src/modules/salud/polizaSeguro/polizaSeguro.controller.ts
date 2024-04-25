@@ -39,7 +39,7 @@ export class PolizaSeguroController {
 
   @Post('/update/:id')
   update(@Body() body:PolizaSeguro, @Param('id') id){
-    return this.userService.update(id,body).then(res=>{
+    return this.userService. update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{
       throw new HttpException(error, HttpStatus.INTERNAL_SERVER_ERROR)
@@ -47,7 +47,7 @@ export class PolizaSeguroController {
   }
   @Post('/activar/:id')
   activar(@Body() body:PolizaSeguro, @Param('id') id){
-    return this.userService.update(id,body).then(res=>{
+    return this.userService. update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{
       throw new HttpException(error, HttpStatus.INTERNAL_SERVER_ERROR)
@@ -55,7 +55,7 @@ export class PolizaSeguroController {
   }
   @Post('/desactivar/:id')
   desactivar(@Body() body:PolizaSeguro, @Param('id') id){
-    return this.userService.update(id,body).then(res=>{
+    return this.userService. update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{
       throw new HttpException(error, HttpStatus.INTERNAL_SERVER_ERROR)

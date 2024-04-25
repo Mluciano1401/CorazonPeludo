@@ -40,7 +40,7 @@ export class ProcesoAdopcionController {
 
   @Post('/update/:id')
   update(@Body() body:ProcesoAdopcion, @Param('id') id){
-    return this.userService.update(id,body).then(res=>{
+    return this.userService. update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{
       throw new HttpException(error, HttpStatus.INTERNAL_SERVER_ERROR)
@@ -48,7 +48,7 @@ export class ProcesoAdopcionController {
   }
   @Post('/activar/:id')
   activar(@Body() body:ProcesoAdopcion, @Param('id') id){
-    return this.userService.update(id,body).then(res=>{
+    return this.userService. update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{
       throw new HttpException(error, HttpStatus.INTERNAL_SERVER_ERROR)
@@ -56,7 +56,7 @@ export class ProcesoAdopcionController {
   }
   @Post('/desactivar/:id')
   desactivar(@Body() body:ProcesoAdopcion, @Param('id') id){
-    return this.userService.update(id,body).then(res=>{
+    return this.userService. update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{
       throw new HttpException(error, HttpStatus.INTERNAL_SERVER_ERROR)

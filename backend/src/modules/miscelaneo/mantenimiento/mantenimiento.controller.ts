@@ -39,7 +39,7 @@ export class MantenimientoController {
 
   @Post('/update/:id')
   update(@Body() body:Mantenimiento, @Param('id') id){
-    return this._MantenimientoService.update(id,body).then(res=>{
+    return this._MantenimientoService. update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{
       throw new HttpException(error, HttpStatus.INTERNAL_SERVER_ERROR)
@@ -47,7 +47,7 @@ export class MantenimientoController {
   }
   @Post('/activar/:id')
   activar(@Body() body:Mantenimiento, @Param('id') id){
-    return this._MantenimientoService.update(id,body).then(res=>{
+    return this._MantenimientoService. update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{
       throw new HttpException(error, HttpStatus.INTERNAL_SERVER_ERROR)
@@ -55,7 +55,7 @@ export class MantenimientoController {
   }
   @Post('/desactivar/:id')
   desactivar(@Body() body:Mantenimiento, @Param('id') id){
-    return this._MantenimientoService.update(id,body).then(res=>{
+    return this._MantenimientoService. update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{
       throw new HttpException(error, HttpStatus.INTERNAL_SERVER_ERROR)

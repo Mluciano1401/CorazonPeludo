@@ -4,7 +4,7 @@ import { TipoPiel } from "./tipoPiel.model";
 @Entity()
 export class RasgosFisicos{
     @PrimaryGeneratedColumn()
-    rasgosFísicosId: number;
+    id: number;
 
     @ManyToOne(()=> TipoPiel)
     @JoinColumn()

@@ -39,7 +39,7 @@ export class HistorialVacunasController {
 
   @Post('/update/:id')
   update(@Body() body:HistorialVacunas, @Param('id') id){
-    return this._HistorialVacunasService.update(id,body).then(res=>{
+    return this._HistorialVacunasService. update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{
       throw new HttpException(error, HttpStatus.INTERNAL_SERVER_ERROR)
@@ -47,7 +47,7 @@ export class HistorialVacunasController {
   }
   @Post('/activar/:id')
   activar(@Body() body:HistorialVacunas, @Param('id') id){
-    return this._HistorialVacunasService.update(id,body).then(res=>{
+    return this._HistorialVacunasService. update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{
       throw new HttpException(error, HttpStatus.INTERNAL_SERVER_ERROR)
@@ -55,7 +55,7 @@ export class HistorialVacunasController {
   }
   @Post('/desactivar/:id')
   desactivar(@Body() body:HistorialVacunas, @Param('id') id){
-    return this._HistorialVacunasService.update(id,body).then(res=>{
+    return this._HistorialVacunasService. update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{
       throw new HttpException(error, HttpStatus.INTERNAL_SERVER_ERROR)

@@ -39,7 +39,7 @@ export class ProductoController {
 
   @Post('/update/:id')
   update(@Body() body:Producto, @Param('id') id){
-    return this.productoService.update(id,body).then(res=>{
+    return this.productoService. update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{
       throw new HttpException(error, HttpStatus.INTERNAL_SERVER_ERROR)
@@ -47,7 +47,7 @@ export class ProductoController {
   }
   @Post('/activar/:id')
   activar(@Body() body:Producto, @Param('id') id){
-    return this.productoService.update(id,body).then(res=>{
+    return this.productoService. update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{
       throw new HttpException(error, HttpStatus.INTERNAL_SERVER_ERROR)
@@ -55,7 +55,7 @@ export class ProductoController {
   }
   @Post('/desactivar/:id')
   desactivar(@Body() body:Producto, @Param('id') id){
-    return this.productoService.update(id,body).then(res=>{
+    return this.productoService. update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{
       throw new HttpException(error, HttpStatus.INTERNAL_SERVER_ERROR)

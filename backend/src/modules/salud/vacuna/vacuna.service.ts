@@ -15,12 +15,12 @@ export class VacunaService {
     return await this._VacunaRepository.findBy({status: true});
   }
   async findById(id:number):Promise<Vacuna>{
-    return await this._VacunaRepository.findOneOrFail(id,{where:{status:true}});
+    return await this._VacunaRepository.findOneBy({id:id,status:true});
   }
   async create(user: Vacuna):Promise<Vacuna> {
     return await this._VacunaRepository.save(user);
   }
-  async update(id: number, user: Vacuna): Promise<void> {
+  async  update( user: Vacuna): Promise<void> {
     return await this._VacunaRepository.save(user);
   }
   async delete(id: number): Promise<string> {

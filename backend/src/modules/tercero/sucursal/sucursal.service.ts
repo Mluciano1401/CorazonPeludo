@@ -15,12 +15,12 @@ export class SucursalService {
     return await this._SucursalRepository.findBy({status: true});
   }
   async findById(id:number):Promise<Sucursal>{
-    return await this._SucursalRepository.findOneOrFail(id,{where:{status:true}});
+    return await this._SucursalRepository.findOneBy({id:id,status:true});
   }
   async create(user: Sucursal):Promise<Sucursal> {
     return await this._SucursalRepository.save(user);
   }
-  async update(id: number, user: Sucursal): Promise<void> {
+  async  update( user: Sucursal): Promise<void> {
     return await this._SucursalRepository.save(user);
   }
   async delete(id: number): Promise<string> {

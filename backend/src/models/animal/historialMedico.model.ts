@@ -9,7 +9,7 @@ import { PolizaSeguro } from "../salud/polizaSeguro.model";
 @Entity( )
 export class HistorialMedico {
     @PrimaryGeneratedColumn()
-    historialMedicoId: number;
+    id: number;
 
     @ManyToOne(() => Animal)
     @JoinColumn()

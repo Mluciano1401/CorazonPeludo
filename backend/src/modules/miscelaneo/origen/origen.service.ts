@@ -15,12 +15,12 @@ export class OrigenService {
     return await this._OrigenRepository.findBy({status: true});
   }
   async findById(id:number):Promise<Origen>{
-    return await this._OrigenRepository.findOneOrFail(id,{where:{status:true}});
+    return await this._OrigenRepository.findOneBy({id:id,status:true});
   }
   async create(user: Origen):Promise<Origen> {
     return await this._OrigenRepository.save(user);
   }
-  async update(id: number, user: Origen): Promise<void> {
+  async  update( user: Origen): Promise<void> {
     return await this._OrigenRepository.save(user);
   }
   async delete(id: number): Promise<string> {

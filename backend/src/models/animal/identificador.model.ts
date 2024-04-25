@@ -3,7 +3,7 @@ import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
 @Entity()
 export class Indentificador{
     @PrimaryGeneratedColumn()
-    indentificadorId: number;
+    id: number;
 
     @Column({ nullable: false })
     codigoBarra: string;

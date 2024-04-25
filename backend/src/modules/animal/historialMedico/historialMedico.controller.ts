@@ -39,7 +39,7 @@ export class HistorialMedicoController {
 
   @Post('/update/:id')
   update(@Body() body:HistorialMedico, @Param('id') id){
-    return this._HistorialMedicoService.update(id,body).then(res=>{
+    return this._HistorialMedicoService. update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{
       throw new HttpException(error, HttpStatus.INTERNAL_SERVER_ERROR)
@@ -47,7 +47,7 @@ export class HistorialMedicoController {
   }
   @Post('/activar/:id')
   activar(@Body() body:HistorialMedico, @Param('id') id){
-    return this._HistorialMedicoService.update(id,body).then(res=>{
+    return this._HistorialMedicoService. update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{
       throw new HttpException(error, HttpStatus.INTERNAL_SERVER_ERROR)
@@ -55,7 +55,7 @@ export class HistorialMedicoController {
   }
   @Post('/desactivar/:id')
   desactivar(@Body() body:HistorialMedico, @Param('id') id){
-    return this._HistorialMedicoService.update(id,body).then(res=>{
+    return this._HistorialMedicoService. update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{
       throw new HttpException(error, HttpStatus.INTERNAL_SERVER_ERROR)

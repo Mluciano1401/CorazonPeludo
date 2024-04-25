@@ -3,7 +3,7 @@ import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
 @Entity( )
 export class TipoCombustible{
     @PrimaryGeneratedColumn()
-    tipoCombustibleId: number;
+    id: number;
 
     @Column({ nullable: false })
     descripcion: string;

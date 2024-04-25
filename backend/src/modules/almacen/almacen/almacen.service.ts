@@ -15,12 +15,12 @@ export class AlmacenService {
     return await this._AlmacenRepository.findBy({status: true});
   }
   async findById(id:number):Promise<Almacen>{
-    return await this._AlmacenRepository.findOneOrFail(id,{where:{status:true}});
+    return await this._AlmacenRepository.findOneBy({id:id,status:true});
   }
   async create(user: Almacen):Promise<Almacen> {
     return await this._AlmacenRepository.save(user);
   }
-  async update(id: number, user: Almacen): Promise<void> {
+  async  update( user: Almacen): Promise<void> {
     return await this._AlmacenRepository.save(user);
   }
   async delete(id: number): Promise<string> {

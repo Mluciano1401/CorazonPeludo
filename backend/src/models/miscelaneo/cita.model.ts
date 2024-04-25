@@ -5,7 +5,7 @@ import { Estado } from "./estado.model";
 @Entity()
 export class Cita{
     @PrimaryGeneratedColumn()
-    citaId: number;
+    id: number;
 
     @ManyToOne(()=>Persona)
     @JoinColumn()

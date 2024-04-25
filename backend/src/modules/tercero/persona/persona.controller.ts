@@ -39,7 +39,7 @@ export class PersonaController {
 
   @Post('/update/:id')
   update(@Body() body:Persona, @Param('id') id){
-    return this.personaService.update(id,body).then(res=>{
+    return this.personaService. update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{
       throw new HttpException(error, HttpStatus.INTERNAL_SERVER_ERROR)
@@ -47,7 +47,7 @@ export class PersonaController {
   }
   @Post('/activar/:id')
   activar(@Body() body:Persona, @Param('id') id){
-    return this.personaService.update(id,body).then(res=>{
+    return this.personaService. update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{
       throw new HttpException(error, HttpStatus.INTERNAL_SERVER_ERROR)
@@ -55,7 +55,7 @@ export class PersonaController {
   }
   @Post('/desactivar/:id')
   desactivar(@Body() body:Persona, @Param('id') id){
-    return this.personaService.update(id,body).then(res=>{
+    return this.personaService. update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{
       throw new HttpException(error, HttpStatus.INTERNAL_SERVER_ERROR)

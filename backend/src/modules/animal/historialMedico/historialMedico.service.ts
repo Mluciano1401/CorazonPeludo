@@ -15,12 +15,12 @@ export class HistorialMedicoService {
     return await this._HistorialMedicoRepository.findBy({status: true});
   }
   async findById(id:number):Promise<HistorialMedico>{
-    return await this._HistorialMedicoRepository.findOneOrFail(id,{where:{status:true}});
+    return await this._HistorialMedicoRepository.findOneBy({id:id,status:true});
   }
   async create(user: HistorialMedico):Promise<HistorialMedico> {
     return await this._HistorialMedicoRepository.save(user);
   }
-  async update(id: number, user: HistorialMedico): Promise<void> {
+  async  update( user: HistorialMedico): Promise<void> {
     return await this._HistorialMedicoRepository.save(user);
   }
   async delete(id: number): Promise<string> {

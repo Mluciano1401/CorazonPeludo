@@ -39,7 +39,7 @@ export class TipoPielController {
 
   @Post('/update/:id')
   update(@Body() body:TipoPiel, @Param('id') id){
-    return this._TipoPielService.update(id,body).then(res=>{
+    return this._TipoPielService. update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{
       throw new HttpException(error, HttpStatus.INTERNAL_SERVER_ERROR)
@@ -47,7 +47,7 @@ export class TipoPielController {
   }
   @Post('/activar/:id')
   activar(@Body() body:TipoPiel, @Param('id') id){
-    return this._TipoPielService.update(id,body).then(res=>{
+    return this._TipoPielService. update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{
       throw new HttpException(error, HttpStatus.INTERNAL_SERVER_ERROR)
@@ -55,7 +55,7 @@ export class TipoPielController {
   }
   @Post('/desactivar/:id')
   desactivar(@Body() body:TipoPiel, @Param('id') id){
-    return this._TipoPielService.update(id,body).then(res=>{
+    return this._TipoPielService. update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{
       throw new HttpException(error, HttpStatus.INTERNAL_SERVER_ERROR)

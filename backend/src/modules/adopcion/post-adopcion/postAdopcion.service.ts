@@ -15,12 +15,12 @@ export class PostAdopcionService {
     return await this._PostAdopcionRepository.findBy({status: true});
   }
   async findById(id:number):Promise<PostAdopcion>{
-    return await this._PostAdopcionRepository.findOneOrFail(id,{where:{status:true}});
+    return await this._PostAdopcionRepository.findOneBy({id: id,status:true});
   }
   async create(user: PostAdopcion):Promise<PostAdopcion> {
     return await this._PostAdopcionRepository.save(user);
   }
-  async update(id: number, user: PostAdopcion): Promise<void> {
+  async  update( user: PostAdopcion): Promise<void> {
     return await this._PostAdopcionRepository.save(user);
   }
   async delete(id: number): Promise<string> {

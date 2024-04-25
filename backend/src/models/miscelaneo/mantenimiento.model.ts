@@ -6,7 +6,7 @@ import { Column, Entity, JoinColumn, ManyToOne, PrimaryGeneratedColumn } from "t
 @Entity( )
 export class Mantenimiento {
     @PrimaryGeneratedColumn()
-    mantenimientoId: number;
+    id: number;
 
     @Column({ nullable: false })
     descripcion: string;

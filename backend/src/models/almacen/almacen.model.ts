@@ -5,7 +5,7 @@ import { TipoAlmacen } from "./tipoAlmacen.model";
 @Entity( )
 export class Almacen{
     @PrimaryGeneratedColumn()
-    almacenId: number;
+    id: number;
 
     @Column({ nullable: false, default:0 })
     capacidad: number;

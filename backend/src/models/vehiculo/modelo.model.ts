@@ -4,7 +4,7 @@ import { Marca } from "../miscelaneo/marca.model";
 @Entity( )
 export class Modelo {
     @PrimaryGeneratedColumn()
-    modeloId: number;
+    id: number;
 
     @Column({ nullable: false })
     descripcion: string;

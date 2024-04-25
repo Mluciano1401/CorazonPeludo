@@ -4,7 +4,7 @@ import { Medicamento } from "./medicamento.model";
 @Entity( )
 export class Vacuna{
     @PrimaryGeneratedColumn()
-    vacunaId: number;
+    id: number;
 
     @ManyToOne(() => Medicamento)
     @JoinColumn()

@@ -15,12 +15,12 @@ export class VehiculoService {
     return await this._VehiculoRepository.findBy({status: true});
   }
   async findById(id:number):Promise<Vehiculo>{
-    return await this._VehiculoRepository.findOneOrFail(id,{where:{status:true}});
+    return await this._VehiculoRepository.findOneBy({id:id,status:true});
   }
   async create(user: Vehiculo):Promise<Vehiculo> {
     return await this._VehiculoRepository.save(user);
   }
-  async update(id: number, user: Vehiculo): Promise<void> {
+  async  update( user: Vehiculo): Promise<void> {
     return await this._VehiculoRepository.save(user);
   }
   async delete(id: number): Promise<string> {

@@ -6,7 +6,7 @@ import { RasgosFisicos } from "./rasgosFisicos.model";
 @Entity()
 export class Animal {
     @PrimaryGeneratedColumn()
-    animalId: number;
+    id: number;
 
     @Column({ nullable: true})
     alias: string;

@@ -15,12 +15,12 @@ export class AsignacionTareaService {
     return await this._AsignacionTareaRepository.findBy({status: true});
   }
   async findById(id:number):Promise<AsignacionTarea>{
-    return await this._AsignacionTareaRepository.findOneOrFail(id,{where:{status:true}});
+    return await this._AsignacionTareaRepository.findOneBy({id: id,status:true});
   }
   async create(user: AsignacionTarea):Promise<AsignacionTarea> {
     return await this._AsignacionTareaRepository.save(user);
   }
-  async update(id: number, user: AsignacionTarea): Promise<void> {
+  async  update( user: AsignacionTarea): Promise<void> {
     return await this._AsignacionTareaRepository.save(user);
   }
   async delete(id: number): Promise<string> {

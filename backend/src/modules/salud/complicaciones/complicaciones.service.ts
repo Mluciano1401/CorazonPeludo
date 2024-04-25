@@ -15,12 +15,12 @@ export class ComplicacionesService {
     return await this._ComplicacionesRepository.findBy({status: true});
   }
   async findById(id:number):Promise<Complicaciones>{
-    return await this._ComplicacionesRepository.findOneOrFail(id,{where:{status:true}});
+    return await this._ComplicacionesRepository.findOneBy({id:id,status:true});
   }
   async create(user: Complicaciones):Promise<Complicaciones> {
     return await this._ComplicacionesRepository.save(user);
   }
-  async update(id: number, user: Complicaciones): Promise<void> {
+  async  update( user: Complicaciones): Promise<void> {
     return await this._ComplicacionesRepository.save(user);
   }
   async delete(id: number): Promise<string> {

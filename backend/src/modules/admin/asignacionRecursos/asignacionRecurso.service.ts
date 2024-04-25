@@ -15,12 +15,12 @@ export class AsignacionRecursosService {
     return await this._AsignacionRecursosRepository.findBy({status: true});
   }
   async findById(id:number):Promise<AsignacionRecursos>{
-    return await this._AsignacionRecursosRepository.findOneOrFail(id,{where:{status:true}});
+    return await this._AsignacionRecursosRepository.findOneBy({id: id,status:true});
   }
   async create(user: AsignacionRecursos):Promise<AsignacionRecursos> {
     return await this._AsignacionRecursosRepository.save(user);
   }
-  async update(id: number, user: AsignacionRecursos): Promise<void> {
+  async  update( user: AsignacionRecursos): Promise<void> {
     return await this._AsignacionRecursosRepository.save(user);
   }
   async delete(id: number): Promise<string> {

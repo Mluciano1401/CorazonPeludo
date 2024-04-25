@@ -5,7 +5,7 @@ import { Complejidad } from "./complejidad.model";
 @Entity( )
 export class Tarea{
     @PrimaryGeneratedColumn()
-    tareaId: number;
+    id: number;
 
     @Column({ nullable: false })
     descripcion: string;

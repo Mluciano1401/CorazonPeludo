@@ -6,7 +6,7 @@ import { TipoSintoma } from "./tipoSintomas.model";
 @Entity( )
 export class Sintoma {
     @PrimaryGeneratedColumn()
-    sintomaId: number;
+    id: number;
 
     @Column({ nullable: false })
     descripcion: string;

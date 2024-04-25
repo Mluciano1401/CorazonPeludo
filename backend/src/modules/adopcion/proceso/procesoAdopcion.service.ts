@@ -15,12 +15,12 @@ export class ProcesoAdopcionService {
     return await this._ProcesoAdopcionRepository.findBy({status: true});
   }
   async findById(id:number):Promise<ProcesoAdopcion>{
-    return await this._ProcesoAdopcionRepository.findOneOrFail(id,{where:{status:true}});
+    return await this._ProcesoAdopcionRepository.findOneBy({id:id,status:true});
   }
   async create(user: ProcesoAdopcion):Promise<ProcesoAdopcion> {
     return await this._ProcesoAdopcionRepository.save(user);
   }
-  async update(id: number, user: ProcesoAdopcion): Promise<void> {
+  async  update( user: ProcesoAdopcion): Promise<void> {
     return await this._ProcesoAdopcionRepository.save(user);
   }
   async delete(id: number): Promise<string> {

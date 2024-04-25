@@ -6,7 +6,7 @@ import { Estado } from "../miscelaneo/estado.model";
 @Entity( )
 export class ProcesoAdopcion{
     @PrimaryGeneratedColumn()
-    procesoAdopcionId: number;
+    id: number;
 
     @OneToOne(()=> Solicitud)
     @JoinColumn()

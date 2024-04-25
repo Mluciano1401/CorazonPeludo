@@ -15,12 +15,12 @@ export class ActividadEconomicaService {
     return await this._ActividadEconomicaRepository.findBy({status: true});
   }
   async findById(id:number):Promise<ActividadEconomica>{
-    return await this._ActividadEconomicaRepository.findOneOrFail(id,{where:{status:true}});
+    return await this._ActividadEconomicaRepository.findOneBy({id: id,status:true});
   }
   async create(user: ActividadEconomica):Promise<ActividadEconomica> {
     return await this._ActividadEconomicaRepository.save(user);
   }
-  async update(id: number, user: ActividadEconomica): Promise<void> {
+  async  update( user: ActividadEconomica): Promise<void> {
     return await this._ActividadEconomicaRepository.save(user);
   }
   async delete(id: number): Promise<string> {

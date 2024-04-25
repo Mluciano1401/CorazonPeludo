@@ -15,12 +15,12 @@ export class MisionService {
     return await this._MisionRepository.findBy({status: true});
   }
   async findById(id:number):Promise<Mision>{
-    return await this._MisionRepository.findOneOrFail(id,{where:{status:true}});
+    return await this._MisionRepository.findOneBy({id:id,status:true});
   }
   async create(user: Mision):Promise<Mision> {
     return await this._MisionRepository.save(user);
   }
-  async update(id: number, user: Mision): Promise<void> {
+  async  update( user: Mision): Promise<void> {
     return await this._MisionRepository.save(user);
   }
   async delete(id: number): Promise<string> {

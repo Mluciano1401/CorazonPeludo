@@ -15,12 +15,12 @@ export class ViaAdministracionService {
     return await this._ViaAministracionRepository.findBy({status: true});
   }
   async findById(id:number):Promise<ViaAdministracion>{
-    return await this._ViaAministracionRepository.findOneOrFail(id,{where:{status:true}});
+    return await this._ViaAministracionRepository.findOneBy({id:id,status:true});
   }
   async create(user: ViaAdministracion):Promise<ViaAdministracion> {
     return await this._ViaAministracionRepository.save(user);
   }
-  async update(id: number, user: ViaAdministracion): Promise<void> {
+  async  update( user: ViaAdministracion): Promise<void> {
     return await this._ViaAministracionRepository.save(user);
   }
   async delete(id: number): Promise<string> {

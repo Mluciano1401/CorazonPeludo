@@ -15,12 +15,12 @@ export class HistorialAlimentacionService {
     return await this._HistorialAlimentacionRepository.findBy({status: true});
   }
   async findById(id:number):Promise<HistorialAlimentacion>{
-    return await this._HistorialAlimentacionRepository.findOneOrFail(id,{where:{status:true}});
+    return await this._HistorialAlimentacionRepository.findOneBy({id:id,status:true});
   }
   async create(user: HistorialAlimentacion):Promise<HistorialAlimentacion> {
     return await this._HistorialAlimentacionRepository.save(user);
   }
-  async update(id: number, user: HistorialAlimentacion): Promise<void> {
+  async  update( user: HistorialAlimentacion): Promise<void> {
     return await this._HistorialAlimentacionRepository.save(user);
   }
   async delete(id: number): Promise<string> {

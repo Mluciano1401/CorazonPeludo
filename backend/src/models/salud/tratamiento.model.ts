@@ -4,7 +4,7 @@ import { TipoTratamiento } from "./tipoTratamiento.model";
 @Entity( )
 export class Tratamiento{
     @PrimaryGeneratedColumn()
-    tratamientoId: number;
+    id: number;
 
     @Column({ nullable: false })
     descripcion: string;

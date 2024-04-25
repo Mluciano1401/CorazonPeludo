@@ -15,12 +15,12 @@ export class TipoPielService {
     return await this._TipoPielRepository.findBy({status: true});
   }
   async findById(id:number):Promise<TipoPiel>{
-    return await this._TipoPielRepository.findOneOrFail(id,{where:{status:true}});
+    return await this._TipoPielRepository.findOneBy({id:id,status:true});
   }
   async create(user: TipoPiel):Promise<TipoPiel> {
     return await this._TipoPielRepository.save(user);
   }
-  async update(id: number, user: TipoPiel): Promise<void> {
+  async  update( user: TipoPiel): Promise<void> {
     return await this._TipoPielRepository.save(user);
   }
   async delete(id: number): Promise<string> {

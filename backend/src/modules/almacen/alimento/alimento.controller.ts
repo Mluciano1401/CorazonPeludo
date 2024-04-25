@@ -39,7 +39,7 @@ export class AlimentoController {
 
   @Post('/update/:id')
   update(@Body() body:Alimento, @Param('id') id){
-    return this._AlimentoService.update(id,body).then(res=>{
+    return this._AlimentoService. update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{
       throw new HttpException(error, HttpStatus.INTERNAL_SERVER_ERROR)
@@ -47,7 +47,7 @@ export class AlimentoController {
   }
   @Post('/activar/:id')
   activar(@Body() body:Alimento, @Param('id') id){
-    return this._AlimentoService.update(id,body).then(res=>{
+    return this._AlimentoService. update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{
       throw new HttpException(error, HttpStatus.INTERNAL_SERVER_ERROR)
@@ -55,7 +55,7 @@ export class AlimentoController {
   }
   @Post('/desactivar/:id')
   desactivar(@Body() body:Alimento, @Param('id') id){
-    return this._AlimentoService.update(id,body).then(res=>{
+    return this._AlimentoService. update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{
       throw new HttpException(error, HttpStatus.INTERNAL_SERVER_ERROR)

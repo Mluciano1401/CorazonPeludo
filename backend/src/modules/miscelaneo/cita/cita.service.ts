@@ -15,12 +15,12 @@ export class CitaService {
     return await this._CitaRepository.findBy({status: true});
   }
   async findById(id:number):Promise<Cita>{
-    return await this._CitaRepository.findOneOrFail(id,{where:{status:true}});
+    return await this._CitaRepository.findOneBy({id:id,status:true});
   }
   async create(user: Cita):Promise<Cita> {
     return await this._CitaRepository.save(user);
   }
-  async update(id: number, user: Cita): Promise<void> {
+  async  update( user: Cita): Promise<void> {
     return await this._CitaRepository.save(user);
   }
   async delete(id: number): Promise<string> {

@@ -7,7 +7,7 @@ import { Persona } from "./persona.model";
 @Entity( )
 export class Donacion {
     @PrimaryGeneratedColumn()
-    donacionId: number;
+    id: number;
 
     @ManyToOne(() => Persona)
     @JoinColumn()

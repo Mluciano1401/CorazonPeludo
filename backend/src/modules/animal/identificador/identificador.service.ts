@@ -15,12 +15,12 @@ export class IndentificadorService {
     return await this._IndentificadorRepository.findBy({status: true});
   }
   async findById(id:number):Promise<Indentificador>{
-    return await this._IndentificadorRepository.findOneOrFail(id,{where:{status:true}});
+    return await this._IndentificadorRepository.findOneBy({id:id,status:true});
   }
   async create(user: Indentificador):Promise<Indentificador> {
     return await this._IndentificadorRepository.save(user);
   }
-  async update(id: number, user: Indentificador): Promise<void> {
+  async  update( user: Indentificador): Promise<void> {
     return await this._IndentificadorRepository.save(user);
   }
   async delete(id: number): Promise<string> {

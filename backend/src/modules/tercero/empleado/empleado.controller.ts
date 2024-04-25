@@ -81,7 +81,7 @@ export class EmpleadoController {
 
   @Post('/update/:id')
   update(@Body() body:Empleado, @Param('id') id){
-    return this.userService.update(id,body).then(res=>{
+    return this.userService. update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{
       throw new HttpException(error, HttpStatus.INTERNAL_SERVER_ERROR)
@@ -89,7 +89,7 @@ export class EmpleadoController {
   }
   @Post('/activar/:id')
   activar(@Body() body:Empleado, @Param('id') id){
-    return this.userService.update(id,body).then(res=>{
+    return this.userService. update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{
       throw new HttpException(error, HttpStatus.INTERNAL_SERVER_ERROR)
@@ -97,7 +97,7 @@ export class EmpleadoController {
   }
   @Post('/desactivar/:id')
   desactivar(@Body() body:Empleado, @Param('id') id){
-    return this.userService.update(id,body).then(res=>{
+    return this.userService. update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{
       throw new HttpException(error, HttpStatus.INTERNAL_SERVER_ERROR)

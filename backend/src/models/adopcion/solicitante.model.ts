@@ -5,7 +5,7 @@ import { ActividadEconomica } from "./actividadEconomica.model";
 @Entity( )
 export class Solicitante {
     @PrimaryGeneratedColumn()
-    SolicitanteId: number;
+    id: number;
 
     @OneToOne(()=>Persona)
     @JoinColumn()

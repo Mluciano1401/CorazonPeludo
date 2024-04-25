@@ -8,7 +8,7 @@ import { personaXtelefono } from "./personaXtelefono.model";
 @Entity( )
 export class Persona {
     @PrimaryGeneratedColumn()
-    personaId: number;
+    id: number;
 
     @ManyToOne(()=> TipoPersona)
     @JoinColumn()

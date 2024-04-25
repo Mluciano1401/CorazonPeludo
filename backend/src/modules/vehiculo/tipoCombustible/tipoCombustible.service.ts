@@ -15,12 +15,12 @@ export class TipoCombustibleService {
     return await this._TipoCombustibleRepository.findBy({status: true});
   }
   async findById(id:number):Promise<TipoCombustible>{
-    return await this._TipoCombustibleRepository.findOneOrFail(id,{where:{status:true}});
+    return await this._TipoCombustibleRepository.findOneBy({id:id,status:true});
   }
   async create(user: TipoCombustible):Promise<TipoCombustible> {
     return await this._TipoCombustibleRepository.save(user);
   }
-  async update(id: number, user: TipoCombustible): Promise<void> {
+  async  update( user: TipoCombustible): Promise<void> {
     return await this._TipoCombustibleRepository.save(user);
   }
   async delete(id: number): Promise<string> {

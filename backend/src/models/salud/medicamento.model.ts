@@ -8,7 +8,7 @@ import { ViaAdministracion } from './viaAdministracion.model';
 @Entity( )
 export class Medicamento {
     @PrimaryGeneratedColumn()
-    medicamentoId: number;
+    id: number;
 
     @Column({ nullable: false })
     descripcion: string;

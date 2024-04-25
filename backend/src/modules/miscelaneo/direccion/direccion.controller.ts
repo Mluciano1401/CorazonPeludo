@@ -39,7 +39,7 @@ export class DireccionController {
 
   @Post('/update/:id')
   update(@Body() body:Direccion, @Param('id') id){
-    return this._DireccionService.update(id,body).then(res=>{
+    return this._DireccionService. update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{
       throw new HttpException(error, HttpStatus.INTERNAL_SERVER_ERROR)
@@ -47,7 +47,7 @@ export class DireccionController {
   }
   @Post('/activar/:id')
   activar(@Body() body:Direccion, @Param('id') id){
-    return this._DireccionService.update(id,body).then(res=>{
+    return this._DireccionService. update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{
       throw new HttpException(error, HttpStatus.INTERNAL_SERVER_ERROR)
@@ -55,7 +55,7 @@ export class DireccionController {
   }
   @Post('/desactivar/:id')
   desactivar(@Body() body:Direccion, @Param('id') id){
-    return this._DireccionService.update(id,body).then(res=>{
+    return this._DireccionService. update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{
       throw new HttpException(error, HttpStatus.INTERNAL_SERVER_ERROR)

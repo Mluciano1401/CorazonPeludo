@@ -15,12 +15,12 @@ export class LogAccionesService {
     return await this._LogAccionesRepository.findBy({status: true});
   }
   async findById(id:number):Promise<LogAcciones>{
-    return await this._LogAccionesRepository.findOneOrFail(id,{where:{status:true}});
+    return await this._LogAccionesRepository.findOneBy({id:id,status:true});
   }
   async create(user: LogAcciones):Promise<LogAcciones> {
     return await this._LogAccionesRepository.save(user);
   }
-  async update(id: number, user: LogAcciones): Promise<void> {
+  async  update( user: LogAcciones): Promise<void> {
     return await this._LogAccionesRepository.save(user);
   }
   async delete(id: number): Promise<string> {

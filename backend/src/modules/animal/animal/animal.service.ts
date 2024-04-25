@@ -17,7 +17,7 @@ export class AnimalService {
     return await this._AnimalRepository.findBy({status: true});
   }
   async findById(id:number):Promise<Animal>{
-    return await this._AnimalRepository.findOneBy({animalId: id, status:true});
+    return await this._AnimalRepository.findOneBy({id: id, status:true});
   }
   async create(user: Animal):Promise<Animal> {
     return await this._AnimalRepository.save(user);

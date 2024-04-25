@@ -12,13 +12,13 @@ form.addEventListener('submit', async (event) =>{
   const tipoPiel = document.getElementById('tipoPiel').value;  
   const especie = document.getElementById('especie').value;
   const sexo = document.getElementById('sexo').value;
-  //const origen = document.getElementById('origen').value;
-  //const amputaciones = document.getElementById('amputaciones').value;
-  //const tipoAmputacion = document.getElementById('tipoAmputacion').value;
-  //const estado = document.getElementById('estado').value;
+  const origen = document.getElementById('origen').value;
+  const amputaciones = document.getElementById('amputaciones').value;
+  const tipoAmputacion = document.getElementById('tipoAmputacion').value;
+  const estado = document.getElementById('estado').value;
   const fechaIngreso = document.getElementById('fechaIngreso').value;
-  //const colorFifisco = document.getElementById('colorFisico').value;
-  //const colorOjos = document.getElementById('colorOjos').value;
+  const colorFifisco = document.getElementById('colorFisico').value;
+  const colorOjos = document.getElementById('colorOjos').value;
 
 
   const status = document.getElementById('status').value;    // Crea una solicitud HTTP

@@ -11,7 +11,7 @@ import { EstadoEmergencia } from "./estadoEmergencia.model";
 @Entity( )
 export class SolicitudR {
     @PrimaryGeneratedColumn()
-    SolicitudId: number;
+    id: number;
 
     @ManyToOne(()=>Animal)
     @JoinColumn()

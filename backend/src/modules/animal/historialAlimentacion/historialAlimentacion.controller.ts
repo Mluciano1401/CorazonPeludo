@@ -39,7 +39,7 @@ export class HistorialAlimentacionController {
 
   @Post('/update/:id')
   update(@Body() body:HistorialAlimentacion, @Param('id') id){
-    return this._HistorialAlimentacionService.update(id,body).then(res=>{
+    return this._HistorialAlimentacionService. update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{
       throw new HttpException(error, HttpStatus.INTERNAL_SERVER_ERROR)
@@ -47,7 +47,7 @@ export class HistorialAlimentacionController {
   }
   @Post('/activar/:id')
   activar(@Body() body:HistorialAlimentacion, @Param('id') id){
-    return this._HistorialAlimentacionService.update(id,body).then(res=>{
+    return this._HistorialAlimentacionService. update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{
       throw new HttpException(error, HttpStatus.INTERNAL_SERVER_ERROR)
@@ -55,7 +55,7 @@ export class HistorialAlimentacionController {
   }
   @Post('/desactivar/:id')
   desactivar(@Body() body:HistorialAlimentacion, @Param('id') id){
-    return this._HistorialAlimentacionService.update(id,body).then(res=>{
+    return this._HistorialAlimentacionService. update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{
       throw new HttpException(error, HttpStatus.INTERNAL_SERVER_ERROR)

@@ -6,7 +6,7 @@ import { Estado } from "../miscelaneo/estado.model";
 @Entity( )
 export class Mision{
     @PrimaryGeneratedColumn()
-    misionId: number;
+    id: number;
 
     @Column({ nullable: true})
     fechaInicio: Date;

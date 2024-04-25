@@ -5,7 +5,7 @@ import { Sucursal } from "../tercero/surcusal.model";
 @Entity( )
 export class Usuario {
     @PrimaryGeneratedColumn()
-    usuarioId: number;
+    id: number;
 
     @Column({ nullable: false })
     userName: string;

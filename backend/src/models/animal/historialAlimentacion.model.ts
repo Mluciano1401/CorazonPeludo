@@ -1,12 +1,13 @@
 import { Column, Entity, JoinColumn, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
 import { Animal } from "./animal.model";
 import { Empleado } from "../tercero/empleado.model";
+import { Alimento } from "../almacen/alimento.model";
 
 
 @Entity( )
 export class HistorialAlimentacion {
     @PrimaryGeneratedColumn()
-    historialMedicoId: number;
+    historialAlimentacionId: number;
 
     @ManyToOne(() => Animal)
     @JoinColumn()
@@ -15,6 +16,10 @@ export class HistorialAlimentacion {
     @ManyToOne(() => Empleado)
     @JoinColumn()
     veterinario: Empleado;
+
+    @ManyToOne(()=> Alimento)
+    @JoinColumn()
+    alimento:Alimento
 
     @Column({ nullable: true})
     fecha: Date;

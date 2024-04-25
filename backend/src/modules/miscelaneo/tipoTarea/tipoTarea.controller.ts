@@ -39,7 +39,7 @@ export class TipoTareaController {
 
   @Post('/update/:id')
   update(@Body() body:TipoTarea, @Param('id') id){
-    return this._TipoTareaService.update(id,body).then(res=>{
+    return this._TipoTareaService. update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{
       throw new HttpException(error, HttpStatus.INTERNAL_SERVER_ERROR)
@@ -47,7 +47,7 @@ export class TipoTareaController {
   }
   @Post('/activar/:id')
   activar(@Body() body:TipoTarea, @Param('id') id){
-    return this._TipoTareaService.update(id,body).then(res=>{
+    return this._TipoTareaService. update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{
       throw new HttpException(error, HttpStatus.INTERNAL_SERVER_ERROR)
@@ -55,7 +55,7 @@ export class TipoTareaController {
   }
   @Post('/desactivar/:id')
   desactivar(@Body() body:TipoTarea, @Param('id') id){
-    return this._TipoTareaService.update(id,body).then(res=>{
+    return this._TipoTareaService. update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{
       throw new HttpException(error, HttpStatus.INTERNAL_SERVER_ERROR)

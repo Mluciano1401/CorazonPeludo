@@ -39,7 +39,7 @@ export class TipoMantenimientoController {
 
   @Post('/update/:id')
   update(@Body() body:TipoMantenimiento, @Param('id') id){
-    return this._TipoMantenimientoService.update(id,body).then(res=>{
+    return this._TipoMantenimientoService. update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{
       throw new HttpException(error, HttpStatus.INTERNAL_SERVER_ERROR)
@@ -47,7 +47,7 @@ export class TipoMantenimientoController {
   }
   @Post('/activar/:id')
   activar(@Body() body:TipoMantenimiento, @Param('id') id){
-    return this._TipoMantenimientoService.update(id,body).then(res=>{
+    return this._TipoMantenimientoService. update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{
       throw new HttpException(error, HttpStatus.INTERNAL_SERVER_ERROR)
@@ -55,7 +55,7 @@ export class TipoMantenimientoController {
   }
   @Post('/desactivar/:id')
   desactivar(@Body() body:TipoMantenimiento, @Param('id') id){
-    return this._TipoMantenimientoService.update(id,body).then(res=>{
+    return this._TipoMantenimientoService. update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{
       throw new HttpException(error, HttpStatus.INTERNAL_SERVER_ERROR)

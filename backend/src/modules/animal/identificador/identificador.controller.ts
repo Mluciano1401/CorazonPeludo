@@ -39,7 +39,7 @@ export class IndentificadorController {
 
   @Post('/update/:id')
   update(@Body() body:Indentificador, @Param('id') id){
-    return this._IndentificadorService.update(id,body).then(res=>{
+    return this._IndentificadorService. update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{
       throw new HttpException(error, HttpStatus.INTERNAL_SERVER_ERROR)
@@ -47,7 +47,7 @@ export class IndentificadorController {
   }
   @Post('/activar/:id')
   activar(@Body() body:Indentificador, @Param('id') id){
-    return this._IndentificadorService.update(id,body).then(res=>{
+    return this._IndentificadorService. update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{
       throw new HttpException(error, HttpStatus.INTERNAL_SERVER_ERROR)
@@ -55,7 +55,7 @@ export class IndentificadorController {
   }
   @Post('/desactivar/:id')
   desactivar(@Body() body:Indentificador, @Param('id') id){
-    return this._IndentificadorService.update(id,body).then(res=>{
+    return this._IndentificadorService. update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{
       throw new HttpException(error, HttpStatus.INTERNAL_SERVER_ERROR)

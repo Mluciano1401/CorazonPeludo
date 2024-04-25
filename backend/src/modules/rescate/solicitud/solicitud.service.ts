@@ -15,12 +15,12 @@ export class SolicitudRService {
     return await this._SolicitudRRepository.findBy({status: true});
   }
   async findById(id:number):Promise<SolicitudR>{
-    return await this._SolicitudRRepository.findOneOrFail(id,{where:{status:true}});
+    return await this._SolicitudRRepository.findOneBy({id:id,status:true});
   }
   async create(user: SolicitudR):Promise<SolicitudR> {
     return await this._SolicitudRRepository.save(user);
   }
-  async update(id: number, user: SolicitudR): Promise<void> {
+  async  update( user: SolicitudR): Promise<void> {
     return await this._SolicitudRRepository.save(user);
   }
   async delete(id: number): Promise<string> {

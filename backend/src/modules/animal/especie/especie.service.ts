@@ -15,12 +15,12 @@ export class EspecieService {
     return await this._EspecieRepository.findBy({status: true});
   }
   async findById(id:number):Promise<Especie>{
-    return await this._EspecieRepository.findOneOrFail(id,{where:{status:true}});
+    return await this._EspecieRepository.findOneBy({id:id, status:true});
   }
   async create(user: Especie):Promise<Especie> {
     return await this._EspecieRepository.save(user);
   }
-  async update(id: number, user: Especie): Promise<void> {
+  async  update( user: Especie): Promise<void> {
     return await this._EspecieRepository.save(user);
   }
   async delete(id: number): Promise<string> {

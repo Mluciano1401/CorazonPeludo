@@ -15,12 +15,12 @@ export class ProveedorService {
     return await this._ProveedorRepository.findBy({status: true});
   }
   async findById(id:number):Promise<Proveedor>{
-    return await this._ProveedorRepository.findOneOrFail(id,{where:{status:true}});
+    return await this._ProveedorRepository.findOneBy({id:id,status:true});
   }
   async create(user: Proveedor):Promise<Proveedor> {
     return await this._ProveedorRepository.save(user);
   }
-  async update(id: number, user: Proveedor): Promise<void> {
+  async  update( user: Proveedor): Promise<void> {
     return await this._ProveedorRepository.save(user);
   }
   async delete(id: number): Promise<string> {

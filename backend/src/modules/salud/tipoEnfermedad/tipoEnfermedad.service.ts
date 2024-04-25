@@ -15,12 +15,12 @@ export class TipoEnfermedadService {
     return await this._TipoEnfermedadRepository.findBy({status: true});
   }
   async findById(id:number):Promise<TipoEnfermedad>{
-    return await this._TipoEnfermedadRepository.findOneOrFail(id,{where:{status:true}});
+    return await this._TipoEnfermedadRepository.findOneBy({id:id,status:true});
   }
   async create(user: TipoEnfermedad):Promise<TipoEnfermedad> {
     return await this._TipoEnfermedadRepository.save(user);
   }
-  async update(id: number, user: TipoEnfermedad): Promise<void> {
+  async  update( user: TipoEnfermedad): Promise<void> {
     return await this._TipoEnfermedadRepository.save(user);
   }
   async delete(id: number): Promise<string> {

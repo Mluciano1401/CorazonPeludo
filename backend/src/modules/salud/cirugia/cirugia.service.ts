@@ -15,12 +15,12 @@ export class CirugiaService {
     return await this._CirugiaRepository.findBy({status: true});
   }
   async findById(id:number):Promise<Cirugia>{
-    return await this._CirugiaRepository.findOneOrFail(id,{where:{status:true}});
+    return await this._CirugiaRepository.findOneBy({id:id,status:true});
   }
   async create(user: Cirugia):Promise<Cirugia> {
     return await this._CirugiaRepository.save(user);
   }
-  async update(id: number, user: Cirugia): Promise<void> {
+  async  update( user: Cirugia): Promise<void> {
     return await this._CirugiaRepository.save(user);
   }
   async delete(id: number): Promise<string> {

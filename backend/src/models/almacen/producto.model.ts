@@ -5,7 +5,7 @@ import { Marca } from "../miscelaneo/marca.model";
 @Entity( )
 export class Producto {
     @PrimaryGeneratedColumn()
-    productoId: number;
+    id: number;
 
     @Column({ nullable: false })
     nombre: string;

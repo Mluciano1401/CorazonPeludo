@@ -15,7 +15,7 @@ export class UsuarioService {
     return await this._usuarioRepository.findBy({status: true});
   }
   async findById(id:number):Promise<Usuario>{
-    return await this._usuarioRepository.findOneOrFail(id,{where:{status:true}});
+    return await this._usuarioRepository.findOneBy({id: id,status:true});
   }
   async getUser(username:string):Promise<any>{
     return await this._usuarioRepository.findOneOrFail({where:{userName: username}});
@@ -23,7 +23,7 @@ export class UsuarioService {
   async create(user: Usuario):Promise<Usuario> {
     return await this._usuarioRepository.save(user);
   }
-  async update(id: number, user: Usuario): Promise<void> {
+  async  update( user: Usuario): Promise<void> {
     return await this._usuarioRepository.save(user);
   }
   async delete(id: number): Promise<string> {

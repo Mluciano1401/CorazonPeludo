@@ -5,7 +5,7 @@ import { TipoCombustible } from "./tipoCombustible.model";
 @Entity( )
 export class Vehiculo {
     @PrimaryGeneratedColumn()
-    vehiculoId: number;
+    id: number;
 
     @OneToOne(()=> TipoVehiculo)
     @JoinColumn()

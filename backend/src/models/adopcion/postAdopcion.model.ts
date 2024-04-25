@@ -5,7 +5,7 @@ import { ProcesoAdopcion } from "./proceso.model";
 @Entity( )
 export class PostAdopcion{
     @PrimaryGeneratedColumn()
-    postAdopcionId: number;
+    id: number;
 
     @OneToOne(()=> ProcesoAdopcion)
     @JoinColumn()

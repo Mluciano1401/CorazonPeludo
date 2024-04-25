@@ -15,12 +15,12 @@ export class HistorialVacunasService {
     return await this._HistorialVacunasRepository.findBy({status: true});
   }
   async findById(id:number):Promise<HistorialVacunas>{
-    return await this._HistorialVacunasRepository.findOneOrFail(id,{where:{status:true}});
+    return await this._HistorialVacunasRepository.findOneBy({id:id,status:true});
   }
   async create(user: HistorialVacunas):Promise<HistorialVacunas> {
     return await this._HistorialVacunasRepository.save(user);
   }
-  async update(id: number, user: HistorialVacunas): Promise<void> {
+  async  update( user: HistorialVacunas): Promise<void> {
     return await this._HistorialVacunasRepository.save(user);
   }
   async delete(id: number): Promise<string> {

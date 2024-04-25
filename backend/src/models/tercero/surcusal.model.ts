@@ -5,7 +5,7 @@ import { Persona } from "./persona.model";
 @Entity( )
 export class Sucursal {
     @PrimaryGeneratedColumn()
-    sucursalId: number;
+    id: number;
 
     @ManyToOne(() => Persona)
     @JoinColumn()

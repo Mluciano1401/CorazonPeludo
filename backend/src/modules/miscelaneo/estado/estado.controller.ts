@@ -39,7 +39,7 @@ export class EstadoController {
 
   @Post('/update/:id')
   update(@Body() body:Estado, @Param('id') id){
-    return this._EstadoService.update(id,body).then(res=>{
+    return this._EstadoService. update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{
       throw new HttpException(error, HttpStatus.INTERNAL_SERVER_ERROR)
@@ -47,7 +47,7 @@ export class EstadoController {
   }
   @Post('/activar/:id')
   activar(@Body() body:Estado, @Param('id') id){
-    return this._EstadoService.update(id,body).then(res=>{
+    return this._EstadoService. update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{
       throw new HttpException(error, HttpStatus.INTERNAL_SERVER_ERROR)
@@ -55,7 +55,7 @@ export class EstadoController {
   }
   @Post('/desactivar/:id')
   desactivar(@Body() body:Estado, @Param('id') id){
-    return this._EstadoService.update(id,body).then(res=>{
+    return this._EstadoService. update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{
       throw new HttpException(error, HttpStatus.INTERNAL_SERVER_ERROR)

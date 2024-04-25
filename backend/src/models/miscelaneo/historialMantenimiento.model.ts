@@ -5,7 +5,7 @@ import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
 @Entity( )
 export class HistorialMantenimiento {
     @PrimaryGeneratedColumn()
-    historialMantenimientoId: number;
+    id: number;
 
     @Column({ nullable: false })
     descripcion: string;

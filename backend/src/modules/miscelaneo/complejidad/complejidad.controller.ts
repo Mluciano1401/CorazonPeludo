@@ -39,7 +39,7 @@ export class ComplejidadController {
 
   @Post('/update/:id')
   update(@Body() body:Complejidad, @Param('id') id){
-    return this._ComplejidadService.update(id,body).then(res=>{
+    return this._ComplejidadService. update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{
       throw new HttpException(error, HttpStatus.INTERNAL_SERVER_ERROR)
@@ -47,7 +47,7 @@ export class ComplejidadController {
   }
   @Post('/activar/:id')
   activar(@Body() body:Complejidad, @Param('id') id){
-    return this._ComplejidadService.update(id,body).then(res=>{
+    return this._ComplejidadService. update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{
       throw new HttpException(error, HttpStatus.INTERNAL_SERVER_ERROR)
@@ -55,7 +55,7 @@ export class ComplejidadController {
   }
   @Post('/desactivar/:id')
   desactivar(@Body() body:Complejidad, @Param('id') id){
-    return this._ComplejidadService.update(id,body).then(res=>{
+    return this._ComplejidadService. update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{
       throw new HttpException(error, HttpStatus.INTERNAL_SERVER_ERROR)

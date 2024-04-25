@@ -15,12 +15,12 @@ export class EfectosSecundariosService {
     return await this._EfectosSecundariosRepository.findBy({status: true});
   }
   async findById(id:number):Promise<EfectosSecundarios>{
-    return await this._EfectosSecundariosRepository.findOneOrFail(id,{where:{status:true}});
+    return await this._EfectosSecundariosRepository.findOneBy({id:id,status:true});
   }
   async create(user: EfectosSecundarios):Promise<EfectosSecundarios> {
     return await this._EfectosSecundariosRepository.save(user);
   }
-  async update(id: number, user: EfectosSecundarios): Promise<void> {
+  async  update( user: EfectosSecundarios): Promise<void> {
     return await this._EfectosSecundariosRepository.save(user);
   }
   async delete(id: number): Promise<string> {

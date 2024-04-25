@@ -5,7 +5,7 @@ import { Almacen } from "../almacen/almacen.model";
 @Entity()
 export class AnimalAlbergue {
     @PrimaryGeneratedColumn()
-    animalId: number;
+    id: number;
 
     @Column({ nullable: true})
     jaula: string;
