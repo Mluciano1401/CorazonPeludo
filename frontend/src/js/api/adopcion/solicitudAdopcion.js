@@ -28,7 +28,6 @@ form.addEventListener('submit', async (event) => {
   const fechaIngreso = document.getElementById('fechaIngreso').value;
   const ninos = document.getElementById('ninos').value;
   const cantidadNinos = document.getElementById('cantidadNinos').value;
-  const camposEdadNinos = document.getElementById('camposEdadNinos').value;
   const otrosAnimales = document.getElementById('otrosAnimales').value;
   const cantidadOtrosAnimales = document.getElementById('cantidadOtrosAnimales').value;
   const vacunados = document.getElementById('vacunados').value;
@@ -66,7 +65,6 @@ form.addEventListener('submit', async (event) => {
     fechaIngreso,
     ninos,
     cantidadNinos,
-    camposEdadNinos,
     otrosAnimales,
     cantidadOtrosAnimales,
     vacunados,

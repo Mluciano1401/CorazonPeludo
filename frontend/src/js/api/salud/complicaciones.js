@@ -6,7 +6,7 @@ form.addEventListener('submit', async (event) =>{
   event.preventDefault(); // Previene el envío predeterminado del formulario
 
   // Recopila los datos del formulario
-  const descripcion = document.getElementById('registro-complicaciones-descripcion').value;
+  const descripcion = document.getElementById('descripcion').value;
 
    const status = document.getElementById('status').value;    // Crea una solicitud HTTP
     let url = '';

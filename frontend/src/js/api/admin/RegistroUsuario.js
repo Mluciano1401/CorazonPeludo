@@ -6,6 +6,7 @@ form.addEventListener('submit', async (event) => {
   event.preventDefault(); // Previene el envío predeterminado del formulario
 
   // Recopila los datos del formulario
+  const iduser = document.getElementById('idUser').value;
   const user = document.getElementById('user').value;
   const tipouser = document.getElementById('tipoUser').value;
   const password = document.getElementById('password').value;
@@ -55,7 +56,7 @@ async function getData(){
   .then(response => response.json()) // Parse JSON response
   .then(data => {
     // Process and populate the select options
-    idEspecie.value = id;
+    iduser.value = id;
     user.value = data.data.userName;
     password.value = data.data.password;
     email.value = data.data.email;
