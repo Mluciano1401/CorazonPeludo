@@ -108,3 +108,10 @@ await fetch(urlAPI)
   .catch(error => console.error('Error:', error));
 }
 busqueda();
+tableBody.addEventListener('click', (event) => {
+  if (event.target.id.startsWith('editar-')) {
+    const userId = event.target.id.split('-')[1]; 
+    window.location.href = `../../../../../../frontend/public/animal/registroAnimales.html?id=${userId}`;
+    console.log(`Edit user with ID: ${userId}`); 
+  }
+});

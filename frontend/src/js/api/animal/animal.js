@@ -22,12 +22,20 @@ form.addEventListener('submit', async (event) =>{
 
 
   const status = document.getElementById('status').value;    // Crea una solicitud HTTP
-  const url = 'http://localhost:3000/animal';
+  let url = '';
+  if(id){
+    url = 'http://localhost:3000/animal/update/';
+  }
+  else{
+    url ='http://localhost:3000/animal';
+  }
+  
   const data = { 
+      animalId: id ? id : null,
       alias:alias ? alias : "",
       edad: edad ? edad : 0,
       peso: peso ? peso : 0,
-      especie: especie,
+      especie: especie ? especie : null,
       sexo: sexo ? sexo : "",
       origen: 0,
       fechaIngreso: fechaIngreso ? fechaIngreso : new Date(),
@@ -53,6 +61,20 @@ form.addEventListener('submit', async (event) =>{
   }
 });
 async function getData(){
+  await fetch(`http://localhost:3000/animal/${id}`) // Replace with your actual backend URL
+  .then(response => response.json()) // Parse JSON response
+  .then(data => {
+    // Process and populate the select options
+    console.log(data.data);
+    idAnimales.value = id;
+    alias.value = data.data.alias;
+    especie.value = data.data.especie;
+    altura.value = data.data.altura;
+    edad.value = data.data.edad;
+    peso.value = data.data.peso;
+    sexo.value = data.data.sexo;
+    fechaIngreso.value = data.data.fechaIngreso;
+  })
   await fetch('http://localhost:3000/tipopiel') // Replace with your actual backend URL
   .then(response => response.json()) // Parse JSON response
   .then(data => {

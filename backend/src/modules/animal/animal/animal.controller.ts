@@ -38,25 +38,25 @@ export class AnimalController {
 
   }
 
-  @Post('/update/:id')
-  update(@Body() body:Animal, @Param('id') id){
-    return this.animalService.update(id,body).then(res=>{
+  @Post('/update/')
+  update(@Body() body:Animal){
+    return this.animalService.update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{
       throw new HttpException(error, HttpStatus.INTERNAL_SERVER_ERROR)
     });
   }
   @Post('/activar/:id')
-  activar(@Body() body:Animal, @Param('id') id){
-    return this.animalService.update(id,body).then(res=>{
+  activar(@Body() body:Animal){
+    return this.animalService.update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{
       throw new HttpException(error, HttpStatus.INTERNAL_SERVER_ERROR)
     });
   }
   @Post('/desactivar/:id')
-  desactivar(@Body() body:Animal, @Param('id') id){
-    return this.animalService.update(id,body).then(res=>{
+  desactivar(@Body() body:Animal){
+    return this.animalService.update(body).then(res=>{
       return {success: true, data: res}
     }).catch(error=>{
       throw new HttpException(error, HttpStatus.INTERNAL_SERVER_ERROR)
