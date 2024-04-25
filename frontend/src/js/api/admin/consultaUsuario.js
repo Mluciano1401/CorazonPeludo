@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', async() => {
           // Create and append table cells for each data property
           for (const key in item) {
             const cell = document.createElement('td');
-            if(key === "usuarioId"){
+            if(key === "id"){
               cell.style.fontWeight = 800;
             }
             if(key === "status"){
@@ -35,10 +35,10 @@ document.addEventListener('DOMContentLoaded', async() => {
           }
           const cellu = document.createElement('td');
           cellu.innerHTML = `
-          ${(item.status) ? `<button id="deshabilitar-${item.usuarioId}" class="btn btn-warning btn-sm me-1">Deshabilitar</button>` 
-          : `<button id="habilitar-${item.usuarioId}" class="btn btn-success btn-sm me-1">Habilitar</button>`}
-          <button id="editar-${item.usuarioId}" class="btn btn-primary btn-sm me-1">Editar</button>
-          <button id="eliminar-${item.usuarioId}" class="btn btn-danger btn-sm">Eliminar</button>
+          ${(item.status) ? `<button id="deshabilitar-${item.id}" class="btn btn-warning btn-sm me-1">Deshabilitar</button>` 
+          : `<button id="habilitar-${item.id}" class="btn btn-success btn-sm me-1">Habilitar</button>`}
+          <button id="editar-${item.id}" class="btn btn-primary btn-sm me-1">Editar</button>
+          <button id="eliminar-${item.id}" class="btn btn-danger btn-sm">Eliminar</button>
           `;
           row.appendChild(cellu);
           tableBody.appendChild(row);
@@ -75,7 +75,7 @@ await fetch(urlAPI)
           // Create and append table cells for each data property
           for (const key in item) {
             const cell = document.createElement('td');
-            if(key === "usuarioId"){
+            if(key === "id"){
               cell.style.fontWeight = 800;
             }
             if(key === "status"){
@@ -95,10 +95,10 @@ await fetch(urlAPI)
           }
           const cellu = document.createElement('td');
           cellu.innerHTML = `
-          ${(item.status) ? `<button id="deshabilitar-${item.usuarioId}" class="btn btn-warning btn-sm me-1">Deshabilitar</button>` 
-          : `<button id="habilitar-${item.usuarioId}" class="btn btn-success btn-sm me-1">Habilitar</button>`}
-          <button id="editar-${item.usuarioId}" class="btn btn-primary btn-sm me-1">Editar</button>
-          <button id="eliminar-${item.usuarioId}" class="btn btn-danger btn-sm">Eliminar</button>
+          ${(item.status) ? `<button id="deshabilitar-${item.id}" class="btn btn-warning btn-sm me-1">Deshabilitar</button>` 
+          : `<button id="habilitar-${item.id}" class="btn btn-success btn-sm me-1">Habilitar</button>`}
+          <button id="editar-${item.id}" class="btn btn-primary btn-sm me-1">Editar</button>
+          <button id="eliminar-${item.id}" class="btn btn-danger btn-sm">Eliminar</button>
           `;
           row.appendChild(cellu);
           tablaCuerpo.appendChild(row);
@@ -115,7 +115,7 @@ tableBody.addEventListener('click', (event) => {
     console.log(`Edit user with ID: ${userId}`); 
   }
 });
-/*tableBody.addEventListener('click', (event) => {
+tableBody.addEventListener('click', (event) => {
   if (event.target.id.startsWith('eliminar-')) {
     const userId = event.target.id.split('-')[1]; // Extract user ID from button ID
 
@@ -123,12 +123,12 @@ tableBody.addEventListener('click', (event) => {
     if (confirm(`¿Está seguro de eliminar al usuario con ID ${userId}?`)) {
       // Logic to delete user (replace with your API call)
       fetch(`http://localhost:3000/usuario/delete/${userId}`, {
-        method: 'DELETE',
+        method: 'GET',
       })
         .then(response => {
           if (response.ok) {
             // Remove user from dataArray and update table
-            const userIndex = dataArray.findIndex(user => user.usuarioId === parseInt(userId));
+            const userIndex = dataArray.findIndex(user => user.id === parseInt(userId));
             dataArray.splice(userIndex, 1);
 
             const rowToDelete = event.target.parentElement.parentElement; // Get the parent row
@@ -140,4 +140,4 @@ tableBody.addEventListener('click', (event) => {
         .catch(error => console.error('Error deleting user:', error));
     }
   }
-});*/
+});

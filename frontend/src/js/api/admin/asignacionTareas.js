@@ -47,7 +47,18 @@ form.addEventListener('submit', async (event) => {
   }
 });
 async function getData(){
-  await fetch('http://localhost:3000/asignaciontarea') // Replace with your actual backend URL
+  await fetch(`http://localhost:3000/tarea/${id}`) // Replace with your actual backend URL
+  .then(response => response.json()) // Parse JSON response
+  .then(data => {
+    // Process and populate the select options
+    idEspecie.value = id;
+    descripcion.value = data.data.descripcion;
+    tipoTarea = data.data.tipoTarea;
+    complejidad = data.data.complejidad;
+    fechaModificacion.value = data.data.fechaModificacion;
+    status.value = data.data.status;
+  })
+  await fetch('http://localhost:3000/complejidad') // Replace with your actual backend URL
   .then(response => response.json()) // Parse JSON response
   .then(data => {
     // Process and populate the select options
@@ -55,7 +66,7 @@ async function getData(){
     const select = document.getElementById('tipoUser');
     select.addEventListener('change', () => {
       const selectedId = select.value;
-      const selectedData = data.data.find(item => item.asignacionTareaId === selectedId); // Find selected item
+      const selectedData = data.data.find(item => item.id === selectedId); // Find selected item
       if (selectedData) {
         const dataDisplay = document.getElementById('data-display');
         dataDisplay.textContent = JSON.stringify(selectedData, null, 2); // Display selected data
@@ -75,7 +86,7 @@ function populateSelectOptions(data) {
   // Add an option for each data item
   data.data.forEach(item => {
     const option = document.createElement('option');
-    option.value = item.asignacionTareaId; // Replace with your data item's ID property
+    option.value = item.id; // Replace with your data item's ID property
     option.text = item.descripcion; // Replace with your data item's label property
     select.appendChild(option);
   });

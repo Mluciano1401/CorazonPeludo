@@ -44,6 +44,7 @@ form.addEventListener('submit', async (event) => {
     url = 'http://localhost:3000/solicitudadopcion';
   }
    const data = { 
+    id: id ? id : null,
     idSolicitante,
     idAnimal,
     nombre,

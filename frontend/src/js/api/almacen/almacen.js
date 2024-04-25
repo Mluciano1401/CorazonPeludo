@@ -44,6 +44,16 @@ form.addEventListener('submit', async (event) =>{
   }
 });
 async function getData(){
+  await fetch(`http://localhost:3000/almacen/${id}`) // Replace with your actual backend URL
+  .then(response => response.json()) // Parse JSON response
+  .then(data => {
+    // Process and populate the select options
+    idEspecie.value = id;
+    sucursal.value = data.data.sucursal;
+    tipoAlmacen.value = data.data.tipoAlmacen;
+    fechaModificacion.value = data.data.fechaModificacion;
+    status.value = data.data.status;
+  })
   await fetch('http://localhost:3000/sucursal') // Replace with your actual backend URL
   .then(response => response.json()) // Parse JSON response
   .then(data => {

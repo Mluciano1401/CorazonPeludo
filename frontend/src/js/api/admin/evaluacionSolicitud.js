@@ -46,7 +46,6 @@ form.addEventListener('submit', async (event) => {
   }
    const data = { 
     id:id ? id : null,
-    idSolicitante,
     idAnimal,
     nombre,
     apellido,
@@ -95,3 +94,15 @@ form.addEventListener('submit', async (event) => {
     console.error('Error:', error);
   }
 });
+async function getData(){
+  await fetch(`http://localhost:3000/solicitante/${id}`) // Replace with your actual backend URL
+  .then(response => response.json()) // Parse JSON response
+  .then(data => {
+    // Process and populate the select options
+    idSolicitante.value = id;
+    descripcion.value = data.data.descripcion;
+    fechaModificacion.value = data.data.fechaModificacion;
+    status.value = data.data.status;
+  })
+}
+getData();

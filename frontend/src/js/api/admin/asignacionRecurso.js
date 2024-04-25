@@ -6,12 +6,12 @@ form.addEventListener('submit', async (event) => {
   event.preventDefault(); // Previene el envío predeterminado del formulario
 
   // Recopila los datos del formulario
-  const user = document.getElementById('user').value;
-  const tipouser = document.getElementById('tipoUser').value;
-  const password = document.getElementById('password').value;
-  const email = document.getElementById('email').value;
-  const sucursal = document.getElementById('sucursal').value;
-  const formFile = document.getElementById('formFile').value;
+  const tarea = document.getElementById('tarea').value;
+  const producto = document.getElementById('producto').value;
+  const estado = document.getElementById('estado').value;
+  const fecha = document.getElementById('fecha').value;
+  const tipoRecurso = document.getElementById('tipoRecurso').value;
+  const fechaModificacion = document.getElementById('fechaModificacion').value;
   const status = document.getElementById('status').value;
   // Crea una solicitud HTTP
     let url = '';
@@ -22,12 +22,11 @@ form.addEventListener('submit', async (event) => {
   }
    const data = {  
       id: id ? id : null,
-      userName: user,
-      password: password,
-      email: email,
-      asignacionRecurso: tipouser,
-      sucursal: sucursal,
-      foto:formFile,
+      tarea: tarea?tarea : null,
+      producto: producto ? producto : null,
+      estado: estado ? estado : null,
+      fecha: fecha ? fecha : new Date(),
+      tipoRecurso: tipoRecurso ? tipoRecurso : null,
       fechaModificacion: new Date(),
       status: (status == '0') ? false : true
 
@@ -51,7 +50,18 @@ form.addEventListener('submit', async (event) => {
   }
 });
 async function getData(){
-  await fetch('http://localhost:3000/asignacionRecurso') // Replace with your actual backend URL
+  await fetch(`http://localhost:3000/asignaciorecurso/${id}`) // Replace with your actual backend URL
+  .then(response => response.json()) // Parse JSON response
+  .then(data => {
+    // Process and populate the select options
+    idEspecie.value = id;
+    tarea.value = data.data.tarea;
+    producto = data.data.producto;
+    tipoRecurso = data.data.tipoRecurso;
+    fechaModificacion.value = data.data.fechaModificacion;
+    status.value = data.data.status;
+  })
+  await fetch('http://localhost:3000/tarea') // Replace with your actual backend URL
   .then(response => response.json()) // Parse JSON response
   .then(data => {
     // Process and populate the select options
@@ -59,7 +69,7 @@ async function getData(){
     const select = document.getElementById('tipoUser');
     select.addEventListener('change', () => {
       const selectedId = select.value;
-      const selectedData = data.data.find(item => item.asignacionRecursoId === selectedId); // Find selected item
+      const selectedData = data.data.find(item => item.id === selectedId); // Find selected item
       if (selectedData) {
         const dataDisplay = document.getElementById('data-display');
         dataDisplay.textContent = JSON.stringify(selectedData, null, 2); // Display selected data
@@ -79,11 +89,10 @@ function populateSelectOptions(data) {
   // Add an option for each data item
   data.data.forEach(item => {
     const option = document.createElement('option');
-    option.value = item.asignacionRecursoId; // Replace with your data item's ID property
+    option.value = item.id; // Replace with your data item's ID property
     option.text = item.descripcion; // Replace with your data item's label property
     select.appendChild(option);
   });
 }
-
 
 getData();

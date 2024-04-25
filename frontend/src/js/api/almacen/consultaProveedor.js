@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', async() => {
 });
      async function populateTable() {
       try {
-        const response = await fetch('http://localhost:3000/tarea'); // Replace with your URL
+        const response = await fetch('http://localhost:3000/proveedor'); // Replace with your URL
         const data = await response.json();
         // Clear existing table rows (optional)
         tableBody.innerHTML = '';
@@ -38,20 +38,21 @@ document.addEventListener('DOMContentLoaded', async() => {
           cellu.innerHTML = `
           ${(item.status) ? `<button id="deshabilitar-${item.id}" class="btn btn-warning btn-sm me-1">Deshabilitar</button>` 
           : `<button id="habilitar-${item.id}" class="btn btn-success btn-sm me-1">Habilitar</button>`}
-          <button id="editar-${item.id}" class="btn btn-primary btn-sm me-1"><a style="text-decoration: none;" href="../../../../public/enums/registrotarea.html?id${item.id}">Editar</a></button>
+          <button id="editar-${item.id}" class="btn btn-primary btn-sm me-1">Editar</button>
           <button id="eliminar-${item.id}" class="btn btn-danger btn-sm">Eliminar</button>
           `;
           row.appendChild(cellu);
           tableBody.appendChild(row);
           
-        });        
+        });
+        
     
       } catch (error) {
         console.error('Error fetching data:', error);
       }
     }
 async function busqueda(){
-  const urlAPI = "http://localhost:3000/tarea"; // URL de la API
+  const urlAPI = "http://localhost:3000/proveedor"; // URL de la API
 const buscador = document.getElementById("buscador");
 const tablaCuerpo = document.querySelector('tbody');
 
@@ -92,12 +93,12 @@ await fetch(urlAPI)
             }   
             cell.classList.add("table-light");        
             row.appendChild(cell);
-          };
+          }
           const cellu = document.createElement('td');
           cellu.innerHTML = `
           ${(item.status) ? `<button id="deshabilitar-${item.id}" class="btn btn-warning btn-sm me-1">Deshabilitar</button>` 
           : `<button id="habilitar-${item.id}" class="btn btn-success btn-sm me-1">Habilitar</button>`}
-          <button id="editar-${item.id}" class="btn btn-primary btn-sm me-1"><a style="text-decoration: none;" href="../../../../public/enums/registrotarea.html?id${item.id}">Editar</a></button>
+          <button id="editar-${item.id}" class="btn btn-primary btn-sm me-1">Editar</button>
           <button id="eliminar-${item.id}" class="btn btn-danger btn-sm">Eliminar</button>
           `;
           row.appendChild(cellu);
@@ -111,7 +112,7 @@ busqueda();
 tableBody.addEventListener('click', (event) => {
   if (event.target.id.startsWith('editar-')) {
     const userId = event.target.id.split('-')[1]; 
-    window.location.href = `../../../../../../frontend/public/admin/registrotarea.html?id=${userId}`;
+    window.location.href = `../../../../../../frontend/public/admin/registroproveedor.html?id=${userId}`;
     console.log(`Edit user with ID: ${userId}`); 
   }
 });
@@ -122,7 +123,7 @@ tableBody.addEventListener('click', (event) => {
     // Confirmation logic (optional)
     if (confirm(`¿Está seguro de eliminar al usuario con ID ${userId}?`)) {
       // Logic to delete user (replace with your API call)
-      fetch(`http://localhost:3000/tarea/delete/${userId}`, {
+      fetch(`http://localhost:3000/proveedor/delete/${userId}`, {
         method: 'GET',
       })
         .then(response => {

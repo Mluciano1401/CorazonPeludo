@@ -51,6 +51,20 @@ form.addEventListener('submit', async (event) => {
   }
 });
 async function getData(){
+  await fetch(`http://localhost:3000/usuario/${id}`) // Replace with your actual backend URL
+  .then(response => response.json()) // Parse JSON response
+  .then(data => {
+    // Process and populate the select options
+    idEspecie.value = id;
+    user.value = data.data.userName;
+    password.value = data.data.password;
+    email.value = data.data.email;
+    tipouser.value = data.data.tipoUsuarioId;
+    sucursal.value = data.data.sucursal;
+    foto.value = data.data.foto;
+    fechaModificacion.value = data.data.fechaModificacion;
+    status.value = data.data.status;
+  })
   await fetch('http://localhost:3000/tipousuario') // Replace with your actual backend URL
   .then(response => response.json()) // Parse JSON response
   .then(data => {

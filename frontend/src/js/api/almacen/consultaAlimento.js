@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', async() => {
           // Create and append table cells for each data property
           for (const key in item) {
             const cell = document.createElement('td');
-            if(key === "alimentoId"){
+            if(key === "id"){
               cell.style.fontWeight = 800;
             }
             if(key === "status"){
@@ -36,10 +36,10 @@ document.addEventListener('DOMContentLoaded', async() => {
           }
           const cellu = document.createElement('td');
           cellu.innerHTML = `
-          ${(item.status) ? `<button id="deshabilitar-${item.alimentoId}" class="btn btn-warning btn-sm me-1">Deshabilitar</button>` 
-          : `<button id="habilitar-${item.alimentoId}" class="btn btn-success btn-sm me-1">Habilitar</button>`}
-          <button id="editar-${item.alimentoId}" class="btn btn-primary btn-sm me-1">Editar</button>
-          <button id="eliminar-${item.alimentoId}" class="btn btn-danger btn-sm">Eliminar</button>
+          ${(item.status) ? `<button id="deshabilitar-${item.id}" class="btn btn-warning btn-sm me-1">Deshabilitar</button>` 
+          : `<button id="habilitar-${item.id}" class="btn btn-success btn-sm me-1">Habilitar</button>`}
+          <button id="editar-${item.id}" class="btn btn-primary btn-sm me-1">Editar</button>
+          <button id="eliminar-${item.id}" class="btn btn-danger btn-sm">Eliminar</button>
           `;
           row.appendChild(cellu);
           tableBody.appendChild(row);
@@ -76,7 +76,7 @@ await fetch(urlAPI)
           // Create and append table cells for each data property
           for (const key in item) {
             const cell = document.createElement('td');
-            if(key === "alimentoId"){
+            if(key === "id"){
               cell.style.fontWeight = 800;
             }
             if(key === "status"){
@@ -96,10 +96,10 @@ await fetch(urlAPI)
           }
           const cellu = document.createElement('td');
           cellu.innerHTML = `
-          ${(item.status) ? `<button id="deshabilitar-${item.alimentoId}" class="btn btn-warning btn-sm me-1">Deshabilitar</button>` 
-          : `<button id="habilitar-${item.alimentoId}" class="btn btn-success btn-sm me-1">Habilitar</button>`}
-          <button id="editar-${item.alimentoId}" class="btn btn-primary btn-sm me-1">Editar</button>
-          <button id="eliminar-${item.alimentoId}" class="btn btn-danger btn-sm">Eliminar</button>
+          ${(item.status) ? `<button id="deshabilitar-${item.id}" class="btn btn-warning btn-sm me-1">Deshabilitar</button>` 
+          : `<button id="habilitar-${item.id}" class="btn btn-success btn-sm me-1">Habilitar</button>`}
+          <button id="editar-${item.id}" class="btn btn-primary btn-sm me-1">Editar</button>
+          <button id="eliminar-${item.id}" class="btn btn-danger btn-sm">Eliminar</button>
           `;
           row.appendChild(cellu);
           tablaCuerpo.appendChild(row);
@@ -109,3 +109,36 @@ await fetch(urlAPI)
   .catch(error => console.error('Error:', error));
 }
 busqueda();
+tableBody.addEventListener('click', (event) => {
+  if (event.target.id.startsWith('editar-')) {
+    const userId = event.target.id.split('-')[1]; 
+    window.location.href = `../../../../../../frontend/public/admin/registroalimento.html?id=${userId}`;
+    console.log(`Edit user with ID: ${userId}`); 
+  }
+});
+tableBody.addEventListener('click', (event) => {
+  if (event.target.id.startsWith('eliminar-')) {
+    const userId = event.target.id.split('-')[1]; // Extract user ID from button ID
+
+    // Confirmation logic (optional)
+    if (confirm(`¿Está seguro de eliminar al usuario con ID ${userId}?`)) {
+      // Logic to delete user (replace with your API call)
+      fetch(`http://localhost:3000/alimento/delete/${userId}`, {
+        method: 'GET',
+      })
+        .then(response => {
+          if (response.ok) {
+            // Remove user from dataArray and update table
+            const userIndex = dataArray.findIndex(user => user.id === parseInt(userId));
+            dataArray.splice(userIndex, 1);
+
+            const rowToDelete = event.target.parentElement.parentElement; // Get the parent row
+            tableBody.removeChild(rowToDelete);
+          } else {
+            console.error('Error deleting user:', response.statusText);
+          }
+        })
+        .catch(error => console.error('Error deleting user:', error));
+    }
+  }
+});
