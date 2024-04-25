@@ -40,7 +40,8 @@
    */
 
   const elementMap = new Map();
-  const Data = {
+ 
+   const data = { 
     set(element, key, instance) {
       if (!elementMap.has(element)) {
         elementMap.set(element, new Map());

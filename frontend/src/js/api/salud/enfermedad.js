@@ -12,8 +12,14 @@ form.addEventListener('submit', async (event) =>{
   const porcientoMortalidad = document.getElementById('porcientoMortalidad').value;
 
    const status = document.getElementById('status').value;    // Crea una solicitud HTTP
-  const url = 'http://localhost:3000/enfermedad';
-  const data = { 
+  let url = '';
+  if(id){
+    url = 'http://localhost:3000/enfermedad/update/';
+  }else{
+    url = 'http://localhost:3000/enfermedad';
+  }
+   const data = {  
+      id: id ? id : null,
       nombre: nombre,
       porcientoMortalidad: porcientoMortalidad,
       tipoEnfermedad: tipoEnfermedad,

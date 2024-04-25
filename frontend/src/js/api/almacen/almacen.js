@@ -11,8 +11,14 @@ form.addEventListener('submit', async (event) =>{
   const capacidad = document.getElementById('registro-almacen-capacidad').value;
   
    const status = document.getElementById('status').value;    // Crea una solicitud HTTP
-  const url = 'http://localhost:3000/almacen';
-  const data = { 
+    let url = '';
+  if(id){
+    url = 'http://localhost:3000/almacen/update/';
+  }else{
+    url = 'http://localhost:3000/almacen';
+  }
+   const data = {  
+      id: id ? id : null,
       sucursal: sucursal,
       tipoAlmacen: tipoAlmacen,
       capacidad: capacidad,

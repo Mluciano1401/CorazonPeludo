@@ -2262,14 +2262,16 @@
       dispatchWith(component, target, event, {});
     };
     const dispatchWith = (component, target, event, properties) => {
-      const data = {
+
+   const data = { 
         target,
         ...properties
       };
       component.getSystem().triggerEvent(event, target, data);
     };
     const retargetAndDispatchWith = (component, target, eventName, properties) => {
-      const data = {
+ 
+   const data = { 
         ...properties,
         target
       };
@@ -13652,7 +13654,13 @@
       const handleTouchstart = event => {
         getTouch(event).each(touch => {
           longpress$1.cancel();
-          const data = {
+           let url = '';
+  if(id){
+    url = 'http://localhost:3000/identificador/update/';
+  }else{
+    url = 'http://localhost:3000/identificador';
+  }
+   const data = { 
             x: touch.clientX,
             y: touch.clientY,
             target: event.target

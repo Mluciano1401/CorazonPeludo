@@ -762,7 +762,8 @@
       const image = getSelectedImage(editor);
       if (image) {
         const selectedImageData = read(css => normalizeCss$1(editor, css), image);
-        const data = {
+  
+   const data = { 
           ...selectedImageData,
           ...partialData
         };

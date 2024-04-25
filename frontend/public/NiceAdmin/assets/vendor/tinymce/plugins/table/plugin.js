@@ -2093,7 +2093,8 @@
           ...padding
         };
       };
-      const data = {
+
+   const data = { 
         ...defaultData,
         ...style,
         ...attrs,

@@ -9,7 +9,8 @@ form.addEventListener('submit', async (event) => {
   const email = document.getElementById('email').value;
   // Crea una solicitud HTTP
   const url = 'http://localhost:3000/usuario';
-  const data = { 
+
+   const data = {  
       userName: name,
       password: password,
       email: email,

@@ -1,7 +1,7 @@
 const form = document.getElementById('form');
 const urlParams = new URLSearchParams(window.location.search);
-//const id = urlParams.get('id');
-console.log('ok ko');
+const id = urlParams.get('id');
+
 form.addEventListener('submit', async (event) => {
   event.preventDefault(); // Previene el envío predeterminado del formulario
 
@@ -14,8 +14,14 @@ form.addEventListener('submit', async (event) => {
   const formFile = document.getElementById('formFile').value;
   const status = document.getElementById('status').value;
   // Crea una solicitud HTTP
-  const url = 'http://localhost:3000/usuario';
-  const data = { 
+    let url = '';
+  if(id){
+    url = 'http://localhost:3000/usuario/update/';
+  }else{
+    url = 'http://localhost:3000/usuario';
+  }
+   const data = {  
+      id: id ? id : null,
       userName: user,
       password: password,
       email: email,

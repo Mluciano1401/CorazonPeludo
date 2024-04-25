@@ -16,8 +16,14 @@ form.addEventListener('submit', async (event) =>{
   const fechavencimiento= document.getElementById('registro-alimentos-fechaVencimiento').value;
   const idproduct = 0;
    const status = document.getElementById('status').value;    // Crea una solicitud HTTP
-  const url = 'http://localhost:3000/producto';
-  const data = { 
+    let url = '';
+  if(id){
+    url = 'http://localhost:3000/alimento/update/';
+  }else{
+    url = 'http://localhost:3000/alimento';
+  }
+   const data = {  
+      id: id ? id : null,
       descripcion: nombre,
       lote: lote,
       tipoProducto: 1,

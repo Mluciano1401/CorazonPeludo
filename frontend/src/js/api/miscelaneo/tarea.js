@@ -11,8 +11,14 @@ form.addEventListener('submit', async (event) =>{
   const complejidad = document.getElementById('complejidad').value;
   const status = document.getElementById('status').value;
 
-  const url = 'http://localhost:3000/tarea';
-  const data = { 
+    let url = '';
+  if(id){
+    url = 'http://localhost:3000/tarea/update/';
+  }else{
+    url = 'http://localhost:3000/tarea';
+  }
+   const data = {  
+      id: id ? id : null,
       descripcion: descripcion,
       complejidad: complejidad,
       tipoTarea: tipoTarea,

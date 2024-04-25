@@ -14,8 +14,14 @@ form.addEventListener('submit', async (event) =>{
   const sexo = document.getElementById('sexo').value;
 
    const status = document.getElementById('status').value;    // Crea una solicitud HTTP
-  const url = 'http://localhost:3000/persona';
-  const data = { 
+    let url = '';
+  if(id){
+    url = 'http://localhost:3000/proveedor/update/';
+  }else{
+    url = 'http://localhost:3000/proveedor';
+  }
+   const data = {  
+      id: id ? id : null,
       descripcion: descripcion,
       fechaModificacion: new Date(),
       status: (status == '0') ? false : true 

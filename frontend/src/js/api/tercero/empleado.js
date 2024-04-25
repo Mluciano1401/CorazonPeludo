@@ -28,8 +28,14 @@ form.addEventListener('submit', async(event)=> {
   const codigoPostal = document.getElementById('codigoPostal').value;
    
    // Crea una solicitud HTTP
-  const url = 'http://localhost:3000/empleado';
-  const data = { 
+    let url = '';
+  if(id){
+    url = 'http://localhost:3000/empleado/update/';
+  }else{
+    url = 'http://localhost:3000/empleado';
+  }
+   const data = {  
+      id: id ? id : null,
       nombre: nombre ? nombre : "",
       apellido: apellido ? apellido : "",
       cedula: (tipoDocumento == 1) ? cedula : "",

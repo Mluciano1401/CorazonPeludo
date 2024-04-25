@@ -9,8 +9,14 @@ form.addEventListener('submit', async (event) =>{
   const descripcion = document.getElementById('descripcion').value;
 
    const status = document.getElementById('status').value;    // Crea una solicitud HTTP
-  const url = 'http://localhost:3000/mision';
-  const data = { 
+    let url = '';
+  if(id){
+    url = 'http://localhost:3000/mision/update/';
+  }else{
+    url = 'http://localhost:3000/mision';
+  }
+   const data = {  
+      id: id ? id : null,
       descripcion: descripcion,
       fechaModificacion: new Date(),
       status: (status == '0') ? false : true 

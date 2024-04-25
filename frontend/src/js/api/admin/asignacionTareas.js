@@ -13,8 +13,14 @@ form.addEventListener('submit', async (event) => {
   const status = document.getElementById('status').value;
 
    // Crea una solicitud HTTP
-   const url = 'http://localhost:3000/asignaciontarea';
-   const data = { 
+     let url = '';
+  if(id){
+    url = 'http://localhost:3000/asignaciontarea/update/';
+  }else{
+    url = 'http://localhost:3000/asignaciontarea';
+  }
+   const data = {  
+      id: id ? id : null,
        idTareas: idtareas,
        descripcion: descripcion ? descripcion : "" ,
        tipoTarea: tipotarea,

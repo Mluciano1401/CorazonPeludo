@@ -29,9 +29,8 @@ form.addEventListener('submit', async (event) =>{
   else{
     url ='http://localhost:3000/animal';
   }
-  
-  const data = { 
-      animalId: id ? id : null,
+   const data = {  
+      id: id ? id : null,
       alias:alias ? alias : "",
       edad: edad ? edad : 0,
       peso: peso ? peso : 0,
@@ -65,7 +64,6 @@ async function getData(){
   .then(response => response.json()) // Parse JSON response
   .then(data => {
     // Process and populate the select options
-    console.log(data.data);
     idAnimales.value = id;
     alias.value = data.data.alias;
     especie.value = data.data.especie;

@@ -14,8 +14,14 @@ form.addEventListener('submit', async (event) => {
   const formFile = document.getElementById('formFile').value;
   const status = document.getElementById('status').value;
   // Crea una solicitud HTTP
-  const url = 'http://localhost:3000/asignacionRecurso';
-  const data = { 
+    let url = '';
+  if(id){
+    url = 'http://localhost:3000/asignacionRecurso/update/';
+  }else{
+    url = 'http://localhost:3000/asignacionRecurso';
+  }
+   const data = {  
+      id: id ? id : null,
       userName: user,
       password: password,
       email: email,

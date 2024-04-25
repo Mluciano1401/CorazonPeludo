@@ -14,8 +14,14 @@ form.addEventListener('submit', async (event) =>{
   const fechaVencimiento = document.getElementById('fechaVencimiento').value;
 
    const status = document.getElementById('status').value;    // Crea una solicitud HTTP
-  const url = 'http://localhost:3000/producto';
-  const data = { 
+    let url = '';
+  if(id){
+    url = 'http://localhost:3000/producto/update/';
+  }else{
+    url = 'http://localhost:3000/producto';
+  }
+   const data = {  
+      id: id ? id : null,
       nombre: nombre,
       lote: lote,
       costo: costo,

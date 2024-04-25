@@ -9,8 +9,13 @@ form.addEventListener('submit', async (event) =>{
   const descripcion = document.getElementById('descripcion').value;
 
    const status = document.getElementById('status').value;    // Crea una solicitud HTTP
-  const url = 'http://localhost:3000/tipopiel';
-  const data = { 
+  if(id){
+    url = 'http://localhost:3000/tipopiel/update/';
+  }else{
+    url = 'http://localhost:3000/tipopiel';
+  }
+   const data = {  
+      id: id ? id : null,
       descripcion: descripcion,
       fechaModificacion: new Date(),
       status: (status == '0') ? false : true 
@@ -33,3 +38,15 @@ form.addEventListener('submit', async (event) =>{
     console.error('Error:', error);
   }
 });
+async function getData(){
+  await fetch(`http://localhost:3000/tipopiel/${id}`) // Replace with your actual backend URL
+  .then(response => response.json()) // Parse JSON response
+  .then(data => {
+    // Process and populate the select options
+    idEspecie.value = id;
+    descripcion.value = data.data.descripcion;
+    fechaModificacion.value = data.data.fechaModificacion;
+    status.value = data.data.status;
+  })
+}
+getData();

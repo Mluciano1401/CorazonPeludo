@@ -16,9 +16,14 @@ form.addEventListener('submit', async (event) => {
   const fechaCita = document.getElementById('fechaCita').value;
   const hora = document.getElementById('hora').value;
   const status = document.getElementById('status').value;  
-  const url = 'http://localhost:3000/solicitante';
-
-  const data = {
+  
+   let url = '';
+  if(id){
+    url = 'http://localhost:3000/cita/update/';
+  }else{
+    url = 'http://localhost:3000/cita';
+  }
+   const data = { 
     idCita,
     nombre,
     apellido,
